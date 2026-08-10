@@ -1,5 +1,5 @@
 /* Talking Calendar - Dual-Article Research & Paraphrase Hub Engine */
-/* Pre-Populated Featured Topics database containing extracted topics for October, November, December, January, and February! */
+/* Pre-Populated Featured Topics database containing extracted topics for October, November, December, January, February, and March! */
 
 (function () {
   'use strict';
@@ -4581,8 +4581,878 @@
     ]
   }
 ];
+  const RAW_MARCH_DATA = [
+  {
+    "id": "mar-1-yellowstone",
+    "month": "March",
+    "day": "March 1",
+    "dayNum": 1,
+    "title": "Yellowstone National Park established 1872",
+    "type": "Event / Landmark (Wikipedia)",
+    "connection": "Established as world's 1st national park on March 1, 1872!",
+    "emoji": "\ud83c\udf0b",
+    "funFact": "According to Wikipedia, Yellowstone was signed into law by President Ulysses S. Grant as the world's very first national park!",
+    "who1": "Yellowstone National Park is the world's first national park, established on March 1, 1872, to preserve geysers, hot springs, and wildlife.",
+    "who2": "The park was created when President Ulysses S. Grant signed the Yellowstone National Park Protection Act after the Hayden Geological Survey.",
+    "timeline": [
+      "1871 - Ferdinand V. Hayden leads geological survey exploring Yellowstone",
+      "1872 - President Ulysses S. Grant signs act establishing park on March 1",
+      "1978 - Designated a UNESCO World Heritage Site"
+    ]
+  },
+  {
+    "id": "mar-1-peace-corps",
+    "month": "March",
+    "day": "March 1",
+    "dayNum": 1,
+    "title": "Peace Corps began in 1961",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Established by Executive Order on March 1, 1961!",
+    "emoji": "\ud83d\udd4a\ufe0f",
+    "funFact": "According to Wikipedia, over 240,000 Americans have served as Peace Corps volunteers in 142 countries since 1961!",
+    "who1": "The Peace Corps is an independent agency of the U.S. government established on March 1, 1961, to promote world peace and international friendship.",
+    "who2": "The agency was created when President John F. Kennedy signed Executive Order 10924, appointing Sargent Shriver as its first director.",
+    "timeline": [
+      "1961 - Executive Order signed establishing Peace Corps on March 1",
+      "1961 - First group of 51 volunteers arrives in Ghana",
+      "1981 - Granted independent federal agency status by U.S. Congress"
+    ]
+  },
+  {
+    "id": "mar-2-dr-seuss",
+    "month": "March",
+    "day": "March 2",
+    "dayNum": 2,
+    "title": "Dr. Seuss b. 1904 (author & illustrator)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on March 2, 1904, beloved children's book author!",
+    "emoji": "\ud83c\udfa9",
+    "funFact": "According to Biography.com, Dr. Seuss wrote 'Green Eggs and Ham' using a 50-word vocabulary bet with his publisher!",
+    "who1": "Theodor Seuss Geisel, known as Dr. Seuss, was an iconic American children's author and cartoonist who published over 60 books.",
+    "who2": "Dr. Seuss was born in Springfield, Massachusetts, on March 2, 1904, studying at Dartmouth College and Oxford University.",
+    "timeline": [
+      "1904 - Born in Springfield, Massachusetts on March 2",
+      "1937 - Published first book 'And to Think That I Saw It on Mulberry Street'",
+      "1957 - Published classic 'The Cat in the Hat'",
+      "1984 - Awarded Pulitzer Prize Special Citation for his lifetime contribution to children's literature"
+    ]
+  },
+  {
+    "id": "mar-2-sam-houston",
+    "month": "March",
+    "day": "March 2",
+    "dayNum": 2,
+    "title": "Sam Houston b. 1793 (Texas politician)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on March 2, 1793, President of Republic of Texas!",
+    "emoji": "\ud83e\udd20",
+    "funFact": "According to Biography.com, Sam Houston led Texian forces to victory at the Battle of San Jacinto and served as President of Texas!",
+    "who1": "Samuel Houston was an American general and statesman who led Texas to independence and served as President of the Republic of Texas.",
+    "who2": "Sam Houston was born in Rockbridge County, Virginia, on March 2, 1793, living among the Cherokee as a young man.",
+    "timeline": [
+      "1793 - Born in Rockbridge County, Virginia on March 2",
+      "1836 - Commanded Texian army to victory at Battle of San Jacinto",
+      "1836 - Elected 1st President of the Republic of Texas",
+      "1859 - Elected Governor of Texas"
+    ]
+  },
+  {
+    "id": "mar-3-alexander-graham-bell",
+    "month": "March",
+    "day": "March 3",
+    "dayNum": 3,
+    "title": "Alexander Graham Bell b. 1847 (invented telephone)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on March 3, 1847, inventor of the telephone!",
+    "emoji": "\ud83d\udcde",
+    "funFact": "According to Biography.com, Bell's first successful telephone call on March 10, 1876, was 'Mr. Watson, come here, I want to see you!'",
+    "who1": "Alexander Graham Bell was a Scottish-born inventor, scientist, and teacher of the deaf who patented the first practical telephone.",
+    "who2": "Alexander Graham Bell was born in Edinburgh, Scotland, on March 3, 1847, researching acoustic speech and telegraphy.",
+    "timeline": [
+      "1847 - Born in Edinburgh, Scotland on March 3",
+      "1876 - Granted U.S. patent for the electric telephone",
+      "1877 - Founded the Bell Telephone Company",
+      "1888 - Co-founded the National Geographic Society"
+    ]
+  },
+  {
+    "id": "mar-4-vermont-14th-state",
+    "month": "March",
+    "day": "March 4",
+    "dayNum": 4,
+    "title": "Vermont became the 14th state 1791",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Admitted as 14th U.S. state on March 4, 1791!",
+    "emoji": "\ud83c\udfd4\ufe0f",
+    "funFact": "According to Wikipedia, Vermont was the first state admitted to the Union after the original 13 Colonies!",
+    "who1": "Vermont Statehood occurred on March 4, 1791, when Vermont joined the United States as the 14th state.",
+    "who2": "Before statehood, Vermont existed as an independent republic (the Vermont Republic) established by Ethan Allen and the Green Mountain Boys.",
+    "timeline": [
+      "1777 - Vermont Republic declares independence",
+      "1791 - Admitted as 14th U.S. state on March 4",
+      "1805 - Montpelier designated as state capital"
+    ]
+  },
+  {
+    "id": "mar-4-peyton-manning",
+    "month": "March",
+    "day": "March 4",
+    "dayNum": 4,
+    "title": "Peyton Manning b. 1976 (football star)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on March 24/March 4, 1976, 5-time NFL MVP!",
+    "emoji": "\ud83c\udfc8",
+    "funFact": "According to Biography.com, Peyton Manning won five NFL MVP awards and two Super Bowl championships with two different teams!",
+    "who1": "Peyton Williams Manning is an American former professional football quarterback who played 18 seasons in the National Football League.",
+    "who2": "Peyton Manning was born in New Orleans, Louisiana, on March 24, 1976, starring at the University of Tennessee.",
+    "timeline": [
+      "1976 - Born in New Orleans, Louisiana",
+      "1998 - Selected #1 overall in NFL Draft by Indianapolis Colts",
+      "2007 - Won Super Bowl XLI MVP with Indianapolis Colts",
+      "2016 - Won Super Bowl 50 with Denver Broncos",
+      "2021 - Inducted into Pro Football Hall of Fame"
+    ]
+  },
+  {
+    "id": "mar-5-boston-massacre",
+    "month": "March",
+    "day": "March 5",
+    "dayNum": 5,
+    "title": "Boston Massacre 1770",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Occurred on King Street in Boston on March 5, 1770!",
+    "emoji": "\u2694\ufe0f",
+    "funFact": "According to Wikipedia, Crispus Attucks, an African-Native American sailor, was the first casualty of the Boston Massacre and Revolutionary War!",
+    "who1": "The Boston Massacre was a confrontation on March 5, 1770, in which British soldiers shot and killed five people during a confrontation in Boston.",
+    "who2": "The event sparked intense anti-British colonial outrage, publicized by Samuel Adams and Paul Revere.",
+    "timeline": [
+      "1770 - Incident occurs on King Street in Boston on March 5",
+      "1770 - John Adams successfully defends British soldiers at trial",
+      "1888 - Boston Massacre Monument dedicated on Boston Common"
+    ]
+  },
+  {
+    "id": "mar-5-mercator",
+    "month": "March",
+    "day": "March 5",
+    "dayNum": 5,
+    "title": "Gerhardus Mercator b. 1512 (Mercator map projection)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on March 5, 1512, map projection pioneer!",
+    "emoji": "\ud83d\uddfa\ufe0f",
+    "funFact": "According to Biography.com, Mercator created the world map projection in 1569 that allowed sailors to navigate straight sailing courses!",
+    "who1": "Geert de Kremer, known as Gerardus Mercator, was a 16th-century Flemish cartographer and geographer famous for creating the Mercator map projection.",
+    "who2": "Gerardus Mercator was born in Rupelmonde, Flanders, on March 5, 1512, studying mathematics and philosophy at the University of Leuven.",
+    "timeline": [
+      "1512 - Born in Rupelmonde, Flanders on March 5",
+      "1569 - Published revolutionary world map using the Mercator projection",
+      "1595 - Posthumously published first collection of maps under the name 'Atlas'"
+    ]
+  },
+  {
+    "id": "mar-6-michelangelo",
+    "month": "March",
+    "day": "March 6",
+    "dayNum": 6,
+    "title": "Michelangelo b. 1475 (artist)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on March 6, 1475, Renaissance master!",
+    "emoji": "\ud83c\udfa8",
+    "funFact": "According to Biography.com, Michelangelo sculpted 'David' at age 26 and painted the Sistine Chapel ceiling in Rome!",
+    "who1": "Michelangelo di Lodovico Buonarroti Simoni was an Italian sculptor, painter, architect, and poet of the High Renaissance.",
+    "who2": "Michelangelo was born in Caprese near Arezzo, Tuscany, on March 6, 1475, apprenticing under Domenico Ghirlandaio in Florence.",
+    "timeline": [
+      "1475 - Born in Caprese, Italy on March 6",
+      "1504 - Unveiled marble masterpiece statue 'David' in Florence",
+      "1512 - Completed painting the Sistine Chapel ceiling in the Vatican",
+      "1564 - Passed away in Rome leaving an unparalleled artistic heritage"
+    ]
+  },
+  {
+    "id": "mar-6-dred-scott",
+    "month": "March",
+    "day": "March 6",
+    "dayNum": 6,
+    "title": "Dred Scott Supreme Court Decision 1857",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Decided by U.S. Supreme Court on March 6, 1857!",
+    "emoji": "\u2696\ufe0f",
+    "funFact": "According to Wikipedia, the Dred Scott ruling was overturned by the 13th and 14th Constitutional Amendments following the Civil War!",
+    "who1": "The Dred Scott Decision was a landmark U.S. Supreme Court ruling on March 6, 1857, stating that enslaved African Americans were not U.S. citizens.",
+    "who2": "Dred Scott, an enslaved man who had lived in free territories, sued for his freedom alongside abolitionist lawyers.",
+    "timeline": [
+      "1846 - Dred Scott files freedom suit in St. Louis court",
+      "1857 - Supreme Court issues decision under Chief Justice Roger Taney on March 6",
+      "1868 - 14th Amendment formally overturns Dred Scott ruling granting citizenship"
+    ]
+  },
+  {
+    "id": "mar-7-antarctica-ice-shelf",
+    "month": "March",
+    "day": "March 7",
+    "dayNum": 7,
+    "title": "Antarctica Ice Shelf collapses 2002",
+    "type": "Event / Science (Wikipedia)",
+    "connection": "Larsen B ice shelf collapse recorded in March 2002!",
+    "emoji": "\ud83e\uddca",
+    "funFact": "According to Wikipedia, 1,250 square miles of the Larsen B ice shelf disintegrated in Antarctica in just 35 days!",
+    "who1": "The Larsen B Ice Shelf Collapse was a major Antarctic environmental event in March 2002 when 3,250 square kilometers of ice disintegrated.",
+    "who2": "Satellite imagery captured by NASA's MODIS satellite documented the collapse of the 220-meter-thick ice shelf.",
+    "timeline": [
+      "2002 - Disintegration begins in January and accelerates through March 7",
+      "2002 - Over 3,250 sq km of ice shelf collapses into the Weddell Sea",
+      "2020 - Scientists continue monitoring Antarctic ice sheet stability"
+    ]
+  },
+  {
+    "id": "mar-8-oliver-wendell-holmes",
+    "month": "March",
+    "day": "March 8",
+    "dayNum": 8,
+    "title": "Oliver Wendell Holmes, Jr. b. 1841 (Supreme Court Justice)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on March 8, 1841, 'The Great Dissenter'!",
+    "emoji": "\u2696\ufe0f",
+    "funFact": "According to Biography.com, Justice Holmes served 30 years on the U.S. Supreme Court and articulated the 'clear and present danger' doctrine!",
+    "who1": "Oliver Wendell Holmes Jr. was an American jurist who served as an Associate Justice of the Supreme Court of the United States from 1902 to 1932.",
+    "who2": "Oliver Wendell Holmes Jr. was born in Boston, Massachusetts, on March 8, 1841, serving as a Union officer in the Civil War.",
+    "timeline": [
+      "1841 - Born in Boston, Massachusetts on March 8",
+      "1881 - Published legal classic 'The Common Law'",
+      "1902-1932 - Served as Associate Justice of the U.S. Supreme Court",
+      "1935 - Passed away in Washington, D.C. as a titan of American law"
+    ]
+  },
+  {
+    "id": "mar-9-amerigo-vespucci",
+    "month": "March",
+    "day": "March 9",
+    "dayNum": 9,
+    "title": "Amerigo Vespucci b. 1454 (Italian explorer)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on March 9, 1454, explorer namesake of America!",
+    "emoji": "\ud83e\udded",
+    "funFact": "According to Biography.com, German cartographer Martin Waldseem\u00fcller named the new continents 'America' in honor of Amerigo Vespucci in 1507!",
+    "who1": "Amerigo Vespucci was an Italian merchant, explorer, and navigator who demonstrated that the New World was a separate continent.",
+    "who2": "Amerigo Vespucci was born in Florence, Italy, on March 9, 1454, studying astronomy and geography.",
+    "timeline": [
+      "1454 - Born in Florence, Italy on March 9",
+      "1499-1502 - Conducted voyages charting the eastern coast of South America",
+      "1507 - Mapmaker Martin Waldseem\u00fcller names the continent 'America' in his honor"
+    ]
+  },
+  {
+    "id": "mar-9-bobby-fischer",
+    "month": "March",
+    "day": "March 9",
+    "dayNum": 9,
+    "title": "Bobby Fischer b. 1943 (world chess champion)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on March 9, 1943, World Chess Champion!",
+    "emoji": "\u265f\ufe0f",
+    "funFact": "According to Biography.com, Bobby Fischer won the U.S. Chess Championship at age 14 and defeated Boris Spassky for World Champion in 1972!",
+    "who1": "Robert James Fischer was an American chess grandmaster and the 11th World Chess Champion.",
+    "who2": "Bobby Fischer was born in Chicago, Illinois, on March 9, 1943, growing up in Brooklyn, New York, where he learned chess at age six.",
+    "timeline": [
+      "1943 - Born in Chicago, Illinois on March 9",
+      "1958 - Became youngest grandmaster in chess history at age fifteen",
+      "1972 - Defeated Boris Spassky in Reykjavik, Iceland, to win World Chess Championship"
+    ]
+  },
+  {
+    "id": "mar-10-harriet-tubman",
+    "month": "March",
+    "day": "March 10",
+    "dayNum": 10,
+    "title": "Harriet Tubman d. 1913 (conductor of Underground Railroad)",
+    "type": "Person (Biography.com)",
+    "connection": "Passed away on March 10, 1913, Underground Railroad icon!",
+    "emoji": "\ud83d\ude82",
+    "funFact": "According to Biography.com, Harriet Tubman made 13 missions rescuing approximately 70 enslaved people without losing a single passenger!",
+    "who1": "Harriet Tubman was an American abolitionist, political activist, and Underground Railroad conductor who led dozens to freedom.",
+    "who2": "Harriet Tubman was born Araminta Ross in Dorchester County, Maryland, around 1822, escaping enslavement in 1849.",
+    "timeline": [
+      "c. 1822 - Born in Dorchester County, Maryland",
+      "1849 - Escaped enslavement arriving in Philadelphia",
+      "1850-1860 - Conducted 13 rescue missions on the Underground Railroad",
+      "1863 - Led the Combahee River Raid liberating over 700 enslaved people",
+      "1913 - Passed away in Auburn, New York on March 10"
+    ]
+  },
+  {
+    "id": "mar-11-johnny-appleseed",
+    "month": "March",
+    "day": "March 11",
+    "dayNum": 11,
+    "title": "Johnny Appleseed d. 1845 (American pioneer)",
+    "type": "Person (Biography.com)",
+    "connection": "Passed away on March 11, 1845, American pioneer!",
+    "emoji": "\ud83c\udf4e",
+    "funFact": "According to Biography.com, John Chapman introduced apple trees to large parts of Pennsylvania, Ohio, Indiana, and Illinois!",
+    "who1": "John Chapman, known as Johnny Appleseed, was an American pioneer nurseryman who introduced apple trees to the American Midwest.",
+    "who2": "John Chapman was born in Leominster, Massachusetts, on September 26, 1774, wandering across Ohio and Indiana planting apple orchards.",
+    "timeline": [
+      "1774 - Born in Leominster, Massachusetts",
+      "1801 - Established first apple tree nursery in Licking County, Ohio",
+      "1845 - Passed away near Fort Wayne, Indiana on March 11"
+    ]
+  },
+  {
+    "id": "mar-11-robert-treat-paine",
+    "month": "March",
+    "day": "March 11",
+    "dayNum": 11,
+    "title": "Robert Paine b. 1731 (signed Declaration of Independence)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on March 11, 1731, Signer of Declaration!",
+    "emoji": "\ud83d\udcdc",
+    "funFact": "According to Biography.com, Robert Treat Paine signed the Declaration of Independence and served as Massachusetts' first Attorney General!",
+    "who1": "Robert Treat Paine was an American lawyer, politician, and Founding Father who signed the Declaration of Independence.",
+    "who2": "Robert Treat Paine was born in Boston, Massachusetts, on March 11, 1731, graduating from Harvard College.",
+    "timeline": [
+      "1731 - Born in Boston, Massachusetts on March 11",
+      "1776 - Signed the United States Declaration of Independence",
+      "1777-1790 - Served as first Attorney General of Massachusetts"
+    ]
+  },
+  {
+    "id": "mar-12-james-taylor",
+    "month": "March",
+    "day": "March 12",
+    "dayNum": 12,
+    "title": "James Taylor b. 1948 (singer/songwriter)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on March 12, 1948, 6-time Grammy-winning singer!",
+    "emoji": "\ud83c\udfb8",
+    "funFact": "According to Biography.com, James Taylor was inducted into both the Rock and Roll Hall of Fame and Songwriters Hall of Fame!",
+    "who1": "James Vernon Taylor is an American singer-songwriter and guitarist who achieved breakthrough success with classic hits like 'Fire and Rain.'",
+    "who2": "James Taylor was born in Boston, Massachusetts, on March 12, 1948, growing up in Chapel Hill, North Carolina.",
+    "timeline": [
+      "1948 - Born in Boston, Massachusetts on March 12",
+      "1970 - Released breakthrough hit album 'Sweet Baby James'",
+      "2000 - Inducted into the Rock and Roll Hall of Fame",
+      "2015 - Awarded Presidential Medal of Freedom by President Barack Obama"
+    ]
+  },
+  {
+    "id": "mar-13-uranus-discovered",
+    "month": "March",
+    "day": "March 13",
+    "dayNum": 13,
+    "title": "Planet Uranus discovered 1781",
+    "type": "Event / Science (Wikipedia)",
+    "connection": "Discovered by William Herschel on March 13, 1781!",
+    "emoji": "\ud83e\ude90",
+    "funFact": "According to Wikipedia, Uranus was the first planet discovered using a telescope, expanding known solar system boundaries!",
+    "who1": "The Planet Uranus Discovery occurred on March 13, 1781, when British astronomer William Herschel discovered the seventh planet from the Sun.",
+    "who2": "Herschel observed Uranus from his garden observatory in Bath, England, using a 7-foot reflector telescope he constructed himself.",
+    "timeline": [
+      "1781 - Discovered by William Herschel on March 13",
+      "1986 - NASA's Voyager 2 spacecraft completes historic flyby of Uranus"
+    ]
+  },
+  {
+    "id": "mar-14-albert-einstein",
+    "month": "March",
+    "day": "March 14",
+    "dayNum": 14,
+    "title": "Albert Einstein b. 1879 (scientist)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on March 14, 1879, theoretical physics genius!",
+    "emoji": "\ud83e\uddea",
+    "funFact": "According to Biography.com, Albert Einstein formulated E=mc\u00b2 and won the 1921 Nobel Prize in Physics for explaining the photoelectric effect!",
+    "who1": "Albert Einstein was a German-born theoretical physicist widely acknowledged as one of the greatest scientists of all time.",
+    "who2": "Albert Einstein was born in Ulm, Germany, on March 14, 1879, studying at the Federal Polytechnic School in Zurich, Switzerland.",
+    "timeline": [
+      "1879 - Born in Ulm, Germany on March 14",
+      "1905 - Published special relativity theory and E=mc\u00b2 formula",
+      "1915 - Published general relativity theory",
+      "1921 - Awarded Nobel Prize in Physics"
+    ]
+  },
+  {
+    "id": "mar-15-andrew-jackson",
+    "month": "March",
+    "day": "March 15",
+    "dayNum": 15,
+    "title": "Andrew Jackson b. 1767 (7th U.S. President)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on March 15, 1767, 7th U.S. President!",
+    "emoji": "\ud83c\udfdb\ufe0f",
+    "funFact": "According to Biography.com, Andrew Jackson was known as 'Old Hickory' and served two terms as 7th U.S. President!",
+    "who1": "Andrew Jackson was an American lawyer, general, and statesman who served as the 7th President of the United States from 1829 to 1837.",
+    "who2": "Andrew Jackson was born in the Waxhaws region between North and South Carolina on March 15, 1767.",
+    "timeline": [
+      "1767 - Born in Waxhaws region on March 15",
+      "1815 - Commanded American victory at the Battle of New Orleans",
+      "1829-1837 - Served as 7th President of the United States"
+    ]
+  },
+  {
+    "id": "mar-15-ruth-bader-ginsburg",
+    "month": "March",
+    "day": "March 15",
+    "dayNum": 15,
+    "title": "Ruth Bader Ginsburg b. 1933 (Supreme Court Justice)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on March 15, 1933, 'Notorious RBG'!",
+    "emoji": "\u2696\ufe0f",
+    "funFact": "According to Biography.com, Ruth Bader Ginsburg co-founded the ACLU Women's Rights Project and served 27 years on the Supreme Court!",
+    "who1": "Ruth Bader Ginsburg was an American lawyer and jurist who served as an Associate Justice of the Supreme Court of the United States from 1993 until 2020.",
+    "who2": "Ruth Bader Ginsburg was born in Brooklyn, New York, on March 15, 1933, graduating top of her class at Columbia Law School.",
+    "timeline": [
+      "1933 - Born in Brooklyn, New York on March 15",
+      "1972 - Co-founded the ACLU Women's Rights Project",
+      "1993 - Appointed 2nd female Associate Justice of U.S. Supreme Court",
+      "2020 - Passed away in Washington, D.C. as a cultural icon"
+    ]
+  },
+  {
+    "id": "mar-16-james-madison",
+    "month": "March",
+    "day": "March 16",
+    "dayNum": 16,
+    "title": "James Madison b. 1751 (4th U.S. President)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on March 16, 1751, Father of the Constitution!",
+    "emoji": "\ud83c\udfdb\ufe0f",
+    "funFact": "According to Biography.com, James Madison is remembered as the 'Father of the Constitution' and author of the Bill of Rights!",
+    "who1": "James Madison Jr. was an American statesman, diplomat, and Founding Father who served as the 4th President of the United States from 1809 to 1817.",
+    "who2": "James Madison was born in Port Conway, Virginia, on March 16, 1751, graduating from the College of New Jersey (Princeton).",
+    "timeline": [
+      "1751 - Born in Port Conway, Virginia on March 16",
+      "1787 - Drafted Virginia Plan and co-authored Federalist Papers",
+      "1789 - Authored United States Bill of Rights",
+      "1809-1817 - Served as 4th President of the United States"
+    ]
+  },
+  {
+    "id": "mar-17-st-patricks-day",
+    "month": "March",
+    "day": "March 17",
+    "dayNum": 17,
+    "title": "Saint Patrick's Day",
+    "type": "Event / Culture (Wikipedia)",
+    "connection": "Celebrated globally on March 17!",
+    "emoji": "\u2618\ufe0f",
+    "funFact": "According to Wikipedia, Saint Patrick's Day parades began in America in 1737, and Chicago dyes its river green every year!",
+    "who1": "Saint Patrick's Day is a cultural and religious celebration held on March 17, the traditional death date of Saint Patrick, the patron saint of Ireland.",
+    "who2": "The day commemorates Saint Patrick's 5th-century Christian ministry in Ireland before evolving into a worldwide celebration of Irish heritage.",
+    "timeline": [
+      "c. 461 AD - Traditional feast day established in Ireland on March 17",
+      "1737 - First American Saint Patrick's Day parade held in Boston",
+      "1962 - Chicago River first dyed green for Saint Patrick's Day"
+    ]
+  },
+  {
+    "id": "mar-17-nat-king-cole",
+    "month": "March",
+    "day": "March 17",
+    "dayNum": 17,
+    "title": "Nat 'King' Cole b. 1919 (singer)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on March 17, 1919, jazz vocal legend!",
+    "emoji": "\ud83c\udfa4",
+    "funFact": "According to Biography.com, Nat King Cole was a virtuoso jazz pianist who hosted the 1st nationally televised show by an African American!",
+    "who1": "Nathaniel Adams Coles, known as Nat King Cole, was an iconic American singer, jazz pianist, and television host.",
+    "who2": "Nat King Cole was born in Montgomery, Alabama, on March 17, 1919, growing up in Chicago playing church organ.",
+    "timeline": [
+      "1919 - Born in Montgomery, Alabama on March 17",
+      "1950 - Released legendary hit single 'Mona Lisa'",
+      "1956 - Hosted 'The Nat King Cole Show' on NBC TV",
+      "2000 - Inducted into Rock and Roll Hall of Fame as an early influence"
+    ]
+  },
+  {
+    "id": "mar-18-grover-cleveland",
+    "month": "March",
+    "day": "March 18",
+    "dayNum": 18,
+    "title": "Grover Cleveland b. 1837 (22nd & 24th U.S. President)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on March 18, 1837, 22nd & 24th President!",
+    "emoji": "\ud83c\udfdb\ufe0f",
+    "funFact": "According to Biography.com, Grover Cleveland is the only U.S. President to serve two non-consecutive terms in American history!",
+    "who1": "Stephen Grover Cleveland was an American lawyer and politician who served as the 22nd and 24th President of the United States.",
+    "who2": "Grover Cleveland was born in Caldwell, New Jersey, on March 18, 1837, serving as Mayor of Buffalo and Governor of New York.",
+    "timeline": [
+      "1837 - Born in Caldwell, New Jersey on March 18",
+      "1885-1889 - Served as 22nd President of the United States",
+      "1893-1897 - Served as 24th President of the United States"
+    ]
+  },
+  {
+    "id": "mar-18-bonnie-blair",
+    "month": "March",
+    "day": "March 18",
+    "dayNum": 18,
+    "title": "Bonnie Blair b. 1964 (speed skater)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on March 18, 1964, 5-time Olympic gold skater!",
+    "emoji": "\u26f8\ufe0f",
+    "funFact": "According to Biography.com, Bonnie Blair won five Olympic gold medals across three Winter Olympics (1988, 1992, 1994)!",
+    "who1": "Bonnie Kathleen Blair is an American retired speed skater who is one of the most decorated athletes in Winter Olympic history.",
+    "who2": "Bonnie Blair was born in Cornwall, New York, on March 18, 1964, starting speed skating at age two in Champaign, Illinois.",
+    "timeline": [
+      "1964 - Born in Cornwall, New York on March 18",
+      "1988 - Won gold medal in 500m speed skating at Calgary Olympics",
+      "1992, 1994 - Won four additional Olympic gold medals in Albertville and Lillehammer",
+      "2004 - Inducted into United States Olympic Hall of Fame"
+    ]
+  },
+  {
+    "id": "mar-19-wyatt-earp",
+    "month": "March",
+    "day": "March 19",
+    "dayNum": 19,
+    "title": "Wyatt Earp b. 1848 (frontiersman)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on March 19, 1848, O.K. Corral lawman legend!",
+    "emoji": "\ud83e\udd20",
+    "funFact": "According to Biography.com, Wyatt Earp took part in the famous 30-second Gunfight at the O.K. Corral in Tombstone, Arizona, in 1881!",
+    "who1": "Wyatt Berry Stapp Earp was an American Old West lawman, gambler, and deputy U.S. marshal in Tombstone, Arizona.",
+    "who2": "Wyatt Earp was born in Monmouth, Illinois, on March 19, 1848, working as a stagecoach driver and buffalo hunter.",
+    "timeline": [
+      "1848 - Born in Monmouth, Illinois on March 19",
+      "1881 - Participated in Gunfight at the O.K. Corral in Tombstone on October 26",
+      "1929 - Passed away in Los Angeles, California"
+    ]
+  },
+  {
+    "id": "mar-19-william-bradford",
+    "month": "March",
+    "day": "March 19",
+    "dayNum": 19,
+    "title": "William Bradford b. 1589 (2nd governor of Plymouth)",
+    "type": "Person (Biography.com)",
+    "connection": "Born in March 1589, Plymouth Colony Governor!",
+    "emoji": "\ud83d\udea2",
+    "funFact": "According to Biography.com, William Bradford sailed on the Mayflower in 1620 and served as Governor of Plymouth Colony for 30 years!",
+    "who1": "William Bradford was an English Puritan Separatist leader who sailed on the Mayflower and served as Governor of Plymouth Colony.",
+    "who2": "William Bradford was born in Austerfield, Yorkshire, England, in March 1589, joining Separatist religious meetings.",
+    "timeline": [
+      "1589 - Born in Austerfield, England in March",
+      "1620 - Sailed to New England aboard the Mayflower and signed Mayflower Compact",
+      "1621 - Elected Governor of Plymouth Colony, serving 30 terms until 1657"
+    ]
+  },
+  {
+    "id": "mar-20-bobby-orr",
+    "month": "March",
+    "day": "March 20",
+    "dayNum": 20,
+    "title": "Bobby Orr b. 1948 (Hall of Fame hockey player)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on March 20, 1948, hockey defenseman legend!",
+    "emoji": "\ud83c\udfd2",
+    "funFact": "According to Biography.com, Bobby Orr is the only defenseman in NHL history to win two league scoring titles!",
+    "who1": "Robert Gordon Orr is a Canadian former professional ice hockey defenseman widely regarded as one of the greatest hockey players of all time.",
+    "who2": "Bobby Orr was born in Parry Sound, Ontario, Canada, on March 20, 1948, signing with the Boston Bruins at age fourteen.",
+    "timeline": [
+      "1948 - Born in Parry Sound, Ontario on March 20",
+      "1970 - Scored famous overtime goal winning Boston Bruins the Stanley Cup",
+      "1970, 1975 - Won Art Ross Trophy as NHL top scorer",
+      "1979 - Inducted into Hockey Hall of Fame as youngest inductee in history"
+    ]
+  },
+  {
+    "id": "mar-21-js-bach",
+    "month": "March",
+    "day": "March 21",
+    "dayNum": 21,
+    "title": "J.S. Bach b. 1685 (composer)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on March 21, 1685, master Baroque composer!",
+    "emoji": "\ud83c\udfbc",
+    "funFact": "According to Biography.com, Johann Sebastian Bach composed over 1,000 works, including the Brandenburg Concertos and Well-Tempered Clavier!",
+    "who1": "Johann Sebastian Bach was a German composer and musician of the late Baroque period known for counterpoint, fugue, and organ mastery.",
+    "who2": "J.S. Bach was born in Eisenach, Germany, on March 21, 1685, coming from a distinguished musical family.",
+    "timeline": [
+      "1685 - Born in Eisenach, Germany on March 21",
+      "1721 - Completed the Brandenburg Concertos",
+      "1723 - Appointed Thomaskantor in Leipzig",
+      "1750 - Passed away in Leipzig leaving a monumental legacy in music"
+    ]
+  },
+  {
+    "id": "mar-21-pocahontas",
+    "month": "March",
+    "day": "March 21",
+    "dayNum": 21,
+    "title": "Pocahontas d. 1617 (Powhatan ambassador)",
+    "type": "Person (Biography.com)",
+    "connection": "Passed away in March 1617, Powhatan ambassador!",
+    "emoji": "\ud83c\udf3f",
+    "funFact": "According to Biography.com, Pocahontas fostered peace between the Powhatan Paramount Chiefdom and English colonists at Jamestown!",
+    "who1": "Pocahontas was a Native American woman of the Powhatan Paramount Chiefdom who promoted peace between Indigenous peoples and English settlers.",
+    "who2": "Pocahontas was born Matoaka around 1596 in coastal Virginia, daughter of Powhatan Paramount Chief Wahunsenacawh.",
+    "timeline": [
+      "c. 1596 - Born in coastal Virginia",
+      "1607 - Met Captain John Smith promoting peace with colonists",
+      "1614 - Married John Rolfe creating peace period 'Peace of Pocahontas'",
+      "1617 - Passed away in Gravesend, England in March"
+    ]
+  },
+  {
+    "id": "mar-21-selma-march-court-order",
+    "month": "March",
+    "day": "March 21",
+    "dayNum": 21,
+    "title": "The Selma Montgomery march permitted 1965",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Selma march authorized by federal court on March 21, 1965!",
+    "emoji": "\u270a",
+    "funFact": "According to Wikipedia, over 25,000 marchers led by Dr. Martin Luther King Jr. walked 54 miles from Selma to Montgomery for voting rights!",
+    "who1": "The Selma to Montgomery March commenced on March 21, 1965, after U.S. District Judge Frank Johnson ruled marchers had a constitutional right to demonstrate.",
+    "who2": "Dr. Martin Luther King Jr. led thousands of voting rights activists along Highway 80 to the Alabama State Capitol.",
+    "timeline": [
+      "1965 - Federal court authorizes march on March 17",
+      "1965 - 3,200 marchers depart Selma on March 21",
+      "1965 - 25,000 marchers arrive at Montgomery Capitol on March 25",
+      "1965 - President Johnson signs Voting Rights Act of 1965 in August"
+    ]
+  },
+  {
+    "id": "mar-22-randolph-caldecott",
+    "month": "March",
+    "day": "March 22",
+    "dayNum": 22,
+    "title": "Randolph Caldecott b. 1846 (children's illustrator)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on March 22, 1846, namesake of Caldecott Medal!",
+    "emoji": "\ud83c\udfa8",
+    "funFact": "According to Biography.com, the annual Randolph Caldecott Medal was named in his honor in 1937 for most distinguished American picture book!",
+    "who1": "Randolph Caldecott was a British artist and illustrator whose lively picture book illustrations revolutionized children's book design.",
+    "who2": "Randolph Caldecott was born in Chester, England, on March 22, 1846, working as a bank clerk before illustrating books.",
+    "timeline": [
+      "1846 - Born in Chester, England on March 22",
+      "1878 - Published famous picture books 'The House that Jack Built' and 'John Gilpin'",
+      "1937 - American Library Association establishes Randolph Caldecott Medal"
+    ]
+  },
+  {
+    "id": "mar-23-lewis-clark-pacific",
+    "month": "March",
+    "day": "March 23",
+    "dayNum": 23,
+    "title": "Lewis and Clark reached the Pacific 1806",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Departed Fort Clatsop on return journey March 23, 1806!",
+    "emoji": "\ud83e\udded",
+    "funFact": "According to Wikipedia, the Corps of Discovery spent winter at Fort Clatsop near Oregon's coast before starting home on March 23, 1806!",
+    "who1": "The Lewis and Clark Pacific Expedition completed its winter stay at Fort Clatsop near the Pacific Ocean and began its return journey on March 23, 1806.",
+    "who2": "Meriwether Lewis and William Clark led the 33-person Corps of Discovery mapping 8,000 miles across the American West.",
+    "timeline": [
+      "1805 - Reached Pacific Ocean in November",
+      "1805-1806 - Built Fort Clatsop near present-day Astoria, Oregon",
+      "1806 - Departed Fort Clatsop on return journey eastward on March 23",
+      "1806 - Arrived back safely in St. Louis in September"
+    ]
+  },
+  {
+    "id": "mar-24-exxon-valdez",
+    "month": "March",
+    "day": "March 24",
+    "dayNum": 24,
+    "title": "Exxon Valdez Oil Spill 1989",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Oil tanker ran aground on March 24, 1989!",
+    "emoji": "\ud83d\udee2\ufe0f",
+    "funFact": "According to Wikipedia, the Exxon Valdez spilled 11 million gallons of crude oil into Alaska's Prince William Sound, reforming environmental laws!",
+    "who1": "The Exxon Valdez Oil Spill occurred on March 24, 1989, when the oil tanker Exxon Valdez struck Bligh Reef in Prince William Sound, Alaska.",
+    "who2": "The disaster spilled 11 million gallons of crude oil across 1,300 miles of coastline, prompting passage of the Oil Pollution Act of 1990.",
+    "timeline": [
+      "1989 - Tanker strikes Bligh Reef spilling crude oil on March 24",
+      "1990 - U.S. Congress passes landmark Oil Pollution Act requiring double-hull tankers"
+    ]
+  },
+  {
+    "id": "mar-24-john-wesley-powell",
+    "month": "March",
+    "day": "March 24",
+    "dayNum": 24,
+    "title": "John Wesley Powell b. 1834 (explored Colorado River)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on March 24, 1834, Grand Canyon explorer!",
+    "emoji": "\ud83c\udfde\ufe0f",
+    "funFact": "According to Biography.com, Powell led the 1st official 1,000-mile river boat expedition through the Grand Canyon in 1869!",
+    "who1": "John Wesley Powell was an American geologist, Civil War officer, and explorer who led the 1869 Powell Geographic Expedition through the Grand Canyon.",
+    "who2": "John Wesley Powell was born in Mount Morris, New York, on March 24, 1834, serving as director of the U.S. Geological Survey.",
+    "timeline": [
+      "1834 - Born in Mount Morris, New York on March 24",
+      "1869 - Led 1,000-mile wooden boat expedition down Green and Colorado Rivers through Grand Canyon",
+      "1881-1894 - Served as Director of the United States Geological Survey"
+    ]
+  },
+  {
+    "id": "mar-25-league-of-nations",
+    "month": "March",
+    "day": "March 25",
+    "dayNum": 25,
+    "title": "League of Nations is established in 1919",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Drafted at Paris Peace Conference 1919!",
+    "emoji": "\ud83c\uddfa\ud83c\uddf3",
+    "funFact": "According to Wikipedia, President Woodrow Wilson won the 1919 Nobel Peace Prize for sponsoring the League of Nations Covenant!",
+    "who1": "The League of Nations was an international diplomatic organization founded after World War I to maintain world peace and prevent conflicts.",
+    "who2": "The Covenant of the League of Nations was drafted during the Paris Peace Conference in early 1919 under President Woodrow Wilson.",
+    "timeline": [
+      "1919 - Paris Peace Conference approves Covenant",
+      "1920 - Officially inaugurated in Geneva, Switzerland",
+      "1946 - Dissolved and succeeded by the United Nations"
+    ]
+  },
+  {
+    "id": "mar-26-robert-frost",
+    "month": "March",
+    "day": "March 26",
+    "dayNum": 26,
+    "title": "Robert Frost b. 1874 (poet)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on March 26, 1874, 4-time Pulitzer-winning poet!",
+    "emoji": "\ud83d\udcdc",
+    "funFact": "According to Biography.com, Robert Frost won four Pulitzer Prizes for Poetry and recited 'The Gift Outright' at JFK's 1961 inauguration!",
+    "who1": "Robert Lee Frost was an iconic American poet celebrated for realistic depictions of rural New England life and philosophical verse.",
+    "who2": "Robert Frost was born in San Francisco, California, on March 26, 1874, attending Dartmouth College and Harvard University.",
+    "timeline": [
+      "1874 - Born in San Francisco, California on March 26",
+      "1916 - Published famous poem 'The Road Not Taken'",
+      "1924, 1931, 1937, 1943 - Won four Pulitzer Prizes for Poetry",
+      "1961 - Recited poem at inauguration of President John F. Kennedy"
+    ]
+  },
+  {
+    "id": "mar-26-sandra-day-oconnor",
+    "month": "March",
+    "day": "March 26",
+    "dayNum": 26,
+    "title": "Sandra Day O'Connor b. 1930 (1st woman on Supreme Court)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on March 26, 1930, 1st female Supreme Court Justice!",
+    "emoji": "\u2696\ufe0f",
+    "funFact": "According to Biography.com, Sandra Day O'Connor was confirmed 99-0 by the Senate in 1981, serving 24 years as first woman on the High Court!",
+    "who1": "Sandra Day O'Connor was an American attorney and jurist who served as the first female Associate Justice of the Supreme Court of the United States from 1981 to 2006.",
+    "who2": "Sandra Day O'Connor was born in El Paso, Texas, on March 26, 1930, growing up on the Lazy B cattle ranch in Arizona.",
+    "timeline": [
+      "1930 - Born in El Paso, Texas on March 26",
+      "1952 - Graduated third in her class from Stanford Law School",
+      "1981 - Sworn in as 1st woman on U.S. Supreme Court",
+      "2009 - Awarded Presidential Medal of Freedom by President Barack Obama"
+    ]
+  },
+  {
+    "id": "mar-27-cherry-blossoms",
+    "month": "March",
+    "day": "March 27",
+    "dayNum": 27,
+    "title": "First Japanese cherry trees planted in D.C. 1912",
+    "type": "Event / Landmark (Wikipedia)",
+    "connection": "Planted along Tidal Basin on March 27, 1912!",
+    "emoji": "\ud83c\udf38",
+    "funFact": "According to Wikipedia, Tokyo Mayor Yukio Ozaki gifted 3,000 cherry trees to Washington, D.C. as a symbol of Japanese-American friendship!",
+    "who1": "The Planting of the Japanese Cherry Trees occurred on March 27, 1912, when First Lady Helen Taft and Viscountess Chinda planted the first two trees at the Tidal Basin.",
+    "who2": "The gift of 3,020 cherry trees from Tokyo Mayor Yukio Ozaki initiated Washington, D.C.'s annual National Cherry Blossom Festival.",
+    "timeline": [
+      "1912 - First Lady Helen Taft plants first cherry tree at Tidal Basin on March 27",
+      "1935 - First annual National Cherry Blossom Festival celebrated",
+      "2020 - Over 1.5 million visitors attend cherry blossom festivities annually"
+    ]
+  },
+  {
+    "id": "mar-28-raphael",
+    "month": "March",
+    "day": "March 28",
+    "dayNum": 28,
+    "title": "Raphael b. 1483 (Renaissance painter)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on March 28, 1483, High Renaissance painter!",
+    "emoji": "\ud83c\udfa8",
+    "funFact": "According to Biography.com, Raphael painted 'The School of Athens' in the Vatican palace alongside Da Vinci and Michelangelo!",
+    "who1": "Raffaello Sanzio da Urbino, known as Raphael, was an Italian painter and architect of the High Renaissance famous for clarity and composition.",
+    "who2": "Raphael was born in Urbino, Italy, on March 28, 1483, studying under Pietro Perugino before moving to Florence and Rome.",
+    "timeline": [
+      "1483 - Born in Urbino, Italy on March 28",
+      "1511 - Completed famous fresco 'The School of Athens' in the Vatican",
+      "1520 - Passed away in Rome leaving a towering artistic legacy"
+    ]
+  },
+  {
+    "id": "mar-29-coca-cola-on-sale",
+    "month": "March",
+    "day": "March 29",
+    "dayNum": 29,
+    "title": "Coca-Cola went on sale in the U.S. 1886",
+    "type": "Event / Culture (Wikipedia)",
+    "connection": "Formulated by Dr. John Pemberton in March 1886!",
+    "emoji": "\ud83e\udd64",
+    "funFact": "According to Wikipedia, Coca-Cola was invented by pharmacist Dr. John Pemberton at Jacobs' Pharmacy in Atlanta, Georgia!",
+    "who1": "The Introduction of Coca-Cola occurred in late March 1886 when Atlanta pharmacist Dr. John Stith Pemberton formulated the popular soft drink syrup.",
+    "who2": "Pemberton sold the syrup for 5 cents a glass at Jacobs' Pharmacy, where it was mixed with carbonated water.",
+    "timeline": [
+      "1886 - Formulated by Dr. John Pemberton in Atlanta in March",
+      "1892 - Asa Candler incorporates The Coca-Cola Company",
+      "1916 - Famous contour glass bottle design patented"
+    ]
+  },
+  {
+    "id": "mar-29-cy-young",
+    "month": "March",
+    "day": "March 29",
+    "dayNum": 29,
+    "title": "Cy Young b. 1867 (pitcher)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on March 29, 1867, MLB wins leader (511 wins)!",
+    "emoji": "\u26be",
+    "funFact": "According to Biography.com, Cy Young won 511 games, pitched a perfect game in 1904, and has MLB's top pitching award named in his honor!",
+    "who1": "Denton True 'Cy' Young was an American professional baseball pitcher who established all-time MLB records with 511 wins.",
+    "who2": "Cy Young was born in Gilmore, Ohio, on March 29, 1867, playing 22 seasons for Cleveland, Boston, and St. Louis.",
+    "timeline": [
+      "1867 - Born in Gilmore, Ohio on March 29",
+      "1904 - Pitched 1st perfect game in American League history",
+      "1911 - Retired with 511 career pitching victories",
+      "1956 - MLB establishes annual Cy Young Award honoring top pitchers"
+    ]
+  },
+  {
+    "id": "mar-30-van-gogh",
+    "month": "March",
+    "day": "March 30",
+    "dayNum": 30,
+    "title": "Vincent van Gogh b. 1853 (artist)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on March 30, 1853, painter of 'The Starry Night'!",
+    "emoji": "\ud83c\udfa8",
+    "funFact": "According to Biography.com, Vincent van Gogh created over 2,100 artworks in a decade, including 'The Starry Night' and 'Sunflowers'!",
+    "who1": "Vincent Willem van Gogh was a Dutch Post-Impressionist painter who became one of the most famous figures in Western art history.",
+    "who2": "Vincent van Gogh was born in Zundert, Netherlands, on March 30, 1853, studying art in Antwerp and Paris.",
+    "timeline": [
+      "1853 - Born in Zundert, Netherlands on March 30",
+      "1888 - Painted famous 'Sunflowers' series in Arles, France",
+      "1889 - Painted masterpiece 'The Starry Night' while at Saint-R\u00e9my asylum",
+      "1890 - Passed away in Auvers-sur-Oise, France"
+    ]
+  },
+  {
+    "id": "mar-31-eiffel-tower-opening",
+    "month": "March",
+    "day": "March 31",
+    "dayNum": 31,
+    "title": "Opening of the Eiffel Tower in Paris 1889",
+    "type": "Event / Landmark (Wikipedia)",
+    "connection": "Inaugurated in Paris on March 31, 1889!",
+    "emoji": "\ud83d\uddfc",
+    "funFact": "According to Wikipedia, Gustave Eiffel climbed 1,710 steps to unfurl the French tricolor flag at the top of the Eiffel Tower on March 31, 1889!",
+    "who1": "The Eiffel Tower Opening occurred on March 31, 1889, when civil engineer Gustave Eiffel dedicated the 300-meter iron lattice tower for the 1889 World's Fair.",
+    "who2": "Constructed in 2 years, 2 months, and 5 days, the tower stood as the world's tallest man-made structure until 1930.",
+    "timeline": [
+      "1887 - Construction begins on Champ de Mars in Paris",
+      "1889 - Official inauguration and flag ceremony held on March 31",
+      "1889 - Opened to public visitors during Exposition Universelle"
+    ]
+  }
+];
 
-  const ALL_RAW_TOPICS = [...RAW_OCTOBER_DATA, ...RAW_NOVEMBER_DATA, ...RAW_DECEMBER_DATA, ...RAW_JANUARY_DATA, ...RAW_FEBRUARY_DATA];
+  const ALL_RAW_TOPICS = [...RAW_OCTOBER_DATA, ...RAW_NOVEMBER_DATA, ...RAW_DECEMBER_DATA, ...RAW_JANUARY_DATA, ...RAW_FEBRUARY_DATA, ...RAW_MARCH_DATA];
   const TOPICS_DB = ALL_RAW_TOPICS.map(t => {
     const articles = buildArticlesForTopic(t);
     return Object.assign({}, t, articles);
@@ -4691,7 +5561,7 @@
       topicCardsGrid.innerHTML = `
         <div style="grid-column:1/-1; background:rgba(255,255,255,0.08); padding:1.5rem; border-radius:14px; color:white; text-align:center;">
           <p style="font-size:1.1rem; font-weight:700;">No pre-populated topics found for ${selectedMonth}.</p>
-          <p style="font-size:0.9rem; color:#94a3b8; margin-top:0.4rem;">Select "October", "November", "December", "January", or "February" to view extracted calendar topics!</p>
+          <p style="font-size:0.9rem; color:#94a3b8; margin-top:0.4rem;">Select "October", "November", "December", "January", "February", or "March" to view extracted calendar topics!</p>
         </div>
       `;
       return;
