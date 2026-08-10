@@ -297,6 +297,21 @@ body {
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
 }
 
+.chip-count {
+  background: rgba(255, 255, 255, 0.18);
+  color: white;
+  padding: 0.15rem 0.5rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-left: 0.2rem;
+}
+
+.month-chip.active .chip-count {
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
 /* Search Bar & Actions */
 .search-bar-row {
   display: flex;
