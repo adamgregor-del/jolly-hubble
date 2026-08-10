@@ -243,8 +243,980 @@
     { id: "halloween-history", title: "Halloween", type: "Event / Culture (Wikipedia)", month: "October", day: "October 31", connection: "Celebrated annually on October 31 around the world!", emoji: "🎃", funFact: "According to Wikipedia, trick-or-treating originated from ancient Celtic harvest customs and medieval European traditions of souling for soul cakes!", who1: "Halloween is an annual cultural celebration observed in many countries on October 31, the eve of the Western Christian feast of All Hallows' Day.", who2: "Halloween traditions originated over 2,000 years ago with the ancient Celtic festival of Samhain, celebrated in Ireland, Scotland, and the Isle of Man.", timeline: ["c. 800 BC - Ancient Celts celebrate Samhain marking the end of harvest season", "835 AD - Pope Gregory IV officially shifts All Saints' Day to November 1", "1840s - Mass Irish immigration introduces Halloween traditions to the United States", "1930s - Modern commercial trick-or-treating becomes popular across American suburbs", "2026 - Celebrated globally with costumes, jack-o'-lanterns, and community festivities"] }
   ];
 
+
+  // --- RAW EXTRACTED PDF TOPICS: NOVEMBER (52 Topics) ---
+  const RAW_NOVEMBER_DATA = [
+  {
+    "id": "nov-1-stamp-act",
+    "month": "November",
+    "day": "November 1",
+    "dayNum": 1,
+    "title": "Stamp Act imposed (1765)",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Imposed by British Parliament on November 1, 1765!",
+    "emoji": "\ud83d\udcdc",
+    "funFact": "According to Wikipedia, the Stamp Act sparked the famous colonial slogan 'No taxation without representation!'",
+    "who1": "The Stamp Act was a landmark British parliamentary law enacted on November 1, 1765, that imposed direct taxation on American colonial paper goods, igniting the American Revolution.",
+    "who2": "The Stamp Act was passed by the British Parliament under Prime Minister George Grenville to help pay for British military troops stationed in North America following the Seven Years' War.",
+    "timeline": [
+      "1765 - Stamp Act passed by Parliament in March",
+      "1765 - Takes official legal effect across American colonies on November 1",
+      "1766 - Repealed by Parliament following widespread colonial boycotts"
+    ]
+  },
+  {
+    "id": "nov-1-day-of-dead",
+    "month": "November",
+    "day": "November 1",
+    "dayNum": 1,
+    "title": "Day of the Dead (Mexico)",
+    "type": "Event / Culture (Wikipedia)",
+    "connection": "Celebrated annually on November 1 & 2 in Mexico!",
+    "emoji": "\ud83d\udc80",
+    "funFact": "According to Wikipedia, families build colorful altar ofrendas with marigolds, candles, and sugar skulls!",
+    "who1": "Day of the Dead (D\u00eda de los Muertos) is a vibrant traditional Mexican holiday celebrated on November 1 and 2 that honors and remembers deceased family members.",
+    "who2": "Day of the Dead originated thousands of years ago in Mesoamerican Aztec rituals honoring ancestral spirits before blending with Catholic All Saints' Day customs.",
+    "timeline": [
+      "c. 1000 BC - Indigenous Aztec harvest rituals honor ancestor spirits",
+      "1500s - Merged with European All Saints' and All Souls' Day traditions",
+      "2008 - Inscribed on UNESCO's Intangible Cultural Heritage list"
+    ]
+  },
+  {
+    "id": "nov-2-north-dakota",
+    "month": "November",
+    "day": "November 2",
+    "dayNum": 2,
+    "title": "North Dakota becomes 39th state (1889)",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Admitted to the Union on November 2, 1889!",
+    "emoji": "\ud83c\udf3e",
+    "funFact": "According to Wikipedia, President Benjamin Harrison shuffled the statehood papers so no one knows whether North Dakota or South Dakota was signed first!",
+    "who1": "North Dakota is a Midwestern U.S. state admitted to the Union on November 2, 1889, as the 39th state, famous for its Great Plains agriculture and Badlands.",
+    "who2": "North Dakota was originally inhabited by Mandan, Hidatsa, Arikara, and Sioux nations before being explored by French-Canadian fur traders in the 1700s.",
+    "timeline": [
+      "1803 - Acquired by United States through Louisiana Purchase",
+      "1889 - Admitted to the Union as 39th state on November 2",
+      "1978 - Theodore Roosevelt National Park established"
+    ]
+  },
+  {
+    "id": "nov-2-daniel-boone",
+    "month": "November",
+    "day": "November 2",
+    "dayNum": 2,
+    "title": "Daniel Boone, frontiersman (b. 1734)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on November 2, 1734, legendary American frontiersman!",
+    "emoji": "\ud83c\udf32",
+    "funFact": "According to Biography.com, Daniel Boone blazed the Wilderness Road through the Cumberland Gap into Kentucky!",
+    "who1": "Daniel Boone was a legendary American pioneer, frontiersman, and woodsman whose exploits exploring Kentucky made him one of America's first folk heroes.",
+    "who2": "Daniel Boone was born in Berks County, Pennsylvania, on November 2, 1734, learning hunting and tracking skills from local Native American tribes.",
+    "timeline": [
+      "1734 - Born in Berks County, Pennsylvania on November 2",
+      "1775 - Blazed the Wilderness Road through the Cumberland Gap into Kentucky",
+      "1775 - Founded the settlement of Boonesborough along the Kentucky River",
+      "1820 - Passed away in Missouri as a celebrated American frontier legend"
+    ]
+  },
+  {
+    "id": "nov-2-james-polk",
+    "month": "November",
+    "day": "November 2",
+    "dayNum": 2,
+    "title": "James Polk (11th president) (b. 1795)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on November 2, 1795, 11th U.S. President!",
+    "emoji": "\ud83c\udfdb\ufe0f",
+    "funFact": "According to Biography.com, James K. Polk achieved all four of his major presidential goals in a single four-year term!",
+    "who1": "James Knox Polk was an American politician who served as the 11th President of the United States, expanding U.S. territory across the Pacific Ocean.",
+    "who2": "James K. Polk was born in Mecklenburg County, North Carolina, on November 2, 1795, graduating from the University of North Carolina and studying law.",
+    "timeline": [
+      "1795 - Born in North Carolina on November 2",
+      "1845-1849 - Served as 11th U.S. President",
+      "1846 - Oregon Treaty settles Pacific Northwest boundary with Britain",
+      "1848 - Treaty of Guadalupe Hidalgo expands U.S. across California and the Southwest"
+    ]
+  },
+  {
+    "id": "nov-3-sputnik-2",
+    "month": "November",
+    "day": "November 3",
+    "dayNum": 3,
+    "title": "Sputnik 2 was launched in 1957",
+    "type": "Event / Space (Wikipedia)",
+    "connection": "Launched into Earth orbit on November 3, 1957!",
+    "emoji": "\ud83d\udc15",
+    "funFact": "According to Wikipedia, Sputnik 2 carried Laika the dog, the first living creature to orbit the Earth!",
+    "who1": "Sputnik 2 was the second artificial spacecraft launched into Earth orbit, carrying Laika the dog as the first living creature in orbital spaceflight.",
+    "who2": "Sputnik 2 was developed by the Soviet space program under engineer Sergey Korolev and launched from Baikonur on November 3, 1957.",
+    "timeline": [
+      "1957 - Launched into Earth orbit on November 3 carrying Laika",
+      "1957 - Transmitted bio-telemetry data back to scientists",
+      "1958 - Reentered Earth's atmosphere after completing 2,570 orbits"
+    ]
+  },
+  {
+    "id": "nov-4-king-tut",
+    "month": "November",
+    "day": "November 4",
+    "dayNum": 4,
+    "title": "King Tut's tomb discovered (1922)",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Discovered by Howard Carter on November 4, 1922!",
+    "emoji": "\ud83d\udc51",
+    "funFact": "According to Wikipedia, King Tutankhamun's tomb contained over 5,000 intact ancient Egyptian artifacts, including his solid gold burial mask!",
+    "who1": "King Tutankhamun's tomb was a world-famous archaeological discovery made by British Egyptologist Howard Carter in the Valley of the Kings on November 4, 1922.",
+    "who2": "The tomb remained virtually intact for over 3,000 years, preserving golden artifacts, royal thrones, and the iconic burial mask of the young pharaoh.",
+    "timeline": [
+      "1922 - Howard Carter discovers the first stone step of the tomb on November 4",
+      "1923 - Burial chamber officially opened revealing the golden sarcophagus",
+      "1925 - King Tut's iconic golden mask revealed to the public"
+    ]
+  },
+  {
+    "id": "nov-4-walter-cronkite",
+    "month": "November",
+    "day": "November 4",
+    "dayNum": 4,
+    "title": "Walter Cronkite (reporter) (b. 1916)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on November 4, 1916, 'most trusted man in America'!",
+    "emoji": "\ud83d\udcfa",
+    "funFact": "According to Biography.com, Walter Cronkite anchored the CBS Evening News for 19 years and reported the Apollo 11 moon landing live!",
+    "who1": "Walter Cronkite was an iconic American broadcast journalist and news anchor for the CBS Evening News who was often called 'the most trusted man in America.'",
+    "who2": "Walter Cronkite was born in Saint Joseph, Missouri, on November 4, 1916, starting his journalism career covering World War II for the United Press.",
+    "timeline": [
+      "1916 - Born in Saint Joseph, Missouri on November 4",
+      "1962-1981 - Anchored the CBS Evening News",
+      "1969 - Broadcasted the live Apollo 11 moon landing for 27 straight hours",
+      "2009 - Passed away in New York City as a legendary broadcast journalist"
+    ]
+  },
+  {
+    "id": "nov-5-monopoly",
+    "month": "November",
+    "day": "November 5",
+    "dayNum": 5,
+    "title": "Monopoly Game premiered in 1935",
+    "type": "Event / Culture (Wikipedia)",
+    "connection": "Debuted nationwide on November 5, 1935!",
+    "emoji": "\ud83c\udfa9",
+    "funFact": "According to Wikipedia, over 275 million copies of Monopoly have been sold worldwide in 47 languages!",
+    "who1": "Monopoly is a world-famous real estate board game introduced by Parker Brothers on November 5, 1935, that became the best-selling board game in history.",
+    "who2": "Monopoly was derived from The Landlord's Game created by Lizzie Magie in 1903 to demonstrate the economic consequences of land monopolies.",
+    "timeline": [
+      "1903 - Lizzie Magie patents The Landlord's Game",
+      "1935 - Parker Brothers releases Monopoly nationwide on November 5",
+      "1999 - Monopoly money printed in over 80 national currencies",
+      "2008 - World Monopoly Championship held in Las Vegas"
+    ]
+  },
+  {
+    "id": "nov-5-ida-tarbell",
+    "month": "November",
+    "day": "November 5",
+    "dayNum": 5,
+    "title": "Ida Tarbell (journalist) (b. 1857)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on November 5, 1857, investigative journalist pioneer!",
+    "emoji": "\ud83d\udcf0",
+    "funFact": "According to Biography.com, Ida Tarbell's investigative report on Standard Oil led to the U.S. Supreme Court breaking up oil monopolies!",
+    "who1": "Ida Tarbell was a pioneering American investigative journalist, author, and lecturer whose reporting exposed corporate monopolies and transformed American journalism.",
+    "who2": "Ida Tarbell was born in Erie County, Pennsylvania, on November 5, 1857, studying biology at Allegheny College before writing for McClure's Magazine.",
+    "timeline": [
+      "1857 - Born in Erie County, Pennsylvania on November 5",
+      "1904 - Published 'The History of the Standard Oil Company'",
+      "1911 - U.S. Supreme Court orders Standard Oil monopoly broken up",
+      "1944 - Passed away in Bridgeport, Connecticut as a pioneering journalist"
+    ]
+  },
+  {
+    "id": "nov-6-james-naismith",
+    "month": "November",
+    "day": "November 6",
+    "dayNum": 6,
+    "title": "James Naismith (invented basketball) (b. 1861)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on November 6, 1861, inventor of basketball!",
+    "emoji": "\ud83c\udfc0",
+    "funFact": "According to Biography.com, James Naismith wrote the original 13 rules of basketball using two peach baskets in 1891!",
+    "who1": "James Naismith was a Canadian-American physical educator, physician, and sports innovator who invented the international game of basketball in December 1891.",
+    "who2": "James Naismith was born in Almonte, Ontario, Canada, on November 6, 1861, studying physical education at McGill University and Springfield YMCA College.",
+    "timeline": [
+      "1861 - Born in Almonte, Ontario, Canada on November 6",
+      "1891 - Invented basketball at Springfield YMCA using peach baskets",
+      "1892 - Published the 13 Official Rules of Basketball",
+      "1936 - Honored at Berlin Olympics as basketball became an official Olympic sport"
+    ]
+  },
+  {
+    "id": "nov-6-john-philip-sousa",
+    "month": "November",
+    "day": "November 6",
+    "dayNum": 6,
+    "title": "John Philip Sousa (American composer) (b. 1854)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on November 6, 1854, 'The March King'!",
+    "emoji": "\ud83c\udfba",
+    "funFact": "According to Biography.com, John Philip Sousa composed 'The Stars and Stripes Forever,' the official National March of the United States!",
+    "who1": "John Philip Sousa was a world-renowned American composer and conductor known as 'The March King' who led the United States Marine Band.",
+    "who2": "John Philip Sousa was born in Washington, D.C., on November 6, 1854, learning violin and brass instruments at an early age.",
+    "timeline": [
+      "1854 - Born in Washington, D.C. on November 6",
+      "1880 - Appointed Leader of the United States Marine Band",
+      "1896 - Composed 'The Stars and Stripes Forever'",
+      "1987 - 'The Stars and Stripes Forever' declared official U.S. National March"
+    ]
+  },
+  {
+    "id": "nov-7-marie-curie",
+    "month": "November",
+    "day": "November 7",
+    "dayNum": 7,
+    "title": "Marie Curie (chemist & physicist) (b. 1867)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on November 7, 1867, Nobel laureate scientist!",
+    "emoji": "\ud83e\uddea",
+    "funFact": "According to Biography.com, Marie Curie is the only person to win Nobel Prizes in two different scientific disciplines (Physics and Chemistry)!",
+    "who1": "Marie Curie was a Polish and naturalized-French physicist and chemist who conducted pioneering research on radioactivity and discovered polonium and radium.",
+    "who2": "Marie Curie was born Maria Sk\u0142odowska in Warsaw, Poland, on November 7, 1867, studying physics and mathematics at the Sorbonne in Paris.",
+    "timeline": [
+      "1867 - Born in Warsaw, Poland on November 7",
+      "1898 - Discovered radioactive elements polonium and radium",
+      "1903 - Awarded Nobel Prize in Physics alongside Pierre Curie",
+      "1911 - Awarded Nobel Prize in Chemistry",
+      "1934 - Passed away in France as one of history's greatest scientists"
+    ]
+  },
+  {
+    "id": "nov-8-louvre",
+    "month": "November",
+    "day": "November 8",
+    "dayNum": 8,
+    "title": "Louvre opened in Paris in 1793",
+    "type": "Event / Landmark (Wikipedia)",
+    "connection": "Opened as a public museum on November 8, 1793!",
+    "emoji": "\ud83d\uddbc\ufe0f",
+    "funFact": "According to Wikipedia, the Louvre is the world's largest art museum, housing over 380,000 historic objects and the Mona Lisa!",
+    "who1": "The Louvre is the world's most visited art museum and historic monument in Paris, France, housing famous masterpieces such as the Mona Lisa.",
+    "who2": "The Louvre was originally built as a medieval royal fortress in the 12th century before the French National Assembly opened it as a public museum on November 8, 1793.",
+    "timeline": [
+      "1793 - Opened as a public art museum on November 8",
+      "1989 - Iconic Louvre Glass Pyramid inaugurated in Paris",
+      "2019 - Welcomed a record 10.2 million visitors in a single year"
+    ]
+  },
+  {
+    "id": "nov-8-xrays",
+    "month": "November",
+    "day": "November 8",
+    "dayNum": 8,
+    "title": "X-rays discovered (1895)",
+    "type": "Event / Science (Wikipedia)",
+    "connection": "Discovered by Wilhelm R\u00f6ntgen on November 8, 1895!",
+    "emoji": "\ud83e\ude7b",
+    "funFact": "According to Wikipedia, Wilhelm R\u00f6ntgen took the first X-ray image of his wife Anna Bertha's hand, revealing her wedding ring!",
+    "who1": "X-rays are a form of high-energy electromagnetic radiation discovered by German physicist Wilhelm R\u00f6ntgen on November 8, 1895, revolutionizing medical imaging.",
+    "who2": "Wilhelm R\u00f6ntgen discovered X-rays while conducting cathode ray gas discharge experiments at W\u00fcrzburg University in Germany.",
+    "timeline": [
+      "1895 - Wilhelm R\u00f6ntgen discovers X-rays on November 8",
+      "1896 - X-rays first used in clinical bone fracture diagnosis",
+      "1901 - R\u00f6ntgen wins inaugural Nobel Prize in Physics"
+    ]
+  },
+  {
+    "id": "nov-9-vietnam-memorial",
+    "month": "November",
+    "day": "November 9",
+    "dayNum": 9,
+    "title": "Vietnam Veterans' Memorial unveiled (1982)",
+    "type": "Event / Landmark (Wikipedia)",
+    "connection": "Dedicated in Washington, D.C. on November 9, 1982!",
+    "emoji": "\ud83d\udda4",
+    "funFact": "According to Wikipedia, the memorial wall was designed by 21-year-old Yale architecture student Maya Lin!",
+    "who1": "The Vietnam Veterans Memorial is a national monument in Washington, D.C., honoring U.S. service members who served in the Vietnam War.",
+    "who2": "The memorial wall was designed by 21-year-old Yale architecture student Maya Lin, listing the names of over 58,000 fallen and missing service members.",
+    "timeline": [
+      "1982 - Dedicated on the National Mall in Washington, D.C. on November 9",
+      "1984 - Three Servicemen statue added to the memorial grounds",
+      "2004 - Inscribed with names of over 58,000 U.S. service personnel"
+    ]
+  },
+  {
+    "id": "nov-9-benjamin-banneker",
+    "month": "November",
+    "day": "November 9",
+    "dayNum": 9,
+    "title": "Benjamin Banneker (astronomer) (b. 1731)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on November 9, 1731, mathematician & astronomer!",
+    "emoji": "\ud83d\udd2d",
+    "funFact": "According to Biography.com, Benjamin Banneker built the first striking wooden clock in America and helped survey Washington, D.C.!",
+    "who1": "Benjamin Banneker was a self-taught African American mathematician, astronomer, almanac author, and surveyor who assisted in surveying the boundary lines of Washington, D.C.",
+    "who2": "Benjamin Banneker was born a free Black man in Baltimore County, Maryland, on November 9, 1731, teaching himself advanced mathematics and astronomy.",
+    "timeline": [
+      "1731 - Born in Baltimore County, Maryland on November 9",
+      "1753 - Built the first working wooden striking clock in North America",
+      "1791 - Assisted Andrew Ellicott in surveying the federal territory of Washington, D.C.",
+      "1792-1797 - Published annual astronomical almanacs calculating eclipse dates"
+    ]
+  },
+  {
+    "id": "nov-10-sesame-street",
+    "month": "November",
+    "day": "November 10",
+    "dayNum": 10,
+    "title": "Sesame Street aired for first time (1969)",
+    "type": "Event / Culture (Wikipedia)",
+    "connection": "Debuted on public television on November 10, 1969!",
+    "emoji": "\ud83d\udc25",
+    "funFact": "According to Wikipedia, Sesame Street has won 205 Emmy Awards and is broadcast in over 150 countries!",
+    "who1": "Sesame Street is an iconic American educational children's television series created by Joan Ganz Cooney and Lloyd Morrisett that revolutionized early childhood education.",
+    "who2": "Sesame Street premiered on November 10, 1969, combining live-action actors, sketch comedy, and Jim Henson's Muppets to teach literacy and numeracy.",
+    "timeline": [
+      "1969 - Premieres on public television on November 10",
+      "1983 - 'Goodbye, Mr. Hooper' episode wins Peabody Award for emotional honesty",
+      "2019 - Celebrates its 50th anniversary with over 4,500 episodes broadcast"
+    ]
+  },
+  {
+    "id": "nov-11-veterans-day",
+    "month": "November",
+    "day": "November 11",
+    "dayNum": 11,
+    "title": "Veteran's Day",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Observed annually on November 11 honoring all military veterans!",
+    "emoji": "\ud83c\udf96\ufe0f",
+    "funFact": "According to Wikipedia, Veterans Day originated as Armistice Day on November 11, 1919, marking the 11th hour of the 11th day of the 11th month!",
+    "who1": "Veterans Day is an official United States federal holiday observed annually on November 11 to honor military veterans who served in the U.S. Armed Forces.",
+    "who2": "Veterans Day originated as Armistice Day on November 11, 1919, marking the 11th hour of the 11th day of the 11th month when World War I fighting ceased.",
+    "timeline": [
+      "1919 - President Woodrow Wilson proclaims Armistice Day on November 11",
+      "1938 - Armistice Day made a legal federal holiday",
+      "1954 - Congress renames the holiday 'Veterans Day' to honor veterans of all American wars"
+    ]
+  },
+  {
+    "id": "nov-12-auguste-rodin",
+    "month": "November",
+    "day": "November 12",
+    "dayNum": 12,
+    "title": "Auguste Rodin (artist) (b. 1840)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on November 12, 1840, sculptor of 'The Thinker'!",
+    "emoji": "\ud83d\uddff",
+    "funFact": "According to Biography.com, Auguste Rodin is considered the founder of modern sculpture, creating 'The Thinker' and 'The Gates of Hell'!",
+    "who1": "Auguste Rodin was a world-famous French sculptor widely considered the founder of modern sculpture, best known for creating bronze masterpieces such as 'The Thinker.'",
+    "who2": "Auguste Rodin was born in Paris on November 12, 1840, studying drawing at the Petite \u00c9cole before working as a decorative stonemason.",
+    "timeline": [
+      "1840 - Born in Paris, France on November 12",
+      "1880 - Commissioned to create 'The Gates of Hell'",
+      "1904 - Bronze cast of 'The Thinker' displayed publicly in Paris",
+      "1917 - Passed away in Meudon, France, leaving his studio as the Mus\u00e9e Rodin"
+    ]
+  },
+  {
+    "id": "nov-12-elizabeth-cady-stanton",
+    "month": "November",
+    "day": "November 12",
+    "dayNum": 12,
+    "title": "Elizabeth Cady Stanton (suffragist) (b. 1815)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on November 12, 1815, women's rights pioneer!",
+    "emoji": "\ud83d\uddf3\ufe0f",
+    "funFact": "According to Biography.com, Elizabeth Cady Stanton organized the 1848 Seneca Falls Convention and wrote the Declaration of Sentiments!",
+    "who1": "Elizabeth Cady Stanton was an influential American suffragist, abolitionist, and leading figure of the early women's rights movement in the United States.",
+    "who2": "Elizabeth Cady Stanton was born in Johnstown, New York, on November 12, 1815, studying at the Troy Female Seminary.",
+    "timeline": [
+      "1815 - Born in Johnstown, New York on November 12",
+      "1848 - Organized the historic Seneca Falls Convention and wrote the Declaration of Sentiments",
+      "1869 - Co-founded the National Woman Suffrage Association alongside Susan B. Anthony",
+      "1902 - Passed away in New York City as a legendary leader for equality"
+    ]
+  },
+  {
+    "id": "nov-13-robert-louis-stevenson",
+    "month": "November",
+    "day": "November 13",
+    "dayNum": 13,
+    "title": "Robert Louis Stevenson (author of Treasure Island) (b. 1850)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on November 13, 1850, author of Treasure Island!",
+    "emoji": "\ud83c\udff4\u200d\u2620\ufe0f",
+    "funFact": "According to Biography.com, Robert Louis Stevenson wrote 'Treasure Island' after drawing a fictional treasure map for his stepson!",
+    "who1": "Robert Louis Stevenson was a celebrated Scottish novelist, poet, and travel writer best known for classics such as 'Treasure Island' and 'Strange Case of Dr Jekyll and Mr Hyde.'",
+    "who2": "Robert Louis Stevenson was born in Edinburgh, Scotland, on November 13, 1850, studying law before dedicating his life to writing.",
+    "timeline": [
+      "1850 - Born in Edinburgh, Scotland on November 13",
+      "1883 - Published the classic adventure novel 'Treasure Island'",
+      "1886 - Published 'Strange Case of Dr Jekyll and Mr Hyde'",
+      "1894 - Passed away in Samoa as a literary legend"
+    ]
+  },
+  {
+    "id": "nov-14-apollo-12",
+    "month": "November",
+    "day": "November 14",
+    "dayNum": 14,
+    "title": "Apollo 12 launched in 1969",
+    "type": "Event / Space (Wikipedia)",
+    "connection": "Launched on second manned moon landing mission on November 14, 1969!",
+    "emoji": "\ud83d\ude80",
+    "funFact": "According to Wikipedia, Apollo 12 was struck by lightning twice during launch but landed with pinpoint precision near Surveyor 3!",
+    "who1": "Apollo 12 was the sixth manned flight in the United States Apollo program and the second space mission to land humans on the Moon.",
+    "who2": "Apollo 12 was crewed by astronauts Charles 'Pete' Conrad, Richard F. Gordon Jr., and Alan L. Bean, launching from Kennedy Space Center on November 14, 1969.",
+    "timeline": [
+      "1969 - Launched from Florida on November 14",
+      "1969 - Lunar Module 'Intrepid' lands on Ocean of Storms on November 19",
+      "1969 - Astronauts conduct 31 hours of lunar exploration before returning safely"
+    ]
+  },
+  {
+    "id": "nov-14-claude-monet",
+    "month": "November",
+    "day": "November 14",
+    "dayNum": 14,
+    "title": "Claude Monet (French impressionist painter) (b. 1840)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on November 14, 1840, founder of Impressionism!",
+    "emoji": "\ud83c\udfa8",
+    "funFact": "According to Biography.com, the entire Impressionist art movement got its name from Monet's painting 'Impression, Sunrise'!",
+    "who1": "Claude Monet was a world-famous French painter and founder of French Impressionist painting who mastered capturing natural light and color outdoors.",
+    "who2": "Claude Monet was born in Paris on November 14, 1840, studying painting at the Acad\u00e9mie Suisse.",
+    "timeline": [
+      "1840 - Born in Paris, France on November 14",
+      "1874 - Exhibited 'Impression, Sunrise,' giving name to Impressionism",
+      "1899 - Begins painting his iconic Water Lilies series at Giverny",
+      "1926 - Passed away in Giverny as a master painter"
+    ]
+  },
+  {
+    "id": "nov-14-william-steig",
+    "month": "November",
+    "day": "November 14",
+    "dayNum": 14,
+    "title": "William Steig (author and illustrator) (b. 1907)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on November 14, 1907, creator of Shrek!",
+    "emoji": "\ud83d\udfe2",
+    "funFact": "According to Biography.com, William Steig wrote the picture book 'Shrek!' at age 83, inspiring the Oscar-winning animated movie franchise!",
+    "who1": "William Steig was an acclaimed American cartoonist, illustrator, and children's book author who created beloved books such as 'Sylvester and the Magic Pebble' and 'Shrek!'",
+    "who2": "William Steig was born in Brooklyn, New York, on November 14, 1907, working for decades as a famous cartoonist for The New Yorker.",
+    "timeline": [
+      "1907 - Born in Brooklyn, New York on November 14",
+      "1970 - Awarded Caldecott Medal for 'Sylvester and the Magic Pebble'",
+      "1990 - Published picture book 'Shrek!'",
+      "2001 - DreamWorks adapts 'Shrek!' into an Oscar-winning animated movie"
+    ]
+  },
+  {
+    "id": "nov-15-georgia-okeeffe",
+    "month": "November",
+    "day": "November 15",
+    "dayNum": 15,
+    "title": "Georgia O'Keeffe (artist) (b. 1887)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on November 15, 1887, 'Mother of American modernism'!",
+    "emoji": "\ud83c\udf3a",
+    "funFact": "According to Biography.com, Georgia O'Keeffe painted dramatic close-up flowers and New Mexico desert landscapes, selling a flower painting for $44 million!",
+    "who1": "Georgia O'Keeffe was a pioneering American artist known as the 'Mother of American modernism' famous for her paintings of enlarged flowers, New York skyscrapers, and New Mexico landscapes.",
+    "who2": "Georgia O'Keeffe was born near Sun Prairie, Wisconsin, on November 15, 1887, studying at the Art Institute of Chicago.",
+    "timeline": [
+      "1887 - Born near Sun Prairie, Wisconsin on November 15",
+      "1929 - Made her first summer painting trip to Northern New Mexico",
+      "1977 - Awarded the Presidential Medal of Freedom by President Gerald Ford",
+      "1986 - Passed away in Santa Fe at age ninety-eight"
+    ]
+  },
+  {
+    "id": "nov-16-jean-fritz",
+    "month": "November",
+    "day": "November 16",
+    "dayNum": 16,
+    "title": "Jean Fritz (author) (b. 1915)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on November 16, 1915, author of historical biography!",
+    "emoji": "\ud83d\udcda",
+    "funFact": "According to Biography.com, Jean Fritz wrote engaging children's biographies about Paul Revere, Ben Franklin, and George Washington that made history fun!",
+    "who1": "Jean Fritz was an acclaimed American author of children's historical fiction and biographic books that brought American history alive for young readers.",
+    "who2": "Jean Fritz was born to missionary parents in Hankou, China, on November 16, 1915, returning to America at age thirteen.",
+    "timeline": [
+      "1915 - Born in Hankou, China on November 16",
+      "1973 - Published 'And Then What Happened, Paul Revere?'",
+      "1983 - Awarded Newbery Honor for her autobiography 'Homesick: My Own Story'",
+      "2017 - Passed away at age 101 as a celebrated children's author"
+    ]
+  },
+  {
+    "id": "nov-16-wc-handy",
+    "month": "November",
+    "day": "November 16",
+    "dayNum": 16,
+    "title": "W.C. Handy ('Father of the Blues') (b. 1872)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on November 16, 1872, 'Father of the Blues'!",
+    "emoji": "\ud83c\udfb7",
+    "funFact": "According to Biography.com, W.C. Handy composed 'St. Louis Blues' and brought traditional African American blues music into mainstream popular culture!",
+    "who1": "William Christopher Handy was an American composer and musician who took the blues from a regional music style into a dominant force in American popular music.",
+    "who2": "W.C. Handy was born in Florence, Alabama, on November 16, 1872, studying cornet and organ against his father's wishes.",
+    "timeline": [
+      "1872 - Born in Florence, Alabama on November 16",
+      "1912 - Published 'The Memphis Blues'",
+      "1914 - Composed 'St. Louis Blues,' one of the most recorded songs in music history",
+      "1958 - Passed away in New York City as the Father of the Blues"
+    ]
+  },
+  {
+    "id": "nov-17-suez-canal",
+    "month": "November",
+    "day": "November 17",
+    "dayNum": 17,
+    "title": "Suez Canal began operating in 1869",
+    "type": "Event / Landmark (Wikipedia)",
+    "connection": "Opened for international maritime navigation on November 17, 1869!",
+    "emoji": "\ud83c\udf0a",
+    "funFact": "According to Wikipedia, the Suez Canal connects the Mediterranean Sea to the Red Sea, saving ships a 4,300-mile trip around Africa!",
+    "who1": "The Suez Canal is a 120-mile artificial sea-level waterway in Egypt connecting the Mediterranean Sea to the Red Sea through the Isthmus of Suez.",
+    "who2": "The Suez Canal was constructed between 1859 and 1869 under the direction of French diplomat Ferdinand de Lesseps.",
+    "timeline": [
+      "1859 - Construction begins under French diplomat Ferdinand de Lesseps",
+      "1869 - Officially opens for international navigation on November 17",
+      "1956 - Egypt nationalizes the canal",
+      "2015 - Major expansion opens new parallel channel"
+    ]
+  },
+  {
+    "id": "nov-18-mickey-mouse",
+    "month": "November",
+    "day": "November 18",
+    "dayNum": 18,
+    "title": "Mickey Mouse appeared for first time (1928)",
+    "type": "Event / Culture (Wikipedia)",
+    "connection": "Debuted in 'Steamboat Willie' on November 18, 1928!",
+    "emoji": "\ud83d\udc2d",
+    "funFact": "According to Wikipedia, 'Steamboat Willie' was the first cartoon featuring synchronized sound, and Walt Disney voiced Mickey himself!",
+    "who1": "Mickey Mouse is an iconic cartoon character created by Walt Disney and Ub Iwerks who became the official mascot of The Walt Disney Company.",
+    "who2": "Mickey Mouse debuted on November 18, 1928, in the groundbreaking animated short film 'Steamboat Willie' at the Colony Theater in New York City.",
+    "timeline": [
+      "1928 - Debuts in 'Steamboat Willie' in NYC on November 18",
+      "1932 - Walt Disney receives special Academy Award for creating Mickey Mouse",
+      "1978 - Mickey becomes first animated character to receive a star on Hollywood Walk of Fame"
+    ]
+  },
+  {
+    "id": "nov-18-antarctica",
+    "month": "November",
+    "day": "November 18",
+    "dayNum": 18,
+    "title": "Antarctica discovered in 1820",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Discovered by Nathaniel Palmer on November 18, 1820!",
+    "emoji": "\ud83e\uddca",
+    "funFact": "According to Wikipedia, Antarctica is the coldest, windiest, and driest continent, containing 90% of Earth's ice!",
+    "who1": "Antarctica is Earth's southernmost continent, surrounded by the Southern Ocean and discovered by American sealer Nathaniel Palmer on November 18, 1820.",
+    "who2": "Nathaniel Palmer sighted the Antarctic Peninsula while searching for seal hunting grounds aboard his 47-foot sloop Hero.",
+    "timeline": [
+      "1820 - Nathaniel Palmer sights the Antarctic Peninsula on November 18",
+      "1911 - Roald Amundsen reaches the South Pole",
+      "1959 - Antarctic Treaty signed reserving continent for scientific peaceful research"
+    ]
+  },
+  {
+    "id": "nov-19-gettysburg-address",
+    "month": "November",
+    "day": "November 19",
+    "dayNum": 19,
+    "title": "Gettysburg Address delivered in 1863",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Delivered by Abraham Lincoln on November 19, 1863!",
+    "emoji": "\ud83d\udcdc",
+    "funFact": "According to Wikipedia, Lincoln's address was only 273 words long and took just two minutes to deliver, becoming one of history's greatest speeches!",
+    "who1": "The Gettysburg Address is a historic 273-word speech delivered by President Abraham Lincoln on November 19, 1863, at the dedication of the Soldiers' National Cemetery in Pennsylvania.",
+    "who2": "President Lincoln delivered the brief address four months after the bloody Battle of Gettysburg, re-dedicating the American nation to human equality and democracy.",
+    "timeline": [
+      "1863 - Delivered in Gettysburg, Pennsylvania on November 19",
+      "1865 - Preserved on the walls of the Lincoln Memorial in Washington, D.C."
+    ]
+  },
+  {
+    "id": "nov-19-roy-campanella",
+    "month": "November",
+    "day": "November 19",
+    "dayNum": 19,
+    "title": "Roy Campanella (baseball player) (b. 1921)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on November 19, 1921, 3-time National League MVP!",
+    "emoji": "\u26be",
+    "funFact": "According to Biography.com, Roy Campanella was a star catcher for the Brooklyn Dodgers who won three National League MVP awards!",
+    "who1": "Roy Campanella was an American professional baseball catcher who played for the Brooklyn Dodgers and Negro leagues, winning three National League MVP awards.",
+    "who2": "Roy Campanella was born in Philadelphia on November 19, 1921, playing Negro League baseball at age fifteen before joining the Dodgers.",
+    "timeline": [
+      "1921 - Born in Philadelphia, Pennsylvania on November 19",
+      "1948 - Joined Brooklyn Dodgers in Major League Baseball",
+      "1951, 1953, 1955 - Won three National League MVP awards",
+      "1969 - Inducted into the Baseball Hall of Fame"
+    ]
+  },
+  {
+    "id": "nov-20-edwin-hubble",
+    "month": "November",
+    "day": "November 20",
+    "dayNum": 20,
+    "title": "Edwin Powell Hubble (astronomer) (b. 1889)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on November 20, 1889, pioneer astronomer!",
+    "emoji": "\ud83d\udd2d",
+    "funFact": "According to Biography.com, Edwin Hubble proved the universe is expanding, and NASA named the Hubble Space Telescope in his honor!",
+    "who1": "Edwin Powell Hubble was a groundbreaking American astronomer who proved that the universe extends beyond the Milky Way galaxy and is continuously expanding.",
+    "who2": "Edwin Hubble was born in Marshfield, Missouri, on November 20, 1889, studying law at Oxford University before completing his astronomy doctorate at the University of Chicago.",
+    "timeline": [
+      "1889 - Born in Marshfield, Missouri on November 20",
+      "1924 - Proved Andromeda is a separate galaxy outside the Milky Way",
+      "1929 - Formulated Hubble's Law proving the universe is expanding",
+      "1990 - NASA launches the Hubble Space Telescope in his honor"
+    ]
+  },
+  {
+    "id": "nov-21-mayflower",
+    "month": "November",
+    "day": "November 21",
+    "dayNum": 21,
+    "title": "Mayflower dropped anchor in Cape Cod in 1620",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Dropped anchor and signed Mayflower Compact on November 21, 1620!",
+    "emoji": "\u26f5",
+    "funFact": "According to Wikipedia, 41 male Pilgrims signed the Mayflower Compact aboard the ship, creating one of America's first frameworks of democratic governance!",
+    "who1": "The Mayflower was an English ship that transported 102 Pilgrim passengers to America in 1620, anchoring at Cape Cod on November 21.",
+    "who2": "The Pilgrims departed Plymouth, England, aboard the Mayflower seeking religious freedom in North America.",
+    "timeline": [
+      "1620 - Anchors at Provincetown Harbor, Cape Cod, on November 21",
+      "1620 - 41 passengers sign Mayflower Compact establishing self-government",
+      "1621 - Pilgrims celebrate the first Thanksgiving harvest festival"
+    ]
+  },
+  {
+    "id": "nov-21-ken-griffey-jr",
+    "month": "November",
+    "day": "November 21",
+    "dayNum": 21,
+    "title": "Ken Griffey Jr. (baseball player) (b. 1969)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on November 21, 1969, Hall of Fame home run hitter!",
+    "emoji": "\u26be",
+    "funFact": "According to Biography.com, Ken Griffey Jr. hit 630 career home runs and was elected to the Baseball Hall of Fame with a record 99.3% vote!",
+    "who1": "Ken Griffey Jr. is an American former professional baseball outfielder who played 22 seasons in Major League Baseball and hit 630 career home runs.",
+    "who2": "Ken Griffey Jr. was born in Donora, Pennsylvania, on November 21, 1969, growing up in major league clubhouses while his father played for the Cincinnati Reds.",
+    "timeline": [
+      "1969 - Born in Donora, Pennsylvania on November 21",
+      "1989 - Debuted with Seattle Mariners at age nineteen",
+      "1997 - Won American League Most Valuable Player award",
+      "2016 - Inducted into Baseball Hall of Fame with 99.3% vote"
+    ]
+  },
+  {
+    "id": "nov-22-nhl-founded",
+    "month": "November",
+    "day": "November 22",
+    "dayNum": 22,
+    "title": "National Hockey League was founded in 1917",
+    "type": "Event / Culture (Wikipedia)",
+    "connection": "Founded in Montreal on November 22, 1917!",
+    "emoji": "\ud83c\udfd2",
+    "funFact": "According to Wikipedia, the NHL started with four Canadian teams in 1917 and expanded to 32 major teams across North America!",
+    "who1": "The National Hockey League (NHL) is a professional ice hockey league in North America, founded in Montreal, Quebec, on November 22, 1917.",
+    "who2": "The NHL was established at the Windsor Hotel in Montreal following the suspension of the National Hockey Association.",
+    "timeline": [
+      "1917 - Founded in Montreal, Quebec on November 22",
+      "1924 - Boston Bruins become the first U.S. franchise to join the NHL",
+      "1926 - NHL assumes sole control of competing for the Stanley Cup"
+    ]
+  },
+  {
+    "id": "nov-22-jfk-assassinated",
+    "month": "November",
+    "day": "November 22",
+    "dayNum": 22,
+    "title": "JFK assassinated 1963",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Tragic event in Dallas, Texas on November 22, 1963!",
+    "emoji": "\ud83c\uddfa\ud83c\uddf8",
+    "funFact": "According to Wikipedia, John F. Kennedy was the 35th President of the United States and the youngest person elected to the presidency!",
+    "who1": "The assassination of John F. Kennedy occurred on November 22, 1963, in Dallas, Texas, shocking the American nation and world.",
+    "who2": "President Kennedy was riding in a presidential motorcade through Dealey Plaza alongside First Lady Jacqueline Kennedy when shots were fired.",
+    "timeline": [
+      "1963 - Assassinated in Dallas, Texas on November 22",
+      "1963 - Vice President Lyndon B. Johnson sworn in aboard Air Force One",
+      "1964 - Warren Commission delivers official investigation report"
+    ]
+  },
+  {
+    "id": "nov-22-abigail-adams",
+    "month": "November",
+    "day": "November 22",
+    "dayNum": 22,
+    "title": "Abigail Adams (wife of John Adams) (b. 1744)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on November 22, 1744, Founding First Lady!",
+    "emoji": "\u2709\ufe0f",
+    "funFact": "According to Biography.com, Abigail Adams wrote famous letters urging her husband to 'Remember the Ladies' when drafting independence laws!",
+    "who1": "Abigail Adams was an American Founding First Lady, writer, and political advisor who served as First Lady of the United States as wife of John Adams.",
+    "who2": "Abigail Adams was born in Weymouth, Massachusetts, on November 22, 1744, educating herself in her father's extensive library.",
+    "timeline": [
+      "1744 - Born in Weymouth, Massachusetts on November 22",
+      "1776 - Writes famous 'Remember the Ladies' letter to John Adams",
+      "1797-1801 - Serves as second First Lady of the United States",
+      "1825 - Her son John Quincy Adams elected 6th U.S. President"
+    ]
+  },
+  {
+    "id": "nov-23-franklin-pierce",
+    "month": "November",
+    "day": "November 23",
+    "dayNum": 23,
+    "title": "Franklin Pierce (14th president) (b. 1804)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on November 23, 1804, 14th U.S. President!",
+    "emoji": "\ud83c\udfa9",
+    "funFact": "According to Biography.com, Franklin Pierce was a New Hampshire lawyer and brigadier general who served as 14th U.S. President!",
+    "who1": "Franklin Pierce was an American politician and lawyer who served as the 14th President of the United States from 1853 to 1857.",
+    "who2": "Franklin Pierce was born in Hillsborough, New Hampshire, on November 23, 1804, graduating from Bowdoin College and studying law.",
+    "timeline": [
+      "1804 - Born in Hillsborough, New Hampshire on November 23",
+      "1847 - Served as brigadier general in the Mexican-American War",
+      "1853-1857 - Served as 14th U.S. President",
+      "1854 - Signed the Gadsden Purchase acquiring land from Mexico"
+    ]
+  },
+  {
+    "id": "nov-24-frances-burnett",
+    "month": "November",
+    "day": "November 24",
+    "dayNum": 24,
+    "title": "Francis Hodgson Burnett (author of Secret Garden) (b. 1849)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on November 24, 1849, author of Little Lord Fauntleroy & Secret Garden!",
+    "emoji": "\ud83c\udf31",
+    "funFact": "According to Biography.com, Frances Hodgson Burnett wrote 'The Secret Garden' based on her love of gardening at her English country manor!",
+    "who1": "Frances Hodgson Burnett was a British-American novelist and playwright best known for classic children's stories 'The Secret Garden' and 'A Little Princess.'",
+    "who2": "Frances Hodgson Burnett was born in Manchester, England, on November 24, 1849, emigrating to Knoxville, Tennessee, at age fifteen.",
+    "timeline": [
+      "1849 - Born in Manchester, England on November 24",
+      "1886 - Published 'Little Lord Fauntleroy'",
+      "1905 - Published 'A Little Princess'",
+      "1911 - Published beloved classic 'The Secret Garden'"
+    ]
+  },
+  {
+    "id": "nov-25-marc-brown",
+    "month": "November",
+    "day": "November 25",
+    "dayNum": 25,
+    "title": "Marc Brown (author) (b. 1946)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on November 25, 1946, creator of Arthur!",
+    "emoji": "\ud83d\udc53",
+    "funFact": "According to Biography.com, Marc Brown created Arthur the Aardvark as a bedtime story for his son, leading to over 65 million books sold!",
+    "who1": "Marc Brown is an acclaimed American author and illustrator of children's books best known as the creator of the 'Arthur' book and TV series.",
+    "who2": "Marc Brown was born in Erie, Pennsylvania, on November 25, 1946, studying illustration at the Cleveland Institute of Art.",
+    "timeline": [
+      "1946 - Born in Erie, Pennsylvania on November 25",
+      "1976 - Published first book 'Arthur's Nose'",
+      "1996 - 'Arthur' animated television series premieres on PBS Kids",
+      "2022 - 'Arthur' series concludes after 25 seasons as PBS's longest-running animated show"
+    ]
+  },
+  {
+    "id": "nov-25-andrew-carnegie",
+    "month": "November",
+    "day": "November 25",
+    "dayNum": 25,
+    "title": "Andrew Carnegie (financier and philanthropist) (b. 1835)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on November 25, 1835, industrialist & library patron!",
+    "emoji": "\ud83c\udfdb\ufe0f",
+    "funFact": "According to Biography.com, Andrew Carnegie donated over $350 million to fund 2,509 public libraries worldwide!",
+    "who1": "Andrew Carnegie was a Scottish-American industrialist and philanthropist who led the expansion of the American steel industry and built over 2,500 public libraries.",
+    "who2": "Andrew Carnegie was born in Dunfermline, Scotland, on November 25, 1835, emigrating to Pennsylvania at age thirteen.",
+    "timeline": [
+      "1835 - Born in Dunfermline, Scotland on November 25",
+      "1875 - Founded Carnegie Steel Company in Pittsburgh",
+      "1901 - Sold Carnegie Steel to J.P. Morgan for $480 million",
+      "1919 - Passed away after donating 90% of his wealth to education and public libraries"
+    ]
+  },
+  {
+    "id": "nov-25-joe-dimaggio",
+    "month": "November",
+    "day": "November 25",
+    "dayNum": 25,
+    "title": "Joe DiMaggio (baseball player) (b. 1914)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on November 25, 1914, 56-game hitting streak legend!",
+    "emoji": "\u26be",
+    "funFact": "According to Biography.com, Joe DiMaggio set a Major League Baseball record by hitting safely in 56 consecutive games in 1941!",
+    "who1": "Joe DiMaggio, nicknamed 'The Yankee Clipper,' was an American professional baseball center fielder who played 13 seasons for the New York Yankees and won nine World Series titles.",
+    "who2": "Joe DiMaggio was born in Martinez, California, on November 25, 1914, growing up in San Francisco as the son of a Sicilian fisherman.",
+    "timeline": [
+      "1914 - Born in Martinez, California on November 25",
+      "1936 - Debuted with New York Yankees",
+      "1941 - Achieved legendary 56-game hitting streak record",
+      "1955 - Inducted into Baseball Hall of Fame"
+    ]
+  },
+  {
+    "id": "nov-26-sojourner-truth",
+    "month": "November",
+    "day": "November 26",
+    "dayNum": 26,
+    "title": "Sojourner Truth (abolitionist) died in 1883",
+    "type": "Person (Biography.com)",
+    "connection": "Passed away on November 26, 1883, abolitionist hero!",
+    "emoji": "\ud83d\udde3\ufe0f",
+    "funFact": "According to Biography.com, Sojourner Truth delivered her famous 'Ain't I a Woman?' speech at the 1851 Women's Rights Convention in Akron, Ohio!",
+    "who1": "Sojourner Truth was an American abolitionist and women's rights activist who escaped enslavement and became a renowned national orator for civil rights.",
+    "who2": "Sojourner Truth was born Isabella Baumfree in Ulster County, New York, around 1797, escaping to freedom in 1826 with her infant daughter.",
+    "timeline": [
+      "c. 1797 - Born in Ulster County, New York",
+      "1826 - Escaped to freedom with her infant daughter Sophia",
+      "1851 - Delivered famous 'Ain't I a Woman?' speech in Akron, Ohio",
+      "1883 - Passed away in Battle Creek, Michigan on November 26"
+    ]
+  },
+  {
+    "id": "nov-26-charles-schulz",
+    "month": "November",
+    "day": "November 26",
+    "dayNum": 26,
+    "title": "Charles Schulz (creator of Peanuts comic strip) (b. 1922)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on November 26, 1922, creator of Charlie Brown & Snoopy!",
+    "emoji": "\ud83c\udfa8",
+    "funFact": "According to Biography.com, Charles M. Schulz drew all 17,897 Peanuts comic strips by himself over 50 years!",
+    "who1": "Charles M. Schulz was an American cartoonist and creator of the comic strip Peanuts, widely regarded as one of the most influential cartoonists in history.",
+    "who2": "Charles Schulz was born in Minneapolis, Minnesota, on November 26, 1922, serving in the U.S. Army during World War II.",
+    "timeline": [
+      "1922 - Born in Minneapolis, Minnesota on November 26",
+      "1950 - Launched Peanuts comic strip in seven daily newspapers",
+      "2000 - Passed away in Santa Rosa, California, after receiving Congressional Gold Medal"
+    ]
+  },
+  {
+    "id": "nov-27-macys-parade",
+    "month": "November",
+    "day": "November 27",
+    "dayNum": 27,
+    "title": "First Macy's Thanksgiving Day Parade 1924",
+    "type": "Event / Culture (Wikipedia)",
+    "connection": "Debuted in New York City on November 27, 1924!",
+    "emoji": "\ud83c\udf88",
+    "funFact": "According to Wikipedia, the first Macy's parade featured live animals from the Central Park Zoo before giant character balloons were introduced in 1927!",
+    "who1": "The Macy's Thanksgiving Day Parade is an annual parade in New York City presented by U.S. department store chain Macy's, featuring giant character balloons, marching bands, and floats.",
+    "who2": "The parade was organized by Macy's immigrant employees on November 27, 1924, marching from 145th Street to Macy's flagship store in Herald Square.",
+    "timeline": [
+      "1924 - First parade held in NYC on Thanksgiving Day, November 27",
+      "1927 - Felix the Cat becomes the first giant character balloon",
+      "1948 - First national television broadcast of the parade on NBC"
+    ]
+  },
+  {
+    "id": "nov-28-panama-independence",
+    "month": "November",
+    "day": "November 28",
+    "dayNum": 28,
+    "title": "Panama gained Independence from Spain 1821",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Declared independence from Spain on November 28, 1821!",
+    "emoji": "\ud83c\uddf5\ud83c\udde6",
+    "funFact": "According to Wikipedia, Panama declared independence from Spanish rule in 1821 and joined Gran Colombia alongside Sim\u00f3n Bol\u00edvar!",
+    "who1": "Panama's independence from Spain was achieved on November 28, 1821, ending over 300 years of Spanish colonial rule in Central America.",
+    "who2": "Panamanian patriots declared independence in Panama City following the 'Primer Grito de Independencia' in Villa de Los Santos.",
+    "timeline": [
+      "1821 - Declared independence from Spain on November 28",
+      "1821 - Voluntarily joined Sim\u00f3n Bol\u00edvar's Republic of Gran Colombia",
+      "1903 - Declared full national sovereignty as the Republic of Panama"
+    ]
+  },
+  {
+    "id": "nov-29-louisa-may-alcott",
+    "month": "November",
+    "day": "November 29",
+    "dayNum": 29,
+    "title": "Louisa May Alcott (author of Little Women) (b. 1832)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on November 29, 1832, author of Little Women!",
+    "emoji": "\ud83d\udcd6",
+    "funFact": "According to Biography.com, Louisa May Alcott wrote 'Little Women' based on her own childhood growing up with three sisters in Concord, Massachusetts!",
+    "who1": "Louisa May Alcott was an American novelist, short story writer, and poet best known as the author of the beloved classic novel 'Little Women.'",
+    "who2": "Louisa May Alcott was born in Germantown, Pennsylvania, on November 29, 1832, growing up among Transcendentalist writers Ralph Waldo Emerson and Henry David Thoreau.",
+    "timeline": [
+      "1832 - Born in Germantown, Pennsylvania on November 29",
+      "1868 - Published 'Little Women' to instant critical acclaim",
+      "1888 - Passed away in Boston, Massachusetts as a beloved American novelist"
+    ]
+  },
+  {
+    "id": "nov-29-cs-lewis",
+    "month": "November",
+    "day": "November 29",
+    "dayNum": 29,
+    "title": "C.S. Lewis (author of Narnia) (b. 1898)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on November 29, 1898, author of Chronicles of Narnia!",
+    "emoji": "\ud83e\udd81",
+    "funFact": "According to Biography.com, C.S. Lewis was an Oxford professor and close friend of J.R.R. Tolkien who wrote 'The Lion, the Witch and the Wardrobe'!",
+    "who1": "Clive Staples Lewis was a British writer, literary scholar, and theologian best known for his fantasy series 'The Chronicles of Narnia.'",
+    "who2": "C.S. Lewis was born in Belfast, Ireland, on November 29, 1898, studying at Oxford University.",
+    "timeline": [
+      "1898 - Born in Belfast, Ireland on November 29",
+      "1950 - Published 'The Lion, the Witch and the Wardrobe'",
+      "1956 - Completed seven-volume 'Chronicles of Narnia' series",
+      "1963 - Passed away in Oxford, England"
+    ]
+  },
+  {
+    "id": "nov-30-mark-twain",
+    "month": "November",
+    "day": "November 30",
+    "dayNum": 30,
+    "title": "Mark Twain (author) (b. 1835)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on November 30, 1835, Father of American Literature!",
+    "emoji": "\u26f5",
+    "funFact": "According to Biography.com, Mark Twain worked as a Mississippi riverboat pilot and took his pen name from a riverboat call meaning two fathoms deep!",
+    "who1": "Mark Twain, born Samuel Langhorne Clemens, was an iconic American humorist, journalist, lecturer, and novelist known as the Father of American Literature.",
+    "who2": "Mark Twain was born in Florida, Missouri, on November 30, 1835, growing up along the Mississippi River in Hannibal, Missouri, working as a riverboat pilot.",
+    "timeline": [
+      "1835 - Born in Florida, Missouri on November 30",
+      "1876 - Published 'The Adventures of Tom Sawyer'",
+      "1884 - Published 'Adventures of Huckleberry Finn'",
+      "1910 - Passed away in Redding, Connecticut"
+    ]
+  },
+  {
+    "id": "nov-30-lucy-maud-montgomery",
+    "month": "November",
+    "day": "November 30",
+    "dayNum": 30,
+    "title": "Lucy Maud Montgomery (author of Anne of Green Gables) (b. 1874)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on November 30, 1874, author of Anne of Green Gables!",
+    "emoji": "\ud83d\udc52",
+    "funFact": "According to Biography.com, L.M. Montgomery set her famous novel 'Anne of Green Gables' on Prince Edward Island, Canada!",
+    "who1": "Lucy Maud Montgomery was a Canadian author best known for a series of novels beginning in 1908 with 'Anne of Green Gables.'",
+    "who2": "L.M. Montgomery was born in Clifton, Prince Edward Island, Canada, on November 30, 1874, raised by her grandparents.",
+    "timeline": [
+      "1874 - Born in Clifton, Prince Edward Island on November 30",
+      "1908 - Published 'Anne of Green Gables' becoming an international bestseller",
+      "1942 - Passed away in Toronto, Ontario as a Canadian literary icon"
+    ]
+  }
+];
+
   // Compile final DB with dynamically built articles
-  const TOPICS_DB = RAW_OCTOBER_DATA.map(t => {
+  const ALL_RAW_TOPICS = [...RAW_OCTOBER_DATA, ...RAW_NOVEMBER_DATA];
+  const TOPICS_DB = ALL_RAW_TOPICS.map(t => {
     const articles = buildArticlesForTopic(t);
     return Object.assign({}, t, articles);
   });
