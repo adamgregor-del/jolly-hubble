@@ -5,6 +5,15 @@
   'use strict';
 
   function buildArticlesForTopic(t) {
+    if (t.article1 && t.article2) {
+      return {
+        article1: t.article1,
+        article1_challenge: t.article1,
+        article2: t.article2,
+        article2_challenge: t.article2
+      };
+    }
+
     const isPerson = t.type.includes("Person");
     const sourceName = isPerson ? "Biography.com" : "Wikipedia";
 
@@ -86,86 +95,6 @@
       `The early narrative of ${t.title} remains an inspiring chapter in the human journey.`
     ];
 
-    const c1_p1 = [
-      `${t.who1}`,
-      `Documented extensively on ${sourceName}, this subject represents a pivotal nexus in constitutional, technological, and socio-political history.`,
-      `The historical record associated with ${t.month} ${t.dayNum} illustrates how structural innovations can reshape national institutional paradigms.`,
-      `Scholars emphasize that analyzing this phenomenon illuminates complex economic, diplomatic, and sociological developments.`,
-      `Through rigorous intellectual discipline, strategic foresight, and organizational leadership, it established unprecedented historical benchmarks.`,
-      `Academic institutions and international research centers maintain comprehensive archives evaluating its systemic repercussions.`,
-      `Today, it stands as an indispensable milestone in global historiography and civil governance.`
-    ];
-
-    const c1_p2 = [
-      `During its operational genesis, this historical development introduced sophisticated methodologies that redefined contemporary industry and governance.`,
-      `Research compiled by ${sourceName} demonstrates that the structural innovations of ${t.title} shattered precedent.`,
-      `Surrounding socio-political conditions demanded exceptional analytical acumen, administrative resilience, and strategic coordination.`,
-      `By resolving entrenched institutional dilemmas, it catalyzed transformative shifts across international legal and cultural sectors.`,
-      `Global analysts recognized the far-reaching economic, diplomatic, and technological ramifications of these developments.`,
-      `Consequently, international repositories digitized primary documentation, blue-prints, and cartographic evidence.`,
-      `This milestone continues to be rigorously analyzed within advanced university curricula globally.`
-    ];
-
-    const c1_p3 = [
-      `In subsequent decades, the systemic legacy of this historical event expanded exponentially across international jurisdictions.`,
-      `Academic symposia and government bodies instituted permanent research foundations to evaluate its long-term societal effects.`,
-      `Monographs published on ${sourceName} elucidate how these foundational principles inform contemporary statutory frameworks.`,
-      `Museums and national monuments preserve primary artifacts, offering scholars empirical evidence of its cultural resonance.`,
-      `Furthermore, modern biographers and policy analysts frequently examine this subject to formulate contemporary governance solutions.`,
-      `The analytical frameworks forged through this milestone remain vital for navigating modern geopolitical challenges.`,
-      `Its institutional heritage endures as a profound testament to intellectual fortitude and civic governance.`
-    ];
-
-    const c1_p4 = [
-      `In summary, ${t.title} constitutes an essential cornerstone of the ${t.month} historical curriculum.`,
-      `Scholars, jurisprudential analysts, and student researchers analyze this achievement with profound intellectual rigor.`,
-      `By synthesizing primary source documentation and empirical research, student scholars cultivate advanced historiographical perspectives.`,
-      `The evidence preserved on ${sourceName} confirms that its analytical relevance will endure across academic disciplines.`,
-      `Scholarly publications, digital repositories, and national monuments ensure its continued prominence in world history.`,
-      `The legacy of this historical milestone provides an enduring paradigm of strategic vision, intellectual rigor, and public service.`,
-      `This entry remains an invaluable object of inquiry for students examining the evolution of modern civilization.`
-    ];
-
-    const c2_p1 = [
-      `${t.who2}`,
-      `According to ${sourceName} scholarly biographies, formative socio-economic factors exerted a decisive influence on subsequent historical developments.`,
-      `Matriculating during an era of significant geopolitical transformation provided rigorous intellectual discipline and practical experience.`,
-      `Early engagement with philosophical, technical, or administrative inquiry laid the groundwork for subsequent systemic breakthroughs.`,
-      `Mentorship from distinguished scholars, family members, and civic leaders cultivated exceptional analytical competence.`,
-      `These formative years forged the intellectual resilience and moral conviction essential for national leadership.`,
-      `Examining these foundational origins affords student researchers comprehensive insight into the trajectory of historical achievement.`
-    ];
-
-    const c2_p2 = [
-      `During the initial developmental phase, empirical investigations and pilot projects were executed with meticulous precision.`,
-      `Archival evidence from ${sourceName} details the formidable economic, legal, or technical impediments encountered during early operations.`,
-      `Overcoming systemic obstacles necessitated extraordinary intellectual resilience, strategic flexibility, and methodological rigor.`,
-      `Collaborative partnerships with prominent scholars and engineers enabled the refinement of early hypotheses into robust operational models.`,
-      `Initial public demonstrations garnered substantial attention from national academic and legislative assemblies.`,
-      `These foundational achievements inaugurated a new epoch in industrial, diplomatic, or cultural organization.`,
-      `The success of these early endeavors substantiated the efficacy of disciplined empirical inquiry.`
-    ];
-
-    const c2_p3 = [
-      `As institutional recognition expanded, systematic initiatives were deployed to institutionalize these advancements globally.`,
-      `Primary manuscripts preserved from this period demonstrate the incremental methodologies utilized to achieve systemic progress.`,
-      `Civic organizations and legal advocates aligned with the initiative, establishing formal administrative infrastructures.`,
-      `This rapid expansion facilitated the dissemination of vital scientific, legal, or humanitarian resources to broad populations.`,
-      `The historical timeline recorded under ${t.month} ${t.dayNum} marks a decisive juncture in this organizational evolution.`,
-      `By adhering to unyielding standards of academic and ethical integrity, the endeavor achieved permanent historical stature.`,
-      `This phase of growth established an enduring precedent for international governance and scholarship.`
-    ];
-
-    const c2_p4 = [
-      `Analyzing the formative background of ${t.title} provides student scholars with advanced analytical perspectives.`,
-      `Article 1 elucidated the systemic impact and global legacy, whereas Article 2 delineated the foundational background and developmental history.`,
-      `Synthesizing evidence from both articles empowers students to author sophisticated, original academic evaluations.`,
-      `Mastering original paraphrasing elevates scholarly vocabulary, syntactic complexity, and critical composition skills.`,
-      `As student researchers organize their notes, they synthesize primary evidence into coherent historiographical essays.`,
-      `This dual-article pedagogical framework ensures students master multi-source informational synthesis.`,
-      `The foundational narrative of ${t.title} remains an exemplary chapter in the history of human intellectual progress.`
-    ];
-
     return {
       article1: {
         title: `Article 1: ${t.title} - Impact, Legacy & Achievements (${sourceName})`,
@@ -173,7 +102,7 @@
       },
       article1_challenge: {
         title: `Article 1 (Challenge): ${t.title} - Advanced Historiographical Analysis (${sourceName})`,
-        paragraphs: [c1_p1, c1_p2, c1_p3, c1_p4]
+        paragraphs: [a1_p1, a1_p2, a1_p3, a1_p4]
       },
       article2: {
         title: `Article 2: ${t.title} - Early Origins, Background & History (${sourceName})`,
@@ -181,7 +110,7 @@
       },
       article2_challenge: {
         title: `Article 2 (Challenge): ${t.title} - Formative Genesis & Institutional Development (${sourceName})`,
-        paragraphs: [c2_p1, c2_p2, c2_p3, c2_p4]
+        paragraphs: [a2_p1, a2_p2, a2_p3, a2_p4]
       }
     };
   }
@@ -201,7 +130,87 @@
     "who2": "Henry Ford introduces Model T developed through significant historical events recorded in detail on Biography.com.",
     "timeline": [
       "October 1 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Henry Ford - Impact, Legacy & Achievements (Biography.com)",
+      "paragraphs": [
+        [
+          "Henry Ford (October 1) is documented on Biography.com as a landmark historical subject.",
+          "According to records on Biography.com, Henry Ford was an American industrialist and business magnate who founded the Ford Motor Company and revolutionized factory manufacturing through the moving assembly line..",
+          "Key historical accounts note that On October 1, 1908, Ford introduced the Model T automobile, an affordable vehicle designed for everyday American families..",
+          "Historians emphasize that studying this topic provides essential insights into American and world history.",
+          "Through visionary dedication and leadership, it established permanent benchmarks in its respective field.",
+          "Citizens and researchers continue to study this legacy to appreciate historical progress.",
+          "Today, it stands as an enduring testament to human achievement."
+        ],
+        [
+          "During its pivotal historical era, Henry Ford introduced key developments that transformed contemporary culture and industry.",
+          "Research compiled by Biography.com demonstrates how these achievements resolved complex challenges of the period.",
+          "Historical archives preserve primary source documents, photographs, and artifacts illustrating the step-by-step impact.",
+          "Civic leaders, scholars, and international observers recognized the far-reaching social and economic consequences.",
+          "By setting high standards of perseverance, it inspired surrounding communities and future generations.",
+          "This milestone continues to serve as an essential case study in academic institutions nationwide."
+        ],
+        [
+          "In the decades following its occurrence on October 1, the long-term influence of this subject expanded globally.",
+          "Educational organizations and civic institutions established annual commemorations to educate young scholars.",
+          "Monographs published on Biography.com highlight how these principles continue to inform modern laws and culture.",
+          "Museums and historical societies display dedicated exhibits featuring primary source evidence from this period.",
+          "Furthermore, modern biographers and creators feature this narrative to inspire future generations.",
+          "The core values demonstrated through this milestone remain vital for addressing contemporary challenges.",
+          "Its enduring heritage serves as an inspiring reminder of human creativity and determination."
+        ],
+        [
+          "In conclusion, Henry Ford remains a cornerstone entry on the October research calendar.",
+          "Students and researchers around the world reflect on this achievement with great respect and scholarly interest.",
+          "By analyzing both source articles, student scholars gain a comprehensive understanding of its historical significance.",
+          "The authoritative records on Biography.com confirm that its legacy will endure for generations to come.",
+          "Textbooks, digital archives, and civic monuments ensure that this story continues to be taught in classrooms everywhere.",
+          "This topic provides an exceptional opportunity for students to practice synthesizing facts into original paraphrased reports."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Henry Ford - Early Origins, Background & History (Biography.com)",
+      "paragraphs": [
+        [
+          "Regarding formative background, Henry Ford was born on a farm in Springwells Township, Michigan, near Dearborn, on July 30, 1863..",
+          "According to Biography.com biographical records, early life experiences played a decisive role in shaping future accomplishments.",
+          "Growing up during a period of historical transition provided unique educational opportunities and practical training.",
+          "Early interest in learning, technical experimentation, or public service laid the groundwork for future breakthroughs.",
+          "Mentorship from dedicated teachers, family members, and community leaders helped cultivate essential skills and character.",
+          "These formative experiences established the work ethic and resilience required for national leadership.",
+          "Understanding these early origins affords student researchers valuable context into the full historical journey."
+        ],
+        [
+          "During the early development phase of Henry Ford, initial experiments and foundational projects were conducted with meticulous dedication.",
+          "Archival records from Biography.com document specific obstacles faced during the early years of this endeavor.",
+          "Overcoming financial, social, or technical challenges required extraordinary resilience and creative problem-solving.",
+          "Collaborations with skilled associates and mentors helped refine early ideas into successful realities.",
+          "Initial public demonstrations and early achievements attracted widespread acclaim from civic assemblies.",
+          "These foundational breakthroughs inaugurated a new era of progress in its respective field.",
+          "The success of these early endeavors demonstrated the power of sustained effort and disciplined research."
+        ],
+        [
+          "As public recognition grew, systematic initiatives expanded the scope and reach of this historical endeavor.",
+          "Primary manuscripts preserved from this era illustrate the step-by-step progress achieved over time.",
+          "Supporters and volunteers rallied around the cause, establishing formal organizations and lasting institutions.",
+          "This rapid growth brought vital knowledge, inspiration, or services to communities across the nation.",
+          "The historical record under October 1 marks a crucial turning point in this developmental story.",
+          "By maintaining unyielding standards of excellence and integrity, the movement achieved lasting success.",
+          "This phase of growth established an unshakeable foundation for future cultural and historical impact."
+        ],
+        [
+          "By analyzing the formative origins of Henry Ford, student researchers gain a complete historical perspective.",
+          "Article 1 detailed the global impact and legacy, while Article 2 highlighted the early background and historical origins.",
+          "Combining facts from both articles enables students to write rich, original paraphrases in their own words.",
+          "Practicing original paraphrasing sharpens reading comprehension, vocabulary expansion, and clear written expression.",
+          "As student researchers organize their notes, they transform historical evidence into polished original reports.",
+          "This dual-article pedagogical framework ensures students master multi-source informational synthesis.",
+          "The early narrative of Henry Ford remains an inspiring chapter in the human journey."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-2-peanuts-comic-strip",
@@ -217,7 +226,87 @@
     "who2": "Peanuts Comic Strip first published developed through significant historical events recorded in detail on Wikipedia.",
     "timeline": [
       "October 2 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Peanuts Comic Strip - Impact, Legacy & Achievements (Wikipedia)",
+      "paragraphs": [
+        [
+          "Peanuts Comic Strip (October 2) is documented on Wikipedia as a landmark historical subject.",
+          "According to records on Wikipedia, Peanuts is a world-famous American newspaper comic strip created by cartoonist Charles M. Schulz that debuted on October 2, 1950..",
+          "Key historical accounts note that Featuring iconic characters Charlie Brown, Snoopy, Linus, and Lucy, the strip became one of the most influential cultural works in comic history..",
+          "Historians emphasize that studying this topic provides essential insights into American and world history.",
+          "Through visionary dedication and leadership, it established permanent benchmarks in its respective field.",
+          "Citizens and researchers continue to study this legacy to appreciate historical progress.",
+          "Today, it stands as an enduring testament to human achievement."
+        ],
+        [
+          "During its pivotal historical era, Peanuts Comic Strip introduced key developments that transformed contemporary culture and industry.",
+          "Research compiled by Wikipedia demonstrates how these achievements resolved complex challenges of the period.",
+          "Historical archives preserve primary source documents, photographs, and artifacts illustrating the step-by-step impact.",
+          "Civic leaders, scholars, and international observers recognized the far-reaching social and economic consequences.",
+          "By setting high standards of perseverance, it inspired surrounding communities and future generations.",
+          "This milestone continues to serve as an essential case study in academic institutions nationwide."
+        ],
+        [
+          "In the decades following its occurrence on October 2, the long-term influence of this subject expanded globally.",
+          "Educational organizations and civic institutions established annual commemorations to educate young scholars.",
+          "Monographs published on Wikipedia highlight how these principles continue to inform modern laws and culture.",
+          "Museums and historical societies display dedicated exhibits featuring primary source evidence from this period.",
+          "Furthermore, modern biographers and creators feature this narrative to inspire future generations.",
+          "The core values demonstrated through this milestone remain vital for addressing contemporary challenges.",
+          "Its enduring heritage serves as an inspiring reminder of human creativity and determination."
+        ],
+        [
+          "In conclusion, Peanuts Comic Strip remains a cornerstone entry on the October research calendar.",
+          "Students and researchers around the world reflect on this achievement with great respect and scholarly interest.",
+          "By analyzing both source articles, student scholars gain a comprehensive understanding of its historical significance.",
+          "The authoritative records on Wikipedia confirm that its legacy will endure for generations to come.",
+          "Textbooks, digital archives, and civic monuments ensure that this story continues to be taught in classrooms everywhere.",
+          "This topic provides an exceptional opportunity for students to practice synthesizing facts into original paraphrased reports."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Peanuts Comic Strip - Early Origins, Background & History (Wikipedia)",
+      "paragraphs": [
+        [
+          "Regarding formative background, Charles M. Schulz created Peanuts in 1950 after drawing a local cartoon series titled Li'l Folks in St. Paul, Minnesota..",
+          "According to Wikipedia biographical records, early life experiences played a decisive role in shaping future accomplishments.",
+          "Growing up during a period of historical transition provided unique educational opportunities and practical training.",
+          "Early interest in learning, technical experimentation, or public service laid the groundwork for future breakthroughs.",
+          "Mentorship from dedicated teachers, family members, and community leaders helped cultivate essential skills and character.",
+          "These formative experiences established the work ethic and resilience required for national leadership.",
+          "Understanding these early origins affords student researchers valuable context into the full historical journey."
+        ],
+        [
+          "During the early development phase of Peanuts Comic Strip, initial experiments and foundational projects were conducted with meticulous dedication.",
+          "Archival records from Wikipedia document specific obstacles faced during the early years of this endeavor.",
+          "Overcoming financial, social, or technical challenges required extraordinary resilience and creative problem-solving.",
+          "Collaborations with skilled associates and mentors helped refine early ideas into successful realities.",
+          "Initial public demonstrations and early achievements attracted widespread acclaim from civic assemblies.",
+          "These foundational breakthroughs inaugurated a new era of progress in its respective field.",
+          "The success of these early endeavors demonstrated the power of sustained effort and disciplined research."
+        ],
+        [
+          "As public recognition grew, systematic initiatives expanded the scope and reach of this historical endeavor.",
+          "Primary manuscripts preserved from this era illustrate the step-by-step progress achieved over time.",
+          "Supporters and volunteers rallied around the cause, establishing formal organizations and lasting institutions.",
+          "This rapid growth brought vital knowledge, inspiration, or services to communities across the nation.",
+          "The historical record under October 2 marks a crucial turning point in this developmental story.",
+          "By maintaining unyielding standards of excellence and integrity, the movement achieved lasting success.",
+          "This phase of growth established an unshakeable foundation for future cultural and historical impact."
+        ],
+        [
+          "By analyzing the formative origins of Peanuts Comic Strip, student researchers gain a complete historical perspective.",
+          "Article 1 detailed the global impact and legacy, while Article 2 highlighted the early background and historical origins.",
+          "Combining facts from both articles enables students to write rich, original paraphrases in their own words.",
+          "Practicing original paraphrasing sharpens reading comprehension, vocabulary expansion, and clear written expression.",
+          "As student researchers organize their notes, they transform historical evidence into polished original reports.",
+          "This dual-article pedagogical framework ensures students master multi-source informational synthesis.",
+          "The early narrative of Peanuts Comic Strip remains an inspiring chapter in the human journey."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-3-mohandas-gandhi",
