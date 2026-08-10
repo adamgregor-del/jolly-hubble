@@ -10,82 +10,80 @@
 
     const a1_p1 = [
       `${t.who1}`,
-      `According to ${sourceName} historical records, this topic is recognized for its major impact on American and world history.`,
-      `Documented under ${t.month} ${t.dayNum}, this topic represents an important milestone in modern education and culture.`,
-      `Historians emphasize that studying this topic provides valuable insights into scientific, social, and political developments.`,
-      `Through dedicated leadership, research, or innovation, it helped shape contemporary societal standards.`,
-      `Citizens across nations continue to celebrate and honor this legacy in schools, museums, and national archives.`,
-      `Today, it stands as an enduring testament to human achievement and historical progress.`
+      `According to ${sourceName} records, ${t.title} stands as one of the most influential entries documented under ${t.month} ${t.dayNum}.`,
+      `The historical record confirms that ${t.connection}`,
+      `Surrounding historical accounts recorded on ${sourceName} emphasize the far-reaching educational, scientific, and cultural significance of this topic.`,
+      `${t.funFact}`,
+      `Through extraordinary dedication and visionary leadership, this subject established permanent benchmarks in American and world history.`,
+      `Today, students and historians continue to study this legacy to understand the evolution of modern society.`
     ];
 
     const a1_p2 = [
-      `During its pivotal era, this milestone introduced key developments that transformed how people work, communicate, and live.`,
-      `Experts from ${sourceName} note that the achievements associated with ${t.title} established new standards in its field.`,
-      `Surrounding historical events required extraordinary dedication, strategic vision, and perseverance.`,
-      `By addressing complex challenges, it inspired surrounding communities and future generations of leaders.`,
-      `International observers recognized the far-reaching economic, social, or cultural consequences of these actions.`,
-      `As a result, national institutions preserved detailed records, artifacts, and photographs commemorating the achievement.`,
-      `This milestone continues to be studied extensively in modern academic curricula around the world.`
+      `During its pivotal historical era, ${t.title} introduced key developments that transformed contemporary culture and industry.`,
+      `Research compiled by ${sourceName} demonstrates how these achievements addressed complex challenges of the era.`,
+      `Historical archives preserve primary documents, photographs, and artifacts illustrating the step-by-step impact of these developments.`,
+      `Civic leaders, scholars, and international observers recognized the profound social and economic consequences of these actions.`,
+      `By setting high standards of perseverance, it inspired surrounding communities and future generations of leaders.`,
+      `This milestone continues to serve as an essential case study in academic institutions across the nation.`
     ];
 
     const a1_p3 = [
-      `In the decades following its initial occurrence, the long-term impact of this event expanded across global boundaries.`,
-      `Educational organizations and civic leaders established annual commemorations to educate the public.`,
-      `Scholarly research published on ${sourceName} highlights how this topic continues to influence modern policy and culture.`,
-      `Museums, historical societies, and public parks proudly display commemorative exhibits honoring its significance.`,
-      `In addition, modern writers and documentary filmmakers frequently feature this subject to inspire young scholars.`,
-      `The principles demonstrated through this historical milestone remain relevant for solving contemporary challenges.`,
-      `Its enduring heritage serves as a powerful reminder of human ingenuity and moral courage.`
+      `In the decades following its initial occurrence under ${t.month} ${t.dayNum}, the long-term influence of this topic expanded globally.`,
+      `Educational organizations and civic institutions established annual commemorations to educate young scholars.`,
+      `Monographs published on ${sourceName} highlight how these principles continue to inform modern laws, technology, and culture.`,
+      `Museums and historical societies display dedicated exhibits featuring primary source evidence from this period.`,
+      `Furthermore, modern biographers and documentary creators feature this narrative to inspire future innovators.`,
+      `The core values demonstrated through this historical milestone remain vital for addressing contemporary challenges.`,
+      `Its enduring heritage serves as an inspiring reminder of human creativity and determination.`
     ];
 
     const a1_p4 = [
-      `In conclusion, ${t.title} remains one of the most memorable entries on the ${t.month} historical calendar.`,
-      `Citizens, students, and researchers around the globe reflect on this achievement with great respect.`,
-      `By examining primary source accounts and historical records, student scholars appreciate its lasting contributions.`,
-      `The records preserved on ${sourceName} confirm that its historical importance will endure for generations to come.`,
-      `School textbooks, digital archives, and civic monuments ensure that its story is never forgotten.`,
-      `His or its life and legacy provide a timeless example of determination, creativity, and service.`,
-      `This entry continues to inspire students as they explore the rich tapestry of world history.`
+      `In conclusion, ${t.title} remains a cornerstone entry on the ${t.month} research calendar.`,
+      `Students and researchers around the world reflect on this achievement with great respect and scholarly interest.`,
+      `By analyzing both source articles, student scholars gain a comprehensive understanding of its historical significance.`,
+      `The authoritative records on ${sourceName} confirm that its legacy will endure for generations to come.`,
+      `Textbooks, digital archives, and civic monuments ensure that this story continues to be taught in classrooms everywhere.`,
+      `This topic provides an exceptional opportunity for students to practice synthesizing facts into original paraphrased reports.`
     ];
 
     const a2_p1 = [
       `${t.who2}`,
-      `According to ${sourceName} biographical entries, early background factors played a vital role in shaping future success.`,
-      `Growing up during a period of historical transition provided unique educational and practical experiences.`,
-      `Early interest in learning, technical experimentation, or public service laid the foundation for future accomplishments.`,
-      `Encouragement from mentors, family members, and teachers helped cultivate essential skills and determination.`,
-      `These formative years established the strong character and work ethic required for national leadership.`,
-      `Understanding these early origins helps student researchers appreciate the full historical journey.`
+      `According to ${sourceName} biographical records, early background factors played a decisive role in shaping future accomplishments.`,
+      `Growing up during a period of historical transition provided unique educational opportunities and practical training.`,
+      `Early interest in scientific inquiry, artistic expression, or public service laid the groundwork for future breakthroughs.`,
+      `Mentorship from dedicated teachers, family members, and community leaders helped cultivate essential skills and character.`,
+      `These formative experiences established the work ethic and resilience required for national leadership.`,
+      `Understanding these early origins affords student researchers valuable context into the full historical journey.`
     ];
 
     const a2_p2 = [
-      `During the early development phase, initial experiments and trial projects were conducted with great dedication.`,
-      `Records from ${sourceName} document the specific challenges faced during the early years of development.`,
-      `Overcoming early financial, social, or technical obstacles required extraordinary resilience and creative problem-solving.`,
-      `Collaborations with skilled partners and advisors helped refine early ideas into successful realities.`,
-      `Initial public demonstrations attracted widespread attention from community leaders.`,
-      `These early breakthroughs paved the way for larger national and international achievements.`,
-      `The success of these early endeavors demonstrated the power of persistence and focused effort.`
+      `During the early development phase, initial experiments and foundational projects were conducted with meticulous dedication.`,
+      `Archival records from ${sourceName} document the specific obstacles faced during the early years of this endeavor.`,
+      `Overcoming financial, social, or technical challenges required extraordinary resilience and creative problem-solving.`,
+      `Collaborations with skilled associates and mentors helped refine early ideas into successful realities.`,
+      `Initial public demonstrations and early achievements attracted widespread acclaim from civic assemblies.`,
+      `These foundational breakthroughs inaugurated a new era of progress in its respective field.`,
+      `The success of these early endeavors demonstrated the power of sustained effort and disciplined research.`
     ];
 
     const a2_p3 = [
-      `As public recognition grew, systematic efforts were made to expand the scope and reach of the initiative.`,
-      `Key historical documents preserved from this era illustrate the step-by-step progress achieved over time.`,
-      `Supporters and volunteers rallied around the cause, establishing organized networks and formal institutions.`,
-      `This rapid expansion helped bring vital services, knowledge, or inspiration to millions of citizens.`,
-      `The historical timeline recorded under ${t.month} ${t.dayNum} marks a crucial turning point in this developmental process.`,
-      `By maintaining high standards of excellence and integrity, the movement achieved lasting success.`,
+      `As public recognition grew, systematic initiatives expanded the scope and reach of this historical endeavor.`,
+      `Primary manuscripts preserved from this era illustrate the step-by-step progress achieved over time.`,
+      `Supporters and volunteers rallied around the cause, establishing formal organizations and lasting institutions.`,
+      `This rapid growth brought vital knowledge, inspiration, or services to communities across the nation.`,
+      `The historical timeline recorded under ${t.month} ${t.dayNum} marks a crucial turning point in this developmental story.`,
+      `By maintaining unyielding standards of excellence and integrity, the movement achieved lasting success.`,
       `This phase of growth established an unshakeable foundation for future cultural and historical impact.`
     ];
 
     const a2_p4 = [
-      `By analyzing the early origins of ${t.title}, student researchers gain comprehensive historical understanding.`,
-      `Article 1 detailed the global impact and legacy, while Article 2 highlighted the formative background and early history.`,
+      `By analyzing the formative origins of ${t.title}, student researchers gain a complete historical perspective.`,
+      `Article 1 detailed the global impact and legacy, while Article 2 highlighted the early background and historical origins.`,
       `Combining facts from both articles enables students to write rich, original paraphrases in their own words.`,
       `Practicing original paraphrasing sharpens reading comprehension, vocabulary expansion, and clear written expression.`,
       `As student researchers organize their notes, they transform historical evidence into polished original reports.`,
-      `This dual-article approach ensures students master the essential skill of synthesizing multiple informational sources.`,
-      `The early story of ${t.title} remains an inspiring chapter in the human journey.`
+      `This dual-article pedagogical framework ensures students master multi-source informational synthesis.`,
+      `The early narrative of ${t.title} remains an inspiring chapter in the human journey.`
     ];
 
     const c1_p1 = [
@@ -120,7 +118,7 @@
 
     const c1_p4 = [
       `In summary, ${t.title} constitutes an essential cornerstone of the ${t.month} historical curriculum.`,
-      `Scholars,服jurisprudential analysts, and student researchers analyze this achievement with profound intellectual rigor.`,
+      `Scholars, jurisprudential analysts, and student researchers analyze this achievement with profound intellectual rigor.`,
       `By synthesizing primary source documentation and empirical research, student scholars cultivate advanced historiographical perspectives.`,
       `The evidence preserved on ${sourceName} confirms that its analytical relevance will endure across academic disciplines.`,
       `Scholarly publications, digital repositories, and national monuments ensure its continued prominence in world history.`,
