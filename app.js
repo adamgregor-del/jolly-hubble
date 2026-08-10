@@ -1,5 +1,5 @@
 /* Talking Calendar - Dual-Article Research & Paraphrase Hub Engine */
-/* Pre-Populated Featured Topics database containing extracted topics for October, November, and January! */
+/* Pre-Populated Featured Topics database containing extracted topics for October, November, January, and February! */
 
 (function () {
   'use strict';
@@ -2797,8 +2797,854 @@
     ]
   }
 ];
+  const RAW_FEBRUARY_DATA = [
+  {
+    "id": "feb-1-supreme-court",
+    "month": "February",
+    "day": "February 1",
+    "dayNum": 1,
+    "title": "Supreme Court held its first session 1790",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Convened in NYC on February 1, 1790!",
+    "emoji": "\u2696\ufe0f",
+    "funFact": "According to Wikipedia, the Supreme Court held its first meeting at the Royal Exchange Building in New York City!",
+    "who1": "The Supreme Court of the United States held its inaugural session on February 1, 1790, establishing the third branch of American constitutional governance.",
+    "who2": "The Supreme Court convened under Chief Justice John Jay in New York City, which served as the temporary national capital.",
+    "timeline": [
+      "1790 - Convened first official session in New York City on February 1",
+      "1791 - Moved to Old City Hall in Philadelphia",
+      "1800 - Established permanent headquarters in Washington, D.C."
+    ]
+  },
+  {
+    "id": "feb-1-explorer-1",
+    "month": "February",
+    "day": "February 1",
+    "dayNum": 1,
+    "title": "First U.S. Satellite launched 1958",
+    "type": "Event / Space (Wikipedia)",
+    "connection": "Launched into Earth orbit on February 1, 1958!",
+    "emoji": "\ud83d\ude80",
+    "funFact": "According to Wikipedia, Explorer 1 discovered the Van Allen radiation belts surrounding Earth!",
+    "who1": "Explorer 1 was the first artificial satellite launched into Earth orbit by the United States on February 1, 1958, marking America's entry into the Space Age.",
+    "who2": "Explorer 1 was built by the Jet Propulsion Laboratory (JPL) under Wernher von Braun and James Van Allen.",
+    "timeline": [
+      "1958 - Launched from Cape Canaveral, Florida, on February 1",
+      "1958 - Discovered the Van Allen radiation belts around Earth",
+      "1970 - Reentered Earth's atmosphere after completing 58,000 orbits"
+    ]
+  },
+  {
+    "id": "feb-1-langston-hughes",
+    "month": "February",
+    "day": "February 1",
+    "dayNum": 1,
+    "title": "Langston Hughes b. 1902 (poet)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 1, 1902, Harlem Renaissance poet icon!",
+    "emoji": "\ud83e\udeb6",
+    "funFact": "According to Biography.com, Langston Hughes wrote his famous poem 'The Negro Speaks of Rivers' at age eighteen!",
+    "who1": "Langston Hughes was an American poet, social activist, novelist, and playwright who was a leading figure of the Harlem Renaissance.",
+    "who2": "Langston Hughes was born in Joplin, Missouri, on February 1, 1902, studying at Columbia University and Lincoln University.",
+    "timeline": [
+      "1902 - Born in Joplin, Missouri on February 1",
+      "1921 - Published famous poem 'The Negro Speaks of Rivers'",
+      "1926 - Published first poetry collection 'The Weary Blues'",
+      "1967 - Passed away in New York City as a literary giant"
+    ]
+  },
+  {
+    "id": "feb-2-groundhog-day",
+    "month": "February",
+    "day": "February 2",
+    "dayNum": 2,
+    "title": "Groundhog Day",
+    "type": "Event / Culture (Wikipedia)",
+    "connection": "Celebrated annually on February 2 in Punxsutawney, PA!",
+    "emoji": "\ud83e\uddab",
+    "funFact": "According to Wikipedia, Punxsutawney Phil's weather prediction ritual began in 1887 at Gobbler's Knob!",
+    "who1": "Groundhog Day is a traditional North American holiday celebrated on February 2 where a groundhog's shadow predicts spring's arrival.",
+    "who2": "Groundhog Day originated from German weather lore and Candlemas customs brought to Pennsylvania by European settlers.",
+    "timeline": [
+      "1887 - First official Groundhog Day celebrated in Punxsutawney, Pennsylvania",
+      "1993 - Iconic comedy movie 'Groundhog Day' released",
+      "2020 - Punxsutawney Phil webstream viewed by millions worldwide"
+    ]
+  },
+  {
+    "id": "feb-3-norman-rockwell",
+    "month": "February",
+    "day": "February 3",
+    "dayNum": 3,
+    "title": "Norman Rockwell b. 1894 (artist)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 3, 1894, painter of American life!",
+    "emoji": "\ud83c\udfa8",
+    "funFact": "According to Biography.com, Norman Rockwell created 323 cover illustrations for The Saturday Evening Post over 47 years!",
+    "who1": "Norman Rockwell was an American painter and illustrator best known for his iconic cover illustrations depicting everyday American life.",
+    "who2": "Norman Rockwell was born in New York City on February 3, 1894, studying art at the Chase Art School and National Academy of Design.",
+    "timeline": [
+      "1894 - Born in New York City on February 3",
+      "1916 - Painted his first cover for The Saturday Evening Post",
+      "1943 - Created famous 'Four Freedoms' painting series",
+      "1977 - Awarded Presidential Medal of Freedom by President Gerald Ford"
+    ]
+  },
+  {
+    "id": "feb-3-endangered-species-act",
+    "month": "February",
+    "day": "February 3",
+    "dayNum": 3,
+    "title": "Endangered Species Act signed 1973",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Signed into landmark law conserving wildlife!",
+    "emoji": "\ud83e\udd85",
+    "funFact": "According to Wikipedia, the Endangered Species Act has saved 99% of listed species from extinction, including the Bald Eagle!",
+    "who1": "The Endangered Species Act is a landmark United States environmental law passed to prevent extinction of imperiled wildlife species.",
+    "who2": "The act was signed into federal law by President Richard Nixon in December 1973 following unanimous Senate approval.",
+    "timeline": [
+      "1973 - Signed into federal law preserving imperiled species",
+      "1995 - Gray wolves successfully reintroduced to Yellowstone",
+      "2007 - American Bald Eagle removed from endangered list after full population recovery"
+    ]
+  },
+  {
+    "id": "feb-4-charles-lindbergh",
+    "month": "February",
+    "day": "February 4",
+    "dayNum": 4,
+    "title": "Charles Lindberg b. 1902 (aviator)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 4, 1902, 1st solo nonstop Atlantic flight!",
+    "emoji": "\u2708\ufe0f",
+    "funFact": "According to Biography.com, Charles Lindbergh flew 'The Spirit of St. Louis' solo for 33.5 hours nonstop from NYC to Paris!",
+    "who1": "Charles Lindbergh was an American aviator, author, and explorer who completed the first solo nonstop transatlantic flight in 1927.",
+    "who2": "Charles Lindbergh was born in Detroit, Michigan, on February 4, 1902, learning to fly as an U.S. Army Air Service cadet.",
+    "timeline": [
+      "1902 - Born in Detroit, Michigan on February 4",
+      "1927 - Completed historic solo transatlantic flight aboard 'The Spirit of St. Louis'",
+      "1954 - Awarded Pulitzer Prize for his autobiography 'The Spirit of St. Louis'"
+    ]
+  },
+  {
+    "id": "feb-4-rosa-parks",
+    "month": "February",
+    "day": "February 4",
+    "dayNum": 4,
+    "title": "Rosa Parks b. 1913 (civil rights activist)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 4, 1913, Mother of Civil Rights!",
+    "emoji": "\ud83d\ude8c",
+    "funFact": "According to Biography.com, Rosa Parks received the Congressional Gold Medal and Presidential Medal of Freedom!",
+    "who1": "Rosa Parks was an iconic African American civil rights activist whose refusal to surrender her seat on a segregated bus ignited the Civil Rights Movement.",
+    "who2": "Rosa Parks was born in Tuskegee, Alabama, on February 4, 1913, working as a seamstress and secretary for the Montgomery NAACP.",
+    "timeline": [
+      "1913 - Born in Tuskegee, Alabama on February 4",
+      "1955 - Refused to yield bus seat in Montgomery sparking 381-day boycott",
+      "1996 - Awarded Presidential Medal of Freedom by President Bill Clinton",
+      "2005 - Passed away in Detroit, becoming first woman to lie in honor at U.S. Capitol Rotunda"
+    ]
+  },
+  {
+    "id": "feb-5-hank-aaron",
+    "month": "February",
+    "day": "February 5",
+    "dayNum": 5,
+    "title": "Hank Aaron b. 1934 (Baseball Hall of Fame outfielder)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 5, 1934, 'Hammerin' Hank'!",
+    "emoji": "\u26be",
+    "funFact": "According to Biography.com, Hank Aaron hit 755 career home runs and holds the MLB record for most career RBIs (2,297)!",
+    "who1": "Henry Louis 'Hank' Aaron was an American professional baseball right fielder who hit 755 career home runs and won 25 All-Star selections.",
+    "who2": "Hank Aaron was born in Mobile, Alabama, on February 5, 1934, playing in the Negro leagues before joining the Milwaukee Braves.",
+    "timeline": [
+      "1934 - Born in Mobile, Alabama on February 5",
+      "1957 - Won National League MVP and led Milwaukee Braves to World Series title",
+      "1974 - Hit 715th career home run breaking Babe Ruth's legendary record",
+      "1982 - Inducted into the Baseball Hall of Fame"
+    ]
+  },
+  {
+    "id": "feb-6-babe-ruth",
+    "month": "February",
+    "day": "February 6",
+    "dayNum": 6,
+    "title": "Babe Ruth b. 1895 (Baseball Hall of Fame pitcher)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 6, 1895, 'The Sultan of Swat'!",
+    "emoji": "\u26be",
+    "funFact": "According to Biography.com, Babe Ruth began his career as a star pitcher for the Red Sox before hitting 714 home runs for the Yankees!",
+    "who1": "George Herman 'Babe' Ruth Jr. was an American professional baseball player whose slugging power transformed baseball into America's pastime.",
+    "who2": "Babe Ruth was born in Baltimore, Maryland, on February 6, 1895, learning baseball at St. Mary's Industrial School for Boys.",
+    "timeline": [
+      "1895 - Born in Baltimore, Maryland on February 6",
+      "1914 - Signed by Baltimore Orioles and traded to Boston Red Sox as a star pitcher",
+      "1927 - Hit record 60 home runs in a single MLB season",
+      "1936 - Elected as one of the inaugural five members of the Baseball Hall of Fame"
+    ]
+  },
+  {
+    "id": "feb-6-ronald-reagan",
+    "month": "February",
+    "day": "February 6",
+    "dayNum": 6,
+    "title": "Ronald Reagan b. 1911 (40th U.S. President)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 6, 1911, 40th U.S. President!",
+    "emoji": "\ud83c\udfdb\ufe0f",
+    "funFact": "According to Biography.com, Ronald Reagan was a Hollywood actor and California Governor before serving two terms as President!",
+    "who1": "Ronald Wilson Reagan was an American politician and actor who served as the 40th President of the United States from 1981 to 1989.",
+    "who2": "Ronald Reagan was born in Tampico, Illinois, on February 6, 1911, graduating from Eureka College before acting in over 50 films.",
+    "timeline": [
+      "1911 - Born in Tampico, Illinois on February 6",
+      "1967-1975 - Served as 33rd Governor of California",
+      "1981-1989 - Served as 40th President of the United States",
+      "1987 - Delivered historic 'Tear down this wall!' speech in Berlin"
+    ]
+  },
+  {
+    "id": "feb-7-frederick-douglass",
+    "month": "February",
+    "day": "February 7",
+    "dayNum": 7,
+    "title": "Frederick Douglass b. 1817 (author & abolitionist)",
+    "type": "Person (Biography.com)",
+    "connection": "Born in February 1817, abolitionist & orator icon!",
+    "emoji": "\ud83d\udde3\ufe0f",
+    "funFact": "According to Biography.com, Frederick Douglass escaped enslavement and published 'The North Star' abolitionist newspaper!",
+    "who1": "Frederick Douglass was an American social reformer, abolitionist, orator, writer, and statesman who led the national movement to end slavery.",
+    "who2": "Frederick Douglass was born into enslavement in Talbot County, Maryland, around February 1817, teaching himself to read and write.",
+    "timeline": [
+      "c. 1817 - Born in Talbot County, Maryland",
+      "1838 - Escaped enslavement disguised as a sailor arriving in New York",
+      "1845 - Published groundbreaking 'Narrative of the Life of Frederick Douglass'",
+      "1847 - Founded 'The North Star' abolitionist newspaper in Rochester, NY"
+    ]
+  },
+  {
+    "id": "feb-7-laura-ingalls-wilder",
+    "month": "February",
+    "day": "February 7",
+    "dayNum": 7,
+    "title": "Laura Ingalls Wilder b. 1867 (author of Little House)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 7, 1867, author of Little House on the Prairie!",
+    "emoji": "\ud83c\udf3e",
+    "funFact": "According to Biography.com, Laura Ingalls Wilder published her first 'Little House' book at age 65 based on her pioneer childhood!",
+    "who1": "Laura Ingalls Wilder was an American writer best known for the 'Little House on the Prairie' series of children's books.",
+    "who2": "Laura Ingalls was born near Pepin, Wisconsin, on February 7, 1867, traveling by covered wagon across the American frontier.",
+    "timeline": [
+      "1867 - Born near Pepin, Wisconsin on February 7",
+      "1932 - Published first novel 'Little House in the Big Woods'",
+      "1935 - Published classic 'Little House on the Prairie'",
+      "1957 - Passed away in Mansfield, Missouri as a beloved pioneer author"
+    ]
+  },
+  {
+    "id": "feb-8-boy-scouts",
+    "month": "February",
+    "day": "February 8",
+    "dayNum": 8,
+    "title": "Boy Scouts of America founded 1910",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Incorporated on February 8, 1910!",
+    "emoji": "\ud83c\udfd5\ufe0f",
+    "funFact": "According to Wikipedia, W.D. Boyce incorporated the BSA after an unknown British Scout helped him through London fog!",
+    "who1": "The Boy Scouts of America is one of the largest youth organization movements in the U.S., founded on February 8, 1910.",
+    "who2": "The organization was incorporated by Chicago publisher W.D. Boyce after visiting Lord Baden-Powell's scouting program in England.",
+    "timeline": [
+      "1910 - Incorporated in Washington, D.C. on February 8",
+      "1911 - First Eagle Scout rank awarded to Arthur R. Eldred",
+      "1916 - Granted a federal charter by U.S. Congress"
+    ]
+  },
+  {
+    "id": "feb-8-jules-verne",
+    "month": "February",
+    "day": "February 8",
+    "dayNum": 8,
+    "title": "Jules Verne b. 1828 (author of Twenty Thousand Leagues)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 8, 1828, Father of Science Fiction!",
+    "emoji": "\ud83e\udd91",
+    "funFact": "According to Biography.com, Jules Verne envisioned submarines and space travel long before they were invented!",
+    "who1": "Jules Verne was a French novelist, poet, and playwright best known for adventure novels such as 'Twenty Thousand Leagues Under the Sea.'",
+    "who2": "Jules Verne was born in Nantes, France, on February 8, 1828, studying law in Paris before writing adventure novels.",
+    "timeline": [
+      "1828 - Born in Nantes, France on February 8",
+      "1864 - Published 'Journey to the Center of the Earth'",
+      "1870 - Published 'Twenty Thousand Leagues Under the Sea'",
+      "1872 - Published 'Around the World in Eighty Days'"
+    ]
+  },
+  {
+    "id": "feb-9-william-henry-harrison",
+    "month": "February",
+    "day": "February 9",
+    "dayNum": 9,
+    "title": "William Henry Harrison b. 1773 (9th U.S. President)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 9, 1773, 9th U.S. President!",
+    "emoji": "\ud83c\udfdb\ufe0f",
+    "funFact": "According to Biography.com, William Henry Harrison delivered a 105-minute inaugural address, the longest in presidential history!",
+    "who1": "William Henry Harrison was an American military officer and politician who served as the 9th President of the United States in 1841.",
+    "who2": "William Henry Harrison was born in Charles City County, Virginia, on February 9, 1773, studying medicine before joining the army.",
+    "timeline": [
+      "1773 - Born in Virginia on February 9",
+      "1811 - Commanded forces at the Battle of Tippecanoe",
+      "1841 - Sworn in as 9th U.S. President"
+    ]
+  },
+  {
+    "id": "feb-9-carole-king",
+    "month": "February",
+    "day": "February 9",
+    "dayNum": 9,
+    "title": "Carole King b. 1941 (singer & songwriter)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 9, 1941, Grammy-winning songwriter!",
+    "emoji": "\ud83c\udfb9",
+    "funFact": "According to Biography.com, Carole King's album 'Tapestry' won four Grammy Awards and stayed on the charts for over 300 weeks!",
+    "who1": "Carole King is an American singer-songwriter who is regarded as one of the most successful female songwriters of the 20th century.",
+    "who2": "Carole King was born Carol Joan Klein in Manhattan, New York, on February 9, 1941, writing hit songs in the Brill Building.",
+    "timeline": [
+      "1941 - Born in New York City on February 9",
+      "1971 - Released landmark pop album 'Tapestry'",
+      "2013 - Awarded Gershwin Prize for Popular Song by the Library of Congress",
+      "2021 - Inducted into the Rock and Roll Hall of Fame as a solo artist"
+    ]
+  },
+  {
+    "id": "feb-10-french-indian-war",
+    "month": "February",
+    "day": "February 10",
+    "dayNum": 10,
+    "title": "French and Indian War ends 1763",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Concluded with Treaty of Paris on February 10, 1763!",
+    "emoji": "\u2694\ufe0f",
+    "funFact": "According to Wikipedia, the Treaty of Paris transferred New France and Florida to British colonial control!",
+    "who1": "The French and Indian War concluded on February 10, 1763, with the signing of the Treaty of Paris, reshaping North American colonial empires.",
+    "who2": "The war pitted Great Britain and its Native allies against France, ending with British territorial expansion.",
+    "timeline": [
+      "1754 - War breaks out between British and French colonial forces",
+      "1763 - Treaty of Paris signed in France on February 10 ending conflict",
+      "1763 - Royal Proclamation establishes new colonial boundaries"
+    ]
+  },
+  {
+    "id": "feb-10-mark-spitz",
+    "month": "February",
+    "day": "February 10",
+    "dayNum": 10,
+    "title": "Mark Spitz b. 1950 (Olympic swimmer)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 10, 1950, 7-gold medal swimmer!",
+    "emoji": "\ud83c\udfca\u200d\u2642\ufe0f",
+    "funFact": "According to Biography.com, Mark Spitz won seven gold medals at the 1972 Munich Olympics, setting world records in all seven events!",
+    "who1": "Mark Andrew Spitz is an American former competition swimmer who won nine Olympic gold medals and set 33 world records.",
+    "who2": "Mark Spitz was born in Modesto, California, on February 10, 1950, swimming for Indiana University under Doc Counsilman.",
+    "timeline": [
+      "1950 - Born in Modesto, California on February 10",
+      "1968 - Won two gold medals at Mexico City Olympics",
+      "1972 - Won historic seven gold medals at Munich Olympics setting seven world records",
+      "1977 - Inducted into International Swimming Hall of Fame"
+    ]
+  },
+  {
+    "id": "feb-11-thomas-edison",
+    "month": "February",
+    "day": "February 11",
+    "dayNum": 11,
+    "title": "Thomas Alva Edison b. 1847 (inventor)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 11, 1847, prolific American inventor!",
+    "emoji": "\ud83d\udca1",
+    "funFact": "According to Biography.com, Edison developed the phonograph, motion picture camera, and practical incandescent electric lightbulb!",
+    "who1": "Thomas Alva Edison was an American inventor and businessman who held 1,093 U.S. patents and developed central electric power stations.",
+    "who2": "Thomas Edison was born in Milan, Ohio, on February 11, 1847, working as a telegraph operator before establishing Menlo Park lab.",
+    "timeline": [
+      "1847 - Born in Milan, Ohio on February 11",
+      "1877 - Invented the phonograph sound recorder",
+      "1879 - Developed long-lasting practical incandescent lightbulb",
+      "1931 - Passed away in West Orange, New Jersey"
+    ]
+  },
+  {
+    "id": "feb-12-abraham-lincoln",
+    "month": "February",
+    "day": "February 12",
+    "dayNum": 12,
+    "title": "Abraham Lincoln b. 1809 (16th U.S. President)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 12, 1809, 16th U.S. President!",
+    "emoji": "\ud83c\udfa9",
+    "funFact": "According to Biography.com, Lincoln issued the Emancipation Proclamation and delivered the Gettysburg Address during the Civil War!",
+    "who1": "Abraham Lincoln was an American lawyer and statesman who served as the 16th President of the United States, preserving the Union and abolishing slavery.",
+    "who2": "Abraham Lincoln was born in a one-room log cabin in Hardin County, Kentucky, on February 12, 1809, teaching himself law.",
+    "timeline": [
+      "1809 - Born in Hardin County, Kentucky on February 12",
+      "1861 - Sworn in as 16th President of the United States",
+      "1863 - Issued the Emancipation Proclamation",
+      "1865 - Preserved the Union before his tragic death"
+    ]
+  },
+  {
+    "id": "feb-13-chuck-yeager",
+    "month": "February",
+    "day": "February 13",
+    "dayNum": 13,
+    "title": "Chuck Yeager b. 1923 (broke the sound barrier)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 13, 1923, 1st pilot to break sound barrier!",
+    "emoji": "\u2708\ufe0f",
+    "funFact": "According to Biography.com, Chuck Yeager flew the Bell X-1 rocket plane at Mach 1.05 in 1947, breaking the sound barrier for the first time!",
+    "who1": "Charles Elwood Yeager was a United States Air Force officer and test pilot who became the first human officially confirmed to have broken the sound barrier.",
+    "who2": "Chuck Yeager was born in Myra, West Virginia, on February 13, 1923, serving as a WWII fighter ace in the Army Air Forces.",
+    "timeline": [
+      "1923 - Born in Myra, West Virginia on February 13",
+      "1947 - Broke the sound barrier flying Bell X-1 at Mach 1.05",
+      "1985 - Awarded Presidential Medal of Freedom by President Ronald Reagan",
+      "2020 - Passed away at age ninety-seven as an aviation icon"
+    ]
+  },
+  {
+    "id": "feb-14-valentines-day",
+    "month": "February",
+    "day": "February 14",
+    "dayNum": 14,
+    "title": "Valentine's Day",
+    "type": "Event / Culture (Wikipedia)",
+    "connection": "Celebrated annually on February 14 worldwide!",
+    "emoji": "\u2764\ufe0f",
+    "funFact": "According to Wikipedia, over 145 million Valentine's Day greeting cards are exchanged every year in the United States alone!",
+    "who1": "Valentine's Day is an annual holiday celebrated on February 14 recognizing romance, friendship, and affection.",
+    "who2": "The holiday originated as a Christian feast day honoring Saint Valentine before becoming a major cultural tradition in Europe and America.",
+    "timeline": [
+      "c. 496 AD - Pope Gelasius I establishes Feast of Saint Valentine on February 14",
+      "1840s - Esther Howland pioneers mass-produced paper Valentines in America",
+      "2020 - Celebrated globally with flowers, cards, and chocolates"
+    ]
+  },
+  {
+    "id": "feb-15-susan-b-anthony",
+    "month": "February",
+    "day": "February 15",
+    "dayNum": 15,
+    "title": "Susan B. Anthony b. 1820 (American reformer & suffragist)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 15, 1820, suffragist pioneer!",
+    "emoji": "\ud83d\uddf3\ufe0f",
+    "funFact": "According to Biography.com, Susan B. Anthony was arrested for voting illegally in the 1872 election and spent 50 years championing women's right to vote!",
+    "who1": "Susan B. Anthony was a legendary American social reformer and women's rights activist who played a pivotal role in the women's suffrage movement.",
+    "who2": "Susan B. Anthony was born in Adams, Massachusetts, on February 15, 1820, working as a teacher before co-founding the National Woman Suffrage Association.",
+    "timeline": [
+      "1820 - Born in Adams, Massachusetts on February 15",
+      "1872 - Arrested for voting illegally in Rochester, New York",
+      "1906 - Passed away 14 years before the 19th Amendment guaranteed women's right to vote",
+      "1979 - Honored as first woman depicted on circulating U.S. coin"
+    ]
+  },
+  {
+    "id": "feb-15-galileo",
+    "month": "February",
+    "day": "February 15",
+    "dayNum": 15,
+    "title": "Galileo Galilei b. 1564 (physicist and astronomer)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 15, 1564, Father of Modern Science!",
+    "emoji": "\ud83d\udd2d",
+    "funFact": "According to Biography.com, Galileo discovered Jupiter's four largest moons, Saturn's rings, and phases of Venus using his improved telescope!",
+    "who1": "Galileo Galilei was an Italian astronomer, physicist, and polymath known as the Father of Modern Science for his telescopic astronomical discoveries.",
+    "who2": "Galileo was born in Pisa, Italy, on February 15, 1564, studying medicine and mathematics at the University of Pisa.",
+    "timeline": [
+      "1564 - Born in Pisa, Italy on February 15",
+      "1609 - Constructed his astronomical telescope",
+      "1610 - Discovered Jupiter's four largest moons (Io, Europa, Ganymede, Callisto)",
+      "1632 - Published 'Dialogue Concerning the Two Chief World Systems'"
+    ]
+  },
+  {
+    "id": "feb-16-john-mcenroe",
+    "month": "February",
+    "day": "February 16",
+    "dayNum": 16,
+    "title": "John McEnroe b. 1959 (tennis player)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 16, 1959, 7-time Grand Slam tennis champion!",
+    "emoji": "\ud83c\udfbe",
+    "funFact": "According to Biography.com, John McEnroe won seven Grand Slam singles titles and 78 doubles titles in professional tennis!",
+    "who1": "John Patrick McEnroe Jr. is an American former world No. 1 professional tennis player known for his shot-making and competitive intensity.",
+    "who2": "John McEnroe was born in Wiesbaden, West Germany, on February 16, 1959, growing up in Queens, New York, and attending Stanford University.",
+    "timeline": [
+      "1959 - Born in Wiesbaden, West Germany on February 16",
+      "1979 - Won his first U.S. Open singles championship",
+      "1981, 1983, 1984 - Won three Wimbledon singles titles",
+      "1999 - Inducted into the International Tennis Hall of Fame"
+    ]
+  },
+  {
+    "id": "feb-17-geronimo",
+    "month": "February",
+    "day": "February 17",
+    "dayNum": 17,
+    "title": "Geronimo d. 1909 (Apache Native American leader)",
+    "type": "Person (Biography.com)",
+    "connection": "Passed away on February 17, 1909, Apache leader icon!",
+    "emoji": "\ud83c\udff9",
+    "funFact": "According to Biography.com, Geronimo led Chiricahua Apache resistance against military forces protecting tribal homelands in New Mexico and Arizona!",
+    "who1": "Geronimo was a prominent leader and medicine man of the Chiricahua Apache who defended tribal lands against military encroachment.",
+    "who2": "Geronimo was born in No-Doyohn Canyon, Mexico, in 1829, joining tribal warrior councils after losing his family in an attack.",
+    "timeline": [
+      "1829 - Born in No-Doyohn Canyon in Apache territory",
+      "1886 - Surrendered to General Nelson Miles ending Apache resistance",
+      "1905 - Rode in President Theodore Roosevelt's inaugural parade",
+      "1909 - Passed away at Fort Sill, Oklahoma on February 17"
+    ]
+  },
+  {
+    "id": "feb-17-marian-anderson",
+    "month": "February",
+    "day": "February 17",
+    "dayNum": 17,
+    "title": "Marian Anderson b. 1902 (opera singer)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 17, 1902, opera icon!",
+    "emoji": "\ud83c\udfa4",
+    "funFact": "According to Biography.com, Marian Anderson sang before 75,000 people at the Lincoln Memorial in 1939 after being denied Constitution Hall!",
+    "who1": "Marian Anderson was an American contralto opera singer who broke racial barriers in classical music and civil rights history.",
+    "who2": "Marian Anderson was born in Philadelphia on February 17, 1902, singing in her church choir before studying classical vocal performance.",
+    "timeline": [
+      "1902 - Born in Philadelphia, Pennsylvania on February 17",
+      "1939 - Performed historic Easter Sunday concert at the Lincoln Memorial",
+      "1955 - Became first African American to perform at the Metropolitan Opera",
+      "1963 - Awarded Presidential Medal of Freedom by President Lyndon B. Johnson"
+    ]
+  },
+  {
+    "id": "feb-18-jefferson-davis",
+    "month": "February",
+    "day": "February 18",
+    "dayNum": 18,
+    "title": "Jefferson Davis inaugurated as President of the Confederacy 1861",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Inaugurated in Montgomery on February 18, 1861!",
+    "emoji": "\ud83c\udfdb\ufe0f",
+    "funFact": "According to Wikipedia, Jefferson Davis was a U.S. Senator and Secretary of War before serving as Confederate President!",
+    "who1": "Jefferson Davis was an American politician who served as President of the Confederate States during the American Civil War.",
+    "who2": "Jefferson Davis was inaugurated at the Alabama State Capitol building in Montgomery on February 18, 1861.",
+    "timeline": [
+      "1861 - Inaugurated as Confederate President in Montgomery, Alabama on February 18",
+      "1865 - Captured by Union forces in Georgia ending Confederate administration"
+    ]
+  },
+  {
+    "id": "feb-18-pluto-discovered",
+    "month": "February",
+    "day": "February 18",
+    "dayNum": 18,
+    "title": "Pluto discovered 1930",
+    "type": "Event / Science (Wikipedia)",
+    "connection": "Discovered by Clyde Tombaugh on February 18, 1930!",
+    "emoji": "\ud83e\ude90",
+    "funFact": "According to Wikipedia, 11-year-old Venetia Burney suggested the name 'Pluto' after the Roman god of the underworld!",
+    "who1": "Pluto is a dwarf planet in the Kuiper belt discovered by American astronomer Clyde Tombaugh at Lowell Observatory on February 18, 1930.",
+    "who2": "Clyde Tombaugh discovered Pluto using a blink comparator machine to compare photographic plates of the night sky.",
+    "timeline": [
+      "1930 - Discovered at Lowell Observatory in Flagstaff, Arizona on February 18",
+      "2006 - Reclassified as a dwarf planet by the International Astronomical Union",
+      "2015 - NASA's New Horizons spacecraft completes historic flyby of Pluto"
+    ]
+  },
+  {
+    "id": "feb-19-copernicus",
+    "month": "February",
+    "day": "February 19",
+    "dayNum": 19,
+    "title": "Copernicus b. 1473 (astronomer)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 19, 1473, sun-centered universe pioneer!",
+    "emoji": "\u2600\ufe0f",
+    "funFact": "According to Biography.com, Nicolaus Copernicus proposed that Earth and planets orbit around the Sun, revolutionizing astronomy!",
+    "who1": "Nicolaus Copernicus was a Polish mathematician and astronomer who formulated the heliocentric model of the universe placing the Sun at its center.",
+    "who2": "Nicolaus Copernicus was born in Toru\u0144, Poland, on February 19, 1473, studying canon law and mathematics at Krakow University.",
+    "timeline": [
+      "1473 - Born in Toru\u0144, Poland on February 19",
+      "1543 - Published landmark astronomical book 'De revolutionibus orbium coelestium'"
+    ]
+  },
+  {
+    "id": "feb-20-ansel-adams",
+    "month": "February",
+    "day": "February 20",
+    "dayNum": 20,
+    "title": "Ansel Adams b. 1902 (American photographer)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 20, 1902, landscape photography master!",
+    "emoji": "\ud83d\udcf7",
+    "funFact": "According to Biography.com, Ansel Adams co-developed the Zone System to achieve perfect black-and-white photographic tonal range!",
+    "who1": "Ansel Easton Adams was an American landscape photographer and environmentalist famous for his black-and-white images of the American West.",
+    "who2": "Ansel Adams was born in San Francisco, California, on February 20, 1902, taking his first photographs of Yosemite National Park at age fourteen.",
+    "timeline": [
+      "1902 - Born in San Francisco, California on February 20",
+      "1932 - Co-founded Group f/64 advocating straight photography",
+      "1980 - Awarded Presidential Medal of Freedom by President Jimmy Carter"
+    ]
+  },
+  {
+    "id": "feb-21-washington-monument",
+    "month": "February",
+    "day": "February 21",
+    "dayNum": 21,
+    "title": "Washington Monument dedicated 1885",
+    "type": "Event / Landmark (Wikipedia)",
+    "connection": "Dedicated in Washington, D.C. on February 21, 1885!",
+    "emoji": "\ud83c\udfdb\ufe0f",
+    "funFact": "According to Wikipedia, at 555 feet tall, the Washington Monument was the tallest structure in the world when dedicated in 1885!",
+    "who1": "The Washington Monument is a world-famous 555-foot marble obelisk on the National Mall built to honor George Washington.",
+    "who2": "Construction began in 1848 before being halted during the Civil War and dedicated on February 21, 1885.",
+    "timeline": [
+      "1848 - Cornerstone laid on National Mall",
+      "1885 - Dedicated on February 21 at 555 feet tall",
+      "1888 - Opened to public visitors"
+    ]
+  },
+  {
+    "id": "feb-22-george-washington",
+    "month": "February",
+    "day": "February 22",
+    "dayNum": 22,
+    "title": "George Washington b. 1732 (1st U.S. President)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 22, 1732, 1st U.S. President!",
+    "emoji": "\ud83c\uddfa\ud83c\uddf8",
+    "funFact": "According to Biography.com, Washington commanded the Continental Army to victory in the Revolutionary War and served as first U.S. President!",
+    "who1": "George Washington was an American military officer, statesman, and Founding Father who served as the first President of the United States from 1789 to 1797.",
+    "who2": "George Washington was born in Westmoreland County, Virginia, on February 22, 1732, working as a surveyor.",
+    "timeline": [
+      "1732 - Born in Westmoreland County, Virginia on February 22",
+      "1775-1783 - Commanded Continental Army during American Revolution",
+      "1789 - Sworn in as 1st President of the United States"
+    ]
+  },
+  {
+    "id": "feb-22-frederic-chopin",
+    "month": "February",
+    "day": "February 22",
+    "dayNum": 22,
+    "title": "Frederic Chopin b. 1810 (pianist & composer)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 22, 1810, Romantic piano genius!",
+    "emoji": "\ud83c\udfb9",
+    "funFact": "According to Biography.com, Fr\u00e9d\u00e9ric Chopin wrote all his compositions featuring the piano, inventing the instrumental ballade!",
+    "who1": "Fr\u00e9d\u00e9ric Fran\u00e7ois Chopin was a Polish composer and virtuoso pianist of the Romantic era who wrote solo piano masterpieces.",
+    "who2": "Fr\u00e9d\u00e9ric Chopin was born in \u017belazowa Wola, Poland, on February 22, 1810, completing his musical education at Warsaw Conservatory.",
+    "timeline": [
+      "1810 - Born in \u017belazowa Wola, Poland on February 22",
+      "1831 - Settled in Paris performing intimate salon concerts",
+      "1849 - Passed away in Paris leaving timeless piano compositions"
+    ]
+  },
+  {
+    "id": "feb-23-web-dubois",
+    "month": "February",
+    "day": "February 23",
+    "dayNum": 23,
+    "title": "W.E.B. DuBois b. 1868 (civil rights activist)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 23, 1868, co-founder of NAACP!",
+    "emoji": "\ud83d\udcda",
+    "funFact": "According to Biography.com, W.E.B. Du Bois was the 1st African American to earn a Ph.D. from Harvard University!",
+    "who1": "William Edward Burghardt Du Bois was an American sociologist, historian, civil rights activist, author, and co-founder of the NAACP.",
+    "who2": "W.E.B. Du Bois was born in Great Barrington, Massachusetts, on February 23, 1868, earning his Ph.D. from Harvard in 1895.",
+    "timeline": [
+      "1868 - Born in Great Barrington, Massachusetts on February 23",
+      "1895 - First African American to earn a Harvard doctorate",
+      "1903 - Published seminal book 'The Souls of Black Folk'",
+      "1909 - Co-founded the NAACP and edited 'The Crisis' magazine"
+    ]
+  },
+  {
+    "id": "feb-23-george-frederick-handel",
+    "month": "February",
+    "day": "February 23",
+    "dayNum": 23,
+    "title": "George Frederick Handel b. 1685 (composer)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 23, 1685, Baroque composer of 'Messiah'!",
+    "emoji": "\ud83c\udfbc",
+    "funFact": "According to Biography.com, Handel composed the famous 'Hallelujah Chorus' in his sacred oratorio 'Messiah' in 1741!",
+    "who1": "George Frideric Handel was a German-born Baroque composer famous for his operas, concertos, and choral masterpiece 'Messiah.'",
+    "who2": "Handel was born in Halle, Germany, on February 23, 1685, settling in London as a naturalized British subject.",
+    "timeline": [
+      "1685 - Born in Halle, Germany on February 23",
+      "1717 - Composed 'Water Music' for King George I",
+      "1741 - Composed 'Messiah' including the 'Hallelujah Chorus'"
+    ]
+  },
+  {
+    "id": "feb-24-honus-wagner",
+    "month": "February",
+    "day": "February 24",
+    "dayNum": 24,
+    "title": "Honus Wagner b. 1874 (baseball player)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 24, 1874, Baseball Hall of Fame shortstop!",
+    "emoji": "\u26be",
+    "funFact": "According to Biography.com, Honus Wagner won eight National League batting titles and his T206 baseball card sold for over $6 million!",
+    "who1": "Johannes Peter 'Honus' Wagner, nicknamed 'The Flying Dutchman,' was an American baseball shortstop who played 21 MLB seasons.",
+    "who2": "Honus Wagner was born in Chartiers, Pennsylvania, on February 24, 1874, working in coal mines before joining the Pittsburgh Pirates.",
+    "timeline": [
+      "1874 - Born in Chartiers, Pennsylvania on February 24",
+      "1909 - Led Pittsburgh Pirates to World Series victory",
+      "1936 - Elected as one of the inaugural five members of the Baseball Hall of Fame"
+    ]
+  },
+  {
+    "id": "feb-25-pierre-renoir",
+    "month": "February",
+    "day": "February 25",
+    "dayNum": 25,
+    "title": "Pierre Renoir b. 1841 (painter)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 25, 1841, Impressionist painter master!",
+    "emoji": "\ud83c\udfa8",
+    "funFact": "According to Biography.com, Pierre-Auguste Renoir painted vibrantly lit portraits and outdoor scenes, including 'Bal du moulin de la Galette'!",
+    "who1": "Pierre-Auguste Renoir was a leading French artist in the development of the Impressionist style.",
+    "who2": "Renoir was born in Limoges, France, on February 25, 1841, studying painting at the \u00c9cole des Beaux-Arts in Paris.",
+    "timeline": [
+      "1841 - Born in Limoges, France on February 25",
+      "1876 - Painted Impressionist masterpiece 'Bal du moulin de la Galette'",
+      "1919 - Passed away in Cagnes-sur-Mer, France"
+    ]
+  },
+  {
+    "id": "feb-26-grand-canyon-park",
+    "month": "February",
+    "day": "February 26",
+    "dayNum": 26,
+    "title": "Grand Canyon National Park established 1919",
+    "type": "Event / Landmark (Wikipedia)",
+    "connection": "Established by President Woodrow Wilson on February 26, 1919!",
+    "emoji": "\ud83c\udfde\ufe0f",
+    "funFact": "According to Wikipedia, the Grand Canyon is 277 miles long, up to 18 miles wide, and over a mile deep, carved by the Colorado River!",
+    "who1": "Grand Canyon National Park is a world-famous U.S. national park in Arizona preserving the massive mile-deep Grand Canyon.",
+    "who2": "The park was established when President Woodrow Wilson signed the Grand Canyon National Park Act on February 26, 1919.",
+    "timeline": [
+      "1908 - President Theodore Roosevelt establishes Grand Canyon National Monument",
+      "1919 - President Woodrow Wilson signs act granting National Park status on February 26",
+      "1979 - Designated a UNESCO World Heritage Site"
+    ]
+  },
+  {
+    "id": "feb-27-longfellow",
+    "month": "February",
+    "day": "February 27",
+    "dayNum": 27,
+    "title": "Henry Wadsworth Longfellow b. 1807 (poet and writer)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 27, 1807, author of 'Paul Revere's Ride'!",
+    "emoji": "\ud83d\udcdc",
+    "funFact": "According to Biography.com, Longfellow wrote famous poems 'Paul Revere's Ride' and 'The Song of Hiawatha'!",
+    "who1": "Henry Wadsworth Longfellow was an American poet and educator whose works include 'Paul Revere's Ride' and 'The Song of Hiawatha.'",
+    "who2": "Longfellow was born in Portland, Maine, on February 27, 1807, studying at Bowdoin College and Harvard University.",
+    "timeline": [
+      "1807 - Born in Portland, Maine on February 27",
+      "1855 - Published epic poem 'The Song of Hiawatha'",
+      "1860 - Published famous poem 'Paul Revere's Ride'"
+    ]
+  },
+  {
+    "id": "feb-28-linus-pauling",
+    "month": "February",
+    "day": "February 28",
+    "dayNum": 28,
+    "title": "Linus Pauling b. 1901 (physicist and chemist)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 28, 1901, 2-time unshared Nobel Prize winner!",
+    "emoji": "\ud83e\uddea",
+    "funFact": "According to Biography.com, Linus Pauling is the only person to win two unshared Nobel Prizes (Chemistry 1954, Peace 1962)!",
+    "who1": "Linus Carl Pauling was an American chemist, biochemist, peace activist, and author who pioneered quantum chemistry and molecular biology.",
+    "who2": "Linus Pauling was born in Portland, Oregon, on February 28, 1901, earning his doctorate at Caltech.",
+    "timeline": [
+      "1901 - Born in Portland, Oregon on February 28",
+      "1954 - Awarded Nobel Prize in Chemistry for research on chemical bonds",
+      "1962 - Awarded Nobel Peace Prize for campaigning against nuclear weapons"
+    ]
+  },
+  {
+    "id": "feb-28-republican-party",
+    "month": "February",
+    "day": "February 28",
+    "dayNum": 28,
+    "title": "Republican Party founded 1854",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Founded in Ripon, Wisconsin, in 1854!",
+    "emoji": "\ud83d\udc18",
+    "funFact": "According to Wikipedia, the Republican Party was founded by anti-slavery activists opposed to the Kansas-Nebraska Act!",
+    "who1": "The Republican Party (GOP) is one of the two major contemporary political parties in the United States, founded in 1854.",
+    "who2": "The party was established at a schoolhouse meeting in Ripon, Wisconsin, on February 28, 1854, to oppose the expansion of slavery.",
+    "timeline": [
+      "1854 - Anti-slavery advocates establish party in Ripon, Wisconsin",
+      "1860 - Abraham Lincoln elected first Republican U.S. President"
+    ]
+  },
+  {
+    "id": "feb-29-leap-year-day",
+    "month": "February",
+    "day": "February 29",
+    "dayNum": 29,
+    "title": "Leap Year Day",
+    "type": "Event / Culture (Wikipedia)",
+    "connection": "Occurs every 4 years on February 29!",
+    "emoji": "\ud83d\udcc5",
+    "funFact": "According to Wikipedia, a leap year has 366 days instead of 365 to keep our calendar synchronized with Earth's orbit around the Sun!",
+    "who1": "Leap Year Day is an intercalary calendar date added to February every four years to align the calendar with Earth's solar orbit.",
+    "who2": "Leap years were introduced by Julius Caesar in the Julian calendar in 45 BC and refined by Pope Gregory XIII in 1582.",
+    "timeline": [
+      "45 BC - Julius Caesar introduces leap years to the calendar",
+      "1582 - Gregorian calendar reform establishes modern leap year rules"
+    ]
+  },
+  {
+    "id": "feb-29-grand-teton-park",
+    "month": "February",
+    "day": "February 29",
+    "dayNum": 29,
+    "title": "Grand Teton National Park established 1929",
+    "type": "Event / Landmark (Wikipedia)",
+    "connection": "Established by President Coolidge on February 26/29, 1929!",
+    "emoji": "\ud83c\udfd4\ufe0f",
+    "funFact": "According to Wikipedia, Grand Teton National Park protects 310,000 acres of Wyoming wilderness and the Teton mountain range!",
+    "who1": "Grand Teton National Park is an American national park in northwestern Wyoming preserving mountain peaks, lakes, and wildlife.",
+    "who2": "The park was established when President Calvin Coolidge signed executive legislation in February 1929.",
+    "timeline": [
+      "1929 - Signed into federal law establishing Grand Teton National Park",
+      "1950 - Park expanded by Congress incorporating Jackson Hole National Monument"
+    ]
+  },
+  {
+    "id": "feb-29-mario-andretti",
+    "month": "February",
+    "day": "February 29",
+    "dayNum": 29,
+    "title": "Mario Andretti b. 1940 (race car driver)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 28/29, 1940, racing legend!",
+    "emoji": "\ud83c\udfce\ufe0f",
+    "funFact": "According to Biography.com, Mario Andretti is the only driver to win the Daytona 500, Indianapolis 500, and Formula One World Championship!",
+    "who1": "Mario Gabriele Andretti is an Italian-born American former racing driver who is one of the most successful drivers in motorsport history.",
+    "who2": "Mario Andretti was born in Montona, Italy, on February 28, 1940, emigrating to Nazareth, Pennsylvania, at age fifteen.",
+    "timeline": [
+      "1940 - Born in Montona, Italy",
+      "1967 - Won the Daytona 500 stock car race",
+      "1969 - Won the Indianapolis 500 open-wheel race",
+      "1978 - Won the Formula One World Championship"
+    ]
+  }
+];
 
-  const ALL_RAW_TOPICS = [...RAW_OCTOBER_DATA, ...RAW_NOVEMBER_DATA, ...RAW_JANUARY_DATA];
+  const ALL_RAW_TOPICS = [...RAW_OCTOBER_DATA, ...RAW_NOVEMBER_DATA, ...RAW_JANUARY_DATA, ...RAW_FEBRUARY_DATA];
   const TOPICS_DB = ALL_RAW_TOPICS.map(t => {
     const articles = buildArticlesForTopic(t);
     return Object.assign({}, t, articles);
@@ -2907,7 +3753,7 @@
       topicCardsGrid.innerHTML = `
         <div style="grid-column:1/-1; background:rgba(255,255,255,0.08); padding:1.5rem; border-radius:14px; color:white; text-align:center;">
           <p style="font-size:1.1rem; font-weight:700;">No pre-populated topics found for ${selectedMonth}.</p>
-          <p style="font-size:0.9rem; color:#94a3b8; margin-top:0.4rem;">Select "October", "November", or "January" to view extracted calendar topics!</p>
+          <p style="font-size:0.9rem; color:#94a3b8; margin-top:0.4rem;">Select "October", "November", "January", or "February" to view extracted calendar topics!</p>
         </div>
       `;
       return;
