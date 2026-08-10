@@ -63,7 +63,7 @@
       `Records from ${sourceName} document the specific challenges faced during the early years of development.`,
       `Overcoming early financial, social, or technical obstacles required extraordinary resilience and creative problem-solving.`,
       `Collaborations with skilled partners and advisors helped refine early ideas into successful realities.`,
-      `Initial public demonstrations and early milestones attracted widespread attention from community leaders.`,
+      `Initial public demonstrations attracted widespread attention from community leaders.`,
       `These early breakthroughs paved the way for larger national and international achievements.`,
       `The success of these early endeavors demonstrated the power of persistence and focused effort.`
     ];
@@ -6414,23 +6414,33 @@
     return Object.assign({}, t, articles);
   });
 
-  let activeStudentName = localStorage.getItem("talking_cal_student") || "Guest Student";
-  let activeTopic = TOPICS_DB[0];
+  let activeStudentName = localStorage.getItem("talking_cal_student") || "Adalie G";
+  let activeTopic = null;
+  let selectedTopicObj = null;
   let activeArticleIndex = 1;
   let isChallengeModeActive = false;
-  let selectedMonth = "all";
+  let selectedMonth = "January";
   let selectedSentencesList = [];
   let currentAudioUtterance = null;
   let savedSubmissions = JSON.parse(localStorage.getItem("talking_cal_submissions") || "[]");
 
+  // DOM Elements
+  const welcomeView = document.getElementById("welcomeView");
+  const workbenchView = document.getElementById("workbenchView");
+  const studentSelect = document.getElementById("studentSelect");
+  const monthSelect = document.getElementById("monthSelect");
+  const topicSearchInput = document.getElementById("topicSearchInput");
+  const welcomeTopicChipsGrid = document.getElementById("welcomeTopicChipsGrid");
+  const chipsHeaderTitle = document.getElementById("chipsHeaderTitle");
+  const chipsCountDisplay = document.getElementById("chipsCountDisplay");
+  const launchStudioBtn = document.getElementById("launchStudioBtn");
+  const launchBtnText = document.getElementById("launchBtnText");
+  const backToTopicsBtn = document.getElementById("backToTopicsBtn");
+  const homeLogoBtn = document.getElementById("homeLogoBtn");
+
   const userNameDisplay = document.getElementById("userNameDisplay");
   const userAvatar = document.getElementById("userAvatar");
-  const changeUserBtn = document.getElementById("changeUserBtn");
   const teacherLoginBtn = document.getElementById("teacherLoginBtn");
-  const monthChipsContainer = document.getElementById("monthChipsContainer");
-  const topicSearchInput = document.getElementById("topicSearchInput");
-  const topicCardsGrid = document.getElementById("topicCardsGrid");
-  const topicGridTitle = document.getElementById("topicGridTitle");
 
   const graphicIconWrap = document.getElementById("graphicIconWrap");
   const topicTypeTag = document.getElementById("topicTypeTag");
@@ -6458,11 +6468,6 @@
   const saveProgressBtn = document.getElementById("saveProgressBtn");
   const printWorksheetBtn = document.getElementById("printWorksheetBtn");
 
-  const studentLoginModal = document.getElementById("studentLoginModal");
-  const studentNameInput = document.getElementById("studentNameInput");
-  const saveStudentNameBtn = document.getElementById("saveStudentNameBtn");
-  const closeStudentModalBtn = document.getElementById("closeStudentModalBtn");
-
   const teacherModal = document.getElementById("teacherModal");
   const closeTeacherModalBtn = document.getElementById("closeTeacherModalBtn");
   const teacherAuthSection = document.getElementById("teacherAuthSection");
@@ -6474,10 +6479,10 @@
   const clearSubmissionsBtn = document.getElementById("clearSubmissionsBtn");
 
   function init() {
+    if (studentSelect) studentSelect.value = activeStudentName;
     updateUserDisplay();
-    renderMonthChips();
-    renderTopicGrid();
-    loadTopic(TOPICS_DB[0]);
+
+    renderWelcomeTopicChips();
     attachEventListeners();
   }
 
@@ -6486,71 +6491,118 @@
     if (userAvatar) userAvatar.textContent = activeStudentName.charAt(0).toUpperCase();
   }
 
-  function renderMonthChips() {
-    if (!monthChipsContainer) return;
-    const chips = monthChipsContainer.querySelectorAll(".month-chip");
-    chips.forEach(chip => {
-      chip.addEventListener("click", () => {
-        chips.forEach(c => c.classList.remove("active"));
-        chip.classList.add("active");
-        selectedMonth = chip.getAttribute("data-month");
-        const query = topicSearchInput ? topicSearchInput.value.trim() : "";
-        renderTopicGrid(query);
-      });
-    });
-  }
+  function renderWelcomeTopicChips(filterQuery = "") {
+    if (!welcomeTopicChipsGrid) return;
+    welcomeTopicChipsGrid.innerHTML = "";
 
-  function renderTopicGrid(filterQuery = "") {
-    if (!topicCardsGrid) return;
-    topicCardsGrid.innerHTML = "";
+    const selectedM = monthSelect ? monthSelect.value : "January";
+    selectedMonth = selectedM;
 
     let filtered = TOPICS_DB.filter(t => {
-      const matchMonth = (selectedMonth === "all" || t.month === selectedMonth);
+      const matchMonth = (selectedM === "all" || t.month === selectedM);
       const matchSearch = filterQuery === "" || 
         t.title.toLowerCase().includes(filterQuery.toLowerCase()) || 
         t.connection.toLowerCase().includes(filterQuery.toLowerCase());
       return matchMonth && matchSearch;
     });
 
-    if (filtered.length === 0) {
-      if (topicGridTitle) topicGridTitle.textContent = `🔍 Topics matching "${filterQuery}"`;
-      topicCardsGrid.innerHTML = `
-        <div style="grid-column:1/-1; background:rgba(255,255,255,0.08); padding:1.5rem; border-radius:14px; color:white; text-align:center;">
-          <p style="font-size:1.1rem; font-weight:700;">No pre-populated topics found for ${selectedMonth}.</p>
-          <p style="font-size:0.9rem; color:#94a3b8; margin-top:0.4rem;">Select "October", "November", "December", "January", "February", "March", or "April" to view extracted calendar topics!</p>
-        </div>
-      `;
-      return;
-    }
-
-    if (topicGridTitle) {
-      if (selectedMonth === "all") {
-        topicGridTitle.textContent = `📚 All Extracted Calendar Topics (${filtered.length} Topics)`;
+    if (chipsCountDisplay) chipsCountDisplay.textContent = filtered.length;
+    if (chipsHeaderTitle) {
+      if (selectedM === "all") {
+        chipsHeaderTitle.innerHTML = `📚 All Extracted Topics (<span id="chipsCountDisplay">${filtered.length}</span> Available)`;
       } else {
-        topicGridTitle.textContent = `🗓️ ${selectedMonth} Talking Calendar (${filtered.length} Extracted Topics Available)`;
+        chipsHeaderTitle.innerHTML = `🗓️ ${selectedM} Featured Topics (<span id="chipsCountDisplay">${filtered.length}</span> Available)`;
       }
     }
 
-    filtered.forEach(topic => {
-      const card = document.createElement("div");
-      card.className = `topic-card ${topic.id === activeTopic.id ? "selected" : ""}`;
-      card.innerHTML = `
-        <div>
-          <div class="topic-card-top">
-            <span class="topic-emoji">${topic.emoji}</span>
-            <span class="month-badge-sm">${topic.day || topic.month}</span>
-          </div>
-          <div class="topic-card-title">${topic.title}</div>
-          <div class="topic-card-desc">${topic.connection}</div>
+    if (filtered.length === 0) {
+      welcomeTopicChipsGrid.innerHTML = `
+        <div style="grid-column:1/-1; background:rgba(255,255,255,0.06); padding:1.5rem; border-radius:14px; color:white; text-align:center;">
+          <p style="font-size:1.1rem; font-weight:700;">No topic chips match "${filterQuery}".</p>
+          <p style="font-size:0.9rem; color:#94a3b8; margin-top:0.4rem;">Try searching another keyword or select a different calendar month!</p>
         </div>
       `;
-      card.addEventListener("click", () => {
-        document.querySelectorAll(".topic-card").forEach(c => c.classList.remove("selected"));
-        card.classList.add("selected");
-        loadTopic(topic);
+      disableLaunchButton();
+      return;
+    }
+
+    filtered.forEach(topic => {
+      const chip = document.createElement("div");
+      const isSelected = selectedTopicObj && selectedTopicObj.id === topic.id;
+      chip.className = `welcome-topic-chip ${isSelected ? "selected" : ""}`;
+      chip.innerHTML = `
+        <div class="chip-left">
+          <span class="chip-emoji">${topic.emoji}</span>
+          <div class="chip-info">
+            <span class="chip-title">${topic.title}</span>
+            <span class="chip-date">${topic.day || topic.month} • ${topic.type}</span>
+          </div>
+        </div>
+        <div class="chip-check">${isSelected ? "✓" : ""}</div>
+      `;
+
+      chip.addEventListener("click", () => {
+        document.querySelectorAll(".welcome-topic-chip").forEach(c => {
+          c.classList.remove("selected");
+          const chk = c.querySelector(".chip-check");
+          if (chk) chk.textContent = "";
+        });
+
+        chip.classList.add("selected");
+        const chk = chip.querySelector(".chip-check");
+        if (chk) chk.textContent = "✓";
+
+        selectedTopicObj = topic;
+        enableLaunchButton(topic);
       });
-      topicCardsGrid.appendChild(card);
+
+      welcomeTopicChipsGrid.appendChild(chip);
     });
+
+    if (selectedTopicObj) {
+      const matchingStill = filtered.find(t => t.id === selectedTopicObj.id);
+      if (matchingStill) {
+        enableLaunchButton(matchingStill);
+      } else {
+        disableLaunchButton();
+      }
+    } else {
+      disableLaunchButton();
+    }
+  }
+
+  function enableLaunchButton(topic) {
+    if (!launchStudioBtn) return;
+    launchStudioBtn.disabled = false;
+    if (launchBtnText) launchBtnText.textContent = `Launch Research Studio for "${topic.title}" 🚀`;
+  }
+
+  function disableLaunchButton() {
+    if (!launchStudioBtn) return;
+    launchStudioBtn.disabled = true;
+    if (launchBtnText) launchBtnText.textContent = "Select a Topic Above to Begin";
+  }
+
+  function switchToStudioView() {
+    if (!selectedTopicObj) return;
+    activeTopic = selectedTopicObj;
+
+    if (welcomeView) welcomeView.style.display = "none";
+    if (workbenchView) workbenchView.style.display = "grid";
+    if (backToTopicsBtn) backToTopicsBtn.style.display = "inline-flex";
+
+    loadTopic(activeTopic);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function switchToWelcomeView() {
+    if (workbenchView) workbenchView.style.display = "none";
+    if (welcomeView) welcomeView.style.display = "flex";
+    if (backToTopicsBtn) backToTopicsBtn.style.display = "none";
+
+    stopAudio();
+    renderWelcomeTopicChips(topicSearchInput ? topicSearchInput.value.trim() : "");
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   function loadTopic(topic) {
@@ -6916,6 +6968,44 @@
   }
 
   function attachEventListeners() {
+    if (studentSelect) {
+      studentSelect.addEventListener("change", (e) => {
+        activeStudentName = e.target.value;
+        localStorage.setItem("talking_cal_student", activeStudentName);
+        updateUserDisplay();
+      });
+    }
+
+    if (monthSelect) {
+      monthSelect.addEventListener("change", () => {
+        selectedTopicObj = null;
+        disableLaunchButton();
+        const filterVal = topicSearchInput ? topicSearchInput.value.trim() : "";
+        renderWelcomeTopicChips(filterVal);
+      });
+    }
+
+    if (topicSearchInput) {
+      topicSearchInput.addEventListener("input", (e) => {
+        renderWelcomeTopicChips(e.target.value.trim());
+      });
+    }
+
+    if (launchStudioBtn) {
+      launchStudioBtn.addEventListener("click", switchToStudioView);
+    }
+
+    if (backToTopicsBtn) {
+      backToTopicsBtn.addEventListener("click", switchToWelcomeView);
+    }
+
+    if (homeLogoBtn) {
+      homeLogoBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        switchToWelcomeView();
+      });
+    }
+
     if (challengeModeBtn) {
       challengeModeBtn.addEventListener("click", () => {
         isChallengeModeActive = !isChallengeModeActive;
@@ -6960,12 +7050,6 @@
     attachCopyProtection();
     if (paraphraseInput) paraphraseInput.addEventListener("input", runPlagiarismCheck);
 
-    if (topicSearchInput) {
-      topicSearchInput.addEventListener("input", (e) => {
-        renderTopicGrid(e.target.value.trim());
-      });
-    }
-
     document.querySelectorAll(".starter-chip").forEach(chip => {
       chip.addEventListener("click", () => {
         const starter = chip.getAttribute("data-starter");
@@ -6979,30 +7063,6 @@
 
     if (saveProgressBtn) saveProgressBtn.addEventListener("click", saveStudentWork);
     if (printWorksheetBtn) printWorksheetBtn.addEventListener("click", triggerPrintWorksheet);
-
-    if (changeUserBtn) {
-      changeUserBtn.addEventListener("click", () => {
-        if (studentNameInput) studentNameInput.value = activeStudentName === "Guest Student" ? "" : activeStudentName;
-        if (studentLoginModal) studentLoginModal.classList.add("active");
-      });
-    }
-    if (closeStudentModalBtn) {
-      closeStudentModalBtn.addEventListener("click", () => {
-        if (studentLoginModal) studentLoginModal.classList.remove("active");
-      });
-    }
-    if (saveStudentNameBtn) {
-      saveStudentNameBtn.addEventListener("click", () => {
-        if (!studentNameInput) return;
-        const val = studentNameInput.value.trim();
-        if (val) {
-          activeStudentName = val;
-          localStorage.setItem("talking_cal_student", activeStudentName);
-          updateUserDisplay();
-          if (studentLoginModal) studentLoginModal.classList.remove("active");
-        }
-      });
-    }
 
     if (teacherLoginBtn) {
       teacherLoginBtn.addEventListener("click", () => {

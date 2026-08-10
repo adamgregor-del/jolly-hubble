@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Talking Calendar: Research & Paraphrasing Hub</title>
-  <meta name="description" content="An interactive research hub for students to read dual factual articles, highlight multiple sentences, practice paraphrasing, and create printable calendar project reports.">
+  <meta name="description" content="An interactive research hub for students to select their name, explore monthly topics, compare dual articles, practice paraphrasing, and create printable calendar project reports.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -21,64 +21,108 @@
       </a>
       <div class="nav-actions">
         <div class="user-badge" id="userBadge">
-          <div class="avatar" id="userAvatar">S</div>
-          <span id="userNameDisplay">Student Guest</span>
+          <div class="avatar" id="userAvatar">A</div>
+          <span id="userNameDisplay">Adalie G</span>
         </div>
-        <button class="btn-btn btn-secondary" id="changeUserBtn">👤 Change Name</button>
+        <button class="btn-btn btn-secondary" id="backToTopicsBtn" style="display:none;">👈 Back to Topics</button>
         <button class="btn-btn btn-accent" id="teacherLoginBtn">🔒 Teacher Dashboard</button>
       </div>
     </div>
   </nav>
 
-  <!-- Main Container -->
+  <!-- Main Application Container -->
   <main class="app-container">
 
-    <!-- Hero Header & Month Selector Section -->
-    <section class="hero-section">
-      <div class="hero-header">
-        <h2>Find Your Research Topic & Compare Dual Articles</h2>
-        <p>Select a month to browse featured topics, or type any topic below. Each topic includes <strong>2 complete articles</strong> (4+ paragraphs each) to synthesize into your own writing!</p>
+    <!-- PAGE 1: WELCOME TITLE PAGE (Topic Selection View) -->
+    <section class="welcome-view" id="welcomeView">
+      <div class="welcome-hero">
+        <div class="welcome-badge">🌟 Interactive Student Research Studio</div>
+        <h1 class="welcome-title">Welcome to Talking Calendar!</h1>
+        <p class="welcome-subtitle">Select your name, choose a calendar month, pick a topic, and launch your dual-article research workbench!</p>
       </div>
 
-      <!-- Month Selector Bar -->
-      <div class="month-selector-wrapper">
-        <div class="month-selector-title">
-          <span>🗓️ Select Calendar Month:</span>
-        </div>
-        <div class="month-chips" id="monthChipsContainer">
-          <button class="month-chip active" data-month="all">🌟 All Months <span class="chip-count">343</span></button>
-          <button class="month-chip" data-month="October">🎃 Oct <span class="chip-count">47</span></button>
-          <button class="month-chip" data-month="November">🍁 Nov <span class="chip-count">52</span></button>
-          <button class="month-chip" data-month="December">❄️ Dec <span class="chip-count">51</span></button>
-          <button class="month-chip" data-month="January">❄️ Jan <span class="chip-count">48</span></button>
-          <button class="month-chip" data-month="February">❤️ Feb <span class="chip-count">46</span></button>
-          <button class="month-chip" data-month="March">🌱 Mar <span class="chip-count">47</span></button>
-          <button class="month-chip" data-month="April">🌧️ Apr <span class="chip-count">52</span></button>
-        </div>
-      </div>
+      <!-- Selection Control Panel Card -->
+      <div class="selection-card">
+        <div class="selectors-row">
+          
+          <!-- Student Dropdown -->
+          <div class="selector-group">
+            <label for="studentSelect" class="selector-label">
+              <span class="label-icon">👤</span> Select Student:
+            </label>
+            <select id="studentSelect" class="custom-select">
+              <option value="Adalie G">Adalie G</option>
+              <option value="Adelaide C">Adelaide C</option>
+              <option value="Andie C">Andie C</option>
+              <option value="August K">August K</option>
+              <option value="Avaleen L">Avaleen L</option>
+              <option value="Emmett C">Emmett C</option>
+              <option value="Felipe M">Felipe M</option>
+              <option value="Jalen S">Jalen S</option>
+              <option value="Josephine B">Josephine B</option>
+              <option value="Landon O">Landon O</option>
+              <option value="Lila S">Lila S</option>
+              <option value="Nika A">Nika A</option>
+              <option value="Olivia C">Olivia C</option>
+              <option value="Oscar J">Oscar J</option>
+              <option value="Payton E">Payton E</option>
+              <option value="Samuel T">Samuel T</option>
+              <option value="William R">William R</option>
+            </select>
+          </div>
 
-      <!-- Search Bar -->
-      <div class="search-bar-row">
-        <div class="search-input-group">
-          <span class="search-icon">🔍</span>
-          <input type="text" id="topicSearchInput" placeholder="Filter topics by name or keyword (e.g. Henry Ford, Gandhi, Model T)...">
-        </div>
-        <button class="btn-btn btn-primary" id="searchSubmitBtn">Search Topics</button>
-      </div>
+          <!-- Month Dropdown -->
+          <div class="selector-group">
+            <label for="monthSelect" class="selector-label">
+              <span class="label-icon">🗓️</span> Select Calendar Month:
+            </label>
+            <select id="monthSelect" class="custom-select">
+              <option value="October">🎃 October (47 Topics)</option>
+              <option value="November">🍁 November (52 Topics)</option>
+              <option value="December">❄️ December (51 Topics)</option>
+              <option value="January" selected>❄️ January (48 Topics)</option>
+              <option value="February">❤️ February (46 Topics)</option>
+              <option value="March">🌱 March (47 Topics)</option>
+              <option value="April">🌧️ April (52 Topics)</option>
+              <option value="all">📚 All Months (343 Topics)</option>
+            </select>
+          </div>
 
-      <!-- Topic Grid Selector -->
-      <div class="topic-grid-section" id="topicGridSection">
-        <div class="topic-grid-header">
-          <h3 id="topicGridTitle">📚 Available Topics for Selected Month</h3>
         </div>
-        <div class="topic-cards-grid" id="topicCardsGrid">
-          <!-- Dynamic Topic Cards Populated by JS -->
+
+        <!-- Topic Search Filter Input -->
+        <div class="topic-search-row">
+          <div class="search-input-group">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="topicSearchInput" placeholder="Filter topics by title or keyword (e.g. Edison, Gold Rush, Lincoln)...">
+          </div>
         </div>
+
+        <!-- Topic Chips Selection Container -->
+        <div class="topic-chips-wrapper">
+          <div class="topic-chips-header">
+            <h3 id="chipsHeaderTitle">❄️ January Featured Topics (<span id="chipsCountDisplay">48</span> Available)</h3>
+            <span class="chips-subtext">Click any topic chip below to select it:</span>
+          </div>
+
+          <div class="topic-chips-grid" id="welcomeTopicChipsGrid">
+            <!-- Dynamic Topic Chips Populated by JS -->
+          </div>
+        </div>
+
+        <!-- Submit Launch Button -->
+        <div class="submit-action-row">
+          <button class="btn-launch" id="launchStudioBtn" disabled>
+            <span class="launch-icon">🚀</span>
+            <span id="launchBtnText">Select a Topic Above to Begin</span>
+          </button>
+        </div>
+
       </div>
     </section>
 
-    <!-- Main Workbench View (Article Reader + Paraphrase Studio) -->
-    <section class="workbench-layout" id="workbenchLayout">
+    <!-- PAGE 2: RESEARCH STUDIO VIEW (Articles & Paraphrase Workbench) -->
+    <section class="workbench-layout" id="workbenchView" style="display: none;">
       
       <!-- Article Card (Left Side) -->
       <article class="article-card" id="articleCard">
@@ -124,7 +168,7 @@
             📄 Article 1: Impact & Real-World Legacy
           </button>
           <button class="article-tab-btn" id="tabArticle2">
-            📄 Article 2: Historical Origins & Overview
+            📄 Article 2: Historical Origins & History
           </button>
         </div>
 
@@ -230,21 +274,6 @@
     </section>
 
   </main>
-
-  <!-- Student Name Modal -->
-  <div class="modal-overlay" id="studentLoginModal">
-    <div class="modal-card">
-      <div class="modal-header">
-        <h3>👋 Welcome to Talking Calendar!</h3>
-        <button class="close-modal-btn" id="closeStudentModalBtn">&times;</button>
-      </div>
-      <div style="margin-bottom: 1.5rem;">
-        <p style="color:#475569; margin-bottom: 1rem;">Please enter your first name so your teacher can find your research work later:</p>
-        <input type="text" id="studentNameInput" placeholder="Enter your first name (e.g. Maya)..." style="width:100%; padding:0.9rem; border-radius:12px; border:2px solid #cbd5e1; font-size:1.1rem; outline:none;">
-      </div>
-      <button class="btn-btn btn-primary" id="saveStudentNameBtn" style="width:100%; justify-center;">Start Researching 🚀</button>
-    </div>
-  </div>
 
   <!-- Teacher Dashboard Modal -->
   <div class="modal-overlay" id="teacherModal">
