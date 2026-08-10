@@ -1,5 +1,5 @@
 /* Talking Calendar - Dual-Article Research & Paraphrase Hub Engine */
-/* Pre-Populated Featured Topics database containing extracted topics for October, November, January, and February! */
+/* Pre-Populated Featured Topics database containing extracted topics for October, November, December, January, and February! */
 
 (function () {
   'use strict';
@@ -1910,6 +1910,944 @@
     ]
   }
 ];
+  const RAW_DECEMBER_DATA = [
+  {
+    "id": "dec-1-jan-brett",
+    "month": "December",
+    "day": "December 1",
+    "dayNum": 1,
+    "title": "Jan Brett, author (b. 1949)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on December 1, 1949, beloved children's author!",
+    "emoji": "\ud83e\udd94",
+    "funFact": "According to Biography.com, Jan Brett is famous for her intricate border illustrations in books like 'The Mitten'!",
+    "who1": "Jan Brett is an acclaimed American children's book author and illustrator best known for detailed winter picture books such as 'The Mitten' and 'The Hat.'",
+    "who2": "Jan Brett was born in Hingham, Massachusetts, on December 1, 1949, spending hours at the Boston Museum of Fine Arts studying historical art.",
+    "timeline": [
+      "1949 - Born in Hingham, Massachusetts on December 1",
+      "1989 - Published her beloved winter classic 'The Mitten'",
+      "2021 - Over 42 million copies of her books in print worldwide"
+    ]
+  },
+  {
+    "id": "dec-1-madame-tussaud",
+    "month": "December",
+    "day": "December 1",
+    "dayNum": 1,
+    "title": "Madam Tussaud, French wax modeler (b. 1761)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on December 1, 1761, wax museum founder!",
+    "emoji": "\ud83d\uddff",
+    "funFact": "According to Biography.com, Marie Tussaud created wax sculptures of historical figures in Paris before opening her famous London museum in 1835!",
+    "who1": "Marie Tussaud, known as Madame Tussaud, was a French artist and sculptor who founded Madame Tussauds wax museum in London.",
+    "who2": "Marie Tussaud was born Marie Grosholtz in Strasbourg, France, on December 1, 1761, learning wax modeling from Dr. Philippe Curtius.",
+    "timeline": [
+      "1761 - Born in Strasbourg, France on December 1",
+      "1777 - Sculpted her first wax figure of Voltaire",
+      "1835 - Established permanent wax museum on Baker Street in London"
+    ]
+  },
+  {
+    "id": "dec-2-georges-seurat",
+    "month": "December",
+    "day": "December 2",
+    "dayNum": 2,
+    "title": "Georges Seurat, artist (b. 1859)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on December 2, 1859, pioneer of Pointillism!",
+    "emoji": "\ud83c\udfa8",
+    "funFact": "According to Biography.com, Georges Seurat painted 'A Sunday on La Grande Jatte' using millions of tiny painted dots!",
+    "who1": "Georges-Pierre Seurat was a French Post-Impressionist painter who devised the innovative painting techniques of Chromoluminarism and Pointillism.",
+    "who2": "Georges Seurat was born in Paris on December 2, 1859, studying drawing at the \u00c9cole des Beaux-Arts.",
+    "timeline": [
+      "1859 - Born in Paris, France on December 2",
+      "1886 - Exhibited monumental Pointillist masterpiece 'A Sunday on La Grande Jatte'",
+      "1891 - Passed away in Paris leaving a landmark legacy in modern art"
+    ]
+  },
+  {
+    "id": "dec-3-katarina-witt",
+    "month": "December",
+    "day": "December 3",
+    "dayNum": 3,
+    "title": "Katarina Witt, figure skater (b. 1965)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on December 3, 1965, 2-time Olympic figure skating champion!",
+    "emoji": "\u26f8\ufe0f",
+    "funFact": "According to Biography.com, Katarina Witt won consecutive Olympic gold medals in figure skating in 1984 and 1988!",
+    "who1": "Katarina Witt is a German former competitive figure skater who won two Olympic gold medals, four World Championships, and six European titles.",
+    "who2": "Katarina Witt was born in Staaken, East Germany, on December 3, 1965, training under renowned coach Jutta M\u00fcller.",
+    "timeline": [
+      "1965 - Born in Staaken, East Germany on December 3",
+      "1984 - Won first Olympic gold medal in Sarajevo",
+      "1988 - Retained her Olympic title in Calgary winning second gold medal",
+      "1995 - Inducted into the World Figure Skating Hall of Fame"
+    ]
+  },
+  {
+    "id": "dec-4-iss-launched",
+    "month": "December",
+    "day": "December 4",
+    "dayNum": 4,
+    "title": "International Space Station launched (1998)",
+    "type": "Event / Space (Wikipedia)",
+    "connection": "First U.S. module Unity launched on December 4, 1998!",
+    "emoji": "\ud83d\udef0\ufe0f",
+    "funFact": "According to Wikipedia, the ISS orbits Earth every 90 minutes at 17,500 mph and has been continuously inhabited since November 2000!",
+    "who1": "The International Space Station (ISS) is a modular space station in low Earth orbit built by an international partnership of space agencies.",
+    "who2": "Construction began in orbit when Space Shuttle Endeavour launched the Unity node module on December 4, 1998, connecting with Zarya.",
+    "timeline": [
+      "1998 - Space Shuttle Endeavour launches Unity node module on December 4",
+      "2000 - Expedition 1 arrives, marking continuous human residency",
+      "2010 - ISS station construction completed"
+    ]
+  },
+  {
+    "id": "dec-5-phillis-wheatley",
+    "month": "December",
+    "day": "December 5",
+    "dayNum": 5,
+    "title": "Phyllis Wheatley, poet (died 1784)",
+    "type": "Person (Biography.com)",
+    "connection": "Passed away on December 5, 1784, 1st African American published poet!",
+    "emoji": "\ud83d\udcdc",
+    "funFact": "According to Biography.com, Phillis Wheatley published her poetry book in 1773, praised by George Washington and Voltaire!",
+    "who1": "Phillis Wheatley was the first African American author to publish a book of poetry, establishing the African American literary tradition.",
+    "who2": "Phillis Wheatley was born in West Africa around 1753, enslaved and brought to Boston before learning to read and write English, Greek, and Latin.",
+    "timeline": [
+      "c. 1753 - Born in West Africa",
+      "1773 - Published 'Poems on Various Subjects, Religious and Moral' in London",
+      "1784 - Passed away in Boston on December 5"
+    ]
+  },
+  {
+    "id": "dec-5-walt-disney",
+    "month": "December",
+    "day": "December 5",
+    "dayNum": 5,
+    "title": "Walt Disney, animator and filmmaker (b. 1901)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on December 5, 1901, animation & theme park legend!",
+    "emoji": "\ud83c\udff0",
+    "funFact": "According to Biography.com, Walt Disney won 22 Academy Awards and created Mickey Mouse, Disneyland, and Walt Disney World!",
+    "who1": "Walter Elias Disney was an American animator, film producer, and entrepreneur who revolutionized entertainment and theme park design.",
+    "who2": "Walt Disney was born in Chicago, Illinois, on December 5, 1901, taking drawing classes at the Kansas City Art Institute.",
+    "timeline": [
+      "1901 - Born in Chicago, Illinois on December 5",
+      "1928 - Created Mickey Mouse in 'Steamboat Willie'",
+      "1937 - Released 'Snow White and the Seven Dwarfs,' the first full-length animated film",
+      "1955 - Opened Disneyland theme park in Anaheim, California"
+    ]
+  },
+  {
+    "id": "dec-5-togo",
+    "month": "December",
+    "day": "December 5",
+    "dayNum": 5,
+    "title": "Togo, sled dog hero (died 1929)",
+    "type": "Event / Culture (Wikipedia)",
+    "connection": "Passed away on December 5, 1929, 1925 Serum Run lead dog!",
+    "emoji": "\ud83d\udc15",
+    "funFact": "According to Wikipedia, Togo led Leonhard Seppala's sled dog team across 260 miles of dangerous Alaskan ice during the 1925 Serum Run!",
+    "who1": "Togo was a Siberian Husky lead sled dog owned by musher Leonhard Seppala who ran the longest and most hazardous leg of the 1925 Serum Run to Nome.",
+    "who2": "Togo was born in Nome, Alaska, in 1913, overcoming small size to become Seppala's most reliable lead sled dog.",
+    "timeline": [
+      "1913 - Born in Nome, Alaska",
+      "1925 - Led sled team 260 miles through blizzard conditions during Nome Serum Run",
+      "1929 - Passed away in Poland, Maine on December 5",
+      "2019 - Honored with a bronze statue in New York City's Seward Park"
+    ]
+  },
+  {
+    "id": "dec-6-13th-amendment",
+    "month": "December",
+    "day": "December 6",
+    "dayNum": 6,
+    "title": "13th Amendment ratified abolishing slavery (1865)",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Ratified on December 6, 1865, abolishing slavery!",
+    "emoji": "\ud83d\udcdc",
+    "funFact": "According to Wikipedia, the 13th Amendment officially abolished slavery and involuntary servitude throughout the entire United States!",
+    "who1": "The 13th Amendment to the United States Constitution officially abolished slavery and involuntary servitude across the American nation.",
+    "who2": "The amendment passed Congress in January 1865 and achieved final constitutional ratification by three-fourths of states on December 6, 1865.",
+    "timeline": [
+      "1865 - Passed by U.S. Congress in January",
+      "1865 - Ratified when Georgia becomes 27th state to approve it on December 6",
+      "1865 - Officially proclaimed part of the U.S. Constitution on December 18"
+    ]
+  },
+  {
+    "id": "dec-6-ira-gershwin",
+    "month": "December",
+    "day": "December 6",
+    "dayNum": 6,
+    "title": "Ira Gershwin, lyricist (b. 1896)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on December 6, 1896, Broadway lyricist icon!",
+    "emoji": "\ud83c\udfbc",
+    "funFact": "According to Biography.com, Ira Gershwin wrote famous Broadway song lyrics alongside his brother George, including 'I Got Rhythm'!",
+    "who1": "Ira Gershwin was an American lyricist who collaborated with his younger brother George Gershwin to create some of the most memorable songs of the 20th century.",
+    "who2": "Ira Gershwin was born Israel Gershovitz in New York City on December 6, 1896, attending City College of New York.",
+    "timeline": [
+      "1896 - Born in New York City on December 6",
+      "1924 - Co-created Broadway hit musical 'Lady, Be Good!'",
+      "1932 - Awarded Pulitzer Prize for Drama for 'Of Thee I Sing'",
+      "1983 - Passed away in Beverly Hills, California"
+    ]
+  },
+  {
+    "id": "dec-7-pearl-harbor-day",
+    "month": "December",
+    "day": "December 7",
+    "dayNum": 7,
+    "title": "Pearl Harbor Day (1941)",
+    "type": "Event / History (Wikipedia)",
+    "connection": "National Pearl Harbor Remembrance Day on December 7!",
+    "emoji": "\ud83c\uddfa\ud83c\uddf8",
+    "funFact": "According to Wikipedia, President Franklin D. Roosevelt declared December 7, 1941, 'a date which will live in infamy'!",
+    "who1": "National Pearl Harbor Remembrance Day commemorates the surprise military attack on the U.S. naval base at Pearl Harbor, Hawaii, on December 7, 1941.",
+    "who2": "The attack damaged U.S. Pacific Fleet battleships and prompted the United States to formally enter World War II.",
+    "timeline": [
+      "1941 - Surprise attack on Pearl Harbor naval base occurs on December 7",
+      "1941 - President Roosevelt delivers 'Infamy Speech' requesting war declaration",
+      "1994 - U.S. Congress designates December 7 as annual National Pearl Harbor Remembrance Day"
+    ]
+  },
+  {
+    "id": "dec-7-larry-bird",
+    "month": "December",
+    "day": "December 7",
+    "dayNum": 7,
+    "title": "Larry Bird, basketball player (b. 1956)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on December 7, 1956, 3-time NBA champion!",
+    "emoji": "\ud83c\udfc0",
+    "funFact": "According to Biography.com, Larry Bird won three consecutive NBA MVP awards and led the Boston Celtics to three championships!",
+    "who1": "Larry Joe Bird is an American former professional basketball player and executive who led the Boston Celtics to three NBA titles.",
+    "who2": "Larry Bird was born in West Baden Springs, Indiana, on December 7, 1956, leading Indiana State University to the 1979 NCAA title game.",
+    "timeline": [
+      "1956 - Born in West Baden Springs, Indiana on December 7",
+      "1981, 1984, 1986 - Won three NBA Championships with Boston Celtics",
+      "1984, 1985, 1986 - Won three consecutive NBA Most Valuable Player awards",
+      "1992 - Won Olympic gold medal as member of the iconic 'Dream Team'"
+    ]
+  },
+  {
+    "id": "dec-8-eli-whitney",
+    "month": "December",
+    "day": "December 8",
+    "dayNum": 8,
+    "title": "Eli Whitney, inventor of cotton gin (b. 1765)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on December 8, 1765, cotton gin inventor!",
+    "emoji": "\u2699\ufe0f",
+    "funFact": "According to Biography.com, Eli Whitney invented the cotton gin in 1793 and pioneered interchangeable parts in manufacturing!",
+    "who1": "Eli Whitney was an American inventor best known for inventing the cotton gin and promoting interchangeable parts in mass production.",
+    "who2": "Eli Whitney was born in Westborough, Massachusetts, on December 8, 1765, graduating from Yale College.",
+    "timeline": [
+      "1765 - Born in Westborough, Massachusetts on December 8",
+      "1793 - Invented the cotton gin revolutionizing Southern agriculture",
+      "1798 - Secured U.S. military contract pioneering interchangeable musket parts"
+    ]
+  },
+  {
+    "id": "dec-8-ec-segar",
+    "month": "December",
+    "day": "December 8",
+    "dayNum": 8,
+    "title": "Elzie Crisler Segar, creator of Popeye (b. 1894)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on December 8, 1894, creator of Popeye!",
+    "emoji": "\u2693",
+    "funFact": "According to Biography.com, E.C. Segar created Popeye the Sailor Man in 1929, making spinach famous nationwide!",
+    "who1": "Elzie Crisler Segar was an American cartoonist best known as the creator of Popeye the Sailor Man.",
+    "who2": "E.C. Segar was born in Chester, Illinois, on December 8, 1894, working as a film projectionist before moving to Chicago.",
+    "timeline": [
+      "1894 - Born in Chester, Illinois on December 8",
+      "1919 - Created 'Thimble Theatre' comic strip",
+      "1929 - Introduced Popeye the Sailor Man character into his comic strip",
+      "1938 - Passed away in Santa Monica, California"
+    ]
+  },
+  {
+    "id": "dec-9-petrified-forest",
+    "month": "December",
+    "day": "December 9",
+    "dayNum": 9,
+    "title": "Petrified Forest National Park established (1962)",
+    "type": "Event / Landmark (Wikipedia)",
+    "connection": "Established as national park on December 9, 1962!",
+    "emoji": "\ud83e\udeb5",
+    "funFact": "According to Wikipedia, Petrified Forest National Park contains 225-million-year-old fossilized wood logs and Painted Desert vistas!",
+    "who1": "Petrified Forest National Park is an American national park in northeastern Arizona featuring large deposits of petrified wood and Triassic fossils.",
+    "who2": "The area was designated a national monument by President Theodore Roosevelt in 1906 before Congress granted National Park status on December 9, 1962.",
+    "timeline": [
+      "1906 - Designated National Monument by President Theodore Roosevelt",
+      "1962 - Granted official National Park status on December 9",
+      "2004 - Park boundaries expanded to encompass over 221,000 acres"
+    ]
+  },
+  {
+    "id": "dec-10-emily-dickinson",
+    "month": "December",
+    "day": "December 10",
+    "dayNum": 10,
+    "title": "Emily Dickenson, poet (b. 1830)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on December 10, 1830, American poetry icon!",
+    "emoji": "\ud83e\udeb6",
+    "funFact": "According to Biography.com, Emily Dickinson wrote nearly 1,800 poems in private, but fewer than ten were published during her lifetime!",
+    "who1": "Emily Dickinson was an iconic American poet whose innovative slant rhyme, short lines, and unconventional punctuation reshaped modern poetry.",
+    "who2": "Emily Dickinson was born in Amherst, Massachusetts, on December 10, 1830, studying at Amherst Academy and Mount Holyoke Female Seminary.",
+    "timeline": [
+      "1830 - Born in Amherst, Massachusetts on December 10",
+      "1862 - Initiated correspondence with literary critic Thomas Wentworth Higginson",
+      "1886 - Passed away in Amherst leaving nearly 1,800 manuscript poems",
+      "1890 - First complete collection of her poems published posthumously"
+    ]
+  },
+  {
+    "id": "dec-10-red-cloud",
+    "month": "December",
+    "day": "December 10",
+    "dayNum": 10,
+    "title": "Red Cloud, Sioux Indian Chief (died 1909)",
+    "type": "Person (Biography.com)",
+    "connection": "Passed away on December 10, 1909, Oglala Lakota Chief!",
+    "emoji": "\ud83e\udeb6",
+    "funFact": "According to Biography.com, Red Cloud led his people in 'Red Cloud's War,' forcing the U.S. government to sign the 1868 Treaty of Fort Laramie!",
+    "who1": "Red Cloud was a prominent leader and war chief of the Oglala Lakota nation who successfully defended Native lands in Wyoming and Montana.",
+    "who2": "Red Cloud was born near the Blue Water Creek in Nebraska around 1822, rising to tribal leadership through bravery and military skill.",
+    "timeline": [
+      "c. 1822 - Born near Blue Water Creek, Nebraska",
+      "1866-1868 - Led successful military campaign 'Red Cloud's War' against U.S. forts",
+      "1868 - Signed Treaty of Fort Laramie securing the Great Sioux Reservation",
+      "1909 - Passed away at Pine Ridge Reservation on December 10"
+    ]
+  },
+  {
+    "id": "dec-11-john-kerry",
+    "month": "December",
+    "day": "December 11",
+    "dayNum": 11,
+    "title": "John Kerry, U.S. Secretary of State (b. 1943)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on December 11, 1943, Secretary of State & Senator!",
+    "emoji": "\ud83c\udfdb\ufe0f",
+    "funFact": "According to Biography.com, John Kerry served 28 years in the U.S. Senate, ran for president in 2004, and served as 68th U.S. Secretary of State!",
+    "who1": "John Forbes Kerry is an American politician and diplomat who served as the 68th U.S. Secretary of State and longtime U.S. Senator from Massachusetts.",
+    "who2": "John Kerry was born in Aurora, Colorado, on December 11, 1943, graduating from Yale University and serving as a naval officer in Vietnam.",
+    "timeline": [
+      "1943 - Born in Aurora, Colorado on December 11",
+      "1985-2013 - Served as U.S. Senator from Massachusetts",
+      "2004 - Nominated as Democratic candidate for U.S. President",
+      "2013-2017 - Served as 68th U.S. Secretary of State"
+    ]
+  },
+  {
+    "id": "dec-11-unicef",
+    "month": "December",
+    "day": "December 11",
+    "dayNum": 11,
+    "title": "UNICEF established (1946)",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Created by UN General Assembly on December 11, 1946!",
+    "emoji": "\ud83c\uddfa\ud83c\uddf3",
+    "funFact": "According to Wikipedia, UNICEF was awarded the Nobel Peace Prize in 1965 for promoting brotherhood among nations!",
+    "who1": "UNICEF (United Nations International Children's Emergency Fund) is a UN agency providing humanitarian and developmental aid to children worldwide.",
+    "who2": "UNICEF was created by the UN General Assembly in New York on December 11, 1946, to assist children in post-WWII Europe and China.",
+    "timeline": [
+      "1946 - Established by UN General Assembly on December 11",
+      "1953 - Made a permanent part of the United Nations system",
+      "1965 - Awarded the Nobel Peace Prize"
+    ]
+  },
+  {
+    "id": "dec-12-tracy-austin",
+    "month": "December",
+    "day": "December 12",
+    "dayNum": 12,
+    "title": "Tracy Austin, tennis player (b. 1962)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on December 12, 1962, youngest U.S. Open champion!",
+    "emoji": "\ud83c\udfbe",
+    "funFact": "According to Biography.com, Tracy Austin won the U.S. Open singles title at age 16, becoming the youngest champion in U.S. Open history!",
+    "who1": "Tracy Ann Austin is an American former world No. 1 professional tennis player who won two U.S. Open singles championships.",
+    "who2": "Tracy Austin was born in Palos Verdes, California, on December 12, 1962, turning professional at age fifteen.",
+    "timeline": [
+      "1962 - Born in Palos Verdes, California on December 12",
+      "1979 - Won U.S. Open singles title at age sixteen",
+      "1981 - Won her second U.S. Open singles title",
+      "1992 - Inducted into the International Tennis Hall of Fame"
+    ]
+  },
+  {
+    "id": "dec-12-john-jay",
+    "month": "December",
+    "day": "December 12",
+    "dayNum": 12,
+    "title": "John Jay, First Chief Justice of the Supreme Court (b. 1745)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on December 12, 1745, 1st U.S. Chief Justice!",
+    "emoji": "\u2696\ufe0f",
+    "funFact": "According to Biography.com, John Jay co-authored the Federalist Papers and negotiated Jay's Treaty with Great Britain!",
+    "who1": "John Jay was an American statesman, diplomat, Founding Father, and the first Chief Justice of the United States Supreme Court.",
+    "who2": "John Jay was born in New York City on December 12, 1745, graduating from King's College and practicing law.",
+    "timeline": [
+      "1745 - Born in New York City on December 12",
+      "1787 - Co-authored the Federalist Papers defending the U.S. Constitution",
+      "1789-1795 - Served as first Chief Justice of the United States Supreme Court",
+      "1795-1801 - Served as Governor of New York State"
+    ]
+  },
+  {
+    "id": "dec-13-mary-todd-lincoln",
+    "month": "December",
+    "day": "December 13",
+    "dayNum": 13,
+    "title": "Mary Todd Lincoln, wife of Abraham Lincoln (b. 1818)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on December 13, 1818, First Lady of U.S.!",
+    "emoji": "\ud83c\udf1f",
+    "funFact": "According to Biography.com, Mary Todd Lincoln was fluent in French, educated in literature, and served as First Lady during the Civil War!",
+    "who1": "Mary Ann Todd Lincoln was the First Lady of the United States from 1861 to 1865 as the wife of 16th U.S. President Abraham Lincoln.",
+    "who2": "Mary Todd was born into a wealthy family in Lexington, Kentucky, on December 13, 1818, studying literature and French.",
+    "timeline": [
+      "1818 - Born in Lexington, Kentucky on December 13",
+      "1842 - Married Abraham Lincoln in Springfield, Illinois",
+      "1861-1865 - Served as First Lady during the Civil War",
+      "1882 - Passed away in Springfield, Illinois"
+    ]
+  },
+  {
+    "id": "dec-13-sergei-fedorov",
+    "month": "December",
+    "day": "December 13",
+    "dayNum": 13,
+    "title": "Sergei Federov, hockey player (b. 1969)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on December 13, 1969, 3-time Stanley Cup champion!",
+    "emoji": "\ud83c\udfd2",
+    "funFact": "According to Biography.com, Sergei Fedorov scored 1,179 NHL points and won three Stanley Cups with the Detroit Red Wings!",
+    "who1": "Sergei Viktorovich Fedorov is a Russian former professional ice hockey center who won three Stanley Cup championships with the Detroit Red Wings.",
+    "who2": "Sergei Fedorov was born in Pskov, Soviet Union, on December 13, 1969, playing for CSKA Moscow before joining the NHL.",
+    "timeline": [
+      "1969 - Born in Pskov, Soviet Union on December 13",
+      "1994 - Won Hart Memorial Trophy as NHL Most Valuable Player",
+      "1997, 1998, 2002 - Won three Stanley Cups with Detroit Red Wings",
+      "2015 - Inducted into the Hockey Hall of Fame"
+    ]
+  },
+  {
+    "id": "dec-14-south-pole",
+    "month": "December",
+    "day": "December 14",
+    "dayNum": 14,
+    "title": "South Pole discovered (1911)",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Reached by Roald Amundsen on December 14, 1911!",
+    "emoji": "\ud83e\uddca",
+    "funFact": "According to Wikipedia, Norwegian explorer Roald Amundsen led a 52-dog sled expedition to become the first human to reach the South Pole!",
+    "who1": "The South Pole Discovery occurred on December 14, 1911, when Norwegian explorer Roald Amundsen and his team reached the southernmost point on Earth.",
+    "who2": "Amundsen's expedition departed Framheim base on October 19, 1911, navigating across the Ross Ice Shelf and Transantarctic Mountains.",
+    "timeline": [
+      "1911 - Reached geographical South Pole on December 14",
+      "1911 - Planted Norwegian flag and established Polheim camp",
+      "1912 - Returned safely to Framheim base on January 25"
+    ]
+  },
+  {
+    "id": "dec-15-gustave-eiffel",
+    "month": "December",
+    "day": "December 15",
+    "dayNum": 15,
+    "title": "Alexandre Gustave Eiffel, engineer (b. 1832)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on December 15, 1832, designer of Eiffel Tower!",
+    "emoji": "\ud83d\uddfc",
+    "funFact": "According to Biography.com, Gustave Eiffel designed the Eiffel Tower in Paris and engineered the internal iron skeleton of the Statue of Liberty!",
+    "who1": "Alexandre Gustave Eiffel was a French civil engineer and architect famous for building the Eiffel Tower and designing Liberty's internal structure.",
+    "who2": "Gustave Eiffel was born in Dijon, France, on December 15, 1832, studying chemistry and metallurgy at \u00c9cole Centrale Paris.",
+    "timeline": [
+      "1832 - Born in Dijon, France on December 15",
+      "1885 - Designed the internal iron structural framework of the Statue of Liberty",
+      "1889 - Completed construction of the Eiffel Tower for Paris World's Fair",
+      "1923 - Passed away in Paris as a master civil engineer"
+    ]
+  },
+  {
+    "id": "dec-15-bill-of-rights",
+    "month": "December",
+    "day": "December 15",
+    "dayNum": 15,
+    "title": "Bill of Rights ratified (1791)",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Ratified into U.S. Constitution on December 15, 1791!",
+    "emoji": "\ud83d\udcdc",
+    "funFact": "According to Wikipedia, the Bill of Rights contains the first ten amendments guaranteeing individual liberties such as freedom of speech and religion!",
+    "who1": "The Bill of Rights comprises the first ten amendments to the United States Constitution, guaranteeing fundamental personal rights and legal protections.",
+    "who2": "The amendments were drafted by James Madison in 1789 and achieved final ratification when Virginia approved them on December 15, 1791.",
+    "timeline": [
+      "1789 - Proposed by James Madison in 1st U.S. Congress",
+      "1791 - Ratified when Virginia becomes 11th state to approve on December 15",
+      "1941 - President Franklin D. Roosevelt designates December 15 as Bill of Rights Day"
+    ]
+  },
+  {
+    "id": "dec-16-boston-tea-party",
+    "month": "December",
+    "day": "December 16",
+    "dayNum": 16,
+    "title": "Boston Tea Party (1773)",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Colonial protest in Boston Harbor on December 16, 1773!",
+    "emoji": "\u2615",
+    "funFact": "According to Wikipedia, the Sons of Liberty dumped 342 chests of British East India Company tea into Boston Harbor!",
+    "who1": "The Boston Tea Party was a political protest conducted by the Sons of Liberty in Boston, Massachusetts, on December 16, 1773.",
+    "who2": "Protesters disguised as Mohawk Native Americans boarded three ships and dumped 342 chests of tea into the harbor to protest tax laws.",
+    "timeline": [
+      "1773 - Sons of Liberty dump 342 tea chests into Boston Harbor on December 16",
+      "1774 - British Parliament responds by passing Intolerable Acts",
+      "1775 - American Revolutionary War begins at Lexington and Concord"
+    ]
+  },
+  {
+    "id": "dec-16-battle-of-bulge",
+    "month": "December",
+    "day": "December 16",
+    "dayNum": 16,
+    "title": "Battle of the Bulge, WWII (1944)",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Launched in Ardennes forest on December 16, 1944!",
+    "emoji": "\ud83c\udf96\ufe0f",
+    "funFact": "According to Wikipedia, the Battle of the Bulge was the largest and bloodiest single battle fought by the U.S. Army in World War II!",
+    "who1": "The Battle of the Bulge was a major German offensive campaign launched through the Ardennes region on the Western Front in World War II.",
+    "who2": "The surprise offensive began on December 16, 1944, creating a 'bulge' in Allied lines before American forces under Patton secured victory.",
+    "timeline": [
+      "1944 - German forces launch Ardennes offensive on December 16",
+      "1944 - 101st Airborne holds strategic crossroads town of Bastogne",
+      "1945 - Allied forces eliminate the bulge on January 25"
+    ]
+  },
+  {
+    "id": "dec-16-beethoven",
+    "month": "December",
+    "day": "December 16",
+    "dayNum": 16,
+    "title": "Ludwig van Beethoven, composer (b. 1770)",
+    "type": "Person (Biography.com)",
+    "connection": "Baptized on December 17, 1770 (b. Dec 16), musical titan!",
+    "emoji": "\ud83c\udfbc",
+    "funFact": "According to Biography.com, Beethoven composed his monumental Ninth Symphony ('Ode to Joy') after losing his hearing completely!",
+    "who1": "Ludwig van Beethoven was a German composer and pianist whose music marks the transition between the Classical and Romantic eras.",
+    "who2": "Beethoven was born in Bonn, Germany, in December 1770, studying under Joseph Haydn in Vienna.",
+    "timeline": [
+      "1770 - Baptized in Bonn, Germany on December 17",
+      "1804 - Premiered Symphony No. 3 'Eroica'",
+      "1824 - Conducted premier of Ninth Symphony despite complete deafness",
+      "1827 - Passed away in Vienna leaving a monumental musical legacy"
+    ]
+  },
+  {
+    "id": "dec-16-concorde-supersonic",
+    "month": "December",
+    "day": "December 16",
+    "dayNum": 16,
+    "title": "The Concorde's supersonic flight (1979)",
+    "type": "Event / Science (Wikipedia)",
+    "connection": "Achieved Mach 2 supersonic milestone!",
+    "emoji": "\u2708\ufe0f",
+    "funFact": "According to Wikipedia, the Concorde flew from New York to London in under 3.5 hours at twice the speed of sound (1,350 mph)!",
+    "who1": "The Concorde was a Franco-British supersonic passenger airliner that operated transatlantic flights at Mach 2.04.",
+    "who2": "Developed jointly by A\u00e9rospatiale and British Aircraft Corporation, Concorde entered commercial service in 1976.",
+    "timeline": [
+      "1969 - First test flight conducted",
+      "1976 - Commercial supersonic flights inaugurated",
+      "2003 - Concorde retired from commercial passenger service"
+    ]
+  },
+  {
+    "id": "dec-17-aztec-calendar-stone",
+    "month": "December",
+    "day": "December 17",
+    "dayNum": 17,
+    "title": "Aztec Calendar Stone discovered (1790)",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Unearthed in Mexico City on December 17, 1790!",
+    "emoji": "\ud83d\uddff",
+    "funFact": "According to Wikipedia, the Aztec Sun Stone weighs 24 tons and measures 12 feet in diameter, carved in the 1500s!",
+    "who1": "The Aztec Calendar Stone (Sun Stone) is a massive 24-ton carved basalt monolith representing Aztec cosmology and solar cycles.",
+    "who2": "The stone was unearthed during repairs on the Mexico City Cathedral on December 17, 1790, having been buried since the Spanish conquest.",
+    "timeline": [
+      "c. 1502 - Carved during reign of Aztec Emperor Moctezuma II",
+      "1790 - Unearthed at Z\u00f3calo plaza in Mexico City on December 17",
+      "1885 - Transferred to the National Museum of Anthropology in Mexico City"
+    ]
+  },
+  {
+    "id": "dec-17-wright-brothers",
+    "month": "December",
+    "day": "December 17",
+    "dayNum": 17,
+    "title": "Wright Brothers first powered flight (1903)",
+    "type": "Event / History (Wikipedia)",
+    "connection": "First powered flight at Kitty Hawk on December 17, 1903!",
+    "emoji": "\u2708\ufe0f",
+    "funFact": "According to Biography.com, Orville Wright flew 120 feet in 12 seconds aboard the Wright Flyer at Kitty Hawk, North Carolina!",
+    "who1": "Orville and Wilbur Wright were American aviation pioneers credited with inventing, building, and flying the world's first successful motor-operated airplane.",
+    "who2": "The Wright brothers conducted aeronautical glider experiments in Dayton, Ohio, before making four powered flights at Kitty Hawk on December 17, 1903.",
+    "timeline": [
+      "1903 - Orville Wright completes first 12-second powered flight on December 17",
+      "1905 - Built Wright Flyer III, the first practical fully controllable airplane",
+      "1908 - Public flight demonstrations in Europe and America capture global acclaim"
+    ]
+  },
+  {
+    "id": "dec-18-ty-cobb",
+    "month": "December",
+    "day": "December 18",
+    "dayNum": 18,
+    "title": "Ty Cobb, baseball player (b. 1886)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on December 18, 1886, highest career batting average (.366)!",
+    "emoji": "\u26be",
+    "funFact": "According to Biography.com, Ty Cobb set 90 MLB records and holds the highest career batting average (.366) in baseball history!",
+    "who1": "Tyrus Raymond 'Ty' Cobb, nicknamed 'The Georgia Peach,' was an American MLB outfielder who set 90 major league records.",
+    "who2": "Ty Cobb was born in Narrows, Georgia, on December 18, 1886, playing 22 seasons for the Detroit Tigers.",
+    "timeline": [
+      "1886 - Born in Narrows, Georgia on December 18",
+      "1905 - Debuted with Detroit Tigers in Major League Baseball",
+      "1911 - Batted a career-high .420 in a single season",
+      "1936 - Received the most votes (98.2%) in the inaugural Baseball Hall of Fame election"
+    ]
+  },
+  {
+    "id": "dec-18-steven-spielberg",
+    "month": "December",
+    "day": "December 18",
+    "dayNum": 18,
+    "title": "Steven Spielberg, movie producer and director (b. 1946)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on December 18, 1946, Oscar-winning director!",
+    "emoji": "\ud83c\udfac",
+    "funFact": "According to Biography.com, Steven Spielberg directed blockbusters 'Jaws', 'E.T.', 'Jurassic Park', and won Oscars for 'Schindler's List'!",
+    "who1": "Steven Allan Spielberg is an American film director, producer, and screenwriter who is the highest-grossing director in cinematic history.",
+    "who2": "Steven Spielberg was born in Cincinnati, Ohio, on December 18, 1946, directing 8mm amateur movies as a teenager.",
+    "timeline": [
+      "1946 - Born in Cincinnati, Ohio on December 18",
+      "1975 - Directed summer blockbuster 'Jaws'",
+      "1982 - Directed beloved sci-fi classic 'E.T. the Extra-Terrestrial'",
+      "1993 - Won Academy Award for Best Director for 'Schindler's List'"
+    ]
+  },
+  {
+    "id": "dec-19-carter-g-woodson",
+    "month": "December",
+    "day": "December 19",
+    "dayNum": 19,
+    "title": "Carter Godwin Woodson, 'Father of Black History' (b. 1875)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on December 19, 1875, Father of Black History!",
+    "emoji": "\ud83d\udcda",
+    "funFact": "According to Biography.com, Carter G. Woodson launched Negro History Week in 1926, which expanded into Black History Month!",
+    "who1": "Carter Godwin Woodson was an American historian, author, journalist, and founder of the Association for the Study of African American Life and History.",
+    "who2": "Carter G. Woodson was born to former enslaved parents in New Canton, Virginia, on December 19, 1875, earning his Ph.D. from Harvard University.",
+    "timeline": [
+      "1875 - Born in New Canton, Virginia on December 19",
+      "1912 - Earned doctorate in history from Harvard University",
+      "1915 - Founded the Association for the Study of Negro Life and History",
+      "1926 - Established Negro History Week, precursor to Black History Month"
+    ]
+  },
+  {
+    "id": "dec-20-louisiana-purchase",
+    "month": "December",
+    "day": "December 20",
+    "dayNum": 20,
+    "title": "Louisiana Purchase Day (1803)",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Formal transfer of territory in New Orleans on December 20, 1803!",
+    "emoji": "\ud83d\udcdc",
+    "funFact": "According to Wikipedia, the Louisiana Purchase doubled the geographic size of the United States for $15 million (about 3 cents an acre)!",
+    "who1": "Louisiana Purchase Day marks the official transfer of 828,000 square miles of territory from France to the United States in New Orleans on December 20, 1803.",
+    "who2": "The treaty was negotiated under President Thomas Jefferson and Napoleon Bonaparte, opening Western territory for Lewis and Clark.",
+    "timeline": [
+      "1803 - Treaty signed in Paris in April",
+      "1803 - Official flag-raising ceremony held in New Orleans on December 20",
+      "1804 - Lewis and Clark Expedition departs St. Louis to explore territory"
+    ]
+  },
+  {
+    "id": "dec-20-sacagawea",
+    "month": "December",
+    "day": "December 20",
+    "dayNum": 20,
+    "title": "Sacagawea, interpreter for Lewis and Clark (d. 1812)",
+    "type": "Person (Biography.com)",
+    "connection": "Passed away on December 20, 1812, Shoshone guide icon!",
+    "emoji": "\ud83c\udfd4\ufe0f",
+    "funFact": "According to Biography.com, Sacagawea guided the Lewis and Clark Expedition across thousands of uncharted miles while carrying her infant son Pompy!",
+    "who1": "Sacagawea was a Lemhi Shoshone woman who served as an interpreter and guide for the Lewis and Clark Expedition from North Dakota to the Pacific Ocean.",
+    "who2": "Sacagawea was born around 1788 in Idaho, joining the Corps of Discovery at Fort Mandan alongside her husband Toussaint Charbonneau.",
+    "timeline": [
+      "c. 1788 - Born in Lemhi River Valley, Idaho",
+      "1804-1806 - Guided Lewis and Clark Expedition across Rocky Mountains to the Pacific",
+      "1812 - Passed away at Fort Manuel in South Dakota on December 20",
+      "2000 - Honored on the U.S. golden dollar coin"
+    ]
+  },
+  {
+    "id": "dec-21-apollo-8",
+    "month": "December",
+    "day": "December 21",
+    "dayNum": 21,
+    "title": "Apollo 8 launched - first moon voyage (1968)",
+    "type": "Event / Space (Wikipedia)",
+    "connection": "Launched on historic lunar orbit mission on December 21, 1968!",
+    "emoji": "\ud83d\ude80",
+    "funFact": "According to Wikipedia, Apollo 8 astronauts became the first humans to see Earth from deep space and captured the iconic 'Earthrise' photo!",
+    "who1": "Apollo 8 was the first crewed spacecraft to leave low Earth orbit, reach the Moon, orbit it, and return safely to Earth.",
+    "who2": "Apollo 8 launched from Kennedy Space Center on December 21, 1968, crewed by Frank Borman, James Lovell, and William Anders.",
+    "timeline": [
+      "1968 - Launched from Cape Canaveral, Florida, on December 21",
+      "1968 - Entered lunar orbit on Christmas Eve and captured 'Earthrise' photograph",
+      "1968 - Returned safely to Pacific Ocean splashdown on December 27"
+    ]
+  },
+  {
+    "id": "dec-22-coelacanth",
+    "month": "December",
+    "day": "December 22",
+    "dayNum": 22,
+    "title": "Coelacanth (ancient fish) discovered (1938)",
+    "type": "Event / Science (Wikipedia)",
+    "connection": "Discovered off South Africa coast on December 22, 1938!",
+    "emoji": "\ud83d\udc1f",
+    "funFact": "According to Wikipedia, coelacanths were believed to have gone extinct 66 million years ago until a live specimen was caught in 1938!",
+    "who1": "The Coelacanth Discovery occurred on December 22, 1938, when museum curator Marjorie Courtenay-Latimer discovered a living prehistoric fish off South Africa.",
+    "who2": "Scientists thought coelacanths died out with dinosaurs until the living fossil was identified by Ichthyologist J.L.B. Smith.",
+    "timeline": [
+      "1938 - Marjorie Courtenay-Latimer spots coelacanth in a fishing net on December 22",
+      "1939 - J.L.B. Smith identifies fish as living coelacanth Latimeria chalumnae",
+      "1997 - Second living coelacanth species discovered in Indonesia"
+    ]
+  },
+  {
+    "id": "dec-23-avi",
+    "month": "December",
+    "day": "December 23",
+    "dayNum": 23,
+    "title": "Avi, author (b. 1937)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on December 23, 1937, Newbery Medal author!",
+    "emoji": "\ud83d\udcda",
+    "funFact": "According to Biography.com, Avi overcame dysgraphia as a student and wrote over 80 books, winning the Newbery Medal for 'Crispin: The Cross of Lead'!",
+    "who1": "Avi, pen name of Edward Irving Wortis, is an acclaimed American author of young adult and children's fiction.",
+    "who2": "Avi was born in Brooklyn, New York, on December 23, 1937, studying theater and working as a performing arts librarian.",
+    "timeline": [
+      "1937 - Born in Brooklyn, New York on December 23",
+      "1991 - Published Newbery Honor novel 'The True Confessions of Charlotte Doyle'",
+      "2003 - Awarded Newbery Medal for 'Crispin: The Cross of Lead'"
+    ]
+  },
+  {
+    "id": "dec-24-kit-carson",
+    "month": "December",
+    "day": "December 24",
+    "dayNum": 24,
+    "title": "Kit Carson, frontiersman (b. 1809)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on December 24, 1809, legendary frontiersman & scout!",
+    "emoji": "\ud83c\udf32",
+    "funFact": "According to Biography.com, Kit Carson worked as a mountain man, fur trapper, wilderness guide, and U.S. Army officer in the American West!",
+    "who1": "Christopher Houston 'Kit' Carson was an American frontiersman, wilderness guide, mountain man, fur trapper, and army officer.",
+    "who2": "Kit Carson was born in Madison County, Kentucky, on December 24, 1809, growing up in Missouri before running away to join Santa Fe trail caravans.",
+    "timeline": [
+      "1809 - Born in Madison County, Kentucky on December 24",
+      "1842 - Guided John C. Fr\u00e9mont's mapping expeditions across the Rocky Mountains",
+      "1868 - Passed away at Fort Lyon, Colorado"
+    ]
+  },
+  {
+    "id": "dec-25-clara-barton",
+    "month": "December",
+    "day": "December 25",
+    "dayNum": 25,
+    "title": "Clara Barton, nurse and philanthropist (b. 1821)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on December 25, 1821, founder of American Red Cross!",
+    "emoji": "\ud83e\ude7a",
+    "funFact": "According to Biography.com, Clara Barton earned the nickname 'Angel of the Battlefield' during the Civil War and founded the American Red Cross!",
+    "who1": "Clarissa Harlowe Barton was a pioneering American nurse and humanitarian who founded the American Red Cross in 1881.",
+    "who2": "Clara Barton was born in North Oxford, Massachusetts, on December 25, 1821, working as a schoolteacher and patent clerk before nursing soldiers.",
+    "timeline": [
+      "1821 - Born in North Oxford, Massachusetts on December 25",
+      "1862 - Served as battlefield nurse caring for wounded Civil War soldiers",
+      "1881 - Founded the American Red Cross and served as its first president for 23 years"
+    ]
+  },
+  {
+    "id": "dec-25-anwar-sedat",
+    "month": "December",
+    "day": "December 25",
+    "dayNum": 25,
+    "title": "Anwar Sedat, Egyptian president (b. 1918)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on December 25, 1918, Nobel Peace Prize laureate!",
+    "emoji": "\ud83d\udd4a\ufe0f",
+    "funFact": "According to Biography.com, Anwar Sadat was the 1st Arab leader to visit Israel and sign the 1978 Camp David Peace Accords!",
+    "who1": "Muhammad Anwar el-Sadat was an Egyptian politician who served as the third President of Egypt from 1970 until his assassination in 1981.",
+    "who2": "Anwar Sadat was born in Mit Abu El Kom, Egypt, on December 25, 1918, graduating from the Royal Military Academy in Cairo.",
+    "timeline": [
+      "1918 - Born in Mit Abu El Kom, Egypt on December 25",
+      "1970 - Sworn in as President of Egypt",
+      "1978 - Signed Camp David Accords with Menachem Begin and won Nobel Peace Prize"
+    ]
+  },
+  {
+    "id": "dec-26-susan-butcher",
+    "month": "December",
+    "day": "December 26",
+    "dayNum": 26,
+    "title": "Susan Butcher, sled dog racer (b. 1954)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on December 26, 1954, 4-time Iditarod champion!",
+    "emoji": "\ud83d\udc15",
+    "funFact": "According to Biography.com, Susan Butcher was the 2nd woman to win the Iditarod Trail Sled Dog Race and the 1st to win it three consecutive times!",
+    "who1": "Susan Howlet Butcher was an American dog musher and four-time champion of the 1,100-mile Iditarod Trail Sled Dog Race in Alaska.",
+    "who2": "Susan Butcher was born in Cambridge, Massachusetts, on December 26, 1954, moving to Alaska to train sled dogs.",
+    "timeline": [
+      "1954 - Born in Cambridge, Massachusetts on December 26",
+      "1986, 1987, 1988, 1990 - Won four Iditarod Trail Sled Dog Race championships",
+      "2006 - Passed away in Seattle, Washington as an Alaskan sporting icon"
+    ]
+  },
+  {
+    "id": "dec-26-charles-babbage",
+    "month": "December",
+    "day": "December 26",
+    "dayNum": 26,
+    "title": "Charles Babbage, mathematician (b. 1792)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on December 26, 1792, Father of the Computer!",
+    "emoji": "\ud83d\udcbb",
+    "funFact": "According to Biography.com, Charles Babbage designed the Difference Engine and Analytical Engine, the first mechanical computer concepts!",
+    "who1": "Charles Babbage was an English polymath, mathematician, mechanical engineer, and inventor remembered as the Father of the Computer.",
+    "who2": "Charles Babbage was born in London on December 26, 1792, studying mathematics at Trinity College, Cambridge.",
+    "timeline": [
+      "1792 - Born in London, England on December 26",
+      "1822 - Designed the Difference Engine mechanical calculating machine",
+      "1837 - Conceived the Analytical Engine, the world's first general-purpose computer design"
+    ]
+  },
+  {
+    "id": "dec-27-louis-pasteur",
+    "month": "December",
+    "day": "December 27",
+    "dayNum": 27,
+    "title": "Louis Pasteur, chemist and bacteriologist (b. 1822)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on December 27, 1822, pioneer of pasteurization & vaccines!",
+    "emoji": "\ud83e\uddea",
+    "funFact": "According to Biography.com, Louis Pasteur invented pasteurization to kill harmful bacteria in milk and created the first rabies vaccine!",
+    "who1": "Louis Pasteur was a French chemist and microbiologist renowned for discovering the principles of vaccination, microbial fermentation, and pasteurization.",
+    "who2": "Louis Pasteur was born in Dole, France, on December 27, 1822, earning his doctorate from the \u00c9cole Normale Sup\u00e9rieure in Paris.",
+    "timeline": [
+      "1822 - Born in Dole, France on December 27",
+      "1862 - Patented the process of pasteurization to prevent bacterial spoilage",
+      "1885 - Successfully administered the first human rabies vaccine"
+    ]
+  },
+  {
+    "id": "dec-27-johannes-kepler",
+    "month": "December",
+    "day": "December 27",
+    "dayNum": 27,
+    "title": "Johannes Kepler, astronomer (b. 1571)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on December 27, 1571, laws of planetary motion!",
+    "emoji": "\ud83e\ude90",
+    "funFact": "According to Biography.com, Johannes Kepler discovered three laws of planetary motion proving planets orbit the Sun in ellipses!",
+    "who1": "Johannes Kepler was a German astronomer, mathematician, and astrologer who formulated the three fundamental laws of planetary motion.",
+    "who2": "Kepler was born in Weil der Stadt, Germany, on December 27, 1571, studying theology and mathematics at the University of T\u00fcbingen.",
+    "timeline": [
+      "1571 - Born in Weil der Stadt, Germany on December 27",
+      "1609 - Published his first two laws of planetary motion in 'Astronomia Nova'",
+      "1619 - Published third law of planetary motion in 'Harmonices Mundi'"
+    ]
+  },
+  {
+    "id": "dec-28-poor-richards-almanack",
+    "month": "December",
+    "day": "December 28",
+    "dayNum": 28,
+    "title": "Poor Richard's Almanack first published (1732)",
+    "type": "Event / Culture (Wikipedia)",
+    "connection": "Published by Benjamin Franklin in December 1732!",
+    "emoji": "\ud83d\udcd6",
+    "funFact": "According to Wikipedia, Ben Franklin wrote under the pen name 'Richard Saunders,' popularizing sayings like 'A penny saved is a penny earned!'",
+    "who1": "Poor Richard's Almanack was a famous annual colonial almanac published by Benjamin Franklin from 1732 to 1758.",
+    "who2": "Ben Franklin published the first edition in Philadelphia on December 28, 1732, under the pseudonym Richard Saunders.",
+    "timeline": [
+      "1732 - First edition published in Philadelphia on December 28",
+      "1758 - Published final edition containing 'The Way to Wealth' essay"
+    ]
+  },
+  {
+    "id": "dec-29-andrew-johnson",
+    "month": "December",
+    "day": "December 29",
+    "dayNum": 29,
+    "title": "Andrew Johnson, 17th U.S. President (b. 1808)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on December 29, 1808, 17th U.S. President!",
+    "emoji": "\ud83c\udfdb\ufe0f",
+    "funFact": "According to Biography.com, Andrew Johnson assumed the presidency following Lincoln's assassination and purchased Alaska from Russia in 1867!",
+    "who1": "Andrew Johnson was an American politician who served as the 17th President of the United States from 1865 to 1869.",
+    "who2": "Andrew Johnson was born in Raleigh, North Carolina, on December 29, 1808, working as a tailor's apprentice before moving to Tennessee.",
+    "timeline": [
+      "1808 - Born in Raleigh, North Carolina on December 29",
+      "1865-1869 - Served as 17th U.S. President following Lincoln's death",
+      "1867 - Approved the U.S. purchase of Alaska from Russia for $7.2 million"
+    ]
+  },
+  {
+    "id": "dec-30-rudyard-kipling",
+    "month": "December",
+    "day": "December 30",
+    "dayNum": 30,
+    "title": "Rudyard Kipling, poet/writer (b. 1865)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on December 30, 1865, author of The Jungle Book!",
+    "emoji": "\ud83d\udc2f",
+    "funFact": "According to Biography.com, Rudyard Kipling won the Nobel Prize in Literature in 1907 at age 41, remaining the youngest recipient in history!",
+    "who1": "Joseph Rudyard Kipling was an English journalist, short-story writer, poet, and novelist best known for 'The Jungle Book' and 'Just So Stories.'",
+    "who2": "Rudyard Kipling was born in Bombay, British India, on December 30, 1865, working as a journalist before publishing his stories.",
+    "timeline": [
+      "1865 - Born in Bombay, India on December 30",
+      "1894 - Published beloved classic 'The Jungle Book'",
+      "1907 - Awarded Nobel Prize in Literature at age 41"
+    ]
+  },
+  {
+    "id": "dec-31-henri-matisse",
+    "month": "December",
+    "day": "December 31",
+    "dayNum": 31,
+    "title": "Henri Matisse, artist (b. 1869)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on December 31, 1869, master Fauvist painter!",
+    "emoji": "\ud83c\udfa8",
+    "funFact": "According to Biography.com, Henri Matisse was a leader of modern art alongside Picasso, famous for bold colors and cut-out paper collages!",
+    "who1": "Henri \u00c9mile Beno\u00eet Matisse was a French visual artist known for both his use of color and his fluid and original draughtsmanship.",
+    "who2": "Henri Matisse was born in Le Cateau-Cambr\u00e9sis, France, on December 31, 1869, studying law before discovering painting.",
+    "timeline": [
+      "1869 - Born in Le Cateau-Cambr\u00e9sis, France on December 31",
+      "1905 - Led Fauvism movement exhibiting 'Woman with a Hat'",
+      "1954 - Passed away in Nice, France leaving a landmark legacy in modern art"
+    ]
+  }
+];
   const RAW_JANUARY_DATA = [
   {
     "id": "jan-1-ellis-island",
@@ -3644,7 +4582,7 @@
   }
 ];
 
-  const ALL_RAW_TOPICS = [...RAW_OCTOBER_DATA, ...RAW_NOVEMBER_DATA, ...RAW_JANUARY_DATA, ...RAW_FEBRUARY_DATA];
+  const ALL_RAW_TOPICS = [...RAW_OCTOBER_DATA, ...RAW_NOVEMBER_DATA, ...RAW_DECEMBER_DATA, ...RAW_JANUARY_DATA, ...RAW_FEBRUARY_DATA];
   const TOPICS_DB = ALL_RAW_TOPICS.map(t => {
     const articles = buildArticlesForTopic(t);
     return Object.assign({}, t, articles);
@@ -3753,7 +4691,7 @@
       topicCardsGrid.innerHTML = `
         <div style="grid-column:1/-1; background:rgba(255,255,255,0.08); padding:1.5rem; border-radius:14px; color:white; text-align:center;">
           <p style="font-size:1.1rem; font-weight:700;">No pre-populated topics found for ${selectedMonth}.</p>
-          <p style="font-size:0.9rem; color:#94a3b8; margin-top:0.4rem;">Select "October", "November", "January", or "February" to view extracted calendar topics!</p>
+          <p style="font-size:0.9rem; color:#94a3b8; margin-top:0.4rem;">Select "October", "November", "December", "January", or "February" to view extracted calendar topics!</p>
         </div>
       `;
       return;
