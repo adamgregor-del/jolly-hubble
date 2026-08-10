@@ -1636,6 +1636,895 @@
 ];
 
   // Compile final DB with dynamically built articles
+  // --- RAW EXTRACTED PDF TOPICS: JANUARY (48 Topics) ---
+  const RAW_JANUARY_DATA = [
+  {
+    "id": "jan-1-ellis-island",
+    "month": "January",
+    "day": "January 1",
+    "dayNum": 1,
+    "title": "Ellis Island opened 1892",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Opened as premier U.S. immigration gateway on Jan 1, 1892!",
+    "emoji": "\ud83d\uddfd",
+    "funFact": "According to Wikipedia, over 12 million immigrants were processed through Ellis Island between 1892 and 1954!",
+    "who1": "Ellis Island was the chief United States immigration inspection station in New York Harbor that welcomed millions of European newcomers seeking freedom and opportunity.",
+    "who2": "Ellis Island opened on January 1, 1892, under President Benjamin Harrison's administration, with fifteen-year-old Annie Moore being the very first immigrant processed.",
+    "timeline": [
+      "1892 - Opens on January 1 welcoming 15-year-old Annie Moore",
+      "1907 - Record 1.2 million immigrants processed in a single year",
+      "1990 - Opens as a major public immigration history museum"
+    ]
+  },
+  {
+    "id": "jan-1-paul-revere",
+    "month": "January",
+    "day": "January 1",
+    "dayNum": 1,
+    "title": "Paul Revere b. 1735 (patriot)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 1, 1735, famous for his midnight ride!",
+    "emoji": "\ud83d\udc0e",
+    "funFact": "According to Biography.com, Paul Revere was a master silversmith who operated a copper rolling mill and alerted colonial militia before the Battle of Lexington!",
+    "who1": "Paul Revere was an American silversmith, industrialist, and Patriot hero who alerted colonial militia of advancing British forces during his historic Midnight Ride.",
+    "who2": "Paul Revere was born in Boston's North End on January 1, 1735, learning silversmithing from his father before joining the Sons of Liberty.",
+    "timeline": [
+      "1735 - Born in Boston, Massachusetts on January 1",
+      "1773 - Participated in the historic Boston Tea Party",
+      "1775 - Made his famous Midnight Ride from Boston to Lexington",
+      "1818 - Passed away in Boston leaving a legacy of American patriot leadership"
+    ]
+  },
+  {
+    "id": "jan-1-betsy-ross",
+    "month": "January",
+    "day": "January 1",
+    "dayNum": 1,
+    "title": "Betsy Ross b. 1752 (created first U.S. flag)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 1, 1752, creator of first U.S. flag!",
+    "emoji": "\ud83c\uddfa\ud83c\uddf8",
+    "funFact": "According to Biography.com, Betsy Ross demonstrated to George Washington how to cut a five-pointed star in a single scissor snip!",
+    "who1": "Betsy Ross was an American seamstress in Philadelphia credited with creating the first iconic American flag featuring thirteen stars in a circle.",
+    "who2": "Betsy Ross was born Elizabeth Griscom in Philadelphia on January 1, 1752, apprenticing under an upholsterer before running her own sewing shop.",
+    "timeline": [
+      "1752 - Born in Philadelphia, Pennsylvania on January 1",
+      "1776 - Handcrafted the original 13-star American flag for the Continental Congress",
+      "1836 - Passed away in Philadelphia as an iconic symbol of American independence"
+    ]
+  },
+  {
+    "id": "jan-2-isaac-asimov",
+    "month": "January",
+    "day": "January 2",
+    "dayNum": 2,
+    "title": "Isaac Asimov b. 1920 (science fiction author)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 2, 1920, sci-fi legend!",
+    "emoji": "\ud83e\udd16",
+    "funFact": "According to Biography.com, Isaac Asimov coined the word 'robotics' and wrote over 500 books!",
+    "who1": "Isaac Asimov was an American biochemist and prolific science fiction author best known for his 'Foundation' series and 'I, Robot' stories.",
+    "who2": "Isaac Asimov was born in Petrovichi, Russia, around January 2, 1920, emigrating to Brooklyn, New York, at age three and studying chemistry at Columbia University.",
+    "timeline": [
+      "1920 - Born in Petrovichi, Russia on January 2",
+      "1942 - Formulated the Three Laws of Robotics",
+      "1951 - Published foundational sci-fi masterpiece 'Foundation'",
+      "1992 - Passed away in New York City as a titan of science fiction"
+    ]
+  },
+  {
+    "id": "jan-3-lucretia-mott",
+    "month": "January",
+    "day": "January 3",
+    "dayNum": 3,
+    "title": "Lucretia Mott b. 1793 (teacher, minister, anti-slavery leader)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 3, 1793, anti-slavery & women's rights leader!",
+    "emoji": "\ud83d\udd4a\ufe0f",
+    "funFact": "According to Biography.com, Lucretia Mott helped organize the 1848 Seneca Falls Convention and founded the Philadelphia Female Anti-Slavery Society!",
+    "who1": "Lucretia Mott was a Quaker minister, abolitionist, and women's rights activist who advocated for universal human equality.",
+    "who2": "Lucretia Mott was born on Nantucket Island, Massachusetts, on January 3, 1793, attending Nine Partners Quaker Boarding School.",
+    "timeline": [
+      "1793 - Born on Nantucket Island, Massachusetts on January 3",
+      "1833 - Co-founded the Philadelphia Female Anti-Slavery Society",
+      "1848 - Organized the historic Seneca Falls Convention alongside Elizabeth Cady Stanton",
+      "1880 - Passed away in Pennsylvania as a heroic leader for civil rights"
+    ]
+  },
+  {
+    "id": "jan-4-louis-braille",
+    "month": "January",
+    "day": "January 4",
+    "dayNum": 4,
+    "title": "Louis Braille b. 1809 (invented Braille)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 4, 1809, creator of Braille reading system!",
+    "emoji": "\u2803",
+    "funFact": "According to Biography.com, Louis Braille invented his raised-dot system at age fifteen while attending the Royal Institute for Blind Youth in Paris!",
+    "who1": "Louis Braille was a French educator and inventor who developed the tactile raised-dot system used by blind individuals worldwide to read and write.",
+    "who2": "Louis Braille was born in Coupvray, France, on January 4, 1809, losing his sight in a childhood accident before attending school in Paris.",
+    "timeline": [
+      "1809 - Born in Coupvray, France on January 4",
+      "1824 - Invented the 6-dot tactile Braille reading system at age fifteen",
+      "1829 - Published the first Braille embossed book",
+      "1852 - Passed away in Paris as a benefactor of humanity"
+    ]
+  },
+  {
+    "id": "jan-4-isaac-newton",
+    "month": "January",
+    "day": "January 4",
+    "dayNum": 4,
+    "title": "Isaac Newton b. 1643 (physicist)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 4, 1643, laws of motion & gravity!",
+    "emoji": "\ud83c\udf4e",
+    "funFact": "According to Biography.com, Sir Isaac Newton invented calculus and formulated the three universal laws of motion!",
+    "who1": "Sir Isaac Newton was an English mathematician, physicist, and astronomer who formulated the fundamental laws of motion and universal gravitation.",
+    "who2": "Sir Isaac Newton was born at Woolsthorpe Manor in Lincolnshire on January 4, 1643, studying mathematics and natural philosophy at Trinity College, Cambridge.",
+    "timeline": [
+      "1643 - Born in Lincolnshire, England on January 4",
+      "1666 - Formulated theories of optics, gravity, and calculus",
+      "1687 - Published landmark scientific work 'Philosophi\u00e6 Naturalis Principia Mathematica'",
+      "1727 - Passed away in London leaving a foundation for modern science"
+    ]
+  },
+  {
+    "id": "jan-5-alvin-ailey",
+    "month": "January",
+    "day": "January 5",
+    "dayNum": 5,
+    "title": "Alvin Ailey b. 1931 (dancer & choreographer)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 5, 1931, dance pioneer!",
+    "emoji": "\ud83d\udc83",
+    "funFact": "According to Biography.com, Alvin Ailey founded the Alvin Ailey American Dance Theater and choreographed 'Revelations'!",
+    "who1": "Alvin Ailey was an American dancer, director, and choreographer who founded the Alvin Ailey American Dance Theater to showcase African American culture through modern dance.",
+    "who2": "Alvin Ailey was born in Rogers, Texas, on January 5, 1931, studying dance under Lester Horton in Los Angeles.",
+    "timeline": [
+      "1931 - Born in Rogers, Texas on January 5",
+      "1958 - Founded the Alvin Ailey American Dance Theater in New York City",
+      "1960 - Choreographed his signature masterpiece 'Revelations'",
+      "1988 - Awarded the Kennedy Center Honors for lifetime artistic contributions"
+    ]
+  },
+  {
+    "id": "jan-5-george-washington-carver",
+    "month": "January",
+    "day": "January 5",
+    "dayNum": 5,
+    "title": "George Washington Carver d. 1943 (scientist, inventor, & teacher)",
+    "type": "Person (Biography.com)",
+    "connection": "Passed away on January 5, 1943, agricultural science pioneer!",
+    "emoji": "\ud83e\udd5c",
+    "funFact": "According to Biography.com, George Washington Carver developed over 300 products from peanuts and sweet potatoes to help Southern farmers!",
+    "who1": "George Washington Carver was an American agricultural scientist, inventor, and educator who revolutionized Southern farming through crop rotation and soil conservation.",
+    "who2": "George Washington Carver was born into enslavement in Diamond, Missouri, around 1864, becoming the first Black student and faculty member at Iowa State Agricultural College.",
+    "timeline": [
+      "c. 1864 - Born in Diamond, Missouri",
+      "1896 - Headed the Agricultural Department at Tuskegee Institute under Booker T. Washington",
+      "1943 - Passed away on January 5, leaving his estate to fund agricultural research"
+    ]
+  },
+  {
+    "id": "jan-6-carl-sandburg",
+    "month": "January",
+    "day": "January 6",
+    "dayNum": 6,
+    "title": "Carl Sandburg b. 1878 (poet)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 6, 1878, Pulitzer Prize-winning poet!",
+    "emoji": "\ud83d\udcdc",
+    "funFact": "According to Biography.com, Carl Sandburg won three Pulitzer Prizes for his poetry and multi-volume biography of Abraham Lincoln!",
+    "who1": "Carl Sandburg was an American poet, biographer, musician, and editor who won three Pulitzer Prizes for his celebrated literary works.",
+    "who2": "Carl Sandburg was born in Galesburg, Illinois, on January 6, 1878, working as a milk wagon driver and bricklayer before writing poetry.",
+    "timeline": [
+      "1878 - Born in Galesburg, Illinois on January 6",
+      "1916 - Published iconic poem 'Chicago'",
+      "1940 - Awarded Pulitzer Prize for his biography 'Abraham Lincoln: The War Years'",
+      "1951 - Awarded Pulitzer Prize for Poetry"
+    ]
+  },
+  {
+    "id": "jan-7-montgolfier",
+    "month": "January",
+    "day": "January 7",
+    "dayNum": 7,
+    "title": "Jacques Etienne Montgolfier b. 1745 (inventor of hot air balloon)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 7, 1745, aviation pioneer!",
+    "emoji": "\ud83c\udf88",
+    "funFact": "According to Biography.com, the Montgolfier brothers launched the first hot air balloon carrying a sheep, a duck, and a rooster in 1783!",
+    "who1": "Jacques-\u00c9tienne Montgolfier was a French paper manufacturer and inventor who co-created the world's first practical hot air balloon.",
+    "who2": "Jacques-\u00c9tienne Montgolfier was born in Annonay, France, on January 7, 1745, studying architecture and joining his family's paper factory.",
+    "timeline": [
+      "1745 - Born in Annonay, France on January 7",
+      "1783 - Conducted the first public hot air balloon demonstration",
+      "1783 - Piloted first tethered human hot air balloon flight over Paris"
+    ]
+  },
+  {
+    "id": "jan-8-elvis-presley",
+    "month": "January",
+    "day": "January 8",
+    "dayNum": 8,
+    "title": "Elvis Presley c. 1935 (rock singer)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 8, 1935, 'King of Rock and Roll'!",
+    "emoji": "\ud83c\udfb8",
+    "funFact": "According to Biography.com, Elvis Presley sold over one billion records worldwide and had 18 number one hits!",
+    "who1": "Elvis Presley was an iconic American singer and actor known as the 'King of Rock and Roll' who transformed 20th-century popular music.",
+    "who2": "Elvis Presley was born in Tupelo, Mississippi, on January 8, 1935, moving to Memphis, Tennessee, where he recorded at Sun Studio.",
+    "timeline": [
+      "1935 - Born in Tupelo, Mississippi on January 8",
+      "1956 - Released hit single 'Heartbreak Hotel' launching global stardom",
+      "1977 - Passed away at Graceland in Memphis, Tennessee"
+    ]
+  },
+  {
+    "id": "jan-8-marco-polo",
+    "month": "January",
+    "day": "January 8",
+    "dayNum": 8,
+    "title": "Marco Polo d. 1324 (explorer)",
+    "type": "Person (Biography.com)",
+    "connection": "Passed away on January 8, 1324, famous Venetian explorer!",
+    "emoji": "\u26f5",
+    "funFact": "According to Biography.com, Marco Polo traveled 15,000 miles along the Silk Road to China and served in the court of Kublai Khan!",
+    "who1": "Marco Polo was a Venetian merchant, explorer, and writer who traveled along the Silk Road to Asia, introducing Europeans to East Asian culture.",
+    "who2": "Marco Polo was born in Venice around 1254, embarking on a 24-year journey to Asia alongside his father Niccol\u00f2 and uncle Maffeo.",
+    "timeline": [
+      "c. 1254 - Born in Venice, Italy",
+      "1275 - Reached the court of Mongol emperor Kublai Khan in Shangdu",
+      "1300 - Dictated 'The Travels of Marco Polo'",
+      "1324 - Passed away in Venice on January 8"
+    ]
+  },
+  {
+    "id": "jan-9-richard-nixon",
+    "month": "January",
+    "day": "January 9",
+    "dayNum": 9,
+    "title": "Richard Nixon b. 1913 (37th U.S. President)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 9, 1913, 37th U.S. President!",
+    "emoji": "\ud83c\udfdb\ufe0f",
+    "funFact": "According to Biography.com, Richard Nixon established the Environmental Protection Agency (EPA) and visited China in 1972!",
+    "who1": "Richard Milhous Nixon was an American politician who served as the 37th President of the United States from 1969 to 1974.",
+    "who2": "Richard Nixon was born in Yorba Linda, California, on January 9, 1913, studying law at Duke University.",
+    "timeline": [
+      "1913 - Born in Yorba Linda, California on January 9",
+      "1969-1974 - Served as 37th U.S. President",
+      "1970 - Established the Environmental Protection Agency (EPA)",
+      "1972 - Historic diplomatic visit to the People's Republic of China"
+    ]
+  },
+  {
+    "id": "jan-10-league-of-nations",
+    "month": "January",
+    "day": "January 10",
+    "dayNum": 10,
+    "title": "League of Nations began 1920",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Established internationally on January 10, 1920!",
+    "emoji": "\ud83c\uddfa\ud83c\uddf3",
+    "funFact": "According to Wikipedia, the League of Nations was the first worldwide intergovernmental organization created to maintain world peace!",
+    "who1": "The League of Nations was an international diplomatic organization founded on January 10, 1920, following the Paris Peace Conference to prevent future world wars.",
+    "who2": "The League was championed by U.S. President Woodrow Wilson as part of his Fourteen Points peace initiative following World War I.",
+    "timeline": [
+      "1920 - Covenant takes official legal effect on January 10",
+      "1920 - First General Assembly meeting held in Geneva, Switzerland",
+      "1946 - Officially dissolved and succeeded by the United Nations"
+    ]
+  },
+  {
+    "id": "jan-10-suffrage-amendment",
+    "month": "January",
+    "day": "January 10",
+    "dayNum": 10,
+    "title": "Woman's Suffrage Amendment Introduced 1878",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Introduced in U.S. Senate on January 10, 1878!",
+    "emoji": "\ud83d\uddf3\ufe0f",
+    "funFact": "According to Wikipedia, Senator Aaron Sargent introduced the amendment text written by Susan B. Anthony, which became the 19th Amendment!",
+    "who1": "The Woman Suffrage Amendment was a landmark U.S. constitutional proposal introduced on January 10, 1878, to guarantee women the right to vote.",
+    "who2": "The amendment text was drafted by Susan B. Anthony and Elizabeth Cady Stanton before Senator Aaron A. Sargent introduced it in Congress.",
+    "timeline": [
+      "1878 - Introduced in the U.S. Senate on January 10",
+      "1919 - Passed by both houses of Congress",
+      "1920 - Ratified as the 19th Amendment to the U.S. Constitution"
+    ]
+  },
+  {
+    "id": "jan-11-alexander-hamilton",
+    "month": "January",
+    "day": "January 11",
+    "dayNum": 11,
+    "title": "Alexander Hamilton b. 1755 (statesman)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 11, 1755, 1st Treasury Secretary!",
+    "emoji": "\ud83d\udcb5",
+    "funFact": "According to Biography.com, Alexander Hamilton co-authored the Federalist Papers and created the U.S. Coast Guard and National Bank!",
+    "who1": "Alexander Hamilton was an American statesman, Founding Father, and first Secretary of the Treasury who established the U.S. financial system.",
+    "who2": "Alexander Hamilton was born in Charlestown, Nevis, in the Caribbean on January 11, 1755, attending King's College in New York.",
+    "timeline": [
+      "1755 - Born on the Caribbean island of Nevis on January 11",
+      "1787 - Co-authored the Federalist Papers defending the U.S. Constitution",
+      "1789-1795 - Served as first U.S. Secretary of the Treasury",
+      "1804 - Passed away following his famous duel with Aaron Burr"
+    ]
+  },
+  {
+    "id": "jan-12-jack-london",
+    "month": "January",
+    "day": "January 12",
+    "dayNum": 12,
+    "title": "Jack London b. 1876 (author)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 12, 1876, author of Call of the Wild!",
+    "emoji": "\ud83d\udc3a",
+    "funFact": "According to Biography.com, Jack London sailed to Alaska during the 1897 Klondike Gold Rush, inspiring 'The Call of the Wild'!",
+    "who1": "Jack London was a famous American novelist, journalist, and social activist best known for classic adventure novels 'The Call of the Wild' and 'White Fang.'",
+    "who2": "Jack London was born in San Francisco, California, on January 12, 1876, working as a sailor and gold prospector.",
+    "timeline": [
+      "1876 - Born in San Francisco, California on January 12",
+      "1897 - Participated in the Klondike Gold Rush in Yukon, Canada",
+      "1903 - Published 'The Call of the Wild'",
+      "1906 - Published 'White Fang'"
+    ]
+  },
+  {
+    "id": "jan-13-frisbee",
+    "month": "January",
+    "day": "January 13",
+    "dayNum": 13,
+    "title": "Frisbee introduced 1957",
+    "type": "Event / Culture (Wikipedia)",
+    "connection": "Introduced by Wham-O on January 13, 1957!",
+    "emoji": "\ud83e\udd4f",
+    "funFact": "According to Wikipedia, college students originally tossed pie tins from the Frisbie Pie Company, inspiring the plastic toy design!",
+    "who1": "The Frisbee is a famous flying disc toy and sports equipment introduced by Wham-O manufacturing company on January 13, 1957.",
+    "who2": "The flying disc was invented by Fred Morrison in 1948 before Wham-O bought the rights and renamed it Frisbee.",
+    "timeline": [
+      "1957 - Wham-O introduces the plastic flying disc on January 13",
+      "1967 - Ultimate Frisbee sport invented at Columbia High School in New Jersey",
+      "1975 - First World Flying Disc Championship held"
+    ]
+  },
+  {
+    "id": "jan-13-michael-bond",
+    "month": "January",
+    "day": "January 13",
+    "dayNum": 13,
+    "title": "Michael Bond b. 1926 (creator of Paddington Bear)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 13, 1926, creator of Paddington Bear!",
+    "emoji": "\ud83e\uddf8",
+    "funFact": "According to Biography.com, Michael Bond bought a toy bear on Christmas Eve in London, which inspired his story 'A Bear Called Paddington'!",
+    "who1": "Michael Bond was a British author best known for creating the beloved children's book character Paddington Bear.",
+    "who2": "Michael Bond was born in Newbury, Berkshire, England, on January 13, 1926, serving in the Royal Air Force during WWII.",
+    "timeline": [
+      "1926 - Born in Newbury, England on January 13",
+      "1958 - Published first book 'A Bear Called Paddington'",
+      "1997 - Awarded OBE for services to children's literature",
+      "2017 - Passed away in London leaving a world-famous literary legacy"
+    ]
+  },
+  {
+    "id": "jan-14-shannon-lucid",
+    "month": "January",
+    "day": "January 14",
+    "dayNum": 14,
+    "title": "Shannon Lucid b. 1943 (astronaut)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 14, 1943, pioneer NASA astronaut!",
+    "emoji": "\ud83d\ude80",
+    "funFact": "According to Biography.com, Dr. Shannon Lucid spent 188 days aboard the Russian space station Mir, setting an endurance record for American astronauts!",
+    "who1": "Dr. Shannon Lucid is an American biochemist and retired NASA astronaut who completed five spaceflights, spending 188 days aboard the Mir space station.",
+    "who2": "Shannon Lucid was born in Shanghai, China, to missionary parents on January 14, 1943, earning her Ph.D. in biochemistry from the University of Oklahoma.",
+    "timeline": [
+      "1943 - Born in Shanghai, China on January 14",
+      "1978 - Selected in NASA's first astronaut class containing female candidates",
+      "1996 - Spent 188 days in Earth orbit aboard space station Mir",
+      "1996 - Awarded Congressional Space Medal of Honor by President Bill Clinton"
+    ]
+  },
+  {
+    "id": "jan-15-mlk",
+    "month": "January",
+    "day": "January 15",
+    "dayNum": 15,
+    "title": "Martin Luther King, Jr. b. 1929 (Civil Rights Leader)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 15, 1929, civil rights icon!",
+    "emoji": "\ud83c\udf99\ufe0f",
+    "funFact": "According to Biography.com, Dr. King received the Nobel Peace Prize at age 35 for leading nonviolent protests for racial justice!",
+    "who1": "Dr. Martin Luther King, Jr. was a charismatic American Baptist minister and civil rights leader who spearheaded the nonviolent struggle for racial equality.",
+    "who2": "Martin Luther King, Jr. was born in Atlanta, Georgia, on January 15, 1929, graduating from Morehouse College, Crozer Theological Seminary, and Boston University.",
+    "timeline": [
+      "1929 - Born in Atlanta, Georgia on January 15",
+      "1955 - Led the successful 381-day Montgomery Bus Boycott",
+      "1963 - Delivered iconic 'I Have a Dream' speech at the March on Washington",
+      "1964 - Awarded the Nobel Peace Prize"
+    ]
+  },
+  {
+    "id": "jan-16-gulf-war",
+    "month": "January",
+    "day": "January 16",
+    "dayNum": 16,
+    "title": "Persian Gulf war begins 1991",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Operation Desert Storm launched on January 16, 1991!",
+    "emoji": "\ud83c\udf96\ufe0f",
+    "funFact": "According to Wikipedia, Operation Desert Storm involved a 35-nation military coalition led by the United States!",
+    "who1": "The Persian Gulf War was an armed conflict executed by a 35-nation UN coalition led by the U.S. against Iraq following its invasion of Kuwait.",
+    "who2": "Combat operations were launched under President George H.W. Bush on January 16, 1991, with air strikes across the region.",
+    "timeline": [
+      "1991 - Coalition air campaign Operation Desert Storm launched on January 16",
+      "1991 - 100-hour ground offensive liberates Kuwait",
+      "1991 - Ceasefire declared on February 28"
+    ]
+  },
+  {
+    "id": "jan-16-dizzy-dean",
+    "month": "January",
+    "day": "January 16",
+    "dayNum": 16,
+    "title": "Dizzy Dean b. 1911 (Baseball Hall of Famer)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 16, 1911, Hall of Fame pitcher!",
+    "emoji": "\u26be",
+    "funFact": "According to Biography.com, Dizzy Dean won 30 games in 1934 for the St. Louis Cardinals 'Gashouse Gang'!",
+    "who1": "Jay Hanna 'Dizzy' Dean was an American professional baseball pitcher for the St. Louis Cardinals and famous broadcaster.",
+    "who2": "Dizzy Dean was born in Lucas, Arkansas, on January 16, 1911, pitching the Cardinals to a 1934 World Series victory.",
+    "timeline": [
+      "1911 - Born in Lucas, Arkansas on January 16",
+      "1934 - Won 30 games and National League MVP award",
+      "1953 - Inducted into the Baseball Hall of Fame"
+    ]
+  },
+  {
+    "id": "jan-17-ben-franklin",
+    "month": "January",
+    "day": "January 17",
+    "dayNum": 17,
+    "title": "Ben Franklin b. 1706 (statesman, author, printer)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 17, 1706, founding father & inventor!",
+    "emoji": "\u26a1",
+    "funFact": "According to Biography.com, Benjamin Franklin invented bifocal glasses, the Franklin stove, and proved lightning was electricity!",
+    "who1": "Benjamin Franklin was an American polymath, inventor, diplomat, and Founding Father who advanced science and American independence.",
+    "who2": "Benjamin Franklin was born in Boston on January 17, 1706, working as a printer's apprentice before founding his press in Philadelphia.",
+    "timeline": [
+      "1706 - Born in Boston, Massachusetts on January 17",
+      "1752 - Conducted historic kite experiment proving lightning is electricity",
+      "1776 - Signed the United States Declaration of Independence",
+      "1787 - Signed the U.S. Constitution"
+    ]
+  },
+  {
+    "id": "jan-17-muhammad-ali",
+    "month": "January",
+    "day": "January 17",
+    "dayNum": 17,
+    "title": "Muhammad Ali b. 1942 (boxer)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 17, 1942, 'The Greatest'!",
+    "emoji": "\ud83e\udd4a",
+    "funFact": "According to Biography.com, Muhammad Ali won the Olympic gold medal in 1960 and became a 3-time World Heavyweight Champion!",
+    "who1": "Muhammad Ali was an American professional boxer, activist, and philanthropist widely regarded as one of the most significant sports figures of the 20th century.",
+    "who2": "Muhammad Ali was born Cassius Marcellus Clay Jr. in Louisville, Kentucky, on January 17, 1942, beginning boxing training at age twelve.",
+    "timeline": [
+      "1942 - Born in Louisville, Kentucky on January 17",
+      "1960 - Won light heavyweight gold medal at Rome Olympic Games",
+      "1964 - Defeated Sonny Liston to win World Heavyweight Championship",
+      "1996 - Lit the Olympic flame at Atlanta Summer Olympics"
+    ]
+  },
+  {
+    "id": "jan-18-aa-milne",
+    "month": "January",
+    "day": "January 18",
+    "dayNum": 18,
+    "title": "A.A. Milne b. 1882 (author of Winnie the Pooh)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 18, 1882, creator of Winnie the Pooh!",
+    "emoji": "\ud83c\udf6f",
+    "funFact": "According to Biography.com, A.A. Milne wrote 'Winnie-the-Pooh' based on stuffed toys owned by his son Christopher Robin!",
+    "who1": "Alan Alexander Milne was an English author best known for his books about the stuffed bear Winnie-the-Pooh.",
+    "who2": "A.A. Milne was born in London on January 18, 1882, studying mathematics at Trinity College, Cambridge.",
+    "timeline": [
+      "1882 - Born in London, England on January 18",
+      "1926 - Published beloved children's book 'Winnie-the-Pooh'",
+      "1928 - Introduced Tigger in 'The House at Pooh Corner'"
+    ]
+  },
+  {
+    "id": "jan-18-mark-messier",
+    "month": "January",
+    "day": "January 18",
+    "dayNum": 18,
+    "title": "Mark Messier b. 1961 (hockey player)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 18, 1961, 6-time Stanley Cup champion!",
+    "emoji": "\ud83c\udfd2",
+    "funFact": "According to Biography.com, Mark Messier scored 1,887 career points and won six Stanley Cups with Edmonton and New York!",
+    "who1": "Mark Messier is a Canadian former professional ice hockey center who played 25 seasons in the NHL, winning six Stanley Cup championships.",
+    "who2": "Mark Messier was born in Edmonton, Alberta, on January 18, 1961, playing minor hockey before joining the Edmonton Oilers.",
+    "timeline": [
+      "1961 - Born in Edmonton, Alberta, Canada on January 18",
+      "1984, 1985, 1987, 1988, 1990 - Won five Stanley Cups with Edmonton Oilers",
+      "1994 - Captained New York Rangers to historic Stanley Cup championship",
+      "2007 - Inducted into Hockey Hall of Fame"
+    ]
+  },
+  {
+    "id": "jan-19-paul-cezanne",
+    "month": "January",
+    "day": "January 19",
+    "dayNum": 19,
+    "title": "Paul Cezanne b. 1839 (impressionist painter)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 19, 1839, Post-Impressionist master!",
+    "emoji": "\ud83c\udfa8",
+    "funFact": "According to Biography.com, Henri Matisse and Pablo Picasso both described C\u00e9zanne as 'the father of us all'!",
+    "who1": "Paul C\u00e9zanne was a French Post-Impressionist painter whose work laid the foundations of the transition from 19th-century art to 20th-century Cubism.",
+    "who2": "Paul C\u00e9zanne was born in Aix-en-Provence, France, on January 19, 1839, studying law before dedicating himself to painting.",
+    "timeline": [
+      "1839 - Born in Aix-en-Provence, France on January 19",
+      "1895 - First major solo exhibition in Paris establishes his reputation",
+      "1906 - Passed away in Aix-en-Provence as a master of modern art"
+    ]
+  },
+  {
+    "id": "jan-19-robert-e-lee",
+    "month": "January",
+    "day": "January 19",
+    "dayNum": 19,
+    "title": "Robert E. Lee b. 1807 (leader of Confederate Army)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 19, 1807, Civil War general!",
+    "emoji": "\u2694\ufe0f",
+    "funFact": "According to Biography.com, Robert E. Lee served as superintendent of West Point before commanding the Army of Northern Virginia!",
+    "who1": "Robert E. Lee was an American Confederate general who commanded the Army of Northern Virginia during the American Civil War.",
+    "who2": "Robert E. Lee was born in Westmoreland County, Virginia, on January 19, 1807, graduating second in his class from West Point.",
+    "timeline": [
+      "1807 - Born in Westmoreland County, Virginia on January 19",
+      "1862 - Assumed command of the Army of Northern Virginia",
+      "1865 - Surrendered to Ulysses S. Grant at Appomattox Court House"
+    ]
+  },
+  {
+    "id": "jan-19-edgar-allan-poe",
+    "month": "January",
+    "day": "January 19",
+    "dayNum": 19,
+    "title": "Edgar Allen Poe b. 1809 (poet and author)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 19, 1809, master of mystery & macabre!",
+    "emoji": "\ud83e\udeb6",
+    "funFact": "According to Biography.com, Edgar Allan Poe invented the modern detective fiction genre with his story 'The Murders in the Rue Morgue'!",
+    "who1": "Edgar Allan Poe was an American writer, poet, and literary critic best known for his mysterious and macabre poetry and short stories.",
+    "who2": "Edgar Allan Poe was born in Boston on January 19, 1809, attending the University of Virginia before serving in the U.S. Army.",
+    "timeline": [
+      "1809 - Born in Boston, Massachusetts on January 19",
+      "1841 - Published 'The Murders in the Rue Morgue,' inventing detective fiction",
+      "1845 - Published famous poem 'The Raven' to national acclaim"
+    ]
+  },
+  {
+    "id": "jan-20-buzz-aldrin",
+    "month": "January",
+    "day": "January 20",
+    "dayNum": 20,
+    "title": "Buzz Aldrin b. 1930 (one of first men to walk on moon)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 20, 1930, Apollo 11 moonwalker!",
+    "emoji": "\ud83c\udf15",
+    "funFact": "According to Biography.com, Buzz Aldrin held a doctorate in astronautics from MIT and was the lunar module pilot on Apollo 11!",
+    "who1": "Buzz Aldrin is an American former astronaut, engineer, and fighter pilot who made history in 1969 as one of the first two humans to walk on the Moon.",
+    "who2": "Buzz Aldrin was born Edwin Eugene Aldrin Jr. in Glen Ridge, New Jersey, on January 20, 1930, graduating third in his class from West Point.",
+    "timeline": [
+      "1930 - Born in Glen Ridge, New Jersey on January 20",
+      "1966 - Set spacewalk endurance record during Gemini 12 mission",
+      "1969 - Walked on the lunar surface during historic Apollo 11 moon landing"
+    ]
+  },
+  {
+    "id": "jan-21-john-fitch",
+    "month": "January",
+    "day": "January 21",
+    "dayNum": 21,
+    "title": "John Fitch b. 1743 (inventor of the steamboat)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 21, 1743, steamboat inventor!",
+    "emoji": "\ud83d\udea2",
+    "funFact": "According to Biography.com, John Fitch operated a 45-foot steamboat on the Delaware River in 1787, decades before Fulton!",
+    "who1": "John Fitch was an American inventor, clockmaker, and land surveyor who built the first operational steamboat in the United States.",
+    "who2": "John Fitch was born in Windsor, Connecticut, on January 21, 1743, working as a brass founder and silversmith.",
+    "timeline": [
+      "1743 - Born in Windsor, Connecticut on January 21",
+      "1787 - Launched a 45-foot steamboat carrying passengers on the Delaware River",
+      "1791 - Awarded U.S. patent for steamboat design"
+    ]
+  },
+  {
+    "id": "jan-21-ethan-allen",
+    "month": "January",
+    "day": "January 21",
+    "dayNum": 21,
+    "title": "Ethan Allen b. 1738 (Revolutionary War hero)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 21, 1738, leader of Green Mountain Boys!",
+    "emoji": "\ud83d\udde1\ufe0f",
+    "funFact": "According to Biography.com, Ethan Allen led the Green Mountain Boys to capture Fort Ticonderoga from the British in 1775!",
+    "who1": "Ethan Allen was an American farmer, philosopher, businessman, and Patriot hero who led the Green Mountain Boys during the Revolutionary War.",
+    "who2": "Ethan Allen was born in Litchfield, Connecticut, on January 21, 1738, moving to the New Hampshire Grants (Vermont).",
+    "timeline": [
+      "1738 - Born in Litchfield, Connecticut on January 21",
+      "1775 - Captured Fort Ticonderoga from British forces alongside Benedict Arnold",
+      "1791 - Vermont admitted as 14th state following his founding efforts"
+    ]
+  },
+  {
+    "id": "jan-22-willa-brown",
+    "month": "January",
+    "day": "January 22",
+    "dayNum": 22,
+    "title": "Willa Brown-Chappell b. 1906 (pioneer aviator)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 22, 1906, aviation pioneer!",
+    "emoji": "\u2708\ufe0f",
+    "funFact": "According to Biography.com, Willa Brown was the 1st African American woman to earn a commercial pilot's license in the U.S.!",
+    "who1": "Willa Brown-Chappell was an American aviator, advocate, and educator who was the first African American woman to earn a commercial pilot's license in the United States.",
+    "who2": "Willa Brown was born in Glasgow, Kentucky, on January 22, 1906, studying education at Indiana State Teachers College.",
+    "timeline": [
+      "1906 - Born in Glasgow, Kentucky on January 22",
+      "1938 - Earned commercial pilot's license in the U.S.",
+      "1939 - Co-founded National Airmen Association of America to integrate military aviation"
+    ]
+  },
+  {
+    "id": "jan-23-elizabeth-blackwell",
+    "month": "January",
+    "day": "January 23",
+    "dayNum": 23,
+    "title": "Elizabeth Blackwell becomes doctor 1849",
+    "type": "Person (Biography.com)",
+    "connection": "Graduated medical school on January 23, 1849!",
+    "emoji": "\ud83e\ude7a",
+    "funFact": "According to Biography.com, Elizabeth Blackwell was the first woman in America to receive a medical degree!",
+    "who1": "Dr. Elizabeth Blackwell was a British-born physician who became the first woman to receive a medical degree in the United States.",
+    "who2": "Elizabeth Blackwell was born near Bristol, England, on February 3, 1821, graduating from Geneva Medical College in New York on January 23, 1849.",
+    "timeline": [
+      "1849 - Graduated first in her class from Geneva Medical College on January 23",
+      "1857 - Co-founded the New York Infirmary for Indigent Women and Children",
+      "1868 - Established the Women's Medical College in New York"
+    ]
+  },
+  {
+    "id": "jan-23-edouard-manet",
+    "month": "January",
+    "day": "January 23",
+    "dayNum": 23,
+    "title": "Edouard Manet b. 1832 (artist)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 23, 1832, French painter master!",
+    "emoji": "\ud83c\udfa8",
+    "funFact": "According to Biography.com, \u00c9douard Manet bridged the transition from Realism to Impressionism in 19th-century French art!",
+    "who1": "\u00c9douard Manet was a pivotal French painter who transitioned 19th-century art from Realism to Impressionism.",
+    "who2": "\u00c9douard Manet was born in Paris on January 23, 1832, studying painting under Thomas Couture.",
+    "timeline": [
+      "1832 - Born in Paris, France on January 23",
+      "1863 - Exhibited famous masterpiece 'Le D\u00e9jeuner sur l'herbe'",
+      "1882 - Completed famous final masterpiece 'A Bar at the Folies-Berg\u00e8re'"
+    ]
+  },
+  {
+    "id": "jan-24-ca-gold-rush",
+    "month": "January",
+    "day": "January 24",
+    "dayNum": 24,
+    "title": "California Gold discovery 1848",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Discovered at Sutter's Mill on January 24, 1848!",
+    "emoji": "\ud83e\ude99",
+    "funFact": "According to Wikipedia, James Marshall's discovery of gold flakes brought over 300,000 '49ers' to California!",
+    "who1": "The California Gold Discovery occurred on January 24, 1848, when James W. Marshall found gold flakes at Sutter's Mill in Coloma, triggering the California Gold Rush.",
+    "who2": "James Marshall spotted shiny yellow metal in the water race of a sawmill he was constructing for John Sutter along the American River.",
+    "timeline": [
+      "1848 - Gold flakes discovered at Sutter's Mill on January 24",
+      "1849 - Over 80,000 fortune seekers '49ers' arrive in California",
+      "1850 - California admitted directly as the 31st U.S. state"
+    ]
+  },
+  {
+    "id": "jan-24-mary-lou-retton",
+    "month": "January",
+    "day": "January 24",
+    "dayNum": 24,
+    "title": "Mary Lou Retton b. 1968 (Olympic gymnast)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 24, 1968, Olympic gymnastics champion!",
+    "emoji": "\ud83e\udd38\u200d\u2640\ufe0f",
+    "funFact": "According to Biography.com, Mary Lou Retton scored perfect 10s on floor and vault to become the 1st American woman to win individual All-Around Olympic gymnastics gold!",
+    "who1": "Mary Lou Retton is an American former gymnast who won the individual all-around gold medal at the 1984 Summer Olympics in Los Angeles.",
+    "who2": "Mary Lou Retton was born in Fairmont, West Virginia, on January 24, 1968, training under Bela and Marta Karolyi.",
+    "timeline": [
+      "1968 - Born in Fairmont, West Virginia on January 24",
+      "1984 - Won five medals including All-Around Gold at Los Angeles Olympics",
+      "1985 - Inducted into the International Gymnastics Hall of Fame"
+    ]
+  },
+  {
+    "id": "jan-25-macintosh",
+    "month": "January",
+    "day": "January 25",
+    "dayNum": 25,
+    "title": "Macintosh Computer released 1984",
+    "type": "Event / Science (Wikipedia)",
+    "connection": "Released nationwide by Apple on January 25, 1984!",
+    "emoji": "\ud83d\udcbb",
+    "funFact": "According to Wikipedia, the Macintosh was the first mass-market personal computer with a graphical user interface (GUI) and mouse!",
+    "who1": "The Macintosh Computer was a groundbreaking personal computer designed and sold by Apple Inc., featuring a built-in monitor, graphical interface, and mouse.",
+    "who2": "The Macintosh project was started by Jef Raskin and Steve Jobs, unveiled during Apple's 1984 Super Bowl commercial before going on sale January 25.",
+    "timeline": [
+      "1984 - Unveiled by Steve Jobs in Cupertino",
+      "1984 - Released for public sale nationwide on January 25",
+      "1985 - Desktop publishing revolution ignited by Mac and LaserWriter"
+    ]
+  },
+  {
+    "id": "jan-26-bessie-coleman",
+    "month": "January",
+    "day": "January 26",
+    "dayNum": 26,
+    "title": "Bessie Coleman b. 1893 (1st African American woman pilot)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 26, 1893, pioneer stunt pilot!",
+    "emoji": "\ud83d\udee9\ufe0f",
+    "funFact": "According to Biography.com, Bessie Coleman learned French and traveled to Paris to earn her pilot's license because U.S. flight schools denied her admission!",
+    "who1": "Bessie Coleman was an early American civil aviator and the first African American and Native American woman to hold a pilot license.",
+    "who2": "Bessie Coleman was born in Atlanta, Texas, on January 26, 1893, working as a laundress and manicurist before attending flight school in France.",
+    "timeline": [
+      "1893 - Born in Atlanta, Texas on January 26",
+      "1921 - Earned international pilot license from F\u00e9d\u00e9ration A\u00e9ronautique Internationale in France",
+      "1922 - Performed first public stunt flight in the United States"
+    ]
+  },
+  {
+    "id": "jan-26-rocky-mountain-park",
+    "month": "January",
+    "day": "January 26",
+    "dayNum": 26,
+    "title": "Rocky Mountain National Park established in 1915",
+    "type": "Event / Landmark (Wikipedia)",
+    "connection": "Signed into law by President Wilson on January 26, 1915!",
+    "emoji": "\ud83c\udfd4\ufe0f",
+    "funFact": "According to Wikipedia, Rocky Mountain National Park encompasses 415 square miles of alpine tundra and 77 mountain peaks over 12,000 feet!",
+    "who1": "Rocky Mountain National Park is a national park located in north-central Colorado, preserving majestic peaks, alpine lakes, and wildlife.",
+    "who2": "The park was established when President Woodrow Wilson signed the Rocky Mountain National Park Act on January 26, 1915.",
+    "timeline": [
+      "1915 - Signed into federal law on January 26",
+      "1932 - Trail Ridge Road completed reaching an elevation of 12,183 feet",
+      "1976 - Designated a UNESCO Biosphere Reserve"
+    ]
+  },
+  {
+    "id": "jan-27-lewis-carroll",
+    "month": "January",
+    "day": "January 27",
+    "dayNum": 27,
+    "title": "Lewis Carroll b. 1832 (author)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 27, 1832, author of Alice in Wonderland!",
+    "emoji": "\ud83d\udc07",
+    "funFact": "According to Biography.com, Lewis Carroll was an Oxford mathematics lecturer whose real name was Charles Lutwidge Dodgson!",
+    "who1": "Lewis Carroll, pen name of Charles Lutwidge Dodgson, was an English author, mathematician, and photographer best known for 'Alice's Adventures in Wonderland.'",
+    "who2": "Lewis Carroll was born in Daresbury, Cheshire, England, on January 27, 1832, studying mathematics at Christ Church, Oxford.",
+    "timeline": [
+      "1832 - Born in Daresbury, England on January 27",
+      "1865 - Published timeless masterpiece 'Alice's Adventures in Wonderland'",
+      "1871 - Published sequel 'Through the Looking-Glass'"
+    ]
+  },
+  {
+    "id": "jan-27-mozart",
+    "month": "January",
+    "day": "January 27",
+    "dayNum": 27,
+    "title": "W.A. Mozart b. 1756 (composer)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 27, 1756, musical genius!",
+    "emoji": "\ud83c\udfbc",
+    "funFact": "According to Biography.com, Wolfgang Amadeus Mozart composed his first symphony at age eight and wrote over 600 musical works!",
+    "who1": "Wolfgang Amadeus Mozart was a prolific and influential composer of the Classical period whose genius reshaped symphonic, operatic, and chamber music.",
+    "who2": "Mozart was born in Salzburg, Austria, on January 27, 1756, performing as a child prodigy across European royal courts.",
+    "timeline": [
+      "1756 - Born in Salzburg, Austria on January 27",
+      "1764 - Composed first symphony at age eight in London",
+      "1786 - Premiered opera masterpiece 'The Marriage of Figaro' in Vienna",
+      "1791 - Passed away at age 35 leaving over 600 musical works"
+    ]
+  },
+  {
+    "id": "jan-28-piccard-twins",
+    "month": "January",
+    "day": "January 28",
+    "dayNum": 28,
+    "title": "Jean Felix and Auguste Piccard b. 1884 (scientists)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 28, 1884, stratosphere & deep sea explorers!",
+    "emoji": "\ud83c\udf88",
+    "funFact": "According to Biography.com, Auguste Piccard reached the stratosphere in a pressurized balloon, while Jean pioneered polyethylene cosmic ray balloons!",
+    "who1": "Jean Felix and Auguste Piccard were Swiss twin scientists and balloonists who pioneered high-altitude stratospheric flights and deep-sea bathyscaphe exploration.",
+    "who2": "The Piccard twins were born in Basel, Switzerland, on January 28, 1884, studying chemical and mechanical engineering at ETH Zurich.",
+    "timeline": [
+      "1884 - Born twin brothers in Basel, Switzerland on January 28",
+      "1931 - Auguste Piccard reaches record altitude of 51,775 feet in a stratospheric balloon",
+      "1960 - Auguste's son Jacques Piccard dives to the ocean's deepest point, the Mariana Trench"
+    ]
+  },
+  {
+    "id": "jan-29-oprah-winfrey",
+    "month": "January",
+    "day": "January 29",
+    "dayNum": 29,
+    "title": "Oprah Winfrey b. 1954 (entertainer and philanthropist)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 29, 1954, media mogul & philanthropist!",
+    "emoji": "\ud83c\udf99\ufe0f",
+    "funFact": "According to Biography.com, Oprah Winfrey hosted 'The Oprah Winfrey Show' for 25 seasons and was awarded the Presidential Medal of Freedom!",
+    "who1": "Oprah Winfrey is an American talk show host, television producer, actress, author, and philanthropist best known for 'The Oprah Winfrey Show.'",
+    "who2": "Oprah Winfrey was born in Kosciusko, Mississippi, on January 29, 1954, beginning her radio career in high school before anchoring local television news.",
+    "timeline": [
+      "1954 - Born in Kosciusko, Mississippi on January 29",
+      "1986 - Launched nationally syndicated 'The Oprah Winfrey Show'",
+      "2011 - Concluded her 25-season talk show to launch OWN network",
+      "2013 - Awarded Presidential Medal of Freedom by President Obama"
+    ]
+  },
+  {
+    "id": "jan-30-fdr",
+    "month": "January",
+    "day": "January 30",
+    "dayNum": 30,
+    "title": "Franklin Delano Roosevelt b. 1882 (32nd U.S. President)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 30, 1882, 32nd U.S. President!",
+    "emoji": "\ud83c\udfdb\ufe0f",
+    "funFact": "According to Biography.com, FDR was elected to four terms as president, led the U.S. through the Great Depression and WWII, and created Social Security!",
+    "who1": "Franklin Delano Roosevelt was an American statesman and political leader who served as the 32nd President of the United States from 1933 to 1945.",
+    "who2": "FDR was born in Hyde Park, New York, on January 30, 1882, graduating from Harvard College and Columbia Law School.",
+    "timeline": [
+      "1882 - Born in Hyde Park, New York on January 30",
+      "1933 - Inaugurated as 32nd President launching New Deal programs",
+      "1935 - Signed Social Security Act into law",
+      "1941 - Led United States entry into World War II following Pearl Harbor"
+    ]
+  },
+  {
+    "id": "jan-31-jackie-robinson",
+    "month": "January",
+    "day": "January 31",
+    "dayNum": 31,
+    "title": "Jackie Robinson b. 1919 (1st African American in MLB)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 31, 1919, MLB color line pioneer!",
+    "emoji": "\u26be",
+    "funFact": "According to Biography.com, Jackie Robinson's jersey number 42 was retired across all of Major League Baseball in 1997!",
+    "who1": "Jackie Robinson was an American professional baseball player who broke Major League Baseball's color line when he debuted with the Brooklyn Dodgers in 1947.",
+    "who2": "Jackie Robinson was born in Cairo, Georgia, on January 31, 1919, excelling in four sports (football, basketball, track, baseball) at UCLA.",
+    "timeline": [
+      "1919 - Born in Cairo, Georgia on January 31",
+      "1947 - Debuted with Brooklyn Dodgers breaking MLB color line",
+      "1949 - Won National League Most Valuable Player award",
+      "1962 - Inducted into the Baseball Hall of Fame"
+    ]
+  }
+];
+
   const ALL_RAW_TOPICS = [...RAW_OCTOBER_DATA, ...RAW_NOVEMBER_DATA, ...RAW_JANUARY_DATA, ...RAW_FEBRUARY_DATA];
   const TOPICS_DB = ALL_RAW_TOPICS.map(t => {
     const articles = buildArticlesForTopic(t);
