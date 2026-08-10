@@ -4,10 +4,12 @@
 (function () {
   'use strict';
 
-  function buildArticlesForTopic(t) {
-    // 1. Reference external October database if available
-    if (window.OCTOBER_ARTICLES_DB && window.OCTOBER_ARTICLES_DB[t.id]) {
-      const ext = window.OCTOBER_ARTICLES_DB[t.id];
+  function getArticlesForTopic(topic) {
+    if (!topic) return null;
+
+    // Check external global database first (e.g. data/october_articles.js)
+    if (window.OCTOBER_ARTICLES_DB && window.OCTOBER_ARTICLES_DB[topic.id]) {
+      const ext = window.OCTOBER_ARTICLES_DB[topic.id];
       return {
         article1: ext.article1,
         article1_challenge: ext.article1,
@@ -16,36 +18,35 @@
       };
     }
 
-    // 2. Reference pre-loaded topic article objects
-    if (t.article1 && t.article2) {
+    // Check embedded topic articles
+    if (topic.article1 && topic.article2) {
       return {
-        article1: t.article1,
-        article1_challenge: t.article1,
-        article2: t.article2,
-        article2_challenge: t.article2
+        article1: topic.article1,
+        article1_challenge: topic.article1,
+        article2: topic.article2,
+        article2_challenge: topic.article2
       };
     }
 
-    // 3. Simple fallback structure if no external file present
-    const isPerson = t.type.includes("Person");
+    const isPerson = topic.type ? topic.type.includes("Person") : true;
     const sourceName = isPerson ? "Biography.com" : "Wikipedia";
 
     return {
       article1: {
-        title: `Article 1: ${t.title} - Impact & Legacy (${sourceName})`,
-        paragraphs: [[`${t.who1}`]]
+        title: `Article 1: ${topic.title} - Impact & Legacy (${sourceName})`,
+        paragraphs: [[`${topic.who1 || topic.title}`]]
       },
       article1_challenge: {
-        title: `Article 1: ${t.title} - Impact & Legacy (${sourceName})`,
-        paragraphs: [[`${t.who1}`]]
+        title: `Article 1: ${topic.title} - Impact & Legacy (${sourceName})`,
+        paragraphs: [[`${topic.who1 || topic.title}`]]
       },
       article2: {
-        title: `Article 2: ${t.title} - Origins & History (${sourceName})`,
-        paragraphs: [[`${t.who2}`]]
+        title: `Article 2: ${topic.title} - Origins & History (${sourceName})`,
+        paragraphs: [[`${topic.who2 || topic.title}`]]
       },
       article2_challenge: {
-        title: `Article 2: ${t.title} - Origins & History (${sourceName})`,
-        paragraphs: [[`${t.who2}`]]
+        title: `Article 2: ${topic.title} - Origins & History (${sourceName})`,
+        paragraphs: [[`${topic.who2 || topic.title}`]]
       }
     };
   }
@@ -6432,7 +6433,7 @@
 
   const ALL_RAW_TOPICS = [...RAW_OCTOBER_DATA, ...RAW_NOVEMBER_DATA, ...RAW_DECEMBER_DATA, ...RAW_JANUARY_DATA, ...RAW_FEBRUARY_DATA, ...RAW_MARCH_DATA, ...RAW_APRIL_DATA];
   const TOPICS_DB = ALL_RAW_TOPICS.map(t => {
-    const articles = buildArticlesForTopic(t);
+    const articles = getArticlesForTopic(t);
     return Object.assign({}, t, articles);
   });
 
@@ -6667,6 +6668,12 @@
     stopAudio();
     if (!articleBodyProtected || !activeTopic) return;
     
+    // Always resolve full article object dynamically
+    const freshArticles = getArticlesForTopic(activeTopic);
+    if (freshArticles) {
+      Object.assign(activeTopic, freshArticles);
+    }
+
     let articleData;
     if (activeArticleIndex === 1) {
       articleData = isChallengeModeActive ? (activeTopic.article1_challenge || activeTopic.article1) : activeTopic.article1;
