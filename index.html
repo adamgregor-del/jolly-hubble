@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talking Calendar: Research & Paraphrasing Hub</title>
+  <meta name="description" content="An interactive research hub for students to read dual factual articles, highlight multiple sentences, practice paraphrasing, and create printable calendar project reports.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <nav class="top-nav">
+    <div class="nav-container">
+      <a href="#" class="brand-logo" id="homeLogoBtn">
+        <div class="brand-icon">📅</div>
+        <div class="brand-text">
+          <h1>Talking Calendar</h1>
+          <p>Dual-Article Research & Paraphrase Studio</p>
+        </div>
+      </a>
+      <div class="nav-actions">
+        <div class="user-badge" id="userBadge">
+          <div class="avatar" id="userAvatar">S</div>
+          <span id="userNameDisplay">Student Guest</span>
+        </div>
+        <button class="btn-btn btn-secondary" id="changeUserBtn">👤 Change Name</button>
+        <button class="btn-btn btn-accent" id="teacherLoginBtn">🔒 Teacher Dashboard</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <main class="app-container">
+
+    <!-- Hero Header & Month Selector Section -->
+    <section class="hero-section">
+      <div class="hero-header">
+        <h2>Find Your Research Topic & Compare Dual Articles</h2>
+        <p>Select a month to browse featured topics, or type any topic below. Each topic includes <strong>2 complete articles</strong> (4+ paragraphs each) to synthesize into your own writing!</p>
+      </div>
+
+      <!-- Month Selector Bar -->
+      <div class="month-selector-wrapper">
+        <div class="month-selector-title">
+          <span>🗓️ Select Calendar Month:</span>
+        </div>
+        <div class="month-chips" id="monthChipsContainer">
+          <button class="month-chip active" data-month="all">🌟 All Months</button>
+          <button class="month-chip" data-month="January">❄️ Jan</button>
+          <button class="month-chip" data-month="February">❤️ Feb</button>
+          <button class="month-chip" data-month="March">🌱 Mar</button>
+          <button class="month-chip" data-month="April">🌧️ Apr</button>
+          <button class="month-chip" data-month="May">🌸 May</button>
+          <button class="month-chip" data-month="June">☀️ Jun</button>
+          <button class="month-chip" data-month="July">🎆 Jul</button>
+          <button class="month-chip" data-month="August">🏖️ Aug</button>
+          <button class="month-chip" data-month="September">🎒 Sep</button>
+          <button class="month-chip" data-month="October">🎃 Oct</button>
+          <button class="month-chip" data-month="November">🍁 Nov</button>
+          <button class="month-chip" data-month="December">❄️ Dec</button>
+        </div>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-bar-row">
+        <div class="search-input-group">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="topicSearchInput" placeholder="Filter topics by name or keyword (e.g. Henry Ford, Gandhi, Model T)...">
+        </div>
+        <button class="btn-btn btn-primary" id="searchSubmitBtn">Search Topics</button>
+      </div>
+
+      <!-- Topic Grid Selector -->
+      <div class="topic-grid-section" id="topicGridSection">
+        <div class="topic-grid-header">
+          <h3 id="topicGridTitle">📚 Available Topics for Selected Month</h3>
+        </div>
+        <div class="topic-cards-grid" id="topicCardsGrid">
+          <!-- Dynamic Topic Cards Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Workbench View (Article Reader + Paraphrase Studio) -->
+    <section class="workbench-layout" id="workbenchLayout">
+      
+      <!-- Article Card (Left Side) -->
+      <article class="article-card" id="articleCard">
+        
+        <!-- Print Header Banner (Only visible when printed) -->
+        <div class="print-header-banner" style="display:none;">
+          <h1 id="printTitle">Talking Calendar Research Project</h1>
+          <p>Student Name: <span id="printStudentName">____________________</span> | Date: <span id="printDate">____________</span></p>
+        </div>
+
+        <!-- Topic Visual Header Graphic -->
+        <div class="topic-hero-graphic" id="topicHeroGraphic">
+          <div class="graphic-icon-wrap" id="graphicIconWrap">📞</div>
+          <div class="graphic-details">
+            <span class="topic-type-tag" id="topicTypeTag">Historical Person</span>
+            <h1 class="article-title" id="articleTitle">Alexander Graham Bell</h1>
+          </div>
+        </div>
+
+        <div class="article-header-meta">
+          <div class="tag-list">
+            <span class="tag tag-month" id="articleMonthTag">📅 October Topic</span>
+            <span class="tag tag-level" style="background:#e0e7ff; color:#3730a3; border-color:#c7d2fe;">📚 2 Source Articles</span>
+          </div>
+          <div style="display:flex; gap:0.5rem; align-items:center;">
+            <button class="challenge-btn" id="challengeModeBtn">
+              <span>⚡ Challenge Mode</span>
+            </button>
+            <button class="audio-btn" id="audioReadBtn">
+              <span id="audioIcon">🔊</span>
+              <span id="audioText">Read Aloud</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="month-connection-banner" id="monthConnectionBanner" style="margin-bottom: 1.25rem;">
+          <span>🗓️ <strong>Month Connection:</strong> Alexander Graham Bell patented the telephone on March 7, 1876!</span>
+        </div>
+
+        <!-- Article Switcher Tabs (Article 1 = Impact & Legacy, Article 2 = Origins & History) -->
+        <div class="article-tabs-nav">
+          <button class="article-tab-btn active" id="tabArticle1">
+            📄 Article 1: Impact & Real-World Legacy
+          </button>
+          <button class="article-tab-btn" id="tabArticle2">
+            📄 Article 2: Historical Origins & Overview
+          </button>
+        </div>
+
+        <!-- Protected Article Body (Copy Blocked) -->
+        <div class="article-body-protected" id="articleBodyProtected">
+          <!-- Populated dynamically with interactive highlighted sentence spans -->
+        </div>
+
+        <!-- Fun Fact Box -->
+        <div class="fun-fact-box" id="funFactBox">
+          <h4>💡 Did You Know?</h4>
+          <p id="funFactText">Bell's mother and wife were both deaf, which inspired him to study sound waves and invent devices to help people communicate!</p>
+        </div>
+
+        <!-- Timeline Section -->
+        <div class="article-section">
+          <h3 class="article-section-heading">⏳ Key Milestones</h3>
+          <ul class="timeline-list" id="timelineList">
+            <!-- Populated dynamically -->
+          </ul>
+        </div>
+
+      </article>
+
+      <!-- Paraphrase Workbench (Right Side) -->
+      <aside class="paraphrase-card" id="paraphraseCard">
+        <h2 class="workbench-title">✍️ Paraphrase Studio</h2>
+        <p class="workbench-subtitle">Click <strong>multiple sentences</strong> in Article 1 and Article 2 to collect key facts, then re-write them in your own words!</p>
+
+        <!-- Focus Sentence Box (Multi-Sentence List) -->
+        <div class="focus-sentence-box" id="focusSentenceBox">
+          <div class="focus-label-row">
+            <span class="focus-label">📌 Selected Sentences to Paraphrase:</span>
+            <button class="clear-sentences-btn" id="clearSentencesBtn" style="display:none;">Clear All</button>
+          </div>
+          <div class="focus-sentences-container" id="focusSentencesContainer">
+            <p class="focus-text-placeholder" id="focusSentencePlaceholder">Click sentences on the left to highlight and collect key facts here...</p>
+          </div>
+        </div>
+
+        <!-- Sentence Starters -->
+        <div class="starters-section">
+          <div class="starters-label">
+            <span>💡 Need help starting? Click a helper phrase:</span>
+          </div>
+          <div class="starter-chips">
+            <button class="starter-chip" data-starter="According to both articles, ">"According to both articles..."</button>
+            <button class="starter-chip" data-starter="In my own words, ">"In my own words..."</button>
+            <button class="starter-chip" data-starter="This person is famous because ">"This person is famous because..."</button>
+            <button class="starter-chip" data-starter="An important event was when ">"An important event was..."</button>
+            <button class="starter-chip" data-starter="Overall, this shows that ">"Overall, this shows that..."</button>
+          </div>
+        </div>
+
+        <!-- Paraphrase Input Area -->
+        <div class="paraphrase-textarea-wrapper">
+          <textarea class="paraphrase-textarea" id="paraphraseInput" placeholder="Synthesize the facts from Article 1 and Article 2 into your own words... (Copy/paste is disabled)"></textarea>
+          <div class="paste-blocked-toast" id="pasteToast">
+            🚫 Copy & Paste is disabled! Please write in your own words.
+          </div>
+        </div>
+
+        <!-- Real-Time Anti-Plagiarism Detector Meter -->
+        <div class="plagiarism-detector-card" id="plagiarismCard">
+          <div class="plagiarism-detector-header">
+            <span class="detector-title">🔍 Originality Check:</span>
+            <span class="plagiarism-badge badge-original" id="plagiarismBadge">Original</span>
+          </div>
+          <p class="detector-feedback-msg" id="plagiarismMsg">Great job! Proper nouns (names, places, dates) are ignored, and warnings trigger only for 5+ matching words in a row.</p>
+        </div>
+
+        <!-- Self-Check Checklist -->
+        <div class="checklist-section">
+          <div class="checklist-title">✅ Student Self-Check Checklist:</div>
+          <div class="checklist-items">
+            <label class="check-item">
+              <input type="checkbox" id="chkBothArticles">
+              <span>I included facts from both Article 1 and Article 2.</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" id="chkOwnWords">
+              <span>I changed the wording and sentence structure.</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" id="chkKeyFacts">
+              <span>I kept the main facts accurate and true.</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" id="chkSpelling">
+              <span>I checked my spelling and capitalization.</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="workbench-actions">
+          <button class="btn-btn btn-primary" id="saveProgressBtn" style="flex:1;">💾 Save Work</button>
+          <button class="btn-btn btn-accent" id="printWorksheetBtn">🖨️ Print Worksheet</button>
+        </div>
+
+      </aside>
+
+    </section>
+
+  </main>
+
+  <!-- Student Name Modal -->
+  <div class="modal-overlay" id="studentLoginModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>👋 Welcome to Talking Calendar!</h3>
+        <button class="close-modal-btn" id="closeStudentModalBtn">&times;</button>
+      </div>
+      <div style="margin-bottom: 1.5rem;">
+        <p style="color:#475569; margin-bottom: 1rem;">Please enter your first name so your teacher can find your research work later:</p>
+        <input type="text" id="studentNameInput" placeholder="Enter your first name (e.g. Maya)..." style="width:100%; padding:0.9rem; border-radius:12px; border:2px solid #cbd5e1; font-size:1.1rem; outline:none;">
+      </div>
+      <button class="btn-btn btn-primary" id="saveStudentNameBtn" style="width:100%; justify-center;">Start Researching 🚀</button>
+    </div>
+  </div>
+
+  <!-- Teacher Dashboard Modal -->
+  <div class="modal-overlay" id="teacherModal">
+    <div class="modal-card" style="max-width: 800px;">
+      <div class="modal-header">
+        <h3>🔒 Teacher Dashboard & Class Work</h3>
+        <button class="close-modal-btn" id="closeTeacherModalBtn">&times;</button>
+      </div>
+      <div id="teacherAuthSection">
+        <p style="color:#475569; margin-bottom: 1rem;">Enter the Teacher PIN to review student submissions (Default PIN: <strong>1234</strong>):</p>
+        <div style="display:flex; gap:0.75rem; margin-bottom: 1.5rem;">
+          <input type="password" id="teacherPinInput" placeholder="Enter PIN..." style="padding:0.8rem; border-radius:10px; border:2px solid #cbd5e1; font-size:1.1rem; width:180px;">
+          <button class="btn-btn btn-primary" id="teacherPinSubmitBtn">Unlock Dashboard</button>
+        </div>
+        <p id="teacherPinError" style="color:#ef4444; font-weight:700; font-size:0.9rem; display:none;">Incorrect PIN. Try 1234.</p>
+      </div>
+
+      <div id="teacherContentSection" style="display:none;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1rem;">
+          <h4>📋 Saved Student Submissions</h4>
+          <button class="btn-btn btn-secondary" id="clearSubmissionsBtn" style="background:#fee2e2; color:#991b1b; border:none; font-size:0.8rem;">Clear All Submissions</button>
+        </div>
+
+        <div class="submissions-table-wrapper">
+          <table class="sub-table">
+            <thead>
+              <tr>
+                <th>Student Name</th>
+                <th>Topic</th>
+                <th>Originality Score</th>
+                <th>Date</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="submissionsTableBody">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- App Script -->
+  <script src="app.js"></script>
+</body>
+</html>
