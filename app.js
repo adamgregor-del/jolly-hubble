@@ -1214,8 +1214,429 @@
   }
 ];
 
+
+  // --- RAW EXTRACTED PDF TOPICS: JANUARY (12 Topics) ---
+  const RAW_JANUARY_DATA = [
+  {
+    "id": "jan-1-ellis-island",
+    "month": "January",
+    "day": "January 1",
+    "dayNum": 1,
+    "title": "Ellis Island opened (1892)",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Opened as premier U.S. immigration gateway on Jan 1, 1892!",
+    "emoji": "\ud83d\uddfd",
+    "funFact": "According to Wikipedia, Ellis Island processed over 12 million immigrants entering the United States!",
+    "who1": "Ellis Island was the chief United States immigration inspection station in New York Harbor that welcomed millions of European newcomers seeking freedom and opportunity.",
+    "who2": "Ellis Island opened on January 1, 1892, under President Benjamin Harrison's administration, with fifteen-year-old Annie Moore being the very first immigrant processed.",
+    "timeline": [
+      "1892 - Opens on January 1 under President Benjamin Harrison",
+      "1907 - Record 1.2 million immigrants processed in a single year",
+      "1990 - Opens as a major historical immigration museum"
+    ]
+  },
+  {
+    "id": "jan-1-paul-revere",
+    "month": "January",
+    "day": "January 1",
+    "dayNum": 1,
+    "title": "Paul Revere (patriot) (b. 1735)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 1, 1735, famous Midnight Rider!",
+    "emoji": "\ud83d\udc0e",
+    "funFact": "According to Biography.com, Paul Revere was an expert silversmith who rode through the night to warn 'The British are coming!'",
+    "who1": "Paul Revere was an American silversmith, industrialist, and Patriot hero who alerted colonial militia of advancing British forces before the Battles of Lexington and Concord.",
+    "who2": "Paul Revere was born in Boston's North End on January 1, 1735, learning silversmithing from his father before joining the Sons of Liberty.",
+    "timeline": [
+      "1735 - Born in Boston, Massachusetts on January 1",
+      "1773 - Takes part in the Boston Tea Party protest",
+      "1775 - Completes famous Midnight Ride to Lexington and Concord",
+      "1818 - Passed away in Boston as an American revolutionary icon"
+    ]
+  },
+  {
+    "id": "jan-1-betsy-ross",
+    "month": "January",
+    "day": "January 1",
+    "dayNum": 1,
+    "title": "Betsy Ross (created first U.S. flag) (b. 1752)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 1, 1752, creator of first U.S. flag!",
+    "emoji": "\ud83c\uddfa\ud83c\uddf8",
+    "funFact": "According to Biography.com, Betsy Ross suggested using five-pointed stars instead of six-pointed stars because they were easier to snip with scissors!",
+    "who1": "Betsy Ross was an American seamstress in Philadelphia credited with creating the first iconic American flag featuring 13 stars and 13 stripes.",
+    "who2": "Betsy Ross was born Elizabeth Griscom in Philadelphia on January 1, 1752, apprenticing under an upholsterer before opening her own business.",
+    "timeline": [
+      "1752 - Born in Philadelphia, Pennsylvania on January 1",
+      "1776 - Meets with George Washington and crafts the 13-star American flag",
+      "1836 - Passed away in Philadelphia as an enduring patriotic figure"
+    ]
+  },
+  {
+    "id": "jan-2-isaac-asimov",
+    "month": "January",
+    "day": "January 2",
+    "dayNum": 2,
+    "title": "Isaac Asimov (science fiction author) (b. 1920)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 2, 1920, sci-fi legend!",
+    "emoji": "\ud83e\udd16",
+    "funFact": "According to Biography.com, Isaac Asimov coined the word 'robotics' and wrote the Three Laws of Robotics in his science fiction stories!",
+    "who1": "Isaac Asimov was a Russian-born American author and biochemistry professor best known for his iconic science fiction works such as the 'Foundation' series and 'I, Robot.'",
+    "who2": "Isaac Asimov was born in Petrovichi, Russia, on January 2, 1920, emigrating to Brooklyn, New York, at age three.",
+    "timeline": [
+      "1920 - Born in Petrovichi, Russia on January 2",
+      "1942 - Begins publishing the seminal 'Foundation' series",
+      "1950 - Publishes 'I, Robot' establishing the Three Laws of Robotics",
+      "1992 - Passed away in New York City as a titan of science fiction"
+    ]
+  },
+  {
+    "id": "jan-4-louis-braille",
+    "month": "January",
+    "day": "January 4",
+    "dayNum": 4,
+    "title": "Louis Braille (invented Braille) (b. 1809)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 4, 1809, inventor of tactile Braille system!",
+    "emoji": "\u2803",
+    "funFact": "According to Biography.com, Louis Braille developed the six-dot raised Braille code at age 15 while attending school in Paris!",
+    "who1": "Louis Braille was a French educator and inventor who developed the tactile raised-dot system used by blind and visually impaired individuals worldwide to read and write.",
+    "who2": "Louis Braille was born in Coupvray, France, on January 4, 1809, losing his sight in a childhood accident before earning a scholarship to the Royal Institute for Blind Youth.",
+    "timeline": [
+      "1809 - Born in Coupvray, France on January 4",
+      "1824 - Publishes initial six-dot Braille alphabet code at age fifteen",
+      "1837 - Expands Braille code to include mathematics and musical notation",
+      "1852 - Passed away in Paris as a world-changing innovator"
+    ]
+  },
+  {
+    "id": "jan-4-isaac-newton",
+    "month": "January",
+    "day": "January 4",
+    "dayNum": 4,
+    "title": "Isaac Newton (physicist) (b. 1643)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 4, 1643, laws of motion & gravity!",
+    "emoji": "\ud83c\udf4e",
+    "funFact": "According to Biography.com, Isaac Newton invented calculus and formulated the three universal laws of motion!",
+    "who1": "Sir Isaac Newton was an English mathematician, physicist, and astronomer who formulated the fundamental laws of motion and universal gravitation, laying the foundation for modern physics.",
+    "who2": "Sir Isaac Newton was born at Woolsthorpe Manor in Lincolnshire, England, on January 4, 1643, studying at Trinity College, Cambridge.",
+    "timeline": [
+      "1643 - Born in Lincolnshire, England on January 4",
+      "1665 - Formulates theories of gravity and calculus while studying optics",
+      "1687 - Publishes masterwork 'Principia Mathematica' establishing three laws of motion",
+      "1727 - Passed away in London as one of history's greatest scientific minds"
+    ]
+  },
+  {
+    "id": "jan-15-mlk",
+    "month": "January",
+    "day": "January 15",
+    "dayNum": 15,
+    "title": "Martin Luther King, Jr. (Civil Rights Leader) (b. 1929)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 15, 1929, civil rights icon!",
+    "emoji": "\ud83c\udf99\ufe0f",
+    "funFact": "According to Biography.com, Dr. King won the Nobel Peace Prize at age 35 for spearheading nonviolent civil rights protests!",
+    "who1": "Dr. Martin Luther King, Jr. was a charismatic American Baptist minister and civil rights leader who spearheaded the nonviolent struggle for racial equality.",
+    "who2": "Martin Luther King, Jr. was born in Atlanta, Georgia, on January 15, 1929, graduating from Morehouse College, Crozer Theological Seminary, and Boston University.",
+    "timeline": [
+      "1929 - Born in Atlanta, Georgia on January 15",
+      "1955 - Leads 381-day Montgomery Bus Boycott",
+      "1963 - Delivers famous 'I Have a Dream' speech during March on Washington",
+      "1964 - Awarded Nobel Peace Prize for nonviolent civil rights leadership"
+    ]
+  },
+  {
+    "id": "jan-17-ben-franklin",
+    "month": "January",
+    "day": "January 17",
+    "dayNum": 17,
+    "title": "Ben Franklin (statesman, author, printer) (b. 1706)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 17, 1706, founding father & inventor!",
+    "emoji": "\u26a1",
+    "funFact": "According to Biography.com, Benjamin Franklin proved lightning was electricity using a kite and key in 1752!",
+    "who1": "Benjamin Franklin was an American polymath, inventor, diplomat, and Founding Father who advanced science, printing, and American independence.",
+    "who2": "Benjamin Franklin was born in Boston on January 17, 1706, working as a printer's apprentice before founding his own printing press in Philadelphia.",
+    "timeline": [
+      "1706 - Born in Boston, Massachusetts on January 17",
+      "1732 - Begins publishing 'Poor Richard's Almanack'",
+      "1752 - Conducts famous kite experiment proving lightning is electricity",
+      "1776 - Signs U.S. Declaration of Independence"
+    ]
+  },
+  {
+    "id": "jan-17-muhammad-ali",
+    "month": "January",
+    "day": "January 17",
+    "dayNum": 17,
+    "title": "Muhammad Ali (boxer) (b. 1942)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 17, 1942, 'The Greatest'!",
+    "emoji": "\ud83e\udd4a",
+    "funFact": "According to Biography.com, Muhammad Ali won an Olympic Gold Medal in 1960 and became a 3-time Heavyweight Champion of the World!",
+    "who1": "Muhammad Ali, born Cassius Marcellus Clay Jr., was an American professional boxer, activist, and philanthropist widely regarded as one of the most significant sports figures of the 20th century.",
+    "who2": "Muhammad Ali was born in Louisville, Kentucky, on January 17, 1942, taking up boxing at age twelve after his bicycle was stolen.",
+    "timeline": [
+      "1942 - Born in Louisville, Kentucky on January 17",
+      "1960 - Wins Olympic Gold Medal in Rome",
+      "1964 - Defeats Sonny Liston to win World Heavyweight Championship",
+      "1996 - Lights the Olympic Cauldron at Atlanta Games"
+    ]
+  },
+  {
+    "id": "jan-20-buzz-aldrin",
+    "month": "January",
+    "day": "January 20",
+    "dayNum": 20,
+    "title": "Buzz Aldrin (walked on moon) (b. 1930)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 20, 1930, Apollo 11 astronaut!",
+    "emoji": "\ud83c\udf15",
+    "funFact": "According to Biography.com, Buzz Aldrin was the Lunar Module Pilot on Apollo 11 and became the second human to walk on the Moon!",
+    "who1": "Buzz Aldrin is an American former astronaut, engineer, and fighter pilot who made history on July 20, 1969, as one of the first humans to walk on the Moon.",
+    "who2": "Buzz Aldrin was born in Glen Ridge, New Jersey, on January 20, 1930, graduating third in his class at West Point Military Academy before earning an astronautics doctorate from MIT.",
+    "timeline": [
+      "1930 - Born in Glen Ridge, New Jersey on January 20",
+      "1966 - Performs record 5.5-hour spacewalk aboard Gemini 12",
+      "1969 - Walks on the Moon alongside Neil Armstrong during Apollo 11",
+      "2011 - Promotes human space exploration missions to Mars"
+    ]
+  },
+  {
+    "id": "jan-25-macintosh",
+    "month": "January",
+    "day": "January 25",
+    "dayNum": 25,
+    "title": "Macintosh Computer released 1984",
+    "type": "Event / Science (Wikipedia)",
+    "connection": "Released by Apple on January 25, 1984!",
+    "emoji": "\ud83d\udcbb",
+    "funFact": "According to Wikipedia, the Macintosh was the first mass-market personal computer to feature an integral graphical user interface and mouse!",
+    "who1": "The Macintosh Computer was a revolutionary personal computer introduced by Apple Inc. that transformed personal desktop computing.",
+    "who2": "The Macintosh was officially unveiled by Steve Jobs on January 24, 1984, going on sale nationwide on January 25.",
+    "timeline": [
+      "1984 - Unveiled by Steve Jobs during annual Apple shareholder meeting",
+      "1984 - On sale nationwide on January 25 featuring graphical desktop and mouse",
+      "1998 - Apple releases colorful iMac continuing Macintosh legacy"
+    ]
+  },
+  {
+    "id": "jan-31-jackie-robinson",
+    "month": "January",
+    "day": "January 31",
+    "dayNum": 31,
+    "title": "Jackie Robinson (MLB pioneer) (b. 1919)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on January 31, 1919, MLB color barrier pioneer!",
+    "emoji": "\u26be",
+    "funFact": "According to Biography.com, Jackie Robinson's jersey number 42 was retired across all Major League Baseball teams in 1997!",
+    "who1": "Jackie Robinson was an American professional baseball player who broke Major League Baseball's color line when he debuted with the Brooklyn Dodgers in 1947.",
+    "who2": "Jackie Robinson was born in Cairo, Georgia, on January 31, 1919, excelling in four sports at UCLA before serving in the U.S. Army.",
+    "timeline": [
+      "1919 - Born in Cairo, Georgia on January 31",
+      "1947 - Starts at first base for Brooklyn Dodgers breaking MLB color line",
+      "1949 - Wins National League Most Valuable Player award",
+      "1962 - Inducted into Baseball Hall of Fame"
+    ]
+  }
+];
+
+  // --- RAW EXTRACTED PDF TOPICS: FEBRUARY (10 Topics) ---
+  const RAW_FEBRUARY_DATA = [
+  {
+    "id": "feb-1-supreme-court",
+    "month": "February",
+    "day": "February 1",
+    "dayNum": 1,
+    "title": "Supreme Court held its first session 1790",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Convened in NYC on February 1, 1790!",
+    "emoji": "\u2696\ufe0f",
+    "funFact": "According to Wikipedia, the U.S. Supreme Court held its first official session in New York City's Royal Exchange building!",
+    "who1": "The Supreme Court of the United States held its inaugural session on February 1, 1790, establishing the third branch of American constitutional governance.",
+    "who2": "The Supreme Court convened at the Royal Exchange Building in New York City under Chief Justice John Jay.",
+    "timeline": [
+      "1790 - First session convenes in New York City on February 1",
+      "1791 - Moves to Independence Hall in Philadelphia",
+      "1935 - Moves into permanent U.S. Supreme Court building in Washington, D.C."
+    ]
+  },
+  {
+    "id": "feb-1-langston-hughes",
+    "month": "February",
+    "day": "February 1",
+    "dayNum": 1,
+    "title": "Langston Hughes (poet) (b. 1902)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 1, 1902, Harlem Renaissance poet!",
+    "emoji": "\ud83d\udcdc",
+    "funFact": "According to Biography.com, Langston Hughes wrote his famous poem 'The Negro Speaks of Rivers' while riding a train to Mexico at age 18!",
+    "who1": "Langston Hughes was an American poet, social activist, novelist, and playwright who was a central leader of the Harlem Renaissance.",
+    "who2": "Langston Hughes was born in Joplin, Missouri, on February 1, 1902, studying at Columbia University and Lincoln University.",
+    "timeline": [
+      "1902 - Born in Joplin, Missouri on February 1",
+      "1926 - Publishes first poetry collection 'The Weary Blues'",
+      "1967 - Passed away in New York City as a titan of American literature"
+    ]
+  },
+  {
+    "id": "feb-4-rosa-parks",
+    "month": "February",
+    "day": "February 4",
+    "dayNum": 4,
+    "title": "Rosa Parks (civil rights activist) (b. 1913)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 4, 1913, Mother of Civil Rights!",
+    "emoji": "\ud83d\ude8c",
+    "funFact": "According to Biography.com, Rosa Parks' refusal to yield her bus seat launched the 381-day Montgomery Bus Boycott!",
+    "who1": "Rosa Parks was an iconic African American civil rights activist whose refusal to surrender her seat on a segregated Montgomery bus ignited the modern Civil Rights Movement.",
+    "who2": "Rosa Parks was born Rosa Louise McCauley in Tuskegee, Alabama, on February 4, 1913, working as a seamstress and secretary for the Montgomery NAACP chapter.",
+    "timeline": [
+      "1913 - Born in Tuskegee, Alabama on February 4",
+      "1955 - Arrested in Montgomery, Alabama on December 1 launching bus boycott",
+      "1996 - Awarded Presidential Medal of Freedom",
+      "1999 - Awarded Congressional Gold Medal"
+    ]
+  },
+  {
+    "id": "feb-6-babe-ruth",
+    "month": "February",
+    "day": "February 6",
+    "dayNum": 6,
+    "title": "Babe Ruth (pitcher & slugger) (b. 1895)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 6, 1895, 'The Sultan of Swat'!",
+    "emoji": "\u26be",
+    "funFact": "According to Biography.com, Babe Ruth hit 714 career home runs and won 7 World Series championships!",
+    "who1": "Babe Ruth, born George Herman Ruth Jr., was an American professional baseball player whose career spanned 22 seasons, setting legendary slugging records.",
+    "who2": "Babe Ruth was born in Baltimore, Maryland, on February 6, 1895, learning baseball at St. Mary's Industrial School for Boys.",
+    "timeline": [
+      "1895 - Born in Baltimore, Maryland on February 6",
+      "1914 - Debuted with Boston Red Sox as a star pitcher",
+      "1927 - Hits 60 home runs in a single season with New York Yankees",
+      "1936 - Elected as one of first five inaugural members of Baseball Hall of Fame"
+    ]
+  },
+  {
+    "id": "feb-6-ronald-reagan",
+    "month": "February",
+    "day": "February 6",
+    "dayNum": 6,
+    "title": "Ronald Reagan (40th U.S. President) (b. 1911)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 6, 1911, 40th U.S. President!",
+    "emoji": "\ud83c\udfdb\ufe0f",
+    "funFact": "According to Biography.com, Ronald Reagan was a Hollywood actor and Governor of California before serving two terms as President!",
+    "who1": "Ronald Wilson Reagan was an American politician and actor who served as the 40th President of the United States from 1981 to 1989.",
+    "who2": "Ronald Reagan was born in Tampico, Illinois, on February 6, 1911, working as a radio sports broadcaster and actor before entering politics.",
+    "timeline": [
+      "1911 - Born in Tampico, Illinois on February 6",
+      "1967-1975 - Serves as Governor of California",
+      "1981-1989 - Serves two terms as 40th U.S. President",
+      "1987 - Delivers famous speech in Berlin urging 'Tear down this wall!'"
+    ]
+  },
+  {
+    "id": "feb-7-frederick-douglass",
+    "month": "February",
+    "day": "February 7",
+    "dayNum": 7,
+    "title": "Frederick Douglass (author & abolitionist) (b. 1817)",
+    "type": "Person (Biography.com)",
+    "connection": "Born in February 1817, abolitionist orator & author!",
+    "emoji": "\ud83d\udde3\ufe0f",
+    "funFact": "According to Biography.com, Frederick Douglass escaped enslavement and wrote three best-selling autobiographies championing human freedom!",
+    "who1": "Frederick Douglass was an American social reformer, abolitionist, orator, writer, and statesman who became a national leader of the abolitionist movement.",
+    "who2": "Frederick Douglass was born into enslavement in Talbot County, Maryland, learning to read secretly before escaping to freedom in 1838.",
+    "timeline": [
+      "1817 - Born into enslavement in Maryland",
+      "1838 - Escapes to freedom in New York",
+      "1845 - Publishes famous autobiography 'Narrative of the Life of Frederick Douglass'",
+      "1889 - Appointed U.S. Minister Resident to Haiti"
+    ]
+  },
+  {
+    "id": "feb-11-thomas-edison",
+    "month": "February",
+    "day": "February 11",
+    "dayNum": 11,
+    "title": "Thomas Alva Edison (inventor) (b. 1847)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 11, 1847, inventor of phonograph & lightbulb!",
+    "emoji": "\ud83d\udca1",
+    "funFact": "According to Biography.com, Edison established the world's first industrial research lab in Menlo Park, New Jersey!",
+    "who1": "Thomas Alva Edison was a prolific American inventor and businessman whose groundbreaking inventions in electricity, sound recording, and motion pictures transformed global life.",
+    "who2": "Thomas Edison was born in Milan, Ohio, on February 11, 1847, working as a teenage telegraph operator before building his famous research laboratory.",
+    "timeline": [
+      "1847 - Born in Milan, Ohio on February 11",
+      "1877 - Invents phonograph recording sound",
+      "1879 - Develops practical long-lasting incandescent electric lightbulb",
+      "1931 - Passed away holding 1,093 U.S. patents"
+    ]
+  },
+  {
+    "id": "feb-12-abraham-lincoln",
+    "month": "February",
+    "day": "February 12",
+    "dayNum": 12,
+    "title": "Abraham Lincoln (16th U.S. President) (b. 1809)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 12, 1809, 16th U.S. President!",
+    "emoji": "\ud83c\udfa9",
+    "funFact": "According to Biography.com, Lincoln preserved the Union during the Civil War and issued the Emancipation Proclamation!",
+    "who1": "Abraham Lincoln was an American lawyer and statesman who served as the 16th President of the United States, preserving the Union and abolishing slavery.",
+    "who2": "Abraham Lincoln was born in a one-room log cabin in Hardin County, Kentucky, on February 12, 1809, teaching himself law while working as a frontier lawyer.",
+    "timeline": [
+      "1809 - Born in Hardin County, Kentucky on February 12",
+      "1861 - Sworn in as 16th U.S. President",
+      "1863 - Issues Emancipation Proclamation and delivers Gettysburg Address",
+      "1865 - Preserves the Union before passing away in Washington, D.C."
+    ]
+  },
+  {
+    "id": "feb-15-susan-b-anthony",
+    "month": "February",
+    "day": "February 15",
+    "dayNum": 15,
+    "title": "Susan B. Anthony (reformer & suffragist) (b. 1820)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 15, 1820, suffragist pioneer!",
+    "emoji": "\ud83d\uddf3\ufe0f",
+    "funFact": "According to Biography.com, Susan B. Anthony was arrested for voting illegally in 1872 to highlight women's right to vote!",
+    "who1": "Susan B. Anthony was a legendary American social reformer and women's rights activist who played a pivotal role in the women's suffrage movement.",
+    "who2": "Susan B. Anthony was born in Adams, Massachusetts, on February 15, 1820, working as a teacher before co-founding the National Woman Suffrage Association.",
+    "timeline": [
+      "1820 - Born in Adams, Massachusetts on February 15",
+      "1872 - Arrested for voting in Rochester, New York",
+      "1906 - Passed away 14 years before 19th Amendment granted women right to vote"
+    ]
+  },
+  {
+    "id": "feb-22-george-washington",
+    "month": "February",
+    "day": "February 22",
+    "dayNum": 22,
+    "title": "George Washington (1st U.S. President) (b. 1732)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on February 22, 1732, 1st U.S. President!",
+    "emoji": "\ud83c\uddfa\ud83c\uddf8",
+    "funFact": "According to Biography.com, Washington led the Continental Army to victory in the Revolutionary War and served as first U.S. President!",
+    "who1": "George Washington was an American military officer, statesman, and Founding Father who served as the first President of the United States from 1789 to 1797.",
+    "who2": "George Washington was born in Westmoreland County, Virginia, on February 22, 1732, working as a land surveyor before joining the Virginia militia.",
+    "timeline": [
+      "1732 - Born in Westmoreland County, Virginia on February 22",
+      "1775 - Commander-in-Chief of Continental Army in American Revolution",
+      "1789 - Unanimously elected first President of the United States",
+      "1799 - Passed away at Mount Vernon, Virginia"
+    ]
+  }
+];
+
   // Compile final DB with dynamically built articles
-  const ALL_RAW_TOPICS = [...RAW_OCTOBER_DATA, ...RAW_NOVEMBER_DATA];
+  const ALL_RAW_TOPICS = [...RAW_OCTOBER_DATA, ...RAW_NOVEMBER_DATA, ...RAW_JANUARY_DATA, ...RAW_FEBRUARY_DATA];
   const TOPICS_DB = ALL_RAW_TOPICS.map(t => {
     const articles = buildArticlesForTopic(t);
     return Object.assign({}, t, articles);
