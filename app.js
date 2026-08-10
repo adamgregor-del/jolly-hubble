@@ -1,5 +1,5 @@
 /* Talking Calendar - Dual-Article Research & Paraphrase Hub Engine */
-/* Pre-Populated Featured Topics database containing extracted topics for October, November, December, January, February, and March! */
+/* Pre-Populated Featured Topics database containing extracted topics for October, November, December, January, February, March, and April! */
 
 (function () {
   'use strict';
@@ -5451,8 +5451,964 @@
     ]
   }
 ];
+  const RAW_APRIL_DATA = [
+  {
+    "id": "apr-1-save-the-rhino",
+    "month": "April",
+    "day": "April 1",
+    "dayNum": 1,
+    "title": "Save the Rhino Day",
+    "type": "Event / Culture (Wikipedia)",
+    "connection": "Celebrated annually on April 1!",
+    "emoji": "\ud83e\udd8f",
+    "funFact": "According to Wikipedia, Save the Rhino Day raises global awareness to protect endangered rhinoceros species from poaching!",
+    "who1": "Save the Rhino Day is an international environmental awareness event held on April 1 to advocate for rhinoceros conservation.",
+    "who2": "Wildlife conservation groups established the day to combat habitat loss and poaching in Africa and Asia.",
+    "timeline": [
+      "1990s - Conservation organizations establish Save the Rhino Day",
+      "2020 - Global anti-poaching initiatives protect black and white rhino populations"
+    ]
+  },
+  {
+    "id": "apr-2-frederic-bartholdi",
+    "month": "April",
+    "day": "April 2",
+    "dayNum": 2,
+    "title": "Frederic Bartholdi b. 1834 (designed Statue of Liberty)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on April 2, 1834, Statue of Liberty sculptor!",
+    "emoji": "\ud83d\uddfd",
+    "funFact": "According to Biography.com, Bartholdi spent 10 years designing and sculpting 'Liberty Enlightening the World'!",
+    "who1": "Fr\u00e9d\u00e9ric-Auguste Bartholdi was a French sculptor best known for designing the Statue of Liberty in New York Harbor.",
+    "who2": "Bartholdi was born in Colmar, France, on April 2, 1834, studying architecture and painting in Paris.",
+    "timeline": [
+      "1834 - Born in Colmar, France on April 2",
+      "1876 - Displayed Statue of Liberty torch at Philadelphia Centennial Exposition",
+      "1886 - Statue of Liberty dedicated in New York Harbor on October 28"
+    ]
+  },
+  {
+    "id": "apr-2-first-us-mint",
+    "month": "April",
+    "day": "April 2",
+    "dayNum": 2,
+    "title": "First U.S. Mint established 1792",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Established by Coinage Act on April 2, 1792!",
+    "emoji": "\ud83e\ude99",
+    "funFact": "According to Wikipedia, the Coinage Act of 1792 established the U.S. dollar and created the U.S. Mint in Philadelphia!",
+    "who1": "The United States Mint was established by the U.S. Congress on April 2, 1792, to produce official national coinage.",
+    "who2": "The mint was created through the Coinage Act signed by President George Washington, housed in Philadelphia.",
+    "timeline": [
+      "1792 - Coinage Act signed establishing U.S. Mint on April 2",
+      "1793 - First official copper cents minted for circulation",
+      "1873 - U.S. Mint becomes part of the Department of the Treasury"
+    ]
+  },
+  {
+    "id": "apr-3-washington-irving",
+    "month": "April",
+    "day": "April 3",
+    "dayNum": 3,
+    "title": "Washington Irving b. 1783 (author of Sleepy Hollow)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on April 3, 1783, Father of American Literature!",
+    "emoji": "\ud83e\udd94",
+    "funFact": "According to Biography.com, Washington Irving created legendary characters Rip Van Winkle and the Headless Horseman!",
+    "who1": "Washington Irving was an American short-story writer, essayist, biographer, and diplomat best known for 'The Legend of Sleepy Hollow.'",
+    "who2": "Washington Irving was born in Manhattan, New York, on April 3, 1783, named after General George Washington.",
+    "timeline": [
+      "1783 - Born in New York City on April 3",
+      "1819 - Published 'Rip Van Winkle' and 'The Legend of Sleepy Hollow'",
+      "1842 - Appointed U.S. Minister to Spain"
+    ]
+  },
+  {
+    "id": "apr-3-jane-goodall",
+    "month": "April",
+    "day": "April 3",
+    "dayNum": 3,
+    "title": "Jane Goodall b. 1934 (biologist)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on April 3, 1934, world-famous primatologist!",
+    "emoji": "\ud83d\udc35",
+    "funFact": "According to Biography.com, Jane Goodall discovered that chimpanzees make and use tools during her 60-year study in Gombe!",
+    "who1": "Dame Jane Morris Goodall is an English primatologist and anthropologist considered the world's foremost expert on chimpanzees.",
+    "who2": "Jane Goodall was born in London on April 3, 1934, traveling to Tanzania's Gombe Stream National Park in 1960.",
+    "timeline": [
+      "1934 - Born in London, England on April 3",
+      "1960 - Begins landmark wild chimpanzee study at Gombe",
+      "1977 - Establishes the Jane Goodall Institute for wildlife conservation",
+      "2002 - Appointed UN Messenger of Peace"
+    ]
+  },
+  {
+    "id": "apr-3-pony-express",
+    "month": "April",
+    "day": "April 3",
+    "dayNum": 3,
+    "title": "Pony Express began in 1860",
+    "type": "Event / History (Wikipedia)",
+    "connection": "First mail rider departed on April 3, 1860!",
+    "emoji": "\ud83d\udc0e",
+    "funFact": "According to Wikipedia, Pony Express riders carried mail 1,900 miles between Missouri and California in just 10 days!",
+    "who1": "The Pony Express was a horseback mail delivery service that connected Missouri to California from April 3, 1860, to October 1861.",
+    "who2": "Founded by William H. Russell, Alexander Majors, and William B. Waddell, the route utilized 190 relay stations.",
+    "timeline": [
+      "1860 - First riders depart St. Joseph, Missouri, and Sacramento, California, on April 3",
+      "1861 - Discontinued after inauguration of transcontinental telegraph"
+    ]
+  },
+  {
+    "id": "apr-4-dorothea-dix",
+    "month": "April",
+    "day": "April 4",
+    "dayNum": 4,
+    "title": "Dorothea Dix b. 1802 (social reformer)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on April 4, 1802, mental health reformer pioneer!",
+    "emoji": "\ud83c\udfe5",
+    "funFact": "According to Biography.com, Dorothea Dix founded or expanded over 30 hospitals for the mentally ill across America!",
+    "who1": "Dorothea Lynde Dix was an American advocate on behalf of the indigent mentally ill who created the first generation of American mental asylums.",
+    "who2": "Dorothea Dix was born in Hampden, Maine, on April 4, 1802, teaching school before investigating asylum conditions.",
+    "timeline": [
+      "1802 - Born in Hampden, Maine on April 4",
+      "1843 - Submitted famous 'Memorial' to Massachusetts legislature reforming mental care",
+      "1861 - Served as Superintendent of Army Nurses during the Civil War"
+    ]
+  },
+  {
+    "id": "apr-4-maya-angelou",
+    "month": "April",
+    "day": "April 4",
+    "dayNum": 4,
+    "title": "Maya Angelou b. 1928 (author & poet)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on April 4, 1928, literary legend!",
+    "emoji": "\ud83e\udeb6",
+    "funFact": "According to Biography.com, Maya Angelou wrote 7 autobiographies, including 'I Know Why the Caged Bird Sings', and recited a poem at JFK/Clinton inauguration!",
+    "who1": "Maya Angelou was an American memoirist, poet, and civil rights activist who published seven acclaimed autobiographies.",
+    "who2": "Maya Angelou was born Marguerite Annie Johnson in St. Louis, Missouri, on April 4, 1928.",
+    "timeline": [
+      "1928 - Born in St. Louis, Missouri on April 4",
+      "1969 - Published landmark memoir 'I Know Why the Caged Bird Sings'",
+      "1993 - Recited poem 'On the Pulse of Morning' at President Bill Clinton's inauguration",
+      "2010 - Awarded Presidential Medal of Freedom"
+    ]
+  },
+  {
+    "id": "apr-5-booker-t-washington",
+    "month": "April",
+    "day": "April 5",
+    "dayNum": 5,
+    "title": "Booker T. Washington b. 1856 (African American leader)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on April 5, 1856, Tuskegee Institute founder!",
+    "emoji": "\ud83d\udcda",
+    "funFact": "According to Biography.com, Booker T. Washington founded Tuskegee Institute in 1881 and authored 'Up From Slavery'!",
+    "who1": "Booker Taliaferro Washington was an American educator, author, orator, and adviser to several presidents of the United States.",
+    "who2": "Booker T. Washington was born into enslavement in Franklin County, Virginia, on April 5, 1856, putting himself through Hampton Institute.",
+    "timeline": [
+      "1856 - Born in Franklin County, Virginia on April 5",
+      "1881 - Founded Tuskegee Normal and Industrial Institute in Alabama",
+      "1901 - Published famous autobiography 'Up From Slavery'",
+      "1901 - First African American invited to dine at the White House by Theodore Roosevelt"
+    ]
+  },
+  {
+    "id": "apr-5-colin-powell",
+    "month": "April",
+    "day": "April 5",
+    "dayNum": 5,
+    "title": "Colin Powell b. 1937 (statesman)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on April 5, 1937, 1st Black Secretary of State!",
+    "emoji": "\ud83c\udf96\ufe0f",
+    "funFact": "According to Biography.com, General Colin Powell was Chairman of the Joint Chiefs of Staff and 1st African American Secretary of State!",
+    "who1": "Colin Luther Powell was an American politician, diplomat, and army general who served as the 65th U.S. Secretary of State.",
+    "who2": "Colin Powell was born in Harlem, New York City, on April 5, 1937, joining ROTC at City College of New York.",
+    "timeline": [
+      "1937 - Born in Harlem, New York City on April 5",
+      "1989-1993 - Served as Chairman of the Joint Chiefs of Staff during Persian Gulf War",
+      "2001-2005 - Served as 65th U.S. Secretary of State"
+    ]
+  },
+  {
+    "id": "apr-6-first-modern-olympics",
+    "month": "April",
+    "day": "April 6",
+    "dayNum": 6,
+    "title": "First modern Olympics 1896",
+    "type": "Event / Culture (Wikipedia)",
+    "connection": "Opened in Athens on April 6, 1896!",
+    "emoji": "\ud83c\udfdb\ufe0f",
+    "funFact": "According to Wikipedia, 241 male athletes from 14 nations competed in 43 events at the Panathenaic Stadium in Athens!",
+    "who1": "The 1896 Summer Olympics, officially known as the Games of the I Olympiad, opened in Athens, Greece, on April 6, 1896.",
+    "who2": "Organized by Pierre de Coubertin and the International Olympic Committee, the games revived ancient Olympic traditions.",
+    "timeline": [
+      "1896 - Opening ceremony held at Panathenaic Stadium on April 6",
+      "1896 - James Connolly wins hop-step-and-jump, becoming 1st modern Olympic champion",
+      "1896 - Spiridon Louis wins inaugural Olympic marathon"
+    ]
+  },
+  {
+    "id": "apr-6-north-pole-discovery",
+    "month": "April",
+    "day": "April 6",
+    "dayNum": 6,
+    "title": "Discovery of the North Pole 1909",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Reached by Robert Peary & Matthew Henson on April 6, 1909!",
+    "emoji": "\ud83e\uddca",
+    "funFact": "According to Wikipedia, Matthew Henson, an African American explorer, reached the North Pole alongside Robert Peary!",
+    "who1": "The North Pole Expedition reached the geographic North Pole on April 6, 1909, led by American explorers Robert Peary and Matthew Henson.",
+    "who2": "The team navigated across Arctic ocean ice with Inuit guides and dog sled teams departing Ellesmere Island.",
+    "timeline": [
+      "1909 - Reached geographic North Pole on April 6",
+      "1988 - Matthew Henson buried with full honors at Arlington National Cemetery",
+      "2000 - National Geographic awards Matthew Henson Hubbard Medal"
+    ]
+  },
+  {
+    "id": "apr-7-wk-kellogg",
+    "month": "April",
+    "day": "April 7",
+    "dayNum": 7,
+    "title": "W.K. Kellogg b. 1860 (cereal manufacturer)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on April 7, 1860, founder of Kellogg's Cereal!",
+    "emoji": "\ud83e\udd63",
+    "funFact": "According to Biography.com, Will Keith Kellogg accidentally invented Corn Flakes while working at Battle Creek Sanitarium!",
+    "who1": "Will Keith Kellogg was an American industrialist in food manufacturing who founded the Kellogg Company.",
+    "who2": "W.K. Kellogg was born in Battle Creek, Michigan, on April 7, 1860, assisting his brother Dr. John Harvey Kellogg.",
+    "timeline": [
+      "1860 - Born in Battle Creek, Michigan on April 7",
+      "1894 - Co-invented toasted wheat and corn flakes",
+      "1906 - Founded the Battle Creek Toasted Corn Flake Company",
+      "1930 - Established the W.K. Kellogg Foundation"
+    ]
+  },
+  {
+    "id": "apr-7-william-wordsworth",
+    "month": "April",
+    "day": "April 7",
+    "dayNum": 7,
+    "title": "William Wordsworth b. 1770 (English poet)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on April 7, 1770, English Romantic poet!",
+    "emoji": "\ud83e\udeb6",
+    "funFact": "According to Biography.com, Wordsworth co-published 'Lyrical Ballads' with Samuel Taylor Coleridge launching the Romantic Age!",
+    "who1": "William Wordsworth was a major English Romantic poet who helped launch the Romantic Age in English literature.",
+    "who2": "William Wordsworth was born in Cockermouth, Cumberland, England, on April 7, 1770, studying at St John's College, Cambridge.",
+    "timeline": [
+      "1770 - Born in Cockermouth, England on April 7",
+      "1798 - Co-published landmark poetry collection 'Lyrical Ballads'",
+      "1843 - Appointed Poet Laureate of the United Kingdom"
+    ]
+  },
+  {
+    "id": "apr-8-buddha",
+    "month": "April",
+    "day": "April 8",
+    "dayNum": 8,
+    "title": "Buddha b. 563 B.C. (began Buddhism)",
+    "type": "Person (Biography.com)",
+    "connection": "Born in April 563 BC, founder of Buddhism!",
+    "emoji": "\ud83e\uddd8\u200d\u2642\ufe0f",
+    "funFact": "According to Biography.com, Siddhartha Gautama achieved enlightenment under the Bodhi tree and taught the Four Noble Truths!",
+    "who1": "Siddhartha Gautama, known as the Buddha, was an ancient Indian spiritual teacher who founded Buddhism.",
+    "who2": "Siddhartha Gautama was born in Lumbini (modern-day Nepal) around 563 BC as a prince of the Shakya clan.",
+    "timeline": [
+      "c. 563 BC - Born in Lumbini, Nepal",
+      "c. 528 BC - Attained enlightenment under the Bodhi tree in Bodh Gaya",
+      "c. 483 BC - Passed away in Kushinagar leaving a global spiritual heritage"
+    ]
+  },
+  {
+    "id": "apr-9-civil-war-ended",
+    "month": "April",
+    "day": "April 9",
+    "dayNum": 9,
+    "title": "Civil War ended in 1865",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Lee surrendered to Grant on April 9, 1865!",
+    "emoji": "\u2694\ufe0f",
+    "funFact": "According to Wikipedia, General Lee surrendered to General Grant in the parlor of Wilmer McLean's home at Appomattox Court House!",
+    "who1": "The Surrender at Appomattox Court House occurred on April 9, 1865, effectively concluding the American Civil War.",
+    "who2": "Confederate General Robert E. Lee surrendered his Army of Northern Virginia to Union General Ulysses S. Grant.",
+    "timeline": [
+      "1865 - Surrender document signed in Appomattox Court House parlor on April 9",
+      "1865 - Union troops supply food rations to surrendering Confederate soldiers",
+      "1940 - Appomattox Court House National Historical Park created"
+    ]
+  },
+  {
+    "id": "apr-10-joseph-pulitzer",
+    "month": "April",
+    "day": "April 10",
+    "dayNum": 10,
+    "title": "Joseph Pulitzer b. 1847 (journalist, publisher)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on April 10, 1847, namesake of Pulitzer Prize!",
+    "emoji": "\ud83d\udcf0",
+    "funFact": "According to Biography.com, Pulitzer established the Pulitzer Prizes for journalism, literature, and music in his will!",
+    "who1": "Joseph Pulitzer was a Hungarian-American newspaper publisher of the St. Louis Post-Dispatch and New York World.",
+    "who2": "Joseph Pulitzer was born in Mak\u00f3, Hungary, on April 10, 1847, emigrating to the U.S. to serve in the Union Army.",
+    "timeline": [
+      "1847 - Born in Mak\u00f3, Hungary on April 10",
+      "1883 - Purchased the New York World building it into a major daily newspaper",
+      "1917 - First annual Pulitzer Prizes awarded according to his bequest"
+    ]
+  },
+  {
+    "id": "apr-10-frances-perkins",
+    "month": "April",
+    "day": "April 10",
+    "dayNum": 10,
+    "title": "Frances Perkins b. 1880 (first woman cabinet member)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on April 10, 1880, 1st female Cabinet Secretary!",
+    "emoji": "\ud83c\udfdb\ufe0f",
+    "funFact": "According to Biography.com, Frances Perkins served as Secretary of Labor under FDR, architecting Social Security and minimum wage laws!",
+    "who1": "Frances Perkins was an American workers' rights advocate who served as the U.S. Secretary of Labor from 1933 to 1945, the first woman in a presidential cabinet.",
+    "who2": "Frances Perkins was born Fannie Coralie Perkins in Boston, Massachusetts, on April 10, 1880, graduating from Mount Holyoke College.",
+    "timeline": [
+      "1880 - Born in Boston, Massachusetts on April 10",
+      "1933 - Sworn in as U.S. Secretary of Labor under President Franklin D. Roosevelt",
+      "1935 - Chaired committee drafting the Social Security Act"
+    ]
+  },
+  {
+    "id": "apr-11-aspca-began",
+    "month": "April",
+    "day": "April 11",
+    "dayNum": 11,
+    "title": "ASPCA began in 1866",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Incorporated in NYC on April 11, 1866!",
+    "emoji": "\ud83d\udc3e",
+    "funFact": "According to Wikipedia, the ASPCA was the 1st humane society established in North America to prevent animal cruelty!",
+    "who1": "The American Society for the Prevention of Cruelty to Animals (ASPCA) is a non-profit organization dedicated to preventing cruelty to animals.",
+    "who2": "Founded by Henry Bergh, the ASPCA was incorporated by the New York State Legislature on April 11, 1866.",
+    "timeline": [
+      "1866 - Incorporated in New York City on April 11",
+      "1866 - New York passes first anti-cruelty law drafted by Henry Bergh",
+      "1894 - ASPCA operates NYC animal shelter system"
+    ]
+  },
+  {
+    "id": "apr-11-apollo-13",
+    "month": "April",
+    "day": "April 11",
+    "dayNum": 11,
+    "title": "Apollo 13 launched in 1970",
+    "type": "Event / Space (Wikipedia)",
+    "connection": "Launched on lunar mission April 11, 1970!",
+    "emoji": "\ud83d\ude80",
+    "funFact": "According to Wikipedia, after an oxygen tank exploded, Apollo 13 returned safely to Earth using the Lunar Module as a lifeboat!",
+    "who1": "Apollo 13 was the seventh crewed mission in the NASA Apollo space program, launched on April 11, 1970.",
+    "who2": "Crewed by Jim Lovell, Jack Swigert, and Fred Haise, the mission suffered a mid-space oxygen tank explosion two days after launch.",
+    "timeline": [
+      "1970 - Launched from Kennedy Space Center on April 11",
+      "1970 - Oxygen tank explodes on April 13 prompting famous 'Houston, we've had a problem'",
+      "1970 - Crew splashes down safely in the South Pacific Ocean on April 17"
+    ]
+  },
+  {
+    "id": "apr-12-henry-clay",
+    "month": "April",
+    "day": "April 12",
+    "dayNum": 12,
+    "title": "Henry Clay b. 1777 (politician)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on April 12, 1777, 'The Great Compromiser'!",
+    "emoji": "\ud83c\udfdb\ufe0f",
+    "funFact": "According to Biography.com, Henry Clay served as Speaker of the House, Secretary of State, and brokered the Missouri Compromise!",
+    "who1": "Henry Clay Sr. was an American attorney, statesman, and orator who represented Kentucky in the Senate and House of Representatives.",
+    "who2": "Henry Clay was born in Hanover County, Virginia, on April 12, 1777, studying law under George Wythe.",
+    "timeline": [
+      "1777 - Born in Hanover County, Virginia on April 12",
+      "1820 - Brokered the Missouri Compromise in U.S. Congress",
+      "1825-1829 - Served as 9th U.S. Secretary of State under John Quincy Adams",
+      "1850 - Authored the Compromise of 1850"
+    ]
+  },
+  {
+    "id": "apr-13-thomas-jefferson",
+    "month": "April",
+    "day": "April 13",
+    "dayNum": 13,
+    "title": "Thomas Jefferson b. 1743 (3rd U.S. President)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on April 13, 1743, 3rd U.S. President!",
+    "emoji": "\ud83c\udfdb\ufe0f",
+    "funFact": "According to Biography.com, Jefferson authored the Declaration of Independence, doubled the nation via Louisiana Purchase, and founded UVA!",
+    "who1": "Thomas Jefferson was an American Founding Father who was the principal author of the Declaration of Independence and 3rd President of the U.S.",
+    "who2": "Thomas Jefferson was born in Shadwell, Virginia, on April 13, 1743, studying law at the College of William & Mary.",
+    "timeline": [
+      "1743 - Born in Shadwell, Virginia on April 13",
+      "1776 - Authored the United States Declaration of Independence",
+      "1801-1809 - Served as 3rd President of the United States",
+      "1819 - Founded the University of Virginia"
+    ]
+  },
+  {
+    "id": "apr-14-tiger-woods",
+    "month": "April",
+    "day": "April 14",
+    "dayNum": 14,
+    "title": "Tiger Woods wins 3rd Masters Tournament 2002",
+    "type": "Person (Biography.com)",
+    "connection": "Won 3rd Masters green jacket on April 14, 2002!",
+    "emoji": "\u26f3",
+    "funFact": "According to Biography.com, Tiger Woods has won 15 major golf championships and 82 PGA Tour victories!",
+    "who1": "Eldrick Tont 'Tiger' Woods is an American professional golfer widely regarded as one of the greatest golfers of all time.",
+    "who2": "Tiger Woods was born in Cypress, California, on December 30, 1975, winning three U.S. Junior Amateurs.",
+    "timeline": [
+      "1975 - Born in Cypress, California",
+      "1997 - Won his first Masters Tournament at age 21 by 12 strokes",
+      "2002 - Won 3rd Masters championship on April 14 retaining title",
+      "2019 - Won 5th Masters green jacket"
+    ]
+  },
+  {
+    "id": "apr-14-anne-sullivan",
+    "month": "April",
+    "day": "April 14",
+    "dayNum": 14,
+    "title": "Anne Sullivan b. 1866 (teacher of Helen Keller)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on April 14, 1866, Helen Keller's teacher!",
+    "emoji": "\ud83e\udd1f",
+    "funFact": "According to Biography.com, Anne Sullivan taught Helen Keller to communicate by spelling words into her hand, starting at the water pump!",
+    "who1": "Johanna 'Anne' Mansfield Sullivan Macy was an American teacher best known for being the instructor and lifelong companion of Helen Keller.",
+    "who2": "Anne Sullivan was born in Feeding Hills, Massachusetts, on April 14, 1866, graduating from Perkins School for the Blind.",
+    "timeline": [
+      "1866 - Born in Feeding Hills, Massachusetts on April 14",
+      "1887 - Arrived in Tuscumbia, Alabama, to teach Helen Keller",
+      "1904 - Graduated alongside Helen Keller from Radcliffe College"
+    ]
+  },
+  {
+    "id": "apr-15-titanic-sunk",
+    "month": "April",
+    "day": "April 15",
+    "dayNum": 15,
+    "title": "Titanic sunk 1912",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Sank in North Atlantic early morning April 15, 1912!",
+    "emoji": "\ud83d\udea2",
+    "funFact": "According to Wikipedia, the RMS Titanic struck an iceberg at 11:40 PM on April 14 and sank at 2:20 AM on April 15, 1912!",
+    "who1": "The Sinking of the RMS Titanic occurred on April 15, 1912, after the ocean liner struck an iceberg in the North Atlantic Ocean.",
+    "who2": "The Titanic was on its maiden voyage from Southampton to New York City carrying over 2,200 passengers and crew.",
+    "timeline": [
+      "1912 - Titanic strikes iceberg on April 14 at 11:40 PM",
+      "1912 - Ship sinks beneath North Atlantic waves on April 15 at 2:20 AM",
+      "1985 - Wreckage discovered by Robert Ballard on ocean floor"
+    ]
+  },
+  {
+    "id": "apr-15-leonardo-da-vinci",
+    "month": "April",
+    "day": "April 15",
+    "dayNum": 15,
+    "title": "Leonardo da Vinci b. 1452 (artist & scientist)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on April 15, 1452, Renaissance genius!",
+    "emoji": "\ud83c\udfa8",
+    "funFact": "According to Biography.com, Leonardo da Vinci painted the 'Mona Lisa' and 'The Last Supper' and sketched flying machines!",
+    "who1": "Leonardo di ser Piero da Vinci was an Italian polymath of the High Renaissance active as a painter, draughtsman, engineer, scientist, and sculptor.",
+    "who2": "Leonardo was born near Vinci, Republic of Florence, on April 15, 1452, apprenticing under Andrea del Verrocchio.",
+    "timeline": [
+      "1452 - Born near Vinci, Italy on April 15",
+      "1498 - Completed mural masterpiece 'The Last Supper' in Milan",
+      "1503 - Began painting the iconic 'Mona Lisa'",
+      "1519 - Passed away in Amboise, France"
+    ]
+  },
+  {
+    "id": "apr-16-wilbur-wright",
+    "month": "April",
+    "day": "April 16",
+    "dayNum": 16,
+    "title": "Wilbur Wright b. 1867 (helped to invent airplane)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on April 16, 1867, aviation pioneer!",
+    "emoji": "\u2708\ufe0f",
+    "funFact": "According to Biography.com, Wilbur Wright and his brother Orville conducted hundreds of glider tests before their 1903 powered flight!",
+    "who1": "Wilbur Wright was an American aviation pioneer who, alongside his brother Orville, developed the world's first successful motor-operated airplane.",
+    "who2": "Wilbur Wright was born in Millville, Indiana, on April 16, 1867, opening a bicycle repair shop with Orville in Dayton, Ohio.",
+    "timeline": [
+      "1867 - Born in Millville, Indiana on April 16",
+      "1903 - Completed historic 1st powered airplane flight at Kitty Hawk",
+      "1908 - Demonstrated 3-axis flight control across Europe"
+    ]
+  },
+  {
+    "id": "apr-17-thornton-wilder",
+    "month": "April",
+    "day": "April 17",
+    "dayNum": 17,
+    "title": "Thornton Wilder b. 1897 (Pulitzer prize winning author)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on April 17, 1897, 3-time Pulitzer winner!",
+    "emoji": "\ud83d\udcda",
+    "funFact": "According to Biography.com, Thornton Wilder won three Pulitzer Prizes for his novel 'The Bridge of San Luis Rey' and play 'Our Town'!",
+    "who1": "Thornton Niven Wilder was an American playwright and novelist who won three Pulitzer Prizes for literature and drama.",
+    "who2": "Thornton Wilder was born in Madison, Wisconsin, on April 17, 1897, graduating from Oberlin College and Yale University.",
+    "timeline": [
+      "1897 - Born in Madison, Wisconsin on April 17",
+      "1928 - Awarded Pulitzer Prize for novel 'The Bridge of San Luis Rey'",
+      "1938 - Awarded Pulitzer Prize for classic play 'Our Town'",
+      "1943 - Awarded third Pulitzer Prize for play 'The Skin of Our Teeth'"
+    ]
+  },
+  {
+    "id": "apr-18-sf-earthquake",
+    "month": "April",
+    "day": "April 18",
+    "dayNum": 18,
+    "title": "San Francisco earthquake 1906",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Struck northern California on April 18, 1906!",
+    "emoji": "\ud83c\udf0b",
+    "funFact": "According to Wikipedia, the 7.9 magnitude earthquake and subsequent fires destroyed 80% of San Francisco!",
+    "who1": "The 1906 San Francisco Earthquake struck the coast of Northern California at 5:12 AM on April 18, 1906, with an estimated magnitude of 7.9.",
+    "who2": "Rupturing 296 miles of the San Andreas Fault, the earthquake and three-day fires destroyed over 28,000 buildings.",
+    "timeline": [
+      "1906 - Earthquake strikes San Francisco at 5:12 AM on April 18",
+      "1906 - Fires burn for three days destroying city core",
+      "1915 - San Francisco hosts Panama-Pacific International Exposition marking city rebuilding"
+    ]
+  },
+  {
+    "id": "apr-19-american-revolution-begins",
+    "month": "April",
+    "day": "April 19",
+    "dayNum": 19,
+    "title": "American Revolution begins in Lexington (1775)",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Battles of Lexington & Concord on April 19, 1775!",
+    "emoji": "\u2694\ufe0f",
+    "funFact": "According to Wikipedia, the 'Shot Heard 'Round the World' occurred at the North Bridge in Concord, launching the Revolutionary War!",
+    "who1": "The Battles of Lexington and Concord on April 19, 1775, were the first military engagements of the American Revolutionary War.",
+    "who2": "Colonial minutemen confronted British regulars on Lexington Green and North Bridge in Concord following Paul Revere's ride.",
+    "timeline": [
+      "1775 - Minutemen clash with British regulars at Lexington Green on April 19",
+      "1775 - 'Shot Heard 'Round the World' fired at Concord North Bridge",
+      "1894 - Massachusetts designates April 19 as Patriots' Day"
+    ]
+  },
+  {
+    "id": "apr-20-marie-curie-radiation",
+    "month": "April",
+    "day": "April 20",
+    "dayNum": 20,
+    "title": "Marie Curie discovers radiation 1902",
+    "type": "Event / Science (Wikipedia)",
+    "connection": "Isolated radium chloride on April 20, 1902!",
+    "emoji": "\u269b\ufe0f",
+    "funFact": "According to Wikipedia, Marie Curie was the 1st woman to win a Nobel Prize and the only person to win Nobels in two different sciences!",
+    "who1": "The Radium Isolation Discovery occurred on April 20, 1902, when Marie and Pierre Curie successfully isolated pure radium chloride salt.",
+    "who2": "Working in a converted shed in Paris, Marie Curie processed tons of pitchblende ore to discover radium and polonium.",
+    "timeline": [
+      "1898 - Discovers radium and polonium elements",
+      "1902 - Isolates pure radium chloride on April 20",
+      "1903 - Awarded Nobel Prize in Physics",
+      "1911 - Awarded Nobel Prize in Chemistry"
+    ]
+  },
+  {
+    "id": "apr-20-joan-miro",
+    "month": "April",
+    "day": "April 20",
+    "dayNum": 20,
+    "title": "Joan Miro b. 1893 (surrealistic painter)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on April 20, 1893, Surrealist art master!",
+    "emoji": "\ud83c\udfa8",
+    "funFact": "According to Biography.com, Joan Mir\u00f3 created biomorphic sculptures and paintings praised for childlike spontaneity and vibrant color!",
+    "who1": "Joan Mir\u00f3 i Ferr\u00e0 was a Catalan Spanish painter, sculptor, and ceramicist who earned international acclaim for Surrealist works.",
+    "who2": "Joan Mir\u00f3 was born in Barcelona, Catalonia, Spain, on April 20, 1893, studying art at the La Llotja Fine Arts Academy.",
+    "timeline": [
+      "1893 - Born in Barcelona, Spain on April 20",
+      "1924 - Joined the Surrealist group in Paris",
+      "1975 - Fundaci\u00f3 Joan Mir\u00f3 museum opened in Barcelona"
+    ]
+  },
+  {
+    "id": "apr-20-rubin-hurricane-carter",
+    "month": "April",
+    "day": "April 20",
+    "dayNum": 20,
+    "title": "Rubin 'The Hurricane' Carter dies 2014",
+    "type": "Person (Biography.com)",
+    "connection": "Passed away on April 20, 2014, middleweight boxer icon!",
+    "emoji": "\ud83e\udd4a",
+    "funFact": "According to Biography.com, Rubin Carter was wrongfully convicted in 1866 before Bob Dylan wrote song 'Hurricane' aiding his exoneration!",
+    "who1": "Rubin 'The Hurricane' Carter was an American middleweight boxer who was wrongfully convicted of murder and freed after 19 years in prison.",
+    "who2": "Rubin Carter was born in Paterson, New Jersey, on May 6, 1937, compiling 27 professional boxing victories.",
+    "timeline": [
+      "1937 - Born in Paterson, New Jersey",
+      "1966 - Wrongfully arrested and convicted",
+      "1985 - Federal judge overturns conviction and frees Carter",
+      "2014 - Passed away in Toronto on April 20"
+    ]
+  },
+  {
+    "id": "apr-21-john-muir",
+    "month": "April",
+    "day": "April 21",
+    "dayNum": 21,
+    "title": "John Muir b. 1838 (naturalist)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on April 21, 1838, Father of the National Parks!",
+    "emoji": "\ud83c\udf32",
+    "funFact": "According to Biography.com, John Muir co-founded the Sierra Club and helped establish Yosemite and Sequoia National Parks!",
+    "who1": "John Muir, also known as 'John of the Mountains,' was a Scottish-American naturalist, author, and early advocate of wilderness preservation.",
+    "who2": "John Muir was born in Dunbar, East Lothian, Scotland, on April 21, 1838, studying at the University of Wisconsin.",
+    "timeline": [
+      "1838 - Born in Dunbar, Scotland on April 21",
+      "1890 - Successfully petitions U.S. Congress to create Yosemite National Park",
+      "1892 - Co-founds the Sierra Club, serving as its first president"
+    ]
+  },
+  {
+    "id": "apr-21-nina-simone",
+    "month": "April",
+    "day": "April 21",
+    "dayNum": 21,
+    "title": "Nina Simone dies 2003",
+    "type": "Person (Biography.com)",
+    "connection": "Passed away on April 21, 2003, High Priestess of Soul!",
+    "emoji": "\ud83c\udfa4",
+    "funFact": "According to Biography.com, Nina Simone combined classical piano, jazz, and blues with powerful civil rights anthems like 'Mississippi Goddam'!",
+    "who1": "Eunice Kathleen Waymon, known as Nina Simone, was an American singer, songwriter, pianist, and civil rights activist.",
+    "who2": "Nina Simone was born in Tryon, North Carolina, on February 21, 1933, studying classical piano at the Juilliard School.",
+    "timeline": [
+      "1933 - Born in Tryon, North Carolina",
+      "1964 - Released iconic civil rights anthem 'Mississippi Goddam'",
+      "2003 - Passed away in Carry-le-Rouet, France on April 21",
+      "2018 - Inducted into the Rock and Roll Hall of Fame"
+    ]
+  },
+  {
+    "id": "apr-21-prince",
+    "month": "April",
+    "day": "April 21",
+    "dayNum": 21,
+    "title": "The musician, Prince, d. 2016",
+    "type": "Person (Biography.com)",
+    "connection": "Passed away on April 21, 2016, musical icon!",
+    "emoji": "\ud83d\udc9c",
+    "funFact": "According to Biography.com, Prince played 27 instruments, sold over 100 million records, and won 7 Grammys and an Oscar for 'Purple Rain'!",
+    "who1": "Prince Rogers Nelson was an American singer-songwriter, musician, and record producer widely regarded as one of the greatest musicians of his generation.",
+    "who2": "Prince was born in Minneapolis, Minnesota, on June 7, 1958, signing with Warner Bros. Records at age nineteen.",
+    "timeline": [
+      "1958 - Born in Minneapolis, Minnesota",
+      "1984 - Released landmark album and movie 'Purple Rain'",
+      "2004 - Inducted into the Rock and Roll Hall of Fame",
+      "2016 - Passed away at Paisley Park studios on April 21"
+    ]
+  },
+  {
+    "id": "apr-22-earth-day",
+    "month": "April",
+    "day": "April 22",
+    "dayNum": 22,
+    "title": "Earth Day established in 1970",
+    "type": "Event / Culture (Wikipedia)",
+    "connection": "First celebrated on April 22, 1970!",
+    "emoji": "\ud83c\udf0d",
+    "funFact": "According to Wikipedia, the first Earth Day in 1970 mobilized 20 million Americans and led to creation of the EPA and Clean Air Act!",
+    "who1": "Earth Day is an annual worldwide event held on April 22 to demonstrate support for environmental protection.",
+    "who2": "First organized by Senator Gaylord Nelson and Denis Hayes on April 22, 1970, Earth Day now mobilizes 1 billion people in 193 countries.",
+    "timeline": [
+      "1970 - First Earth Day mobilizes 20 million Americans on April 22",
+      "1970 - U.S. Environmental Protection Agency (EPA) established",
+      "1990 - Earth Day goes global, reaching 200 million people in 141 nations"
+    ]
+  },
+  {
+    "id": "apr-23-william-shakespeare",
+    "month": "April",
+    "day": "April 23",
+    "dayNum": 23,
+    "title": "William Shakespeare b. 1564 (poet and playwright)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on April 23, 1564, The Bard of Avon!",
+    "emoji": "\ud83c\udfad",
+    "funFact": "According to Biography.com, Shakespeare wrote 39 plays and 154 sonnets, inventing over 1,700 English words!",
+    "who1": "William Shakespeare was an English playwright, poet, and actor widely regarded as the greatest writer in the English language.",
+    "who2": "William Shakespeare was baptized in Stratford-upon-Avon, England, on April 26, 1564 (traditionally born April 23).",
+    "timeline": [
+      "1564 - Born in Stratford-upon-Avon on April 23",
+      "1599 - Globe Theatre constructed in London by Shakespeare's playing company",
+      "1606 - Wrote tragedies 'Macbeth' and 'King Lear'",
+      "1616 - Passed away in Stratford-upon-Avon on April 23"
+    ]
+  },
+  {
+    "id": "apr-23-shirley-temple",
+    "month": "April",
+    "day": "April 23",
+    "dayNum": 23,
+    "title": "Shirley Temple b. 1928 (actress and ambassador)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on April 23, 1928, child star & U.S. Ambassador!",
+    "emoji": "\ud83c\udfac",
+    "funFact": "According to Biography.com, Shirley Temple was Hollywood's #1 box office star at age 6 and later served as U.S. Ambassador to Ghana and Czechoslovakia!",
+    "who1": "Shirley Temple Black was an American actress, singer, dancer, and diplomat who was Hollywood's number-one box-office draw as a child actress.",
+    "who2": "Shirley Temple was born in Santa Monica, California, on April 23, 1928, starring in hit musical films like 'Bright Eyes.'",
+    "timeline": [
+      "1928 - Born in Santa Monica, California on April 23",
+      "1935 - Awarded special Academy Juvenile Award at age six",
+      "1974-1976 - Served as U.S. Ambassador to Ghana",
+      "1989-1992 - Served as U.S. Ambassador to Czechoslovakia"
+    ]
+  },
+  {
+    "id": "apr-24-library-of-congress",
+    "month": "April",
+    "day": "April 24",
+    "dayNum": 24,
+    "title": "Library of Congress established 1800",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Established by President Adams on April 24, 1800!",
+    "emoji": "\ud83c\udfdb\ufe0f",
+    "funFact": "According to Wikipedia, the Library of Congress is the largest library in the world, holding over 173 million items!",
+    "who1": "The Library of Congress is the national library of the United States and the official research arm of the U.S. Congress.",
+    "who2": "Established when President John Adams signed an Act of Congress on April 24, 1800, providing $5,000 to purchase books.",
+    "timeline": [
+      "1800 - Established by Act of Congress on April 24",
+      "1815 - Thomas Jefferson sells his personal 6,487-volume library to reconstitute holdings",
+      "1897 - Thomas Jefferson Building opens to the public"
+    ]
+  },
+  {
+    "id": "apr-25-guglielmo-marconi",
+    "month": "April",
+    "day": "April 25",
+    "dayNum": 25,
+    "title": "Guglielmo Marconi b. 1874 (invented wireless telegraph)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on April 25, 1874, wireless radio pioneer!",
+    "emoji": "\ud83d\udcfb",
+    "funFact": "According to Biography.com, Marconi sent the 1st transatlantic wireless radio signal across the Atlantic Ocean in 1901!",
+    "who1": "Guglielmo Giovanni Maria Marconi was an Italian inventor and electrical engineer best known for creating the practical wireless telegraph radio system.",
+    "who2": "Marconi was born in Bologna, Italy, on April 25, 1874, conducting radio experiments in his attic.",
+    "timeline": [
+      "1874 - Born in Bologna, Italy on April 25",
+      "1901 - Transmits 1st transatlantic wireless radio signal from England to Newfoundland",
+      "1909 - Awarded Nobel Prize in Physics for wireless telegraphy"
+    ]
+  },
+  {
+    "id": "apr-25-hubble-space-telescope",
+    "month": "April",
+    "day": "April 25",
+    "dayNum": 25,
+    "title": "Hubble Space Telescope deployed 1990",
+    "type": "Event / Space (Wikipedia)",
+    "connection": "Deployed from Discovery on April 25, 1990!",
+    "emoji": "\ud83d\udd2d",
+    "funFact": "According to Wikipedia, Hubble has taken over 1.5 million observations of deep space, helping pin down the age of the universe (13.8 billion years)!",
+    "who1": "The Hubble Space Telescope Deployment occurred on April 25, 1990, when Space Shuttle Discovery released the space telescope into orbit.",
+    "who2": "Hubble was built by NASA and the European Space Agency, orbiting 340 miles above Earth's atmosphere.",
+    "timeline": [
+      "1990 - Deployed into low Earth orbit from Discovery payload bay on April 25",
+      "1993 - First servicing mission corrects main mirror optics",
+      "2020 - Celebrates 30th anniversary of continuous astronomical observations"
+    ]
+  },
+  {
+    "id": "apr-25-jackie-joyner-kersee",
+    "month": "April",
+    "day": "April 25",
+    "dayNum": 25,
+    "title": "Jackie Joyner-Kersee famous Olympian (awarded 2007)",
+    "type": "Person (Biography.com)",
+    "connection": "Honored for Olympic track & field achievements!",
+    "emoji": "\ud83c\udfc3\u200d\u2640\ufe0f",
+    "funFact": "According to Biography.com, Jackie Joyner-Kersee won 3 gold, 1 silver, and 2 bronze Olympic medals in heptathlon and long jump!",
+    "who1": "Jacqueline Joyner-Kersee is an American retired track and field athlete ranked among the greatest female athletes of all time.",
+    "who2": "Jackie Joyner-Kersee was born in East St. Louis, Illinois, on March 3, 1962, competing for UCLA.",
+    "timeline": [
+      "1962 - Born in East St. Louis, Illinois",
+      "1988 - Won two gold medals at Seoul Olympics setting world record in heptathlon (7,291 pts)",
+      "1992 - Won gold medal in heptathlon at Barcelona Olympics",
+      "2007 - Named to U.S. Olympic Hall of Fame"
+    ]
+  },
+  {
+    "id": "apr-26-john-james-audubon",
+    "month": "April",
+    "day": "April 26",
+    "dayNum": 26,
+    "title": "John James Audubon b. 1785 (ornithologist & artist)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on April 26, 1785, author of The Birds of America!",
+    "emoji": "\ud83e\udd85",
+    "funFact": "According to Biography.com, Audubon's 'The Birds of America' contained 435 life-sized hand-colored prints of North American birds!",
+    "who1": "John James Audubon was an American self-taught artist, naturalist, and ornithologist famed for his expansive illustrations of American birds.",
+    "who2": "Audubon was born Jean-Jacques Audubon in Les Cayes, Saint-Domingue (Haiti), on April 26, 1785, growing up in France.",
+    "timeline": [
+      "1785 - Born in Les Cayes, Saint-Domingue on April 26",
+      "1827-1838 - Published monumental masterwork 'The Birds of America'",
+      "1905 - National Audubon Society named in his honor"
+    ]
+  },
+  {
+    "id": "apr-26-frederick-law-olmsted",
+    "month": "April",
+    "day": "April 26",
+    "dayNum": 26,
+    "title": "Frederick Law Olmsted b. 1822 (designed Central Park)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on April 26, 1822, Father of American Landscape Architecture!",
+    "emoji": "\ud83c\udfde\ufe0f",
+    "funFact": "According to Biography.com, Olmsted co-designed New York City's Central Park, Brooklyn's Prospect Park, and the U.S. Capitol grounds!",
+    "who1": "Frederick Law Olmsted was an American landscape architect, journalist, and social critic considered the father of American landscape architecture.",
+    "who2": "Frederick Law Olmsted was born in Hartford, Connecticut, on April 26, 1822, working as a journalist before landscape design.",
+    "timeline": [
+      "1822 - Born in Hartford, Connecticut on April 26",
+      "1858 - Won Greensward Plan competition with Calvert Vaux designing Central Park",
+      "1874 - Designed the U.S. Capitol grounds and terraces in Washington, D.C."
+    ]
+  },
+  {
+    "id": "apr-27-samuel-morse",
+    "month": "April",
+    "day": "April 27",
+    "dayNum": 27,
+    "title": "Samuel Morse b. 1791 (invented Morse Code)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on April 27, 1791, inventor of Morse Code!",
+    "emoji": "\ud83d\udce1",
+    "funFact": "According to Biography.com, Samuel Morse sent the 1st telegraph message 'What hath God wrought' from D.C. to Baltimore in 1844!",
+    "who1": "Samuel Finley Breese Morse was an American inventor and painter who co-developed the single-wire electric telegraph and Morse code.",
+    "who2": "Samuel Morse was born in Charlestown, Massachusetts, on April 27, 1791, studying at Yale College and painting portraits.",
+    "timeline": [
+      "1791 - Born in Charlestown, Massachusetts on April 27",
+      "1837 - Granted patent for single-wire telegraph system",
+      "1844 - Transmits first public telegraph message 'What hath God wrought'"
+    ]
+  },
+  {
+    "id": "apr-27-ulysses-s-grant",
+    "month": "April",
+    "day": "April 27",
+    "dayNum": 27,
+    "title": "Ulysses S. Grant b. 1822 (18th U.S. President)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on April 27, 1822, 18th U.S. President!",
+    "emoji": "\ud83c\udfdb\ufe0f",
+    "funFact": "According to Biography.com, Grant commanded Union armies to victory in the Civil War and served two terms as 18th U.S. President!",
+    "who1": "Ulysses S. Grant was an American military officer and politician who served as the 18th President of the United States from 1869 to 1877.",
+    "who2": "Ulysses S. Grant was born Hiram Ulysses Grant in Point Pleasant, Ohio, on April 27, 1822, graduating from West Point.",
+    "timeline": [
+      "1822 - Born in Point Pleasant, Ohio on April 27",
+      "1864 - Appointed Commanding General of the United States Army",
+      "1869-1877 - Served as 18th President of the United States",
+      "1885 - Completed landmark personal memoirs shortly before passing away"
+    ]
+  },
+  {
+    "id": "apr-28-james-monroe",
+    "month": "April",
+    "day": "April 28",
+    "dayNum": 28,
+    "title": "James Monroe b. 1758 (5th U.S. President)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on April 28, 1758, 5th U.S. President!",
+    "emoji": "\ud83c\udfdb\ufe0f",
+    "funFact": "According to Biography.com, James Monroe issued the Monroe Doctrine in 1823 opposing European colonialism in the Americas!",
+    "who1": "James Monroe was an American Founding Father, lawyer, and diplomat who served as the 5th President of the United States from 1817 to 1825.",
+    "who2": "James Monroe was born in Westmoreland County, Virginia, on April 28, 1758, fighting in the Revolutionary War.",
+    "timeline": [
+      "1758 - Born in Westmoreland County, Virginia on April 28",
+      "1803 - Helped negotiate the Louisiana Purchase in Paris",
+      "1817-1825 - Served as 5th President of the United States",
+      "1823 - Articulated the Monroe Doctrine in State of the Union address"
+    ]
+  },
+  {
+    "id": "apr-29-andre-agassi",
+    "month": "April",
+    "day": "April 29",
+    "dayNum": 29,
+    "title": "Andre Agassi b. 1970 (tennis player)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on April 29, 1970, Career Grand Slam champion!",
+    "emoji": "\ud83c\udfbe",
+    "funFact": "According to Biography.com, Andre Agassi won eight Grand Slam singles titles and an Olympic gold medal, achieving a Career Golden Slam!",
+    "who1": "Andre Kirk Agassi is an American former world No. 1 tennis player who won eight Grand Slam singles titles and the 1996 Olympic gold.",
+    "who2": "Andre Agassi was born in Las Vegas, Nevada, on April 29, 1970, turning professional at age sixteen.",
+    "timeline": [
+      "1970 - Born in Las Vegas, Nevada on April 29",
+      "1992 - Won 1st Grand Slam title at Wimbledon",
+      "1996 - Won Olympic gold medal in Atlanta",
+      "1999 - Completed Career Grand Slam by winning French Open",
+      "2011 - Inducted into International Tennis Hall of Fame"
+    ]
+  },
+  {
+    "id": "apr-29-duke-ellington",
+    "month": "April",
+    "day": "April 29",
+    "dayNum": 29,
+    "title": "Duke Ellington b. 1899 (jazz musician)",
+    "type": "Person (Biography.com)",
+    "connection": "Born on April 29, 1899, jazz orchestra titan!",
+    "emoji": "\ud83c\udfb7",
+    "funFact": "According to Biography.com, Duke Ellington composed over 1,000 works, leading his famous jazz orchestra for 50 years!",
+    "who1": "Edward Kennedy 'Duke' Ellington was an American composer, pianist, and leader of a jazz orchestra from 1923 until his death.",
+    "who2": "Duke Ellington was born in Washington, D.C., on April 29, 1899, performing at Harlem's Cotton Club.",
+    "timeline": [
+      "1899 - Born in Washington, D.C. on April 29",
+      "1927 - Began famous residency at Harlem's Cotton Club",
+      "1969 - Awarded Presidential Medal of Freedom by President Richard Nixon",
+      "1999 - Posthumously awarded Pulitzer Prize Special Citation"
+    ]
+  },
+  {
+    "id": "apr-30-national-arbor-day",
+    "month": "April",
+    "day": "April 30",
+    "dayNum": 30,
+    "title": "National Arbor Day",
+    "type": "Event / Culture (Wikipedia)",
+    "connection": "Celebrated on last Friday of April!",
+    "emoji": "\ud83c\udf33",
+    "funFact": "According to Wikipedia, J. Sterling Morton founded Arbor Day in Nebraska in 1872, planting over 1 million trees on the first day!",
+    "who1": "National Arbor Day is a civic holiday encouraging individuals and groups to plant trees, celebrated on the last Friday of April.",
+    "who2": "Founded by J. Sterling Morton in Nebraska on April 10, 1872, Arbor Day became a national observance under President Richard Nixon.",
+    "timeline": [
+      "1872 - First Arbor Day observed in Nebraska with 1 million trees planted",
+      "1970 - President Richard Nixon declares last Friday of April as National Arbor Day"
+    ]
+  },
+  {
+    "id": "apr-30-vietnam-war-ended",
+    "month": "April",
+    "day": "April 30",
+    "dayNum": 30,
+    "title": "Vietnam War ended 1975",
+    "type": "Event / History (Wikipedia)",
+    "connection": "Fall of Saigon occurred on April 30, 1975!",
+    "emoji": "\ud83d\udd4a\ufe0f",
+    "funFact": "According to Wikipedia, the Fall of Saigon on April 30, 1975, marked the official end of the Vietnam War!",
+    "who1": "The End of the Vietnam War occurred on April 30, 1975, with the Fall of Saigon and conclusion of military hostilities.",
+    "who2": "North Vietnamese forces entered Saigon as Operation Frequent Wind evacuated remaining American personnel.",
+    "timeline": [
+      "1973 - Paris Peace Accords signed bringing U.S. troop withdrawal",
+      "1975 - Saigon captured by North Vietnamese forces on April 30, ending war",
+      "1982 - Vietnam Veterans Memorial dedicated in Washington, D.C."
+    ]
+  }
+];
 
-  const ALL_RAW_TOPICS = [...RAW_OCTOBER_DATA, ...RAW_NOVEMBER_DATA, ...RAW_DECEMBER_DATA, ...RAW_JANUARY_DATA, ...RAW_FEBRUARY_DATA, ...RAW_MARCH_DATA];
+  const ALL_RAW_TOPICS = [...RAW_OCTOBER_DATA, ...RAW_NOVEMBER_DATA, ...RAW_DECEMBER_DATA, ...RAW_JANUARY_DATA, ...RAW_FEBRUARY_DATA, ...RAW_MARCH_DATA, ...RAW_APRIL_DATA];
   const TOPICS_DB = ALL_RAW_TOPICS.map(t => {
     const articles = buildArticlesForTopic(t);
     return Object.assign({}, t, articles);
@@ -5561,7 +6517,7 @@
       topicCardsGrid.innerHTML = `
         <div style="grid-column:1/-1; background:rgba(255,255,255,0.08); padding:1.5rem; border-radius:14px; color:white; text-align:center;">
           <p style="font-size:1.1rem; font-weight:700;">No pre-populated topics found for ${selectedMonth}.</p>
-          <p style="font-size:0.9rem; color:#94a3b8; margin-top:0.4rem;">Select "October", "November", "December", "January", "February", or "March" to view extracted calendar topics!</p>
+          <p style="font-size:0.9rem; color:#94a3b8; margin-top:0.4rem;">Select "October", "November", "December", "January", "February", "March", or "April" to view extracted calendar topics!</p>
         </div>
       `;
       return;
