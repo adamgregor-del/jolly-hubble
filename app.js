@@ -1,5 +1,5 @@
 /* Talking Calendar - Dual-Article Research & Paraphrase Hub Engine */
-/* Clean Engine referencing external datasets from data/ directory */
+/* Clean Engine with Copy to Clipboard capabilities */
 
 (function () {
   'use strict';
@@ -7,9 +7,9 @@
   function getArticlesForTopic(topic) {
     if (!topic) return null;
 
-    // Use the unified AI-generated database
-    if (window.GENERATED_ARTICLES && window.GENERATED_ARTICLES[topic.id]) {
-      const ext = window.GENERATED_ARTICLES[topic.id];
+    const db = window.GENERATED_ARTICLES || window.GENERATED_ARTICLES_DB || window.OCTOBER_ARTICLES_DB;
+    if (db && db[topic.id]) {
+      const ext = db[topic.id];
       return {
         article1: ext.article1,
         article1_challenge: ext.article1,
@@ -18,23 +18,35 @@
       };
     }
 
-    // Fallback if data is missing for some reason
+    // Check embedded topic articles
+    if (topic.article1 && topic.article2) {
+      return {
+        article1: topic.article1,
+        article1_challenge: topic.article1,
+        article2: topic.article2,
+        article2_challenge: topic.article2
+      };
+    }
+
+    const isPerson = topic.type ? topic.type.includes("Person") : true;
+    const sourceName = isPerson ? "Biography.com" : "Wikipedia";
+
     return {
       article1: {
-        title: `Article 1: ${topic.title} - Impact & Legacy`,
-        paragraphs: [["Content is currently generating..."]]
+        title: `Article 1: ${topic.title} - Impact & Legacy (${sourceName})`,
+        paragraphs: [[`${topic.who1 || topic.title}`]]
       },
       article1_challenge: {
-        title: `Article 1: ${topic.title} - Impact & Legacy`,
-        paragraphs: [["Content is currently generating..."]]
+        title: `Article 1: ${topic.title} - Impact & Legacy (${sourceName})`,
+        paragraphs: [[`${topic.who1 || topic.title}`]]
       },
       article2: {
-        title: `Article 2: ${topic.title} - Origins & History`,
-        paragraphs: [["Content is currently generating..."]]
+        title: `Article 2: ${topic.title} - Origins & History (${sourceName})`,
+        paragraphs: [[`${topic.who2 || topic.title}`]]
       },
       article2_challenge: {
-        title: `Article 2: ${topic.title} - Origins & History`,
-        paragraphs: [["Content is currently generating..."]]
+        title: `Article 2: ${topic.title} - Origins & History (${sourceName})`,
+        paragraphs: [[`${topic.who2 || topic.title}`]]
       }
     };
   }
@@ -56,82 +68,44 @@
       "October 1 - Historical milestone documented in public archives"
     ],
     "article1": {
-      "title": "Article 1: Henry Ford introduces Model T (1908) - Impact, Legacy & Achievements (Biography.com)",
+      "title": "Article 1: Henry Ford introduces Model T (1908) - Impact & Legacy",
       "paragraphs": [
         [
-          "Henry Ford was an American industrialist and business magnate who founded the Ford Motor Company and revolutionized factory manufacturing through the moving assembly line.",
-          "According to historical records preserved on Biography.com, this achievement represents a monumental milestone in American and world history.",
-          "On October 1, 1908, Ford introduced the Model T automobile, an affordable vehicle designed for everyday American families.",
-          "Historians and researchers emphasize that examining this milestone provides vital insights into scientific, cultural, and political developments.",
-          "Through dedicated leadership, technical innovation, or moral courage, it established enduring standards across international communities.",
-          "Citizens and scholars continue to honor and commemorate this historical event in academic curricula, museums, and national archives.",
-          "Today, it stands as a shining testament to human achievement and historical progress."
+          "On October 1, 1908, Henry Ford officially introduced the Model T, forever changing American transportation.",
+          "Before the Model T, cars were expensive luxury items reserved for the wealthy, often costing upwards of $2,000."
         ],
         [
-          "During its pivotal historical era, Henry Ford introduces Model T (1908) introduced transformative developments that reshaped contemporary society.",
-          "Research published on Biography.com documents how these accomplishments addressed complex challenges of the era.",
-          "National archives preserve detailed primary source manuscripts, photographs, and artifacts illustrating the step-by-step impact.",
-          "Civic leaders, scholars, and international observers recognized the far-reaching social, economic, or cultural consequences.",
-          "By setting high standards of perseverance and excellence, it inspired surrounding communities and future generations of leaders.",
-          "This milestone continues to be analyzed as an essential case study in schools and universities across the globe."
+          "By introducing the moving assembly line in 1913 at his Highland Park plant, Ford reduced the time it took to build a car from 12 hours to just 93 minutes.",
+          "This incredible efficiency allowed Ford to lower the price of the Model T from $850 in 1908 to under $300 by the 1920s."
         ],
         [
-          "In the decades following its initial occurrence on October 1, the long-term influence of this subject expanded internationally.",
-          "Educational organizations and civic institutions established annual commemorations to educate young scholars.",
-          "Monographs published on Biography.com highlight how these principles continue to inform modern laws, technology, and culture.",
-          "Museums and historical societies display dedicated exhibits featuring primary source evidence from this period.",
-          "Furthermore, modern biographers and documentary creators feature this narrative to inspire future innovators.",
-          "The core values demonstrated through this milestone remain vital for addressing contemporary challenges.",
-          "Its enduring heritage serves as an inspiring reminder of human creativity and determination."
+          "Between 1908 and 1927, the Ford Motor Company produced more than 15 million Model T automobiles.",
+          "The widespread ownership of these cars spurred the construction of thousands of miles of paved roads, gas stations, and suburban communities across the United States."
         ],
         [
-          "In conclusion, Henry Ford introduces Model T (1908) remains a cornerstone entry on the October research calendar.",
-          "Students and researchers around the world reflect on this achievement with great respect and scholarly interest.",
-          "By analyzing both source articles, student scholars gain a comprehensive understanding of its historical significance.",
-          "The authoritative records on Biography.com confirm that its legacy will endure for generations to come.",
-          "Textbooks, digital archives, and civic monuments ensure that this story continues to be taught in classrooms everywhere.",
-          "This topic provides an exceptional opportunity for students to practice synthesizing facts into original paraphrased reports."
+          "In 1914, Ford raised worker wages to an unprecedented $5 per day and shortened the workday to eight hours, which helped build a strong American middle class.",
+          "The lasting legacy of the Model T proved that mass production could make advanced technology accessible to everyday families."
         ]
       ]
     },
     "article2": {
-      "title": "Article 2: Henry Ford introduces Model T (1908) - Early Origins, Background & History (Biography.com)",
+      "title": "Article 2: Henry Ford introduces Model T (1908) - Origins & History",
       "paragraphs": [
         [
-          "Henry Ford was born on a farm in Springwells Township, Michigan, near Dearborn, on July 30, 1863.",
-          "According to Biography.com biographical records, early background factors played a decisive role in shaping future accomplishments.",
-          "Growing up during a period of historical transition provided unique educational opportunities and practical training.",
-          "Growing up on a farm, young Henry demonstrated a natural fascination with mechanical devices and watch repair rather than traditional farm labor.",
-          "Mentorship from dedicated teachers, family members, and community leaders helped cultivate essential skills and character.",
-          "These formative experiences established the work ethic and resilience required for national leadership.",
-          "Understanding these early origins affords student researchers valuable context into the full historical journey."
+          "Henry Ford was born on July 30, 1863, in Greenfield Township, Michigan, and possessed a passionate interest in mechanics from childhood.",
+          "After building his first experimental gas-powered vehicle, the Quadricycle, in 1896, Ford established the Ford Motor Company on June 16, 1903."
         ],
         [
-          "During the early development phase of Henry Ford introduces Model T (1908), initial experiments and foundational projects were conducted with meticulous dedication.",
-          "Archival records from Biography.com document specific obstacles faced during the early years of this endeavor.",
-          "Overcoming financial, social, or technical challenges required extraordinary resilience and creative problem-solving.",
-          "Collaborations with skilled associates and mentors helped refine early ideas into successful realities.",
-          "Initial public demonstrations and early achievements attracted widespread acclaim from civic assemblies.",
-          "These foundational breakthroughs inaugurated a new era of progress in its respective field.",
-          "The success of these early endeavors demonstrated the power of sustained effort and disciplined research."
+          "In the years leading up to 1908, Ford and his team experimented with various vehicle designs named after letters of the alphabet, starting with the Model A.",
+          "Ford wanted to create a simple, reliable car that could handle rugged rural roads without breaking down frequently."
         ],
         [
-          "As public recognition grew, systematic initiatives expanded the scope and reach of this historical endeavor.",
-          "Primary manuscripts preserved from this era illustrate the step-by-step progress achieved over time.",
-          "Supporters and volunteers rallied around the cause, establishing formal organizations and lasting institutions.",
-          "This rapid growth brought vital knowledge, inspiration, or services to communities across the nation.",
-          "The historical record under October 1 marks a crucial turning point in this developmental story.",
-          "By maintaining unyielding standards of excellence and integrity, the movement achieved lasting success.",
-          "This phase of growth established an unshakeable foundation for future cultural and historical impact."
+          "The team used a newly developed vanadium steel alloy, which made the Model T lighter and three times stronger than other contemporary automobiles.",
+          "The vehicle was equipped with a 20-horsepower, four-cylinder engine that could reach top speeds of up to 45 miles per hour."
         ],
         [
-          "By analyzing the formative origins of Henry Ford introduces Model T (1908), student researchers gain a complete historical perspective.",
-          "Article 1 detailed the global impact and legacy, while Article 2 highlighted the early background and historical origins.",
-          "Combining facts from both articles enables students to write rich, original paraphrases in their own words.",
-          "Practicing original paraphrasing sharpens reading comprehension, vocabulary expansion, and clear written expression.",
-          "As student researchers organize their notes, they transform historical evidence into polished original reports.",
-          "This dual-article pedagogical framework ensures students master multi-source informational synthesis.",
-          "The early narrative of Henry Ford introduces Model T (1908) remains an inspiring chapter in the human journey."
+          "The first production Model T was completed at the Piquette Avenue Plant in Detroit on September 27, 1908, and official sales began on October 1, 1908.",
+          "With more than 10,000 orders placed in the first year alone, the Model T quickly established itself as a revolutionary milestone in automotive history."
         ]
       ]
     }
@@ -152,82 +126,44 @@
       "October 2 - Historical milestone documented in public archives"
     ],
     "article1": {
-      "title": "Article 1: Peanuts Comic Strip first published (1950) - Impact, Legacy & Achievements (Wikipedia)",
+      "title": "Article 1: Peanuts Comic Strip first published (1950) - Impact & Legacy",
       "paragraphs": [
         [
-          "Peanuts is a world-famous American newspaper comic strip created by cartoonist Charles M. Schulz that debuted on October 2, 1950.",
-          "According to historical records preserved on Wikipedia, this achievement represents a monumental milestone in American and world history.",
-          "Featuring iconic characters Charlie Brown, Snoopy, Linus, and Lucy, the strip became one of the most influential cultural works in comic history.",
-          "Historians and researchers emphasize that examining this milestone provides vital insights into scientific, cultural, and political developments.",
-          "Through dedicated leadership, technical innovation, or moral courage, it established enduring standards across international communities.",
-          "Citizens and scholars continue to honor and commemorate this historical event in academic curricula, museums, and national archives.",
-          "Today, it stands as a shining testament to human achievement and historical progress."
+          "When Peanuts debuted in 1950, nobody expected it to become one of the most influential comic strips in modern print history.",
+          "Over its 50-year run, the strip reached an incredible audience of over 355 million readers across 75 countries and was translated into 21 different languages."
         ],
         [
-          "During its pivotal historical era, Peanuts Comic Strip first published (1950) introduced transformative developments that reshaped contemporary society.",
-          "Research published on Wikipedia documents how these accomplishments addressed complex challenges of the era.",
-          "National archives preserve detailed primary source manuscripts, photographs, and artifacts illustrating the step-by-step impact.",
-          "Civic leaders, scholars, and international observers recognized the far-reaching social, economic, or cultural consequences.",
-          "By setting high standards of perseverance and excellence, it inspired surrounding communities and future generations of leaders.",
-          "This milestone continues to be analyzed as an essential case study in schools and universities across the globe."
+          "The success of the newspaper strip quickly expanded into iconic animated television specials and major pop culture milestones.",
+          "In December 1965, 'A Charlie Brown Christmas' aired for the first time, winning an Emmy Award, and in 1968, NASA officially adopted Snoopy as their safety mascot for human spaceflight missions."
         ],
         [
-          "In the decades following its initial occurrence on October 2, the long-term influence of this subject expanded internationally.",
-          "Educational organizations and civic institutions established annual commemorations to educate young scholars.",
-          "Monographs published on Wikipedia highlight how these principles continue to inform modern laws, technology, and culture.",
-          "Museums and historical societies display dedicated exhibits featuring primary source evidence from this period.",
-          "Furthermore, modern biographers and documentary creators feature this narrative to inspire future innovators.",
-          "The core values demonstrated through this milestone remain vital for addressing contemporary challenges.",
-          "Its enduring heritage serves as an inspiring reminder of human creativity and determination."
+          "Peanuts also revolutionized global commercial licensing and merchandising for newspaper comics throughout the late twentieth century.",
+          "By the 1980s, Charles Schulz's characters were generating over one billion dollars annually in retail sales, appearing on greeting cards, apparel, and major national ad campaigns."
         ],
         [
-          "In conclusion, Peanuts Comic Strip first published (1950) remains a cornerstone entry on the October research calendar.",
-          "Students and researchers around the world reflect on this achievement with great respect and scholarly interest.",
-          "By analyzing both source articles, student scholars gain a comprehensive understanding of its historical significance.",
-          "The authoritative records on Wikipedia confirm that its legacy will endure for generations to come.",
-          "Textbooks, digital archives, and civic monuments ensure that this story continues to be taught in classrooms everywhere.",
-          "This topic provides an exceptional opportunity for students to practice synthesizing facts into original paraphrased reports."
+          "The enduring legacy of Charles Schulz's work completely reshaped how cartoonists approached emotion, anxiety, and philosophy in daily comics.",
+          "When Schulz retired, the final original daily strip was published on February 13, 2000, concluding a historic run that forever changed American culture."
         ]
       ]
     },
     "article2": {
-      "title": "Article 2: Peanuts Comic Strip first published (1950) - Early Origins, Background & History (Wikipedia)",
+      "title": "Article 2: Peanuts Comic Strip first published (1950) - Origins & History",
       "paragraphs": [
         [
-          "Charles M. Schulz created Peanuts in 1950 after drawing a local cartoon series titled Li'l Folks in St. Paul, Minnesota.",
-          "According to Wikipedia biographical records, early background factors played a decisive role in shaping future accomplishments.",
-          "Growing up during a period of historical transition provided unique educational opportunities and practical training.",
-          "Schulz drew, inked, and lettered every single daily Peanuts strip by hand for nearly fifty years without using studio assistants.",
-          "Mentorship from dedicated teachers, family members, and community leaders helped cultivate essential skills and character.",
-          "These formative experiences established the work ethic and resilience required for national leadership.",
-          "Understanding these early origins affords student researchers valuable context into the full historical journey."
+          "Before creating his masterwork, artist Charles M. Schulz drew a weekly panel comic called 'Li'l Folks' starting in June 1947.",
+          "Published in his hometown newspaper, the St. Paul Pioneer Press, this early comic featured prototype versions of quiet children who enjoyed classical music and dogs that resembled Snoopy."
         ],
         [
-          "During the early development phase of Peanuts Comic Strip first published (1950), initial experiments and foundational projects were conducted with meticulous dedication.",
-          "Archival records from Wikipedia document specific obstacles faced during the early years of this endeavor.",
-          "Overcoming financial, social, or technical challenges required extraordinary resilience and creative problem-solving.",
-          "Collaborations with skilled associates and mentors helped refine early ideas into successful realities.",
-          "Initial public demonstrations and early achievements attracted widespread acclaim from civic assemblies.",
-          "These foundational breakthroughs inaugurated a new era of progress in its respective field.",
-          "The success of these early endeavors demonstrated the power of sustained effort and disciplined research."
+          "In May 1950, Schulz traveled to New York City to present his newest comic ideas to the publication team at United Feature Syndicate.",
+          "The syndicate executives loved the cartoon concept but insisted on renaming the strip 'Peanuts', a decision Schulz personally disliked because he thought the title lacked dignity."
         ],
         [
-          "As public recognition grew, systematic initiatives expanded the scope and reach of this historical endeavor.",
-          "Primary manuscripts preserved from this era illustrate the step-by-step progress achieved over time.",
-          "Supporters and volunteers rallied around the cause, establishing formal organizations and lasting institutions.",
-          "This rapid growth brought vital knowledge, inspiration, or services to communities across the nation.",
-          "The historical record under October 2 marks a crucial turning point in this developmental story.",
-          "By maintaining unyielding standards of excellence and integrity, the movement achieved lasting success.",
-          "This phase of growth established an unshakeable foundation for future cultural and historical impact."
+          "The official national publication of the Peanuts comic strip occurred on October 2, 1950, debuting in seven American newspapers.",
+          "That first panel showed Charlie Brown walking past two neighborhood friends, Shermy and Patty, while Snoopy appeared as a regular four-legged beagle."
         ],
         [
-          "By analyzing the formative origins of Peanuts Comic Strip first published (1950), student researchers gain a complete historical perspective.",
-          "Article 1 detailed the global impact and legacy, while Article 2 highlighted the early background and historical origins.",
-          "Combining facts from both articles enables students to write rich, original paraphrases in their own words.",
-          "Practicing original paraphrasing sharpens reading comprehension, vocabulary expansion, and clear written expression.",
-          "As student researchers organize their notes, they transform historical evidence into polished original reports.",
-          "This dual-article pedagogical framework ensures students master multi-source informational synthesis.",
-          "The early narrative of Peanuts Comic Strip first published (1950) remains an inspiring chapter in the human journey."
+          "Throughout the early 1950s, the comic strip expanded rapidly in both visual detail and character development.",
+          "Charlie Brown gained his famous zigzag pattern on his shirt on December 21, 1950, and future core characters Lucy and Linus were introduced to readers in 1952."
         ]
       ]
     }
@@ -246,7 +182,49 @@
     "who2": "Mohandas Gandhi developed through significant historical events recorded in detail on Biography.com.",
     "timeline": [
       "October 2 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Mohandas Gandhi (b. 1869) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "Mohandas Gandhi's philosophy of nonviolent resistance, known as Satyagraha, transformed the struggle for Indian independence from British rule.",
+          "His leadership inspired millions of everyday citizens to participate in peaceful protests, boycotts, and marches during the early-to-mid twentieth century."
+        ],
+        [
+          "In 1930, Gandhi led the famous 240-mile Salt March to the Arabian Sea to protest harsh British salt taxes.",
+          "This massive demonstration led to the arrest of over 60,000 Indians, bringing international media attention to the injustice of colonial rule."
+        ],
+        [
+          "Gandhi's successful methods deeply influenced future global leaders, including Dr. Martin Luther King Jr. during the American Civil Rights Movement in the 1950s and 1960s.",
+          "Nelson Mandela also utilized Gandhi's principles of peaceful resistance to fight against apartheid in South Africa."
+        ],
+        [
+          "India gained full independence on August 15, 1947, largely due to the national unity forged through Gandhi's leadership.",
+          "Today, his birthday on October 2 is celebrated globally as the International Day of Non-Violence to honor his enduring historical legacy."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Mohandas Gandhi (b. 1869) - Origins & History",
+      "paragraphs": [
+        [
+          "Mohandas Karamchand Gandhi was born on October 2, 1869, in Porbandar, a coastal town in western India.",
+          "Raised in a devout Hindu family, he learned principles of self-discipline, vegetarianism, and respect for all living beings at an early age."
+        ],
+        [
+          "At age 18 in 1888, Gandhi traveled to London, England, to study law at the Inner Temple.",
+          "He successfully passed the bar exam in June 1891 and returned to India to begin practicing law as a barrister."
+        ],
+        [
+          "In 1893, Gandhi accepted a one-year legal contract in South Africa, where he immediately faced severe racial discrimination.",
+          "After being thrown off a train in Pietermaritzburg for sitting in a first-class carriage, he spent the next 21 years fighting for Indian civil rights in South Africa."
+        ],
+        [
+          "Gandhi returned to India in 1915 as a seasoned activist and assumed leadership of the Indian National Congress in 1921.",
+          "Over the next three decades, he organized nationwide campaigns for economic independence and social reform until his assassination in 1948."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-4-sos-established",
@@ -262,7 +240,49 @@
     "who2": "SOS established developed through significant historical events recorded in detail on Wikipedia.",
     "timeline": [
       "October 3 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: SOS established (1906) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "The establishment of SOS in 1906 completely transformed international safety at sea by creating the world's first universal distress signal.",
+          "Before this unified standard was created, ships from different countries and private radio companies used competing codes that often led to confusion during life-threatening emergencies."
+        ],
+        [
+          "One of the most famous historical uses of the signal occurred on the night of April 14, 1912, when the RMS Titanic struck an iceberg in the North Atlantic.",
+          "Wireless operators sent out both the older CQD signal and the new SOS call, which alerted the nearby Carpathia and helped rescue 705 surviving passengers."
+        ],
+        [
+          "Throughout the twentieth century, this distinct Morse code sequence saved thousands of lives across global oceans during naval battles, shipwrecks, and severe storms.",
+          "Because the pattern of three dots, three dashes, and three dots was so simple, the letters SOS quickly entered popular culture worldwide as the ultimate symbol for needing emergency assistance."
+        ],
+        [
+          "Even though international maritime authorities officially replaced Morse code distress calls with advanced satellite systems in 1999, the impact of SOS remains profound.",
+          "It established a lasting standard for global safety cooperation that still influences modern search-and-rescue operations today."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: SOS established (1906) - Origins & History",
+      "paragraphs": [
+        [
+          "After Italian inventor Guglielmo Marconi developed practical wireless telegraphy in the late 1890s, ocean vessels began installing radios to communicate with land and other ships.",
+          "However, as radio traffic grew, sailors quickly realized that ships lacked a single, agreed-upon signal to request emergency help."
+        ],
+        [
+          "In 1904, the Marconi Company attempted to solve this issue by creating the distress call CQD, which combined a general call signal with the letter D for danger.",
+          "Unfortunately, CQD was frequently misheard by land operators because it sounded similar to standard non-emergency telegraph codes used at the time."
+        ],
+        [
+          "To solve this dangerous problem, representatives from 29 nations gathered at the International Radio Telegraphic Convention in Berlin, Germany, on October 3, 1906.",
+          "During this historic conference, delegates officially approved a unique visual and audio sequence composed of three short dots, three long dashes, and three short dots."
+        ],
+        [
+          "Contrary to popular myth, the letters did not stand for Save Our Ship or Save Our Souls, but were chosen simply because the pattern was easy for anyone to transmit and recognize.",
+          "The new standard officially took effect on July 1, 1908, permanently establishing SOS as the international call for help."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-5-robert-lawson",
@@ -278,7 +298,49 @@
     "who2": "Robert Lawson, author developed through significant historical events recorded in detail on Biography.com.",
     "timeline": [
       "October 4 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Robert Lawson, author (b. 1892) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "Robert Lawson left an unprecedented mark on American children's literature as the first person to win both major literary honors in the field.",
+          "In 1941, he earned the Caldecott Medal for his artwork in They Were Strong and Good, and in 1945, he won the Newbery Medal for writing Rabbit Hill."
+        ],
+        [
+          "Lawson's artistic influence expanded significantly when he illustrated Munro Leaf's classic 1936 book, The Story of Ferdinand.",
+          "His detailed black-and-white ink drawings helped the book become an international bestseller, at one point selling over 14,000 copies per week."
+        ],
+        [
+          "Beyond his artistic talent, Lawson revolutionized historical fiction for young readers with his 1939 masterpiece, Ben and Me.",
+          "By telling the biography of Benjamin Franklin through the eyes of a clever mouse named Amos, he created an engaging strategy to teach 18th-century American history."
+        ],
+        [
+          "Today, Lawson is documented on Biography.com as a landmark historical figure born on October 4, 1892, whose work set a standard for quality in publishing.",
+          "His unique dual victory of both the Caldecott and Newbery Medals remains one of the rarest achievements in children's literary history."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Robert Lawson, author (b. 1892) - Origins & History",
+      "paragraphs": [
+        [
+          "Robert Lawson was born on October 4, 1892, in New York City and spent most of his childhood growing up in Montclair, New Jersey.",
+          "Determined to pursue an artistic career, he attended the New York School of Fine and Applied Art from 1911 to 1914."
+        ],
+        [
+          "During World War I, Lawson enlisted in the United States Army and served overseas in France from 1917 to 1919.",
+          "He was assigned to the 40th Engineers Camouflage Section, where artists used visual design principles to disguise military equipment on European battlefields."
+        ],
+        [
+          "After returning to the United States, Lawson married fellow illustrator Marie Abrams in 1922 and established a home in Connecticut.",
+          "Throughout the 1920s, he worked as a commercial illustrator, creating visual graphics for magazines, advertisements, and greeting cards."
+        ],
+        [
+          "By the late 1930s, Lawson transitioned into creating books, ultimately writing and illustrating 17 of his own original titles before his death on May 26, 1957.",
+          "His rich personal history\u2014spanning early art school, wartime military camouflage, and decades of studio practice\u2014shaped his successful career as a historical author."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-6-sputnik-1",
@@ -294,7 +356,49 @@
     "who2": "Sputnik I launched developed through significant historical events recorded in detail on Wikipedia.",
     "timeline": [
       "October 4 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Sputnik I launched (1957) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "The launch of Sputnik I on October 4, 1957, shocked the public and instantly transformed global politics.",
+          "It demonstrated that the Soviet Union possessed advanced technology capable of reaching outer space before any other nation."
+        ],
+        [
+          "In response, the United States entered an intense period of competition known as the Space Race.",
+          "To lead American efforts, President Dwight D. Eisenhower signed the National Aeronautics and Space Act on July 29, 1958, creating NASA."
+        ],
+        [
+          "The launch also triggered major changes in American education and scientific research.",
+          "Congress passed the National Defense Education Act in 1958, providing over $1 billion to improve science, mathematics, and technology programs in schools."
+        ],
+        [
+          "Today, Sputnik I is celebrated as the dawn of the space age.",
+          "Its legacy includes thousands of modern satellites that enable global communication, weather forecasting, and GPS navigation."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Sputnik I launched (1957) - Origins & History",
+      "paragraphs": [
+        [
+          "On October 4, 1957, the Soviet Union launched Sputnik I from the Baikonur Cosmodrome in Kazakhstan.",
+          "The satellite was a polished metal sphere measuring 23 inches in diameter and weighing 183.9 pounds."
+        ],
+        [
+          "Soviet engineer Sergey Korolev led the secret development team that adapted an R-7 intercontinental ballistic missile for the launch.",
+          "The massive rocket delivered enough energy to boost Sputnik I to an orbital speed of about 18,000 miles per hour."
+        ],
+        [
+          "Equipped with four long radio antennas, the satellite transmitted a distinct radio signal that could be heard worldwide.",
+          "It broadcasted its famous 'beep-beep' signal for 21 days until its chemical batteries finally ran out."
+        ],
+        [
+          "Sputnik I orbited Earth every 96 minutes, traveling millions of miles and completing 1,440 orbits over three months.",
+          "On January 4, 1958, the historic satellite reentered Earth's atmosphere and burned up completely."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-7-ray-kroc",
@@ -310,7 +414,49 @@
     "who2": "Ray Kroc, founder of McDonald's developed through significant historical events recorded in detail on Biography.com.",
     "timeline": [
       "October 5 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Ray Kroc, founder of McDonald's (b. 1902) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "Ray Kroc transformed the restaurant industry by turning a small California burger stand into a global fast-food empire.",
+          "By the time of his death in 1984, McDonald's was serving millions of customers daily across more than 30 countries."
+        ],
+        [
+          "Kroc created a strict system of uniformity where every McDonald's location offered the exact same menu, taste, and cleanliness standards.",
+          "This innovative franchising model established McDonald's as a household name and reshaped American dining habits during the late 20th century."
+        ],
+        [
+          "The success of the business created jobs for millions of workers, while popularizing quick service and standardized drive-thru windows.",
+          "Today, the brand operates over 38,000 locations worldwide, serving as an iconic symbol of American entrepreneurship."
+        ],
+        [
+          "Beyond business, Kroc established the Kroc Foundation in 1965 to support medical research into diabetes and arthritis.",
+          "He also purchased the San Diego Padres baseball team in 1974, leaving a lasting mark on American culture, sports, and philanthropy."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Ray Kroc, founder of McDonald's (b. 1902) - Origins & History",
+      "paragraphs": [
+        [
+          "Born on October 5, 1902, in Oak Park, Illinois, Ray Kroc worked a variety of energetic sales jobs during his early life.",
+          "He served as a Red Cross ambulance driver during World War I before spending seventeen years selling paper cups across the country."
+        ],
+        [
+          "By the early 1950s, Kroc was working as an exclusive distributor for a commercial milkshake machine called the Multimixer.",
+          "In 1954, he traveled to San Bernardino, California, after brothers Richard and Maurice McDonald ordered eight of his mixers for a single restaurant."
+        ],
+        [
+          "Impressed by the brothers' speedy assembly-line kitchen system, Kroc convinced them to let him franchise their restaurant concept nationwide.",
+          "He opened his first official McDonald's franchise in Des Plaines, Illinois, on April 15, 1955, and incorporated the growing company."
+        ],
+        [
+          "After years of rapid expansion, Kroc purchased the full rights to the McDonald's brand from the original brothers in 1961 for 2.7 million dollars.",
+          "This pivotal transaction allowed Kroc to take total control and guide the business into an international food phenomenon."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-8-neil-degrasse-tyson",
@@ -326,7 +472,49 @@
     "who2": "Neil deGrasse Tyson, astronomer developed through significant historical events recorded in detail on Biography.com.",
     "timeline": [
       "October 5 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Neil deGrasse Tyson, astronomer (b. 1958) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "In 1996, Neil deGrasse Tyson became the director of the Hayden Planetarium at the American Museum of Natural History in New York City.",
+          "Through this prominent leadership position, he redesigned the planetarium and transformed how millions of visitors learn about space and astronomy."
+        ],
+        [
+          "In 2000, Tyson made the bold decision to omit Pluto from the planet exhibit at the planetarium, leading to intense debate among scientists.",
+          "The International Astronomical Union officially reclassified Pluto as a dwarf planet in 2006, proving that Tyson's scientific vision was ahead of its time."
+        ],
+        [
+          "Tyson hosted the popular television series Cosmos: A Spacetime Odyssey in 2014, which was broadcast in over 135 countries.",
+          "He also launched his hit radio show and podcast StarTalk in 2009 to successfully bridge the gap between pop culture and modern science."
+        ],
+        [
+          "In 2004, President George W. Bush appointed Tyson to serve on the Commission on Implementation of United States Space Exploration Policy.",
+          "Tyson received the NASA Distinguished Public Service Medal in 2004 for his incredible efforts to inspire young students across the country."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Neil deGrasse Tyson, astronomer (b. 1958) - Origins & History",
+      "paragraphs": [
+        [
+          "Neil deGrasse Tyson was born on October 5, 1958, in New York City, where he grew up fascinated by the night sky.",
+          "At age 9, a visit to the Hayden Planetarium sparked his lifelong passion for studying the universe and stars."
+        ],
+        [
+          "By the age of 15, Tyson was already giving public lectures on astronomy and earning money for his deep scientific knowledge.",
+          "Famous astronomer Carl Sagan personally invited 17-year-old Tyson to visit Cornell University in 1975 to encourage his scientific career."
+        ],
+        [
+          "Tyson earned his Bachelor of Arts degree in Physics from Harvard University in 1980, where he was also an active wrestler.",
+          "He continued his advanced studies and successfully earned a Doctorate in Astrophysics from Columbia University in 1991."
+        ],
+        [
+          "From 1991 to 1994, Tyson worked as a postdoctoral research associate at Princeton University, studying star formation and distant galaxies.",
+          "He joined the staff at the Hayden Planetarium in 1994, returning full circle to the very place that inspired him as a child."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-9-thomas-edison-motion-picture",
@@ -342,7 +530,49 @@
     "who2": "Thomas Edison shows first motion picture developed through significant historical events recorded in detail on Biography.com.",
     "timeline": [
       "October 6 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Thomas Edison shows first motion picture (1889) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "On October 6, 1889, Thomas Edison demonstrated a short moving picture clip at his lab in West Orange, New Jersey, changing global entertainment forever.",
+          "This early breakthrough laid the foundation for the modern movie industry, which eventually grew into a multi-billion dollar global force."
+        ],
+        [
+          "Beyond fictional storytelling, motion pictures quickly became a revolutionary tool for documenting real historical events, nature, and news around the world.",
+          "By the mid-1890s, early films allowed ordinary citizens to observe far-off places and world leaders they would otherwise never have seen."
+        ],
+        [
+          "Edison's visual breakthrough inspired his team to build the Black Maria in 1893, which was recognized as the world's very first film production studio.",
+          "This invention launched a rapid wave of innovation among worldwide engineers, leading to theater projectors and synchronized audio by the late 1920s."
+        ],
+        [
+          "More than 130 years after that initial 1889 demonstration, visual storytelling remains one of humanity's most powerful art forms.",
+          "Every digital movie, streaming television show, and online video recorded today traces its direct roots back to Edison's original motion picture experiments."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Thomas Edison shows first motion picture (1889) - Origins & History",
+      "paragraphs": [
+        [
+          "In 1888, American inventor Thomas Edison decided to design a device that would do for the eye what his phonograph had accomplished for the ear.",
+          "Edison assigned his skilled assistant, William Kennedy Laurie Dickson, to engineer a motion picture camera capable of capturing rapid movement."
+        ],
+        [
+          "Dickson and his research team utilized George Eastman's newly developed flexible celluloid film, cutting it into strips 35 millimeters wide.",
+          "They built an innovative camera called the Kinetograph, which captured rapidly sequential photographs at speeds up to 46 frames per second."
+        ],
+        [
+          "When Edison returned to his laboratory from a trip to Europe on October 6, 1889, Dickson presented his new projection test called the Kinetophonograph.",
+          "The brief motion picture clip showed Dickson stepping forward, lifting his hat, and speaking greeting words synchronized with a recorded audio track."
+        ],
+        [
+          "Edison filed official patents for his Kinetoscope viewing box in 1891, allowing individual viewers to watch short films through a peep-hole viewer.",
+          "By April 1894, the first public Kinetoscope parlor opened in New York City, formally kicking off the commercial film age in human history."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-10-rose-national-flower",
@@ -358,7 +588,49 @@
     "who2": "Rose designated as U.S. National Flower developed through significant historical events recorded in detail on Wikipedia.",
     "timeline": [
       "October 7 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Rose designated as U.S. National Flower (1986) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "On November 20, 1986, President Ronald Reagan signed Proclamation 5574, officially declaring the rose as the national floral emblem of the United States.",
+          "This landmark decision came shortly after Congress passed Senate Joint Resolution 159 in October 1986, giving the country its first official national flower."
+        ],
+        [
+          "The designation highlighted the flower's deep presence across all 50 states, where wild and cultivated varieties thrive.",
+          "Long before the 1986 federal law, individual states had already adopted the rose, including Iowa in 1897, Georgia in 1916, North Dakota in 1942, and New York in 1955."
+        ],
+        [
+          "The official status elevated a massive domestic floriculture industry that grows over 100 million stems annually for public celebration.",
+          "Famous events like the Tournament of Roses Parade in Pasadena, California, which started in 1890, gained renewed national significance as standard-bearers for America's favorite bloom."
+        ],
+        [
+          "Today, the rose stands alongside the bald eagle and the star-spangled banner as an enduring emblem of American pride.",
+          "It serves as the backdrop for presidential announcements in the historic White House Rose Garden, which was established in 1913 by First Lady Ellen Wilson and redesigned in 1962."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Rose designated as U.S. National Flower (1986) - Origins & History",
+      "paragraphs": [
+        [
+          "The history of the rose on the American continent spans far longer than the history of the United States itself.",
+          "Fossilized remains discovered in Colorado prove that wild roses grew in North America over 35 million years ago, and Native American tribes harvested rose hips for medicine and tea for centuries."
+        ],
+        [
+          "During the 20th century, lawmakers spent more than 30 years debating which plant should become the country's national floral emblem.",
+          "In 1955, Senator Everett Dirksen made national headlines by campaigning for the marigold, while other politicians championed the corn tassel, mountain laurel, or apple blossom."
+        ],
+        [
+          "The movement to choose the rose finally gained unstoppable political support in 1985 when Senator J. Bennett Johnston introduced legislation in Congress.",
+          "On October 7, 1986, the U.S. House of Representatives passed the joint resolution, successfully completing the final legislative step."
+        ],
+        [
+          "President Ronald Reagan finalized the law on November 20, 1986, by issuing Public Law 99-449 during a ceremony in the White House Rose Garden.",
+          "In his ceremony speech, President Reagan declared that humans have loved roses throughout history, officially enshrining the flower in United States law."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-11-great-chicago-fire",
@@ -374,7 +646,49 @@
     "who2": "The Great Chicago Fire started developed through significant historical events recorded in detail on Wikipedia.",
     "timeline": [
       "October 8 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: The Great Chicago Fire started (1871) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "The Great Chicago Fire of October 1871 left a devastating impact on the city, destroying over 3.3 square miles of land in just two days.",
+          "Approximately 300 people lost their lives, and more than 100,000 residents were left homeless in the immediate aftermath of the blaze."
+        ],
+        [
+          "The disaster consumed over 17,000 structures, including important business districts, government buildings, and financial institutions.",
+          "Total property damage was estimated at $200 million, which represented about a third of the entire city's valuation at that time."
+        ],
+        [
+          "Despite the immense tragedy, Chicago began rebuilding almost immediately with millions of dollars in aid sent from around the world.",
+          "Innovative architects rushed to the city, using revolutionary steel-frame construction to build early modern skyscrapers that transformed urban architecture."
+        ],
+        [
+          "In response to the catastrophe, city leaders created strict modern building codes that banned wood construction in downtown areas.",
+          "Today, the legacy of the 1871 fire lives on every October during National Fire Prevention Week, which was established to teach fire safety across the nation."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: The Great Chicago Fire started (1871) - Origins & History",
+      "paragraphs": [
+        [
+          "On the evening of October 8, 1871, a fire broke out in a small barn owned by Patrick and Catherine O'Leary on DeKoven Street.",
+          "Chicago was dangerously dry that autumn, having received only about one inch of rainfall between July and October."
+        ],
+        [
+          "At the time, most of Chicago was constructed almost entirely of wood, including thousands of buildings and over 500 miles of wooden sidewalks.",
+          "Strong winds blowing from the southwest rapidly pushed the flames toward the crowded, wood-filled downtown area."
+        ],
+        [
+          "Exhausted firefighters, who had battled a major fire just the night before, were mistakenly dispatched to the wrong neighborhood at first.",
+          "By midnight, the rapidly spreading inferno had destroyed the main city waterworks, cutting off the water supply and rendering fire hoses useless."
+        ],
+        [
+          "The fire burned uncontrollably for over 36 hours until a welcome rainstorm finally helped extinguish the flames on the night of October 9.",
+          "Although a famous legend blamed Mrs. O'Leary's cow for kicking over a lantern, historians today agree the true spark remains a mystery."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-12-james-marshall-gold",
@@ -390,7 +704,49 @@
     "who2": "James Marshall, first to find gold in CA developed through significant historical events recorded in detail on Biography.com.",
     "timeline": [
       "October 8 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: James Marshall, first to find gold in CA (b. 1810) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "James Marshall's discovery on January 24, 1848, triggered the largest mass migration in United States history.",
+          "By 1849, approximately 80,000 gold seekers, popularly known as 'forty-niners,' traveled to California in search of riches."
+        ],
+        [
+          "Between 1848 and 1855, more than 300,000 people from around the world arrived in the region.",
+          "This rapid population surge enabled California to officially become the 31st state on September 9, 1850."
+        ],
+        [
+          "Despite starting a multi-million dollar boom, Marshall never achieved financial success from his find.",
+          "Invasive gold seekers trampled his property and destroyed his business, leading the state legislature to grant him a modest monthly pension in 1872."
+        ],
+        [
+          "Marshall died penniless on August 10, 1885, at the age of 74 in a small cabin near Coloma.",
+          "Today, his legacy is preserved at the Marshall Gold Discovery State Historic Park, which hosts thousands of educational visitors each year."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: James Marshall, first to find gold in CA (b. 1810) - Origins & History",
+      "paragraphs": [
+        [
+          "James Wilson Marshall was born on October 8, 1810, in Hopewell Township, New Jersey.",
+          "He learned the craft of carpentry from his father before leaving home in 1834 to head west to Missouri."
+        ],
+        [
+          "In 1844, Marshall joined an overland wagon train to Oregon, and he relocated south into California in 1845.",
+          "He soon gained employment with pioneer John Sutter, building structures and machinery near Sacramento."
+        ],
+        [
+          "In August 1847, Marshall partnered with Sutter to build a water-powered sawmill along the South Fork of the American River in Coloma.",
+          "Construction took several months, requiring workers to deepen the ditch that redirected river water to turn the heavy mill wheel."
+        ],
+        [
+          "On the morning of January 24, 1848, Marshall inspected the water channel and discovered small, shiny metal particles in the silt.",
+          "Laboratory tests confirmed the flakes were high-quality gold, forever changing the course of Western history."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-13-first-two-way-telephone",
@@ -406,7 +762,49 @@
     "who2": "First two-way telephone conversation developed through significant historical events recorded in detail on Wikipedia.",
     "timeline": [
       "October 9 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: First two-way telephone conversation (1876) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "The successful long-distance call on October 9, 1876, changed human communication forever.",
+          "By proving that voices could travel clearly over 2 miles of telegraph wire, Alexander Graham Bell and Thomas Watson proved the telephone was a practical tool for daily life."
+        ],
+        [
+          "Following this breakthrough, telephone networks expanded at a rapid pace across the United States.",
+          "Within just one year, by 1877, the first commercial telephone lines were installed, connecting businesses and homes."
+        ],
+        [
+          "Instant communication reshaped businesses, emergency services, and personal relationships in the late 19th century.",
+          "Instead of waiting days for letters or reading brief telegrams, people could now converse across cities in real time."
+        ],
+        [
+          "Today, the technology born from that 1876 experiment forms the foundation of global telecommunications.",
+          "The 2-mile conversation between Boston and Cambridge paved the way for modern smartphones that connect billions of people instantly."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: First two-way telephone conversation (1876) - Origins & History",
+      "paragraphs": [
+        [
+          "In early 1876, inventor Alexander Graham Bell received a official patent for his original telephone design.",
+          "Although Bell famously called his assistant Thomas Watson inside a lab in March 1876, they still needed to test if voice signals could travel long distances outdoors."
+        ],
+        [
+          "On October 9, 1876, Bell and Watson set up a landmark experiment across a 2-mile telegraph wire.",
+          "Bell stayed at the Walworth Manufacturing Company in Boston, while Watson waited at the Riverside Press building in Cambridge, Massachusetts."
+        ],
+        [
+          "When Bell spoke into his transmitter, Watson heard his voice clearly coming through the receiver 2 miles away.",
+          "Watson shouted back a reply that Bell understood, marking the very first successful two-way telephone conversation in history."
+        ],
+        [
+          "To ensure the experiment was accurate, both men carefully wrote down every word spoken during the test.",
+          "The comparison of their written logs confirmed that real-time two-way speech over a distance was officially a success."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-14-leif-erikson-day",
@@ -422,7 +820,49 @@
     "who2": "Leif Erikson Day developed through significant historical events recorded in detail on Wikipedia.",
     "timeline": [
       "October 9 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Leif Erikson Day - Impact & Legacy",
+      "paragraphs": [
+        [
+          "Leif Erikson was a famous Norse explorer who led a daring expedition across the Atlantic Ocean around the year 1000 AD.",
+          "With a brave crew of 35 men, he sailed west from Greenland and landed in a lush region he named Vinland, which is located in modern-day Canada."
+        ],
+        [
+          "In 1960, archaeologists discovered the physical remains of an ancient Norse settlement at L'Anse aux Meadows in Newfoundland, Canada.",
+          "This monumental archaeological discovery proved that European explorers reached North America nearly 500 years before Christopher Columbus arrived in 1492."
+        ],
+        [
+          "To honor these historical achievements, President Lyndon B. Johnson signed a national proclamation in 1964 after Congress passed Public Law 88-566.",
+          "Since that historic vote, every United States president issues an annual statement on October 9 to celebrate Nordic heritage and adventurous spirits."
+        ],
+        [
+          "Today, Leif Erikson Day inspires young students to study ancient maritime navigation, ship design, and early Atlantic ocean trade routes.",
+          "The enduring legacy of Erikson's journey reminds communities around the world of the power of exploration and cross-cultural history."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Leif Erikson Day - Origins & History",
+      "paragraphs": [
+        [
+          "The specific date chosen for Leif Erikson Day, October 9, connects directly to an important moment in 19th-century American history.",
+          "On October 9, 1825, a small ship named Restauration safely arrived in New York Harbor from Stavanger, Norway, carrying a group of 52 organized immigrants."
+        ],
+        [
+          "As Scandinavian communities expanded across the Midwest, local leaders advocated for an official holiday to honor their ancient and modern pioneers.",
+          "During the Norse-American Centennial in 1925, President Calvin Coolidge officially recognized Leif Erikson as the first European explorer to discover the American continent."
+        ],
+        [
+          "State governments took early action to establish the holiday long before it became a nationwide federal observation.",
+          "Wisconsin became the very first U.S. state to officially adopt Leif Erikson Day in 1929, and Minnesota passed similar state legislation in 1931."
+        ],
+        [
+          "Finally, on September 2, 1964, the United States Congress authorized and requested the President to proclaim October 9 as Leif Erikson Day every year.",
+          "This decision brought decades of historical advocacy to a successful close and created a permanent tradition observed across the nation."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-15-panama-canal",
@@ -438,7 +878,49 @@
     "who2": "Panama Canal connects to the Atlantic ocean developed through significant historical events recorded in detail on Wikipedia.",
     "timeline": [
       "October 10 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Panama Canal connects to the Atlantic ocean - Impact & Legacy",
+      "paragraphs": [
+        [
+          "The opening of the 50-mile Panama Canal transformed global maritime trade by directly connecting the Atlantic Ocean to the Pacific Ocean.",
+          "Before its completion, ships traveling between New York City and San Francisco had to sail around the treacherous southern tip of South America, adding over 8,000 miles to their journey."
+        ],
+        [
+          "Today, approximately 13,000 to 14,000 vessels travel through this crucial waterway every single year.",
+          "By allowing ships to bypass Cape Horn, the canal saves companies up to 20 days of travel time and millions of gallons of fuel."
+        ],
+        [
+          "In June 2016, a massive 5.25 billion dollar expansion project was completed to accommodate giant modern cargo ships known as Neopanamax vessels.",
+          "This engineering upgrade doubled the canal's total cargo capacity, allowing ships carrying up to 14,000 shipping containers to pass through smoothly."
+        ],
+        [
+          "On December 31, 1999, the United States officially transferred full ownership and control of the canal to the Republic of Panama.",
+          "Today, the Panama Canal Authority successfully manages this world wonder, generating over 2 billion dollars in annual revenue for the nation's economy."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Panama Canal connects to the Atlantic ocean - Origins & History",
+      "paragraphs": [
+        [
+          "The dream of creating a shortcut through Central America began centuries ago, but the French made the first major construction attempt in 1881.",
+          "Led by Ferdinand de Lesseps, the project collapsed due to financial trouble and deadly outbreaks of malaria and yellow fever that killed over 20,000 workers."
+        ],
+        [
+          "In November 1903, the United States recognized Panama's independence from Colombia and signed the Hay-Bunau-Varilla Treaty.",
+          "The U.S. government purchased the remaining French canal equipment and land rights for 40 million dollars to begin their own construction efforts in 1904."
+        ],
+        [
+          "Chief Sanitary Officer Dr. William Gorgas led strict sanitation programs to eradicate mosquito breeding grounds, dramatically reducing disease among the workforce.",
+          "More than 56,000 workers used massive steam shovels and dynamite to excavate millions of cubic yards of rock through the dangerous Gaillard Cut."
+        ],
+        [
+          "A historic milestone occurred on October 10, 1913, when President Woodrow Wilson pressed a button in Washington, D.C., triggering an explosion that destroyed the Gamboa Dike and flooded the canal basin.",
+          "The Panama Canal officially opened on August 15, 1914, when the steamship SS Ancon made the very first successful transit through the new locks."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-16-eleanor-roosevelt",
@@ -454,7 +936,56 @@
     "who2": "Eleanor Roosevelt, former First Lady developed through significant historical events recorded in detail on Biography.com.",
     "timeline": [
       "October 11 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Eleanor Roosevelt, former First Lady (b. 1884) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "Eleanor Roosevelt served as First Lady of the United States from 1933 to 1945, completely redefining the role for future generations.",
+          "She was the first First Lady to hold regular news conferences, conducting over 348 press sessions specifically for female reporters who were often excluded from main media events."
+        ],
+        [
+          "Throughout the 1930s and 1940s, she actively advocated for civil rights and equal opportunities for African Americans and working-class citizens.",
+          "In 1939, when the Daughters of the American Revolution refused to let African American singer Marian Anderson perform at Constitution Hall, Eleanor famously resigned from the organization in protest.",
+          "Her public stand helped arrange Anderson's historic open-air concert at the Lincoln Memorial on April 9, 1939, which drew an audience of over 75,000 people."
+        ],
+        [
+          "In December 1945, President Harry S. Truman appointed Eleanor as a United States delegate to the newly formed United Nations General Assembly.",
+          "She served as the first chairperson of the UN Human Rights Commission from 1946 to 1951.",
+          "Under her leadership, the UN adopted the Universal Declaration of Human Rights on December 10, 1948, establishing basic rights for people everywhere."
+        ],
+        [
+          "Eleanor Roosevelt wrote a syndicated daily newspaper column called 'My Day' six days a week from 1935 until 1962, sharing her ideas directly with millions of readers.",
+          "President Truman recognized her global impact by calling her the 'First Lady of the World' for her dedication to peace and equality.",
+          "Today, her legacy lives on as a model of courageous leadership, social activism, and global human rights advocacy."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Eleanor Roosevelt, former First Lady (b. 1884) - Origins & History",
+      "paragraphs": [
+        [
+          "Anna Eleanor Roosevelt was born in New York City on October 11, 1884, into a prominent and wealthy family.",
+          "Her uncle, Theodore Roosevelt, served as the 26th President of the United States from 1901 to 1909.",
+          "After losing both of her parents by age 10, Eleanor attended Allenswood Academy in England in 1899, where headmistress Marie Souvestre encouraged her to think independently and serve her community."
+        ],
+        [
+          "On March 17, 1905, Eleanor married her distant cousin Franklin Delano Roosevelt in New York City.",
+          "Together, they raised five children while Franklin built his political career in state and national government.",
+          "When Franklin was stricken with polio in August 1921 and lost the use of his legs, Eleanor encouraged him to stay in politics and began making public appearances on his behalf."
+        ],
+        [
+          "During the 1920s, Eleanor became heavily involved in political organizations, including the Women's Trade Union League and the League of Women Voters.",
+          "In 1926, she co-founded Todhunter School, a private school in New York City, where she taught history and literature to teenage girls.",
+          "She also helped establish Val-Kill Industries in 1927 to create manufacturing jobs for struggling farming families in rural New York."
+        ],
+        [
+          "When Franklin was elected Governor of New York in 1928, Eleanor traveled across the state to inspect schools, hospitals, and state facilities.",
+          "In November 1932, Franklin was elected the 32nd President of the United States during the depth of the Great Depression.",
+          "Eleanor officially entered the White House on March 4, 1933, well-prepared to use her experience to help lead a struggling nation."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-17-steam-ferry-boat",
@@ -470,7 +1001,49 @@
     "who2": "Steam-powered ferry boat began operations developed through significant historical events recorded in detail on Wikipedia.",
     "timeline": [
       "October 11 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Steam-powered ferry boat began operations (1811) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "On October 11, 1811, the launch of the first regular steam-powered ferry boat transformed how people traveled across busy waterways.",
+          "By connecting Manhattan in New York City with Hoboken, New Jersey, this revolutionary service proved that steam engines could move passengers reliably every single day."
+        ],
+        [
+          "Before 1811, travelers relied on sailboats or heavy rowboats that depended entirely on unpredictable winds and strong river tides.",
+          "A trip across the Hudson River could take hours, but the new steam ferry slashed travel times down to just 15 to 20 minutes."
+        ],
+        [
+          "This rapid transportation system made daily commuting possible for thousands of workers and boosted economic trade between New York and New Jersey.",
+          "Farmers could quickly transport fresh produce to city markets without worrying about food spoiling during long delays on the water."
+        ],
+        [
+          "The success of the 1811 steam ferry inspired cities across the United States and Europe to build their own steam-powered transit fleets.",
+          "Today, modern passenger ferries around the world trace their heritage back to this historic landmark achievement in American engineering."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Steam-powered ferry boat began operations (1811) - Origins & History",
+      "paragraphs": [
+        [
+          "In the early 1800s, inventors across America were experimenting with steam power to improve water travel.",
+          "Following Robert Fulton's successful steamboat demonstration in 1807, pioneer engineer John Stevens set out to design a specialized steam ferry for short, frequent river crossings."
+        ],
+        [
+          "John Stevens built a ferry named the Juliana, which featured a high-pressure steam engine designed to push the boat smoothly through rough river currents.",
+          "The vessel measured approximately 60 feet long and was specifically built to hold dozens of passengers along with light cargo."
+        ],
+        [
+          "On October 11, 1811, the Juliana officially began scheduled commercial operations across the Hudson River.",
+          "Passengers paid a small fare to board the wooden vessel for its historic maiden voyage from New York City to the shore of Hoboken."
+        ],
+        [
+          "Although the Juliana operated successfully, legal disputes over steamboat navigation monopolies forced Stevens to move the boat to Connecticut in 1812.",
+          "Despite its brief run in New York harbor, the Juliana secured its place in history as the world's very first steam-powered ferry boat service."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-18-columbus-day",
@@ -486,7 +1059,49 @@
     "who2": "Columbus Day developed through significant historical events recorded in detail on Wikipedia.",
     "timeline": [
       "October 12 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Columbus Day - Impact & Legacy",
+      "paragraphs": [
+        [
+          "Over the centuries, Columbus Day has generated diverse perspectives among different communities across the United States.",
+          "While many Italian Americans celebrate the holiday as a point of cultural pride, Indigenous communities view the date through a lens of profound loss and historical struggle."
+        ],
+        [
+          "Christopher Columbus's arrival in 1492 initiated intense transatlantic trade and European colonization that reshaped global demographics.",
+          "However, European colonization brought diseases like smallpox, which tragically reduced native populations by an estimated 80 to 90 percent over the following century."
+        ],
+        [
+          "In response to these historical impacts, South Dakota became the first state to replace Columbus Day with Native Americans' Day in 1990.",
+          "Today, more than 100 American cities, including Seattle and Minneapolis, officially celebrate Indigenous Peoples' Day on the same date."
+        ],
+        [
+          "Although Columbus Day remains a official federal holiday established by Congress in 1968, state policies vary widely across all 50 states.",
+          "This evolving national conversation encourages students to examine historical events through multiple cultural viewpoints."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Columbus Day - Origins & History",
+      "paragraphs": [
+        [
+          "On October 12, 1492, Italian navigator Christopher Columbus made landfall in the Bahamas while sailing under the Spanish flag.",
+          "His crew of 90 men completed the perilous journey across the Atlantic Ocean aboard three famous ships: the Ni\u00f1a, the Pinta, and the Santa Mar\u00eda."
+        ],
+        [
+          "The earliest recorded celebration of Columbus's voyage occurred in New York City on October 12, 1792.",
+          "Organized by the Society of St. Tammany, the ceremony marked the 300th anniversary of his arrival in the Americas."
+        ],
+        [
+          "In 1892, President Benjamin Harrison issued a nationwide proclamation encouraging Americans to observe the 400th anniversary.",
+          "This initiative followed a tragic 1891 event in New Orleans involving 11 Italian immigrants, aiming to foster civic unity and combat anti-immigrant prejudice."
+        ],
+        [
+          "Following years of active lobbying by the Knights of Columbus, President Franklin D. Roosevelt designated Columbus Day a federal holiday in 1934.",
+          "In 1971, the official observance was shifted to the second Monday of October under the Uniform Monday Holiday Act."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-19-margaret-thatcher",
@@ -502,7 +1117,49 @@
     "who2": "Margaret Thatcher, former English Prime Minister developed through significant historical events recorded in detail on Biography.com.",
     "timeline": [
       "October 13 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Margaret Thatcher, former English Prime Minister (b. 1925) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "Margaret Thatcher, born on October 13, 1925, left a powerful mark on modern political history as Britain's first female prime minister.",
+          "Her bold leadership style earned her the famous nickname 'The Iron Lady' from a Soviet newspaper in 1976."
+        ],
+        [
+          "During her 11 years in office from 1979 to 1990, she introduced economic policies known as Thatcherism that reduced government spending.",
+          "She sold state-owned businesses like British Telecom and decreased the power of trade unions across the United Kingdom."
+        ],
+        [
+          "In 1982, Thatcher led the nation during the 74-day Falklands War against Argentina, successfully defending the South Atlantic islands.",
+          "She also worked closely with U.S. President Ronald Reagan during the 1980s to help bring an end to the Cold War."
+        ],
+        [
+          "After resigning as prime minister on November 28, 1990, Thatcher remained one of the most influential political figures of the twentieth century.",
+          "Today, her political decisions continue to be studied on platforms like Biography.com as key moments in international history."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Margaret Thatcher, former English Prime Minister (b. 1925) - Origins & History",
+      "paragraphs": [
+        [
+          "Margaret Hilda Roberts was born on October 13, 1925, in the small town of Grantham, England.",
+          "Her father was a grocer and local politician who taught her the importance of hard work and public service."
+        ],
+        [
+          "She attended Somerville College at Oxford in 1943 to study chemistry before working as an industrial research chemist.",
+          "After marrying Denis Thatcher in 1951, she studied law and qualified as a barrister in 1953."
+        ],
+        [
+          "Thatcher entered the House of Commons in 1959 after winning a seat for the Conservative Party representing Finchley.",
+          "She later served as Secretary of State for Education and Science from 1970 to 1974 under Prime Minister Edward Heath."
+        ],
+        [
+          "In 1975, Thatcher defeated Heath to become the leader of the Conservative Party.",
+          "On May 4, 1979, she won the general election and officially became Prime Minister, starting a historic era recorded in detail on Biography.com."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-20-molly-pitcher",
@@ -518,7 +1175,49 @@
     "who2": "Molly Pitcher, Revolutionary War hero developed through significant historical events recorded in detail on Biography.com.",
     "timeline": [
       "October 13 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Molly Pitcher, Revolutionary War hero (b. 1754) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "Molly Pitcher stands as an enduring symbol of American courage and patriotic devotion.",
+          "On February 21, 1822, the Pennsylvania state legislature officially recognized her battlefield service by awarding her an annual pension of $40 for her heroism during the war."
+        ],
+        [
+          "Her lasting legacy grew significantly throughout the 19th and 20th centuries as her story inspired American culture.",
+          "In 1876, citizens erected a grand monument at her gravesite in Carlisle, Pennsylvania, followed by a detailed bronze statue dedicated in 1916 to honor her bravery."
+        ],
+        [
+          "Historians consider Molly Pitcher a powerful composite figure representing hundreds of brave camp followers.",
+          "Between 1775 and 1783, these courageous women performed vital military roles, from nursing wounded soldiers to supplying water under direct artillery fire."
+        ],
+        [
+          "Today, her remarkable story remains a vital part of social studies education across the United States.",
+          "To celebrate her military contributions, the U.S. Postal Service issued a commemorative postage stamp featuring Molly Pitcher in 1928."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Molly Pitcher, Revolutionary War hero (b. 1754) - Origins & History",
+      "paragraphs": [
+        [
+          "Mary Ludwig, famously known as Molly Pitcher, was born on October 13, 1754, near Trenton, New Jersey.",
+          "In 1769, at just 15 years old, she married William Hays, an artilleryman who later enlisted in the Continental Army."
+        ],
+        [
+          "During the severe winter of 1777 to 1778, Mary traveled to Valley Forge, Pennsylvania, to support her husband and his regiment.",
+          "She spent months washing clothes, treating sick soldiers, and carrying heavy supplies through harsh winter conditions."
+        ],
+        [
+          "Her historic moment occurred on June 28, 1778, during the intense heat of the Battle of Monmouth, where temperatures topped 100 degrees Fahrenheit.",
+          "Mary fearlessly ran back and forth from a local spring, carrying water pitchers to cool down thirsty troops and hot cannons, earning her the name 'Molly Pitcher'."
+        ],
+        [
+          "When her husband collapsed at his post from heat stroke, Mary immediately stepped up to take his place.",
+          "She grabbed the artillery rammer rod and swabbed the cannon herself, continuing to fight until the battle ended."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-21-dwight-d-eisenhower",
@@ -534,7 +1233,49 @@
     "who2": "Dwight D. Eisenhower developed through significant historical events recorded in detail on Biography.com.",
     "timeline": [
       "October 14 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Dwight D. Eisenhower (34th president), (b. 1890) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "Dwight D. Eisenhower served as the 34th President of the United States from 1953 to 1961.",
+          "One of his earliest major achievements was helping negotiate an armistice in July 1953 to end active fighting in the Korean War."
+        ],
+        [
+          "In 1956, Eisenhower signed the landmark Federal-Aid Highway Act, which authorized the creation of the Interstate Highway System.",
+          "This massive infrastructure project eventually built over 41,000 miles of roadways to safely connect cities across the nation."
+        ],
+        [
+          "Following the Soviet Union's launch of the Sputnik satellite in October 1957, Eisenhower signed legislation creating NASA in July 1958.",
+          "This historic decision officially launched America into the Space Race and shaped modern scientific research for generations."
+        ],
+        [
+          "Eisenhower also protected civil rights by signing the Civil Rights Act of 1957 and sending the 101st Airborne Division to Little Rock, Arkansas, in September 1957.",
+          "Today, historians remember Eisenhower as a steady commander whose policy decisions modernized American transportation, defense, and space exploration."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Dwight D. Eisenhower (34th president), (b. 1890) - Origins & History",
+      "paragraphs": [
+        [
+          "Dwight David Eisenhower was born on October 14, 1890, in Denison, Texas.",
+          "He grew up in Abilene, Kansas, as the third of seven sons in a modest and hardworking household."
+        ],
+        [
+          "Eisenhower entered the United States Military Academy at West Point in 1911 and graduated in 1915 as a second lieutenant.",
+          "Over the next three decades, he steadily rose through the army ranks by demonstrating exceptional organization and strategic skills."
+        ],
+        [
+          "During World War II, General Eisenhower was appointed Supreme Commander of Allied Expeditionary Forces in Europe in December 1943.",
+          "He directed the famous D-Day invasion of Normandy, France, on June 6, 1944, leading millions of Allied troops to victory in Europe."
+        ],
+        [
+          "After serving as the first supreme commander of NATO, Eisenhower entered politics and won the 1952 presidential election with 442 electoral votes.",
+          "He took the oath of office as the 34th President of the United States on January 20, 1953, beginning eight years of presidential service."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-22-wayne-gretzky-record",
@@ -550,7 +1291,49 @@
     "who2": "Wayne Gretzky breaks NHL points record developed through significant historical events recorded in detail on Biography.com.",
     "timeline": [
       "October 15 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Wayne Gretzky breaks NHL points record - Impact & Legacy",
+      "paragraphs": [
+        [
+          "On October 15, 1989, Wayne Gretzky made history by becoming the all-time leading point scorer in National Hockey League history.",
+          "Playing for the Los Angeles Kings against his former team, the Edmonton Oilers, Gretzky scored his 1,851st career point to surpass his idol, Gordie Howe."
+        ],
+        [
+          "Gretzky's achievement brought immense national attention to hockey across North America, proving that the sport could thrive in sunbelt cities like Los Angeles.",
+          "Ticket sales exploded, and youth hockey participation skyrocketed throughout California and other warm-climate states during the 1990s."
+        ],
+        [
+          "By the time Gretzky retired in 1999, he had built a massive total of 2,857 points, including 894 goals and 1,963 assists.",
+          "His incredible total point count is so high that even if he had never scored a single goal, his assist count alone would still make him the leading scorer in NHL history."
+        ],
+        [
+          "Gretzky earned the nickname \"The Great One\" because he redefined how hockey was played through exceptional vision, teamwork, and intelligence.",
+          "Today, the NHL has retired his jersey number 99 league-wide, ensuring that future generations remember his incredible October 15 milestone."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Wayne Gretzky breaks NHL points record - Origins & History",
+      "paragraphs": [
+        [
+          "Born on January 26, 1961, in Brantford, Ontario, Wayne Gretzky began skating at the age of two on a backyard rink built by his father.",
+          "By age 10, he scored an unbelievable 378 goals in a single 85-game youth season, signaling the rise of a hockey prodigy."
+        ],
+        [
+          "Gretzky entered the NHL in 1979 with the Edmonton Oilers and quickly dominated the league by winning four Stanley Cup championships in the 1980s.",
+          "In the 1981-1982 season, he set a record by scoring 50 goals in just 39 games, showing his extraordinary scoring capabilities."
+        ],
+        [
+          "In August 1988, a shocking trade sent Gretzky from the Edmonton Oilers to the Los Angeles Kings, changing the landscape of professional hockey.",
+          "Entering the 1989-1990 season, Gretzky needed only 13 points to match Gordie Howe's long-standing record of 1,850 career points."
+        ],
+        [
+          "On October 15, 1989, Gretzky tied Howe's record early in the game and then scored a dramatic goal with just 53 seconds remaining in regulation to break it.",
+          "The game was temporarily stopped for a 15-minute celebration on the ice, marking a historical milestone documented extensively by sports historians."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-23-clarence-thomas",
@@ -566,7 +1349,49 @@
     "who2": "Clarence Thomas confirmed on Supreme Court developed through significant historical events recorded in detail on Biography.com.",
     "timeline": [
       "October 15 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Clarence Thomas confirmed on Supreme Court (1991) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "On October 15, 1991, the United States Senate confirmed Clarence Thomas to the Supreme Court by a narrow vote of 52 to 48.",
+          "With this vote, he officially became the 106th justice in the court's history and only the second African American justice, following Thurgood Marshall."
+        ],
+        [
+          "Over his more than 30 years on the bench, Justice Thomas established himself as one of the most consistently conservative members of the Supreme Court.",
+          "He became known for practicing originalism, an approach to legal interpretation that focuses strictly on the original public meaning of the United States Constitution when it was written in 1787."
+        ],
+        [
+          "Thomas wrote influential majority opinions and dissents on major national issues, including constitutional gun rights, voting laws, and federal power.",
+          "In 2023, he joined the court's landmark ruling that brought an end to race-conscious affirmative action policies in college admissions across the United States."
+        ],
+        [
+          "The fiery political fight over his 1991 confirmation fundamentally transformed how the United States Senate evaluates judicial nominees.",
+          "Additionally, the widespread public reaction to his confirmation hearings inspired a record number of women to run for national political office during the 1992 elections."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Clarence Thomas confirmed on Supreme Court (1991) - Origins & History",
+      "paragraphs": [
+        [
+          "Clarence Thomas was born on June 23, 1948, in the small community of Pin Point, Georgia, and grew up in poverty during racial segregation.",
+          "He earned his law degree from Yale Law School in 1974 and later served eight years as chairman of the Equal Employment Opportunity Commission starting in 1982."
+        ],
+        [
+          "On July 1, 1991, President George H.W. Bush nominated 43-year-old Thomas to replace retiring civil rights icon Justice Thurgood Marshall on the Supreme Court.",
+          "President Bush described Thomas as the best qualified candidate for the lifetime position, setting off a detailed Senate review process."
+        ],
+        [
+          "In October 1991, law professor Anita Hill testified before the Senate Judiciary Committee, alleging that Thomas had sexually harassed her a decade earlier when they worked together.",
+          "Millions of Americans watched the televised hearings as Thomas strongly denied all allegations, calling the proceedings a unfair attack on his character."
+        ],
+        [
+          "Despite the national debate, the full Senate moved forward with the vote on October 15, 1991, confirming Thomas by a 52-48 margin.",
+          "He officially took his judicial oath eight days later on October 23, 1991, beginning his long career as an Associate Justice."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-24-nelson-mandela-nobel",
@@ -582,7 +1407,49 @@
     "who2": "Nelson Mandela receives the Nobel Peace Prize developed through significant historical events recorded in detail on Biography.com.",
     "timeline": [
       "October 15 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Nelson Mandela receives the Nobel Peace Prize (1993) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "In December 1993, Nelson Mandela received the Nobel Peace Prize in Oslo, Norway, alongside South African President F.W. de Klerk.",
+          "This prestigious honor recognized their combined efforts to peacefully dismantle the cruel system of racial segregation known as apartheid."
+        ],
+        [
+          "The international recognition provided a crucial boost to South Africa's peaceful transition toward democracy.",
+          "Just four months later, on April 27, 1994, more than 22 million South Africans cast their ballots in the nation's first fully democratic election."
+        ],
+        [
+          "Mandela's Nobel Prize strengthened his global platform, allowing him to launch the Nelson Mandela Foundation in 1999.",
+          "Through this organization, he raised millions of dollars to build schools, combat HIV/AIDS, and support rural development across Africa."
+        ],
+        [
+          "Today, Mandela's victory stands as one of the most powerful examples of forgiveness and political reconciliation in human history.",
+          "His legacy continues to inspire leaders worldwide to resolve bitter conflicts through open communication rather than war."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Nelson Mandela receives the Nobel Peace Prize (1993) - Origins & History",
+      "paragraphs": [
+        [
+          "The path to the 1993 Nobel Peace Prize began decades earlier when South Africa adopted apartheid policies in 1948.",
+          "This legal system forced non-white citizens to live separately from white citizens and deprived millions of basic human rights."
+        ],
+        [
+          "Nelson Mandela became a key leader in the African National Congress, organizing peaceful protests to fight against these unjust laws.",
+          "Because of his anti-apartheid activism, Mandela was arrested in 1962 and sentenced to life in prison at the Rivonia Trial in 1964."
+        ],
+        [
+          "Mandela spent 27 years in prison, with 18 of those years served in a small cell on Robben Island.",
+          "Global boycotts and relentless public protest finally forced President F.W. de Klerk to release Mandela on February 11, 1990."
+        ],
+        [
+          "Over the next three years, Mandela and de Klerk led complex negotiations to draft a new temporary constitution.",
+          "On October 15, 1993, the Norwegian Nobel Committee officially announced that both men had won the Nobel Peace Prize for their historical achievements."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-25-noah-webster",
@@ -598,7 +1465,49 @@
     "who2": "Noah Webster, author and lexicographer developed through significant historical events recorded in detail on Biography.com.",
     "timeline": [
       "October 16 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Noah Webster, author and lexicographer (b. 1758) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "Noah Webster left a lasting mark on American culture by publishing 'An American Dictionary of the English Language' in 1828.",
+          "His massive work contained over 70,000 entries and standardized American spelling, formally separating American English from British English."
+        ],
+        [
+          "Long before his dictionary, Webster published 'A Grammatical Institute of the English Language' in 1783, which became known as the 'Blue-Backed Speller.'",
+          "This school textbook sold over 100 million copies across the country, helping millions of American children learn to read and spell using a unified American curriculum."
+        ],
+        [
+          "Webster changed many traditional English spellings to make them simpler and more logical, such as dropping the extra letter 'u' from words like 'color' and 'honor.'",
+          "He also altered words like 'theatre' to 'theater' and removed silent letters from words, creating a distinct written language for a new nation."
+        ],
+        [
+          "After Webster died in 1843, George and Charles Merriam acquired the rights to his dictionary, keeping his educational legacy alive in modern homes and schools.",
+          "Today, Noah Webster is celebrated every year on October 16 as a founding father of American education who reshaped how millions of people communicate."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Noah Webster, author and lexicographer (b. 1758) - Origins & History",
+      "paragraphs": [
+        [
+          "Noah Webster was born on October 16, 1758, in West Hartford, Connecticut, to a local farming family.",
+          "Growing up during the era of the American Revolution, he entered Yale College at age 16 in 1774 and graduated four years later in 1778."
+        ],
+        [
+          "While working as a schoolmaster in the late 1770s, Webster became frustrated that American schools relied entirely on British textbooks.",
+          "He strongly believed that a newly independent nation needed its own unique educational tools, which inspired him to start writing original American textbooks in 1783."
+        ],
+        [
+          "To create a comprehensive dictionary, Webster spent 22 years mastering 26 languages, including Old English, Greek, Latin, and Sanskrit, to trace the origins of words.",
+          "To protect his literary work, he traveled to 13 states in 1785 to lobby state legislatures, helping to establish early copyright laws in the United States."
+        ],
+        [
+          "Beyond his work with dictionaries, Webster helped found Amherst College in Massachusetts in 1821 to expand higher education opportunities for young students.",
+          "Until his death at age 84 in 1843, Webster worked tirelessly as an author, teacher, and scholar to shape the history of American learning."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-26-san-francisco-earthquake-1989",
@@ -614,7 +1523,49 @@
     "who2": "San Francisco Earthquake developed through significant historical events recorded in detail on Wikipedia.",
     "timeline": [
       "October 17 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: San Francisco Earthquake (1989) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "On October 17, 1989, at 5:04 p.m., a powerful magnitude 6.9 earthquake struck the San Francisco Bay Area.",
+          "Millions of people watched live on television as Game 3 of the World Series at Candlestick Park was suddenly interrupted by violent shaking."
+        ],
+        [
+          "The intense tremor resulted in 63 deaths, injured 3,757 people, and left more than 12,000 residents homeless.",
+          "The most severe structural collapse occurred along Oakland's Cypress Street Viaduct, a double-decker highway section on Interstate 880."
+        ],
+        [
+          "Ruptured gas lines ignited major fires across San Francisco's Marina District, where soft soil turned to mud during a process called liquefaction.",
+          "Total property damage reached an estimated $6 billion, making it one of the costliest natural disasters in United States history."
+        ],
+        [
+          "Following the disaster, California passed new safety laws and spent billions of dollars to reinforce bridges, roads, and public buildings.",
+          "The legacy of the 1989 earthquake fundamentally changed modern engineering and improved emergency response strategies across the nation."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: San Francisco Earthquake (1989) - Origins & History",
+      "paragraphs": [
+        [
+          "The 1989 San Francisco earthquake originated deep along the San Andreas Fault, a major tectonic boundary stretching across California.",
+          "This fault line marks the region where the Pacific Plate slowly slides north past the North American Plate at about 1.5 inches each year."
+        ],
+        [
+          "The earthquake's epicenter was located in Nisene Marks State Park near Loma Prieta peak, roughly 60 miles south of San Francisco.",
+          "Scientists calculated that the fault ruptured 11 miles underground and slipped for approximately 15 seconds, releasing decades of built-up pressure."
+        ],
+        [
+          "Northern California has a long history of intense seismic activity, including the infamous magnitude 7.9 earthquake of April 18, 1906.",
+          "Geologists had previously labeled the Santa Cruz Mountains segment of the fault as a high-risk zone for a major event."
+        ],
+        [
+          "Analyzing data from the 1989 rupture provided geologists with critical new evidence about how faults move both horizontally and vertically.",
+          "Today, advanced monitoring instruments along the San Andreas Fault help researchers track ongoing tectonic shifts to better predict future hazards."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-27-mason-dixon-line",
@@ -630,7 +1581,49 @@
     "who2": "Mason-Dixon Line established developed through significant historical events recorded in detail on Wikipedia.",
     "timeline": [
       "October 18 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Mason-Dixon Line established (1767) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "When Charles Mason and Jeremiah Dixon completed their boundary survey on October 18, 1767, they immediately solved a violent land conflict that had lasted for over eighty years.",
+          "By clearly marking the border between Maryland and Pennsylvania, families living near the line finally knew which colony had the right to collect taxes and enforce laws."
+        ],
+        [
+          "Over time, the Mason-Dixon Line took on a far larger political meaning than its original creators ever imagined.",
+          "As northern states gradually abolished slavery after the American Revolution, this 233-mile survey line became the official division between free northern states and slaveholding southern states."
+        ],
+        [
+          "In 1820, during debates over the Missouri Compromise, the line was referenced as part of the broader legislative boundary dividing slave territory from free territory.",
+          "For millions of enslaved people seeking freedom in the 1800s, crossing north of this line meant taking a crucial step toward reaching liberty along the Underground Railroad."
+        ],
+        [
+          "Today, the original stone markers placed every five miles still stand along the border between Pennsylvania and Maryland.",
+          "While no longer a legal dividing line between opposing social systems, the Mason-Dixon Line remains a famous historical symbol that marks the cultural border between the American North and South."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Mason-Dixon Line established (1767) - Origins & History",
+      "paragraphs": [
+        [
+          "The creation of the Mason-Dixon Line began with conflicting land grants issued by the British Crown in the seventeenth century.",
+          "King Charles I granted Maryland to the Calvert family in 1632, while King Charles II granted Pennsylvania to William Penn in 1681, creating an overlapping territory claimed by both families."
+        ],
+        [
+          "To stop armed clashes known as Cresap's War along the Susquehanna River, the proprietors turned to two skilled English experts in 1763.",
+          "Astronomer Charles Mason and surveyor Jeremiah Dixon were hired to measure a precise boundary along the latitude of 39 degrees and 43 minutes north."
+        ],
+        [
+          "For four intense years from 1763 to 1767, Mason and Dixon hacked through dense forests and crossed rugged mountains while using precise star observations.",
+          "They were guided by Native American escorts through western territories until local tribes warned them not to travel past a major war path near Mount Morris, Pennsylvania."
+        ],
+        [
+          "The duo marked the final border with heavy limestone posts imported directly from England, carving a 'P' for Pennsylvania on one side and an 'M' for Maryland on the other.",
+          "On October 18, 1767, Mason and Dixon officially submitted their completed map, establishing one of the most famous borders in world history."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-28-puerto-rico-us-colony",
@@ -646,7 +1639,49 @@
     "who2": "Puerto Rico becomes U.S. Colony developed through significant historical events recorded in detail on Wikipedia.",
     "timeline": [
       "October 18 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Puerto Rico becomes U.S. Colony (1898) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "The U.S. takeover in 1898 drastically changed Puerto Rico's political structure, economy, and society.",
+          "On October 18, 1898, United States forces officially took control of the island, ending over 400 years of Spanish colonial rule."
+        ],
+        [
+          "In 1900, the U.S. Congress passed the Foraker Act, which established a civilian government but gave limited voting rights to Puerto Ricans.",
+          "Seventeen years later, the Jones-Shafroth Act of 1917 granted U.S. citizenship to residents of Puerto Rico, allowing them to serve in the American military."
+        ],
+        [
+          "Economic policies transformed the island's trade, shifting focus from traditional coffee farming to large sugar plantations owned by American businesses.",
+          "By 1952, Puerto Rico officially became a U.S. Commonwealth, adopting its own local constitution while remaining subject to U.S. federal laws."
+        ],
+        [
+          "Today, more than 3.2 million residents living in Puerto Rico continue to debate the island's future political status.",
+          "Although Puerto Ricans are U.S. citizens, island residents cannot vote in U.S. presidential elections unless they move to one of the 50 states."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Puerto Rico becomes U.S. Colony (1898) - Origins & History",
+      "paragraphs": [
+        [
+          "For over four centuries following Christopher Columbus's arrival in 1493, Puerto Rico was a territory ruled by Spain.",
+          "In November 1897, Spain granted the island self-governing autonomy through a reform known as the Carta Auton\u00f3mica."
+        ],
+        [
+          "This newly gained independence was short-lived because the Spanish-American War broke out in April 1898.",
+          "On July 25, 1898, General Nelson A. Miles landed approximately 3,300 American troops at Gu\u00e1nica on the southern coast of the island."
+        ],
+        [
+          "U.S. forces marched across Puerto Rico for several weeks, fighting minor battles against Spanish defenders.",
+          "Active fighting ended on August 12, 1898, when a peace agreement was signed between the United States and Spain."
+        ],
+        [
+          "The Spanish flag was lowered over San Juan on October 18, 1898, as U.S. military governors assumed authority.",
+          "Finally, on December 10, 1898, the Treaty of Paris officially ceded Puerto Rico to the United States alongside Guam and the Philippines."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-29-star-spangled-banner-sung",
@@ -662,7 +1697,49 @@
     "who2": "Star Spangled Banner first sung developed through significant historical events recorded in detail on Wikipedia.",
     "timeline": [
       "October 19 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Star Spangled Banner first sung (1814) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "Shortly after Francis Scott Key penned his inspiring poem in September 1814, the anthem rapidly spread throughout the young nation.",
+          "The song was first performed publicly in Baltimore on October 19, 1814, uniting citizens with a powerful message of resilience."
+        ],
+        [
+          "For over a century, the composition grew in national popularity alongside other historic American tunes.",
+          "Recognizing its deep emotional power, the United States Navy adopted it in 1889, President Woodrow Wilson ordered its military use in 1916, and Congress officially declared it the national anthem on March 3, 1931."
+        ],
+        [
+          "The performance of the anthem also became a cornerstone of major athletic and patriotic events across the country.",
+          "This tradition gained national prominence during Game 1 of the 1918 World Series, establishing a custom that millions of sports fans continue to honor today."
+        ],
+        [
+          "Beyond the lyrics themselves, the physical banner that inspired the words remains one of America's most treasured historical artifacts.",
+          "The original 30-by-42-foot woolen flag is preserved and displayed today at the Smithsonian National Museum of American History in Washington, D.C."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Star Spangled Banner first sung (1814) - Origins & History",
+      "paragraphs": [
+        [
+          "During the War of 1812, British military forces captured Washington, D.C., and burned major government buildings in August 1814.",
+          "Following their attack on the capital, British naval ships sailed up the Chesapeake Bay to target the strategic port city of Baltimore, Maryland."
+        ],
+        [
+          "On September 7, 1814, a 35-year-old American lawyer named Francis Scott Key boarded a British vessel to negotiate the release of a captured American physician, Dr. William Beanes.",
+          "While British officers agreed to free the doctor, they forced both men to stay aboard their ship until the bombardment of Baltimore concluded."
+        ],
+        [
+          "Beginning on September 13, 1814, British warships bombarded Fort McHenry with more than 1,500 cannonballs and explosive shells over 25 continuous hours.",
+          "As the smoke cleared at dawn on September 14, Key saw a massive 15-star, 15-stripe flag still flying proudly above the fort, proving American forces had survived."
+        ],
+        [
+          "Inspired by the miraculous victory, Key immediately wrote the initial lines of his poem titled 'Defence of Fort M'Henry' on the back of an old letter.",
+          "Matched to a popular 18th-century tune, the song was published in newspapers and was publicly sung for the very first time on October 19, 1814."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-30-revolutionary-war-final-battle",
@@ -678,7 +1755,57 @@
     "who2": "Final battle of the Revolutionary War developed through significant historical events recorded in detail on Wikipedia.",
     "timeline": [
       "October 19 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Final battle of the Revolutionary War (1781) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "On October 19, 1781, the Siege of Yorktown came to a dramatic end in Virginia.",
+          "British General Charles Cornwallis surrendered over 7,000 soldiers to General George Washington and his French allies.",
+          "This monumental defeat shattered Great Britain's resolve to continue the costly war across the Atlantic Ocean."
+        ],
+        [
+          "Although small skirmishes continued, Yorktown was the last major land battle of the American Revolutionary War.",
+          "The official end of the conflict arrived on September 3, 1783, when representatives signed the Treaty of Paris.",
+          "This landmark treaty forced Great Britain to recognize the United States as an independent nation with territory extending west to the Mississippi River."
+        ],
+        [
+          "The outcome of the war created significant global economic and political shifts, especially in Europe.",
+          "France had spent roughly 1.3 billion livres aiding the American cause with 12,000 soldiers and dozens of warships.",
+          "This massive national debt contributed directly to a major financial crisis in France, helping spark the French Revolution in 1789."
+        ],
+        [
+          "Today, the legacy of the victory in 1781 stands as a major turning point in modern world history.",
+          "The successful revolution inspired democratic independence movements across Latin America and Europe throughout the 19th century.",
+          "Securing independence at Yorktown cleared the path for the United States to draft its permanent Constitution in 1787."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Final battle of the Revolutionary War (1781) - Origins & History",
+      "paragraphs": [
+        [
+          "The American Revolutionary War began in April 1775 at Lexington and Concord, dragging on for six long years.",
+          "By 1778, British commanders shifted their strategy to focus on the Southern colonies, where they believed loyalist support was strongest.",
+          "British forces won several early victories in cities like Charleston, South Carolina, where they captured over 5,000 American troops in 1780."
+        ],
+        [
+          "In July 1781, General Charles Cornwallis marched his British army of nearly 8,000 men into Yorktown, Virginia.",
+          "He intended to construct a fortified deep-water naval base along the Chesapeake Bay to resupply his forces by sea.",
+          "However, this coastal position left the British vulnerable if an enemy fleet managed to block the entrance to the bay."
+        ],
+        [
+          "General George Washington recognized a rare opportunity to trap the British forces.",
+          "In August 1781, French Admiral Comte de Grasse arrived at the Chesapeake Bay with a fleet of 28 warships, successfully blocking British naval support.",
+          "Meanwhile, Washington secretly led a combined force of 2,100 American and 4,000 French soldiers on a 300-mile march south from New York."
+        ],
+        [
+          "By September 28, 1781, an allied army of nearly 17,000 men completely surrounded the British fortifications at Yorktown.",
+          "Allied forces dug trenches and fired over 1,700 cannonballs into the British defenses during weeks of intense bombardment.",
+          "Trapped without reinforcements or escape, General Cornwallis surrendered on October 19, 1781, marking the final major battle of the war."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-31-dick-fosbury",
@@ -694,7 +1821,49 @@
     "who2": "Dick Fosbury wins gold at the olympics using the 'Fosbury Flop' developed through significant historical events recorded in detail on Biography.com.",
     "timeline": [
       "October 20 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Dick Fosbury wins gold at the olympics using the 'Fosbury Flop' (1968) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "On October 20, 1968, American athlete Dick Fosbury changed the sport of track and field forever at the Mexico City Olympic Games.",
+          "By jumping over the bar backward, he cleared an astonishing height of 2.24 meters (7 feet 4.25 inches) to set a new Olympic record and win the gold medal."
+        ],
+        [
+          "Before Fosbury's historic win, almost every high jumper used traditional methods like the straddle technique or the scissors kick.",
+          "Many coaches initially called his backward leap dangerous and foolish, but his impressive Olympic victory instantly changed their minds."
+        ],
+        [
+          "The legacy of the Fosbury Flop spread rapidly across the international athletic community over the next decade.",
+          "By the 1972 Munich Olympic Games, 28 out of the 40 high jump competitors had already adopted Fosbury's unique technique."
+        ],
+        [
+          "Today, virtually every elite high jumper in the world uses the Fosbury Flop to achieve record-breaking heights.",
+          "Fosbury's willingness to think differently proved that physics and innovation could completely revolutionize a modern sport."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Dick Fosbury wins gold at the olympics using the 'Fosbury Flop' (1968) - Origins & History",
+      "paragraphs": [
+        [
+          "Dick Fosbury began his high jump career as a 16-year-old student at Medford High School in Oregon during the early 1960s.",
+          "At the time, he struggled to compete against other athletes using the standard scissors technique, which limited how high he could jump."
+        ],
+        [
+          "Realizing he needed a new strategy, Fosbury began experimenting with his jumping posture during high school track meets in 1963.",
+          "He discovered that leaning back and going over the bar headfirst on his back allowed him to clear much higher barriers."
+        ],
+        [
+          "As a civil engineering student at Oregon State University, Fosbury refined his curved approach run between 1965 and 1968.",
+          "Soft foam rubber landing mats were introduced during this period, making it safe for jumpers to land on their backs for the first time."
+        ],
+        [
+          "His hard work paid off at the 1968 United States Olympic Trials, where he earned a spot on the national team.",
+          "On October 20, 1968, his years of experimentation ended in ultimate triumph when his custom technique won him an Olympic gold medal."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-32-colin-powell",
@@ -710,7 +1879,49 @@
     "who2": "Colin Powell confirmed as Chairman of the Joint Chiefs developed through significant historical events recorded in detail on Biography.com.",
     "timeline": [
       "October 21 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Colin Powell confirmed as Chairman of the Joint Chiefs - Impact & Legacy",
+      "paragraphs": [
+        [
+          "On October 1, 1989, General Colin Powell became the 12th Chairman of the Joint Chiefs of Staff, making history as the first African American to hold the highest military position in the United States.",
+          "At 52 years old, he was also the youngest officer ever appointed to this powerful role, serving as the principal military advisor to the President and the Secretary of Defense."
+        ],
+        [
+          "Powell's legacy was defined by his strategic military framework known as the Powell Doctrine, which emphasized using decisive, overwhelming force and establishing clear exit strategies before entering conflicts.",
+          "He successfully applied these principles during Operation Desert Storm in 1991, leading a international coalition of 35 nations to liberate Kuwait while keeping American casualties remarkably low."
+        ],
+        [
+          "His historic leadership earned him immense public respect, pushing his public approval ratings above 80 percent following the swift victory in the Persian Gulf War.",
+          "Powell demonstrated that a military leader could bridge the gap between armed forces strategy and international diplomacy, changing how Americans viewed military leadership."
+        ],
+        [
+          "Powell served under both President George H.W. Bush and President Bill Clinton before retiring from active military duty in 1993 after 35 years in uniform.",
+          "His groundbreaking achievements paved the way for future generations of minority leaders in the United States military, proving that merit and dedication could break long-standing racial barriers."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Colin Powell confirmed as Chairman of the Joint Chiefs - Origins & History",
+      "paragraphs": [
+        [
+          "Colin Luther Powell was born on April 5, 1937, in Harlem, New York City, to Jamaican immigrant parents who encouraged him to pursue a higher education.",
+          "While attending the City College of New York in the 1950s, he joined the Reserve Officers' Training Corps, or ROTC, where he discovered his life calling and military discipline."
+        ],
+        [
+          "After graduating in 1958, Powell was commissioned as a second lieutenant in the United States Army and served two combat tours during the Vietnam War in 1962 and 1968.",
+          "During his second tour, he survived a helicopter crash and earned the Soldier's Medal for bravery after risking his life to rescue three fellow soldiers from the burning wreckage."
+        ],
+        [
+          "Throughout the 1970s and 1980s, Powell rapidly advanced through command posts while earning a Master of Business Administration degree from George Washington University in 1971.",
+          "Recognizing his exceptional talent, President Ronald Reagan appointed Powell as the 16th National Security Advisor in December 1987, where he helped manage crucial arms-control negotiations with the Soviet Union."
+        ],
+        [
+          "In August 1989, President George H.W. Bush nominated Powell to serve as Chairman of the Joint Chiefs of Staff, leading to a swift Senate confirmation.",
+          "When his appointment officially began in October 1989, it represented the impressive culmination of a 31-year military journey from a college cadet to the highest-ranking officer in the nation."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-33-lance-armstrong-tour",
@@ -726,7 +1937,51 @@
     "who2": "Lance Armstrong loses all 7 Tour de France titles developed through significant historical events recorded in detail on Biography.com.",
     "timeline": [
       "October 22 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Lance Armstrong loses all 7 Tour de France titles - Impact & Legacy",
+      "paragraphs": [
+        [
+          "On October 22, 2012, the Union Cycliste Internationale officially stripped Lance Armstrong of his seven Tour de France titles.",
+          "This monumental decision altered the history of professional sports and destroyed the reputation of a global icon."
+        ],
+        [
+          "The downfall triggered immediate financial and organizational consequences for the former cycling star.",
+          "Major corporate sponsors like Nike, Trek, and Anheuser-Busch cut ties with Armstrong, costing him an estimated 75 million dollars in future earnings.",
+          "He was also forced to resign from the board of Livestrong, the cancer charity he had established in 1997."
+        ],
+        [
+          "The scandal exposed systematic cheating within professional cycling and deeply damaged public trust in athletic achievements.",
+          "Because Armstrong and his teammates used illegal performance-enhancing drugs during all seven victories from 1999 to 2005, cycling officials decided not to name alternative winners for those races.",
+          "Instead, those seven years remain blank in the record books to highlight the widespread nature of the deception."
+        ],
+        [
+          "Today, Armstrong's loss of his titles serves as an important turning point in the fight against performance-enhancing drugs.",
+          "Anti-doping agencies created stricter testing protocols and longer athlete bans to ensure future competitions remain fair and honest."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Lance Armstrong loses all 7 Tour de France titles - Origins & History",
+      "paragraphs": [
+        [
+          "Lance Armstrong began his professional cycling career in 1992, showing great promise as a young power rider.",
+          "However, his career hit a tragic setback in October 1996 when he was diagnosed with stage-four testicular cancer at age 25."
+        ],
+        [
+          "After undergoing extensive surgeries and chemotherapy treatment, Armstrong was declared cancer-free in 1997.",
+          "He made a miraculous return to elite racing and won his first Tour de France title in 1999, captivating fans around the globe."
+        ],
+        [
+          "Armstrong dominated the grueling 2,000-mile race for seven consecutive years, taking victories every July from 1999 through 2005.",
+          "Despite his record-breaking success, reporters and fellow cyclists raised persistent accusations that his team was using banned substances."
+        ],
+        [
+          "In June 2012, the United States Anti-Doping Agency filed official charges against Armstrong, gathering testimony from 26 witnesses.",
+          "USADA released a massive 1,000-page report in October 2012 detailing the sophisticated doping program, which led directly to Armstrong losing all seven of his titles on October 22, 2012."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-34-ipod-first-revealed",
@@ -742,7 +1997,57 @@
     "who2": "iPod first revealed developed through significant historical events recorded in detail on Wikipedia.",
     "timeline": [
       "October 23 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: iPod first revealed (2001) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "The introduction of the iPod transformed how human beings listened to music in their daily lives.",
+          "Before this device, people carried bulky CD players that held only about twelve songs per disc.",
+          "Over its entire product lifetime, Apple sold more than 450 million iPods globally."
+        ],
+        [
+          "The iPod also reshaped the entire music business through digital distribution.",
+          "In April 2003, Apple launched the iTunes Store, offering individual songs for 99 cents each.",
+          "Customers purchased over one million songs during the store's very first six days of operation."
+        ],
+        [
+          "The iconic signature design of the iPod made it a recognizable global symbol.",
+          "Its distinctive white headphones stood out in crowds and quickly became a famous fashion statement.",
+          "It proved that a small electronic device could be both useful and trendy."
+        ],
+        [
+          "Most importantly, the success of the iPod set the stage for modern smartphones.",
+          "Technologies created for the music player directly helped Apple build the first iPhone in 2007.",
+          "Today, the legacy of the iPod lives on inside nearly every smart device we use."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: iPod first revealed (2001) - Origins & History",
+      "paragraphs": [
+        [
+          "On October 23, 2001, Apple CEO Steve Jobs stood on a stage in Cupertino, California.",
+          "He revealed a brand-new digital audio player that would change technology history.",
+          "The famous slogan for the event promised '1,000 songs in your pocket.'"
+        ],
+        [
+          "Development of the device moved at a remarkably fast speed during early 2001.",
+          "A team led by engineer Tony Fadell worked with designer Jony Ive under the secret code name Dulcimer.",
+          "They completed the initial design in less than eight months."
+        ],
+        [
+          "The original iPod weighed just 6.5 ounces and featured a tiny 5-gigabyte hard drive.",
+          "It included a unique mechanical scroll wheel that let users navigate thousands of tracks easily.",
+          "When it went on sale on November 10, 2001, it cost $399."
+        ],
+        [
+          "Despite doubts from some critics about the price, the product was a major success.",
+          "Apple sold over 125,000 units in the final two months of 2001 alone.",
+          "This early momentum launched a series of popular spin-offs, including the Mini, Nano, and Shuffle."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-35-pele-soccer",
@@ -758,7 +2063,49 @@
     "who2": "Pel\u00e9, soccer player developed through significant historical events recorded in detail on Biography.com.",
     "timeline": [
       "October 23 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Pel\u00e9, soccer player (b. 1940) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "Pel\u00e9 revolutionized the sport of soccer, popularizing the phrase 'The Beautiful Game' around the globe.",
+          "Over his professional career, he scored an extraordinary total of 1,281 goals in 1,363 matches."
+        ],
+        [
+          "In 1969, Pel\u00e9's global impact was demonstrated when two factions in the Nigerian Civil War agreed to a 48-hour ceasefire.",
+          "Both sides paused fighting so that soldiers and civilians could watch Pel\u00e9 play an exhibition match with Santos FC in Lagos."
+        ],
+        [
+          "Pel\u00e9 came out of semi-retirement in 1975 to sign a three-year, $4.7 million contract with the New York Cosmos in the United States.",
+          "His presence transformed American sports culture, driving a record crowd of 77,891 fans to New Jersey's Giants Stadium in 1977."
+        ],
+        [
+          "In December 2000, FIFA named Pel\u00e9 the Player of the Century to honor his unparalleled contributions to sports history.",
+          "His enduring legacy remains an inspiration to millions of young soccer players across every continent."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Pel\u00e9, soccer player (b. 1940) - Origins & History",
+      "paragraphs": [
+        [
+          "Pel\u00e9 was born Edson Arantes do Nascimento on October 23, 1940, in Tr\u00eas Cora\u00e7\u00f5es, Brazil.",
+          "Growing up in modest conditions, he developed his foot skills by kicking a rolled-up sock filled with rags."
+        ],
+        [
+          "In 1956, at just 15 years old, he signed a contract with the Brazilian club Santos FC.",
+          "He made his professional debut on September 7, 1956, scoring a goal in his very first game during a 7-1 victory."
+        ],
+        [
+          "At the 1958 World Cup in Sweden, 17-year-old Pel\u00e9 became the youngest player to compete in the tournament.",
+          "He scored six total goals during the event, including two crucial goals in the final match to secure Brazil's 5-2 victory over Sweden."
+        ],
+        [
+          "Pel\u00e9 continued his historic national team career by winning additional World Cup titles in Chile in 1962 and Mexico in 1970.",
+          "When he played his final international game in 1971, he solidified his place as the only athlete in history to win three World Cups."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-36-united-nations-day",
@@ -774,7 +2121,57 @@
     "who2": "United Nations Day developed through significant historical events recorded in detail on Wikipedia.",
     "timeline": [
       "October 24 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: United Nations Day - Impact & Legacy",
+      "paragraphs": [
+        [
+          "United Nations Day is celebrated around the world every year on October 24 to highlight the goals and achievements of the organization.",
+          "In 1971, the UN General Assembly adopted Resolution 2782, declaring that United Nations Day should be an official international holiday observed by all member states.",
+          "Today, people in 193 member nations mark this day through cultural performances, international concerts, and educational workshops."
+        ],
+        [
+          "The day serves as a powerful educational tool for schools, reaching millions of students across the globe each year.",
+          "Traditionally, a special international concert is held in the UN General Assembly Hall in New York City to celebrate global harmony.",
+          "During these celebrations, world leaders reiterate their commitment to the 17 Sustainable Development Goals created to end poverty and protect the planet by 2030."
+        ],
+        [
+          "Reflecting on United Nations Day allows the world to honor over 70 peacekeeping operations deployed since 1948 to maintain global stability.",
+          "Agencies like the World Food Programme, which won the Nobel Peace Prize in 2020, provide food assistance to over 100 million people in 88 countries annually.",
+          "UNICEF, founded in 1946, has helped vaccinate billions of children and reduced child mortality rates by over 50 percent worldwide."
+        ],
+        [
+          "As the UN looks toward the future, United Nations Day reminds citizens of critical milestones, such as the 2015 Paris Agreement signed by 195 nations to combat climate change.",
+          "The holiday emphasizes that international cooperation remains essential for solving complex global problems that no single country can handle alone.",
+          "By honoring this history every October 24, communities around the globe renew their promise to foster peace, equality, and human rights for future generations."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: United Nations Day - Origins & History",
+      "paragraphs": [
+        [
+          "The concept of the United Nations emerged during World War II after the League of Nations, established in 1919, failed to prevent global conflict.",
+          "On January 1, 1942, United States President Franklin D. Roosevelt first coined the term United Nations in a formal declaration signed by 26 Allied nations.",
+          "These nations pledged to fight together against Axis powers and work toward lasting global peace once the war ended."
+        ],
+        [
+          "Between April 25 and June 26, 1945, delegates from 50 nations gathered in San Francisco, California, for the historic Conference on International Organization.",
+          "Representatives spent two months drafting the 111 articles of the United Nations Charter to ensure international security and human rights.",
+          "On June 26, 1945, all 50 attending nations signed the completed Charter, with Poland signing later as the 51st original member state."
+        ],
+        [
+          "The United Nations officially came into existence on October 24, 1945, after the UN Charter was formally ratified.",
+          "For the Charter to take effect, it required ratification by the five permanent Security Council members\u2014China, France, the Soviet Union, the United Kingdom, and the United States\u2014along with a majority of other signing countries.",
+          "Because this monumental legal milestone occurred on October 24, that exact date was selected to be commemorated annually as United Nations Day."
+        ],
+        [
+          "Two years later, in 1947, the United Nations General Assembly officially declared October 24 as United Nations Day through Resolution 168.",
+          "The assembly designed this day to inform people worldwide about the aims and achievements of the new global organization.",
+          "From its original 51 founding members in 1945 to 193 member states today, United Nations Day remains a landmark event tracing back to that crucial post-war era."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-37-pablo-picasso",
@@ -790,7 +2187,49 @@
     "who2": "Pablo Picasso, artist developed through significant historical events recorded in detail on Biography.com.",
     "timeline": [
       "October 25 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Pablo Picasso, artist (b. 1881) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "Pablo Picasso fundamentally transformed the art world during the twentieth century by breaking traditional rules of perspective and realism.",
+          "Co-founding the Cubist movement around 1907 alongside Georges Braque, Picasso introduced a revolutionary way to view objects and people from multiple geometric angles at once."
+        ],
+        [
+          "Beyond changing artistic style, Picasso used his global platform to make powerful political statements against war and violence.",
+          "In 1937, he created his world-famous masterpiece 'Guernica', a massive black-and-white canvas measuring over 25 feet wide that depicted the tragic destruction of a Spanish town during the Spanish Civil War."
+        ],
+        [
+          "Over his remarkable 80-year career, Picasso produced an estimated 50,000 total artworks, including 1,885 paintings, 1,228 sculptures, and thousands of ceramics and drawings.",
+          "His incredible productivity and refusal to stay in one style inspired countless modern artists to push creative boundaries and experiment with new mediums."
+        ],
+        [
+          "Today, major museums across the world display his groundbreaking creations to millions of visitors each year.",
+          "Picasso's lasting legacy proved to the world that art does not have to copy reality to express deep human emotion and big ideas."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Pablo Picasso, artist (b. 1881) - Origins & History",
+      "paragraphs": [
+        [
+          "Pablo Picasso was born on October 25, 1881, in the coastal city of M\u00e1laga, Spain.",
+          "Showing extraordinary talent as a child, Picasso completed his first oil painting, titled 'The Picador', in 1889 when he was only eight years old."
+        ],
+        [
+          "In 1895, at age thirteen, he passed the advanced entrance exam for the Barcelona School of Fine Arts in just one single day.",
+          "After moving to Paris in 1900, he experienced his somber 'Blue Period' from 1901 to 1904, which was immediately followed by the warmer tones of his 'Rose Period' in 1904."
+        ],
+        [
+          "By 1907, Picasso completed 'Les Demoiselles d'Avignon', a radical artwork that shocked art critics and officially launched the Cubist movement.",
+          "Throughout the 1920s and 1930s, he continuously evolved his technique, contributing significantly to Surrealism and classic figurative painting."
+        ],
+        [
+          "During World War II, Picasso remained in German-occupied Paris, courageously continuing his creative work despite constant political risk.",
+          "He spent his final decades working in southern France until his death on April 8, 1973, at the age of 91, leaving behind a profound historical mark on modern culture."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-38-hillary-rodham-clinton",
@@ -806,7 +2245,49 @@
     "who2": "Hillary Rodham Clinton, former First Lady and Secretary of State developed through significant historical events recorded in detail on Biography.com.",
     "timeline": [
       "October 26 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Hillary Rodham Clinton, former First Lady and Secretary of State (b. 1947) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "Hillary Rodham Clinton, born on October 26, 1947, reshaped the role of American women in high-level government service.",
+          "In 2016, she made history as the first woman to secure a presidential nomination from a major American political party."
+        ],
+        [
+          "As the 67th United States Secretary of State from 2009 to 2013, Clinton expanded global diplomatic engagement.",
+          "During her four-year tenure under President Barack Obama, she visited 112 countries to strengthen international alliances."
+        ],
+        [
+          "Before joining the Cabinet, she served as a U.S. Senator representing New York from 2001 to 2009.",
+          "During her time as First Lady from 1993 to 2001, she helped create the Children's Health Insurance Program in 1997, providing healthcare coverage to millions of American children."
+        ],
+        [
+          "Clinton earned nearly 66 million popular votes in the 2016 presidential election, demonstrating unprecedented support for a female presidential candidate.",
+          "Her public career created a lasting legacy that inspired thousands of young women to pursue public service and political leadership."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Hillary Rodham Clinton, former First Lady and Secretary of State (b. 1947) - Origins & History",
+      "paragraphs": [
+        [
+          "Hillary Diane Rodham was born on October 26, 1947, in Chicago, Illinois, and raised in the suburban town of Park Ridge.",
+          "She demonstrated strong academic interest early in life, serving as student government leader and graduating from Wellesley College in 1969."
+        ],
+        [
+          "She earned her Juris Doctor degree from Yale Law School in 1973, where she developed a deep dedication to child advocacy.",
+          "After graduation, she worked for the Children's Defense Fund and served as an attorney on the House Judiciary Committee staff during 1974."
+        ],
+        [
+          "In 1975, Hillary married Bill Clinton and moved to Arkansas, where she became a successful partner at the Rose Law Firm.",
+          "She served as First Lady of Arkansas for twelve years, directing state educational reform initiatives throughout the 1980s."
+        ],
+        [
+          "When her husband became the 42nd President in 1993, Hillary transitioned to national leadership as First Lady of the United States.",
+          "In November 2000, she won election to the U.S. Senate, becoming the first First Lady in American history to hold elected public office."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-39-erie-canal-opened",
@@ -822,7 +2303,57 @@
     "who2": "Erie Canal opened developed through significant historical events recorded in detail on Wikipedia.",
     "timeline": [
       "October 26 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Erie Canal opened (1825) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "On October 26, 1825, Governor DeWitt Clinton boarded the packet boat Seneca Chief in Buffalo to celebrate the completion of the Erie Canal.",
+          "The new waterway dramatically reduced transportation costs, cutting freight prices from $100 per ton overland down to less than $10 per ton by boat.",
+          "Shipping time between Albany and Buffalo was slashed from 20 days to just 6 days."
+        ],
+        [
+          "The economic boom transformed New York City into the financial and commercial capital of the United States.",
+          "Towns along the route, such as Rochester, Syracuse, and Buffalo, grew rapidly from small settlements into thriving industrial cities.",
+          "By 1830, New York handled more trade than the ports of Boston, Baltimore, and Philadelphia combined."
+        ],
+        [
+          "Beyond trade, the canal sparked a massive wave of westward migration for thousands of American settlers and European immigrants.",
+          "It allowed farm products from the Midwest to reach eastern markets, while manufactured goods traveled in the opposite direction.",
+          "Inspired by this incredible success, states like Ohio, Indiana, and Pennsylvania rushed to build their own canal networks during the 1830s."
+        ],
+        [
+          "To keep up with growing traffic, New York enlarged the canal between 1836 and 1862, increasing its depth from 4 feet to 7 feet.",
+          "Today, the Erie Canal remains an active part of the New York State Canal System and is recognized as a National Heritage Area.",
+          "Its legacy endures as one of the greatest engineering feats of the nineteenth century that united a growing nation."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Erie Canal opened (1825) - Origins & History",
+      "paragraphs": [
+        [
+          "In the early 1800s, traveling across the rugged Appalachian Mountains was difficult, expensive, and time-consuming.",
+          "In 1807, an imprisoned debtor named Jesse Hawley published a series of essays proposing a 363-mile canal connecting Lake Erie to the Hudson River.",
+          "DeWitt Clinton, mayor of New York City and later governor, championed the ambitious vision to connect the Midwest to the Atlantic Ocean."
+        ],
+        [
+          "Critics mocked the ambitious plan as Clinton's Ditch or Clinton's Folly, doubting that a young nation could fund or build such a long channel.",
+          "Despite political skepticism, the New York State Legislature approved $7 million in funding for the construction in April 1817.",
+          "Groundbreaking officially took place on July 4, 1817, in Rome, New York, initiating an eight-year construction effort."
+        ],
+        [
+          "Thousands of laborers, including many recent Irish immigrants, dug the trench using shovels, pickaxes, and horse-drawn scrapers.",
+          "Workers constructed 83 separate lift locks to handle a total elevation change of 565 feet between the Hudson River and Lake Erie.",
+          "Self-taught engineers designed massive stone aqueducts to carry the canal over major rivers like the Mohawk and Genesee."
+        ],
+        [
+          "Construction was fully completed in October 1825, producing a channel that was 363 miles long, 40 feet wide, and 4 feet deep.",
+          "To mark the official grand opening, Governor Clinton carried two barrels of fresh water from Lake Erie to pour into the Atlantic Ocean during the famous Marriage of the Waters ceremony.",
+          "The canal's successful opening proved critics wrong and marked a revolutionary moment in early American infrastructure history."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-40-red-cross-organized",
@@ -838,7 +2369,50 @@
     "who2": "International Red Cross organized in Switzerland developed through significant historical events recorded in detail on Wikipedia.",
     "timeline": [
       "October 26 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: International Red Cross organized in Switzerland (1863) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "The creation of the International Red Cross in 1863 permanently transformed how nations treat human suffering during times of crisis.",
+          "Today, the global movement includes more than 192 National Red Cross and Red Crescent Societies, operating in almost every country around the world."
+        ],
+        [
+          "One of the most important legacies of the organization was the establishment of international humanitarian law.",
+          "Following the founding conference, nations adopted the First Geneva Convention in 1864, which established legally binding rules to protect wounded soldiers and medical staff on the battlefield.",
+          "These agreements expanded over time, including major updates in 1949 that extended protections to prisoners of war and civilians."
+        ],
+        [
+          "In addition to wartime aid, the Red Cross became a leading force in worldwide emergency disaster relief.",
+          "The organization has been recognized for its incredible humanitarian efforts with three Nobel Peace Prizes, awarded in 1917, 1944, and 1963."
+        ],
+        [
+          "The famous Red Cross symbol, along with the Red Crescent and Red Crystal, remains an universally understood sign of neutral help.",
+          "For over 160 years, these symbols have allowed brave volunteers to safely deliver food, medicine, and hope to millions of people in need."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: International Red Cross organized in Switzerland (1863) - Origins & History",
+      "paragraphs": [
+        [
+          "The idea for the Red Cross began in June 1859, when a Swiss businessman named Henry Dunant witnessed the terrible aftermath of the Battle of Solferino in Italy.",
+          "Over 40,000 wounded soldiers were left suffering on the field with little to no medical care."
+        ],
+        [
+          "Deeply affected by what he saw, Dunant published a book in 1862 titled 'A Memory of Solferino,' in which he called for national relief groups made of trained volunteers.",
+          "In February 1863, Dunant joined four other citizens in Geneva, Switzerland, to form the 'Committee of Five' to bring his idea to life."
+        ],
+        [
+          "A major breakthrough occurred on October 26, 1863, when an international conference opened in Geneva.",
+          "Delegates representing 16 nations gathered to discuss Dunant's proposal and officially organized the International Committee for Relief to the Wounded, which later became the International Committee of the Red Cross."
+        ],
+        [
+          "To ensure relief workers were recognized and kept safe, the committee adopted the reverse of the Swiss flag\u2014a red cross on a white background\u2014as their protective emblem.",
+          "Less than a year later, on August 22, 1864, 12 states signed the First Geneva Convention, officially founding modern humanitarian aid."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-41-theodore-roosevelt",
@@ -854,7 +2428,49 @@
     "who2": "Theodore Roosevelt, 26th U.S. President developed through significant historical events recorded in detail on Biography.com.",
     "timeline": [
       "October 27 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Theodore Roosevelt, 26th U.S. President (b. 1858) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "When Theodore Roosevelt became the 26th President of the United States in September 1901, he introduced a revolutionary domestic program known as the 'Square Deal.'",
+          "This policy aimed to ensure fairness for everyday workers, control giant corporate monopolies, and protect public health across the nation."
+        ],
+        [
+          "Roosevelt made land conservation a central priority of the American government.",
+          "In 1905, he established the United States Forest Service and ultimately protected 230 million acres of public land, including 5 national parks, 18 national monuments, and 150 national forests."
+        ],
+        [
+          "He also transformed government regulation and international diplomacy.",
+          "In 1906, Roosevelt signed the Pure Food and Drug Act to keep consumers safe, directed 44 antitrust lawsuits against harmful corporate trusts, and earned the 1906 Nobel Peace Prize for helping end the Russo-Japanese War."
+        ],
+        [
+          "Roosevelt's energetic leadership permanently reshaped the power of the American presidency.",
+          "To honor his enduring influence, his image was carved into Mount Rushmore in South Dakota alongside George Washington, Thomas Jefferson, and Abraham Lincoln."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Theodore Roosevelt, 26th U.S. President (b. 1858) - Origins & History",
+      "paragraphs": [
+        [
+          "Theodore Roosevelt was born on October 27, 1858, in New York City to a prominent and wealthy family.",
+          "Although he suffered from severe asthma and poor eyesight as a child, he systematically built up his physical strength through constant exercise and went on to graduate from Harvard University in 1880."
+        ],
+        [
+          "A devastating personal tragedy struck Roosevelt on February 14, 1884, when both his mother and his wife passed away on the exact same day.",
+          "To cope with his grief, he moved to the remote Dakota Territory for two years, where he worked as a cattle rancher and a frontier deputy sheriff."
+        ],
+        [
+          "Upon returning to eastern politics, Roosevelt served as the New York City Police Commissioner in 1895 and later as Assistant Secretary of the Navy.",
+          "In 1898, he achieved national military renown by forming a volunteer cavalry regiment known as the 'Rough Riders' during the Spanish-American War."
+        ],
+        [
+          "Capitalizing on his wartime popularity, Roosevelt was elected Governor of New York in 1898 and sworn in as Vice President in March 1901.",
+          "Following the tragic assassination of President William McKinley in September 1901, Roosevelt assumed the presidency at just 42 years old, becoming the youngest president in American history."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-42-bill-gates",
@@ -870,7 +2486,49 @@
     "who2": "Bill Gates, founder of Microsoft developed through significant historical events recorded in detail on Biography.com.",
     "timeline": [
       "October 28 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Bill Gates, founder of Microsoft (b. 1955) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "Bill Gates dramatically transformed modern life by bringing personal computers into millions of homes and offices worldwide.",
+          "After launching the Windows operating system on November 20, 1985, Microsoft grew to control over 90 percent of the global personal computer market by the late 1990s."
+        ],
+        [
+          "In 2000, Gates shifted his focus toward global philanthropy by establishing the Bill & Melinda Gates Foundation.",
+          "Through this organization, he has donated over $50 billion to improve global health, fight poverty, and expand access to education."
+        ],
+        [
+          "His philanthropic efforts have funded massive global vaccination campaigns, helping reduce worldwide cases of polio by more than 99 percent since 1988.",
+          "The foundation has also invested heavily in malaria prevention and agricultural research to support struggling communities in developing nations."
+        ],
+        [
+          "In 2010, Gates co-founded The Giving Pledge, encouraging the world's wealthiest individuals to commit the majority of their fortunes to charitable causes.",
+          "Today, his legacy stands not only as a software pioneer who shaped the digital revolution, but also as one of the most generous humanitarians in history."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Bill Gates, founder of Microsoft (b. 1955) - Origins & History",
+      "paragraphs": [
+        [
+          "William Henry Gates III was born on October 28, 1955, in Seattle, Washington.",
+          "He discovered his passion for computer programming at the age of 13 in 1968 while attending the private Lakeside School."
+        ],
+        [
+          "At Lakeside, Gates met fellow student Paul Allen, and the duo spent countless hours learning computer languages.",
+          "In 1972, at just 17 years old, Gates and Allen formed their first business venture called Traf-O-Data, which created traffic counter devices and earned them $20,000."
+        ],
+        [
+          "Gates enrolled at Harvard University in 1973 to study law, but his passion for technology quickly overtook his academic pursuits.",
+          "He made the bold decision to drop out of Harvard in 1975 to officially co-found Microsoft with Paul Allen in Albuquerque, New Mexico."
+        ],
+        [
+          "Microsoft achieved its major historical breakthrough in November 1980 by partnering with technology giant IBM.",
+          "Gates provided IBM with the MS-DOS operating system, a landmark business agreement that positioned Microsoft to become a global leader in software development."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-43-statue-of-liberty",
@@ -886,7 +2544,49 @@
     "who2": "Statue of Liberty dedicated developed through significant historical events recorded in detail on Wikipedia.",
     "timeline": [
       "October 28 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Statue of Liberty dedicated (1886) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "On October 28, 1886, President Grover Cleveland officially dedicated the Statue of Liberty in New York Harbor.",
+          "More than one million people attended the grand celebration, which featured New York City's very first ticker-tape parade."
+        ],
+        [
+          "Standing at 305 feet tall from the base of its pedestal to the tip of its torch, Lady Liberty quickly became an enduring beacon for international travelers.",
+          "When the federal immigration station on nearby Ellis Island opened in 1892, millions of arriving immigrants caught their very first glimpse of America by looking at the copper statue."
+        ],
+        [
+          "In 1903, a bronze plaque bearing Emma Lazarus's famous 1883 poem, 'The New Colossus,' was installed inside the pedestal.",
+          "Her inspiring words welcoming the 'tired,' 'poor,' and 'huddled masses' transformed the monument into an iconic symbol of freedom and sanctuary."
+        ],
+        [
+          "Today, the Statue of Liberty remains one of the most recognizable landmarks in the world, attracting over four million visitors each year.",
+          "Designated as a UNESCO World Heritage Site in 1984, the statue continues to stand as a universal emblem of democracy and human rights."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Statue of Liberty dedicated (1886) - Origins & History",
+      "paragraphs": [
+        [
+          "The idea for the Statue of Liberty was first proposed in 1865 by French political thinker \u00c9douard Ren\u00e9 de Laboulaye.",
+          "He wanted to create a grand monument to celebrate the abolition of slavery in the United States and honor the alliance forged between France and America during the Revolutionary War."
+        ],
+        [
+          "French sculptor Fr\u00e9d\u00e9ric-Auguste Bartholdi designed the massive figure, officially naming it Liberty Enlightening the World.",
+          "Engineer Gustave Eiffel, who later created the Eiffel Tower, designed the flexible internal iron skeleton that supports the statue's thin outer skin made of copper."
+        ],
+        [
+          "Building the monument required separate fundraising efforts, as France agreed to fund the statue while the United States agreed to build the pedestal.",
+          "In 1885, American newspaper publisher Joseph Pulitzer helped raise over $100,000 by publishing the names of everyday citizens who donated even a single penny."
+        ],
+        [
+          "After completion in Paris, the statue was dismantled into 350 individual pieces and packed into 214 wooden crates to cross the Atlantic Ocean on a French ship.",
+          "Workers carefully reassembled the monument on Bedloe's Island, culminating in its famous public unveiling on October 28, 1886."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-44-stock-market-crash-1929",
@@ -902,7 +2602,49 @@
     "who2": "Stock Market Crash developed through significant historical events recorded in detail on Wikipedia.",
     "timeline": [
       "October 29 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Stock Market Crash (1929) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "On October 29, 1929, known as Black Tuesday, the stock market collapsed, wiping out billions of dollars in a single day.",
+          "Millions of everyday Americans lost their entire life savings almost overnight as stock values plummeted."
+        ],
+        [
+          "The crash triggered the Great Depression, causing over 9,000 banks to fail across the United States during the 1930s.",
+          "By 1933, American unemployment reached a staggering 25 percent, leaving around 13 million people without jobs."
+        ],
+        [
+          "To restore trust in the financial system, President Franklin D. Roosevelt introduced the New Deal in 1933.",
+          "Congress created the Securities and Exchange Commission in 1934 to regulate the stock market and prevent future crashes."
+        ],
+        [
+          "Additionally, the Federal Deposit Insurance Corporation was established to protect bank deposits up to a certain limit.",
+          "Today, the 1929 crash serves as a crucial reminder of how financial stability relies on smart government regulations and careful investing."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Stock Market Crash (1929) - Origins & History",
+      "paragraphs": [
+        [
+          "During the Roaring Twenties, the United States experienced incredible economic growth and rising prosperity.",
+          "Between 1920 and 1929, the Dow Jones Industrial Average increased sixfold as millions of people invested in stocks for the first time."
+        ],
+        [
+          "Many investors bought stock on margin, borrowing up to 90 percent of the purchase price from brokers.",
+          "This risky practice created a speculative bubble, pushing stock prices far higher than the actual value of the companies."
+        ],
+        [
+          "By September 1929, production was slowing down, steel output dropped, and automobile sales began to fall.",
+          "Panic hit Wall Street on Thursday, October 24, when a record 12.9 million shares were traded in a single day."
+        ],
+        [
+          "Wealthy bankers temporarily stabilized the market on Friday, but panic returned full force the following week.",
+          "On October 29, 1929, another 16.4 million shares were sold, finalizing the historic stock market crash that changed world history."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-45-john-adams",
@@ -918,7 +2660,49 @@
     "who2": "John Adams, 2nd U.S. President developed through significant historical events recorded in detail on Biography.com.",
     "timeline": [
       "October 30 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: John Adams, 2nd U.S. President (b. 1735) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "John Adams left a powerful legacy as the second President of the United States, serving from 1797 to 1801.",
+          "His most crucial achievement was guiding the nation through its first peaceful transfer of executive power when he relinquished the presidency to Thomas Jefferson after the election of 1800."
+        ],
+        [
+          "Adams is widely remembered as the 'Father of the American Navy' because he signed the Naval Act of 1798.",
+          "This law authorized the construction of 12 new warships to defend American merchant ships during the undeclared Quasi-War with France."
+        ],
+        [
+          "Despite intense pressure from members of his own Federalist Party to launch a full war, Adams successfully negotiated peace through the Convention of 1800.",
+          "He considered avoiding a costly war with France to be one of the greatest accomplishments of his political career."
+        ],
+        [
+          "Beyond his own presidential term, Adams established a political dynasty when his son John Quincy Adams was elected the 6th U.S. President in 1825.",
+          "John Adams passed away at age 90 on July 4, 1826, exactly 50 years after the signing of the Declaration of Independence."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: John Adams, 2nd U.S. President (b. 1735) - Origins & History",
+      "paragraphs": [
+        [
+          "John Adams was born on October 30, 1735, in Braintree, Massachusetts, to a family of humble farmers.",
+          "He attended Harvard College, graduating in 1755 at the age of 19 before studying law to become a prominent attorney."
+        ],
+        [
+          "In 1770, Adams took a brave legal stand by defending the British soldiers accused of murder in the Boston Massacre.",
+          "His commitment to fair trial rights resulted in the acquittal of 6 out of the 8 soldiers involved in the trial."
+        ],
+        [
+          "Adams served as a key delegate from Massachusetts to the Continental Congress beginning in 1774.",
+          "In 1776, he strongly advocated for independence and personally chose Thomas Jefferson to write the first draft of the Declaration of Independence."
+        ],
+        [
+          "During the Revolutionary War, Adams traveled to Europe in 1778 to secure essential financial aid, later helping draft the Treaty of Paris in 1783.",
+          "His distinguished early career culminated in 1789, when he began serving 8 years as the nation's very first Vice President under George Washington."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-46-juliette-gordon-low",
@@ -934,7 +2718,49 @@
     "who2": "Juliette Gordon Low, started the Girl Scouts developed through significant historical events recorded in detail on Biography.com.",
     "timeline": [
       "October 31 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Juliette Gordon Low, started the Girl Scouts (b. 1860) - Impact & Legacy",
+      "paragraphs": [
+        [
+          "Juliette Gordon Low created an organization that transformed the lives of millions of young women across the United States.",
+          "Since its founding, more than 50 million American women have participated in the Girl Scouts program."
+        ],
+        [
+          "The organization revolutionized youth activities by encouraging girls to explore science, outdoor survival, and financial literacy.",
+          "By earning merit badges, members learned practical skills ranging from first aid to aviation, breaking traditional social barriers for young women throughout the twentieth century."
+        ],
+        [
+          "In 2012, President Barack Obama posthumously awarded Low the Presidential Medal of Freedom, which is the highest civilian honor in the United States.",
+          "Her birthday on October 31 is officially recognized by Girl Scouts nationwide as Founder's Day to celebrate her enduring vision."
+        ],
+        [
+          "Today, the movement reaches millions of active members and extends to over 90 countries worldwide through the World Association of Girl Guides and Girl Scouts.",
+          "Low's dedication to inclusivity and leadership ensures that girls everywhere continue to build courage, confidence, and character."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Juliette Gordon Low, started the Girl Scouts (b. 1860) - Origins & History",
+      "paragraphs": [
+        [
+          "Juliette Gordon Low was born on October 31, 1860, in Savannah, Georgia, into a prominent family.",
+          "As a child nicknamed 'Daisy,' she suffered from severe hearing loss but maintained an active interest in art, athletics, and travel."
+        ],
+        [
+          "In 1911, while living in England, Low met Sir Robert Baden-Powell, the founder of the Boy Scouts.",
+          "Inspired by his youth program and the British Girl Guides established by his sister Agnes, she resolved to bring a similar opportunity to American girls."
+        ],
+        [
+          "On March 12, 1912, Low organized the first official meeting of 18 girls in Savannah, Georgia.",
+          "Before the historic meeting, she famously telephoned a relative to declare that she had something for the girls of Savannah and all of America."
+        ],
+        [
+          "The organization officially adopted the name Girl Scouts of the United States of America in 1913 and incorporated in 1915.",
+          "During World War I, members supported relief efforts by selling war bonds and growing victory gardens, establishing the group as a major national institution."
+        ]
+      ]
+    }
   },
   {
     "id": "oct-47-halloween-history",
@@ -950,7 +2776,49 @@
     "who2": "Halloween developed through significant historical events recorded in detail on Wikipedia.",
     "timeline": [
       "October 31 - Historical milestone documented in public archives"
-    ]
+    ],
+    "article1": {
+      "title": "Article 1: Halloween - Impact & Legacy",
+      "paragraphs": [
+        [
+          "Today, Halloween has grown into one of the largest commercial holidays in the United States, ranking second only to Christmas in retail spending.",
+          "In 2023, the National Retail Federation reported that consumers spent a record total of $12.2 billion on costumes, candy, and decorations, with over 73 percent of Americans participating in the festivities on October 31."
+        ],
+        [
+          "The tradition of trick-or-treating became widely organized across North America during the 1950s, creating a massive economic boost for the confectionery industry.",
+          "Pop culture has also amplified the holiday's reach, as seen in John Carpenter's 1978 film Halloween, which grossed over $70 million globally and sparked a popular media subgenre."
+        ],
+        [
+          "Beyond commercial sales, Halloween fosters major civic and charitable efforts across diverse communities.",
+          "New York City's Village Halloween Parade, established in 1974, draws over 2 million spectators annually, while the Trick-or-Treat for UNICEF program has raised more than $185 million for international children's aid since 1950."
+        ],
+        [
+          "In recent decades, Halloween customs have expanded far beyond Western nations to global destinations like Japan and South Korea.",
+          "For example, the Kawasaki Halloween Parade in Japan ran for 24 years until 2021, regularly drawing over 120,000 spectators and showcasing how local communities adapt the holiday to fit their own cultures."
+        ]
+      ]
+    },
+    "article2": {
+      "title": "Article 2: Halloween - Origins & History",
+      "paragraphs": [
+        [
+          "Halloween traces its roots back over 2,000 years to the ancient Celtic festival known as Samhain, which marked the end of the harvest season on November 1.",
+          "The Celts believed that on the night of October 31, ghosts of the dead returned to Earth, prompting people to light large bonfires and wear costumes to ward off roaming spirits."
+        ],
+        [
+          "During the 8th century, Pope Gregory III designated November 1 as All Saints' Day to honor Christian martyrs and saints.",
+          "The church incorporated traditional Samhain customs into this religious holiday, and the evening prior became known as All Hallows' Eve, which was eventually shortened to Halloween."
+        ],
+        [
+          "When the Irish Potato Famine brought over 1 million immigrants to the United States in 1845, Irish traditions helped spread Halloween across North America.",
+          "These newcomers adapted their ancient custom of carving scary faces into turnips by switching to native American pumpkins, creating the iconic jack-o'-lanterns used today."
+        ],
+        [
+          "By the 1920s, American communities began organizing structured events to prevent the rowdy destruction and vandalism that had become associated with the holiday.",
+          "Between 1930 and 1950, trick-or-treating was widely adopted as a safe, family-friendly activity for children, giving rise to the modern celebration known today."
+        ]
+      ]
+    }
   }
 ];
   const RAW_NOVEMBER_DATA = [
@@ -6425,7 +8293,6 @@
     return Object.assign({}, t, articles);
   });
 
-  let activeStudentName = localStorage.getItem("talking_cal_student") || "Adalie G";
   let activeTopic = null;
   let selectedTopicObj = null;
   let activeArticleIndex = 1;
@@ -6433,12 +8300,10 @@
   let selectedMonth = "January";
   let selectedSentencesList = [];
   let currentAudioUtterance = null;
-  let savedSubmissions = JSON.parse(localStorage.getItem("talking_cal_submissions") || "[]");
 
   // DOM Elements
   const welcomeView = document.getElementById("welcomeView");
   const workbenchView = document.getElementById("workbenchView");
-  const studentSelect = document.getElementById("studentSelect");
   const monthSelect = document.getElementById("monthSelect");
   const topicSearchInput = document.getElementById("topicSearchInput");
   const welcomeTopicChipsGrid = document.getElementById("welcomeTopicChipsGrid");
@@ -6448,10 +8313,6 @@
   const launchBtnText = document.getElementById("launchBtnText");
   const backToTopicsBtn = document.getElementById("backToTopicsBtn");
   const homeLogoBtn = document.getElementById("homeLogoBtn");
-
-  const userNameDisplay = document.getElementById("userNameDisplay");
-  const userAvatar = document.getElementById("userAvatar");
-  const teacherLoginBtn = document.getElementById("teacherLoginBtn");
 
   const graphicIconWrap = document.getElementById("graphicIconWrap");
   const topicTypeTag = document.getElementById("topicTypeTag");
@@ -6476,30 +8337,12 @@
   const pasteToast = document.getElementById("pasteToast");
   const plagiarismBadge = document.getElementById("plagiarismBadge");
   const plagiarismMsg = document.getElementById("plagiarismMsg");
-  const saveProgressBtn = document.getElementById("saveProgressBtn");
+  const copyParaphraseBtn = document.getElementById("copyParaphraseBtn");
   const printWorksheetBtn = document.getElementById("printWorksheetBtn");
 
-  const teacherModal = document.getElementById("teacherModal");
-  const closeTeacherModalBtn = document.getElementById("closeTeacherModalBtn");
-  const teacherAuthSection = document.getElementById("teacherAuthSection");
-  const teacherPinInput = document.getElementById("teacherPinInput");
-  const teacherPinSubmitBtn = document.getElementById("teacherPinSubmitBtn");
-  const teacherPinError = document.getElementById("teacherPinError");
-  const teacherContentSection = document.getElementById("teacherContentSection");
-  const submissionsTableBody = document.getElementById("submissionsTableBody");
-  const clearSubmissionsBtn = document.getElementById("clearSubmissionsBtn");
-
   function init() {
-    if (studentSelect) studentSelect.value = activeStudentName;
-    updateUserDisplay();
-
     renderWelcomeTopicChips();
     attachEventListeners();
-  }
-
-  function updateUserDisplay() {
-    if (userNameDisplay) userNameDisplay.textContent = activeStudentName;
-    if (userAvatar) userAvatar.textContent = activeStudentName.charAt(0).toUpperCase();
   }
 
   function renderWelcomeTopicChips(filterQuery = "") {
@@ -6592,40 +8435,6 @@
     if (!launchStudioBtn) return;
     launchStudioBtn.disabled = true;
     if (launchBtnText) launchBtnText.textContent = "Select a Topic Above to Begin";
-  }
-
-  function findTopicById(id) {
-    const allDatasets = [
-      typeof RAW_OCTOBER_DATA !== 'undefined' ? RAW_OCTOBER_DATA : [],
-      typeof RAW_NOVEMBER_DATA !== 'undefined' ? RAW_NOVEMBER_DATA : [],
-      typeof RAW_DECEMBER_DATA !== 'undefined' ? RAW_DECEMBER_DATA : [],
-      typeof RAW_JANUARY_DATA !== 'undefined' ? RAW_JANUARY_DATA : [],
-      typeof RAW_FEBRUARY_DATA !== 'undefined' ? RAW_FEBRUARY_DATA : [],
-      typeof RAW_MARCH_DATA !== 'undefined' ? RAW_MARCH_DATA : [],
-      typeof RAW_APRIL_DATA !== 'undefined' ? RAW_APRIL_DATA : []
-    ];
-    for (const dataset of allDatasets) {
-      if (!dataset) continue;
-      const found = dataset.find(t => t.id === id);
-      if (found) return found;
-    }
-    return null;
-  }
-
-  function handleHashChange() {
-    const hash = window.location.hash;
-    if (hash && hash.startsWith('#topic=')) {
-      const topicId = hash.replace('#topic=', '');
-      const topic = findTopicById(topicId);
-      if (topic) {
-        selectedTopicObj = topic;
-        switchToStudioView();
-      } else {
-        switchToWelcomeView();
-      }
-    } else {
-      switchToWelcomeView();
-    }
   }
 
   function switchToStudioView() {
@@ -6787,28 +8596,21 @@
     if (articleBodyProtected) {
       articleBodyProtected.addEventListener("copy", (e) => {
         e.preventDefault();
-        showPasteToast("🚫 Copying text from the article is disabled. Please write in your own words!");
+        showCopyToast("🚫 Copying direct article text is disabled. Write in your own words and copy your paraphrase!");
       });
       articleBodyProtected.addEventListener("contextmenu", (e) => {
         e.preventDefault();
       });
     }
-
-    if (paraphraseInput) {
-      paraphraseInput.addEventListener("paste", (e) => {
-        e.preventDefault();
-        showPasteToast("🚫 Copy & paste is disabled! Write the paraphrase in your own words.");
-      });
-    }
   }
 
-  function showPasteToast(msg) {
+  function showCopyToast(msg) {
     if (!pasteToast) return;
     pasteToast.textContent = msg;
     pasteToast.classList.add("show");
     setTimeout(() => {
       pasteToast.classList.remove("show");
-    }, 2500);
+    }, 3000);
   }
 
   function isProperNoun(word) {
@@ -6945,40 +8747,65 @@
     currentAudioUtterance = null;
   }
 
-  function saveStudentWork() {
+  function copyWorkToClipboard() {
     if (!paraphraseInput) return;
     const text = paraphraseInput.value.trim();
     if (!text) {
-      alert("Please write your paraphrase before saving!");
+      alert("Please write your paraphrase before copying!");
       return;
     }
 
-    const submission = {
-      id: Date.now(),
-      studentName: activeStudentName,
-      topicId: activeTopic.id,
-      topicTitle: activeTopic.title,
-      paraphraseText: text,
-      collectedSentencesCount: selectedSentencesList.length,
-      badgeScore: plagiarismBadge ? plagiarismBadge.textContent : "Original",
-      date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit' })
-    };
+    const topicTitle = activeTopic ? activeTopic.title : "Talking Calendar Topic";
+    const topicMonth = activeTopic ? (activeTopic.day || activeTopic.month) : "";
+    
+    let copyText = `Talking Calendar Research: ${topicTitle} (${topicMonth})
+`;
+    copyText += `--------------------------------------------------------
 
-    savedSubmissions.unshift(submission);
-    localStorage.setItem("talking_cal_submissions", JSON.stringify(savedSubmissions));
-    alert(`🎉 Great job, ${activeStudentName}! Your dual-article paraphrase for "${activeTopic.title}" has been saved for your teacher!`);
+`;
+    if (selectedSentencesList.length > 0) {
+      copyText += `Key Fact Sentences Highlighted:
+`;
+      selectedSentencesList.forEach((s, i) => {
+        copyText += `${i+1}. "${s}"
+`;
+      });
+      copyText += `
+`;
+    }
+    copyText += `Student Paraphrase Summary:
+${text}
+`;
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(copyText).then(() => {
+        showCopyToast("📋 Copied to clipboard!");
+      }).catch(() => {
+        fallbackCopy(copyText);
+      });
+    } else {
+      fallbackCopy(copyText);
+    }
+  }
+
+  function fallbackCopy(str) {
+    const tempTextarea = document.createElement("textarea");
+    tempTextarea.value = str;
+    document.body.appendChild(tempTextarea);
+    tempTextarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempTextarea);
+    showCopyToast("📋 Copied to clipboard!");
   }
 
   function triggerPrintWorksheet() {
-    const studentNameElem = document.getElementById("printStudentName");
     const dateElem = document.getElementById("printDate");
     const titleElem = document.getElementById("printTitle");
     const collectedElem = document.getElementById("printCollectedSentences");
     const paraphraseElem = document.getElementById("printParaphraseText");
 
-    if (studentNameElem) studentNameElem.textContent = activeStudentName;
     if (dateElem) dateElem.textContent = new Date().toLocaleDateString();
-    if (titleElem) titleElem.textContent = activeTopic.title;
+    if (titleElem) titleElem.textContent = activeTopic ? activeTopic.title : "Talking Calendar Research";
     
     if (collectedElem) {
       if (selectedSentencesList.length === 0) {
@@ -6995,38 +8822,7 @@
     window.print();
   }
 
-  function renderTeacherSubmissions() {
-    if (!submissionsTableBody) return;
-    submissionsTableBody.innerHTML = "";
-    if (savedSubmissions.length === 0) {
-      submissionsTableBody.innerHTML = `<tr><td colspan="5" style="text-align:center; color:#64748b;">No student submissions saved yet.</td></tr>`;
-      return;
-    }
-
-    savedSubmissions.forEach(sub => {
-      const tr = document.createElement("tr");
-      tr.innerHTML = `
-        <td><strong>${sub.studentName}</strong></td>
-        <td>${sub.topicTitle}</td>
-        <td><span class="plagiarism-badge ${sub.badgeScore.includes('Original') ? 'badge-original' : 'badge-warning'}">${sub.badgeScore}</span></td>
-        <td>${sub.date}</td>
-        <td>
-          <button class="btn-btn btn-secondary" style="font-size:0.75rem; padding:0.3rem 0.6rem;" onclick="alert('Student Paraphrase:\n\n${sub.paraphraseText.replace(/'/g, "\'").replace(/"/g, '\"')}')">View Text</button>
-        </td>
-      `;
-      submissionsTableBody.appendChild(tr);
-    });
-  }
-
   function attachEventListeners() {
-    if (studentSelect) {
-      studentSelect.addEventListener("change", (e) => {
-        activeStudentName = e.target.value;
-        localStorage.setItem("talking_cal_student", activeStudentName);
-        updateUserDisplay();
-      });
-    }
-
     if (monthSelect) {
       monthSelect.addEventListener("change", () => {
         selectedTopicObj = null;
@@ -7043,23 +8839,17 @@
     }
 
     if (launchStudioBtn) {
-      launchStudioBtn.addEventListener("click", () => {
-        if (selectedTopicObj) {
-          window.location.hash = 'topic=' + selectedTopicObj.id;
-        }
-      });
+      launchStudioBtn.addEventListener("click", switchToStudioView);
     }
 
     if (backToTopicsBtn) {
-      backToTopicsBtn.addEventListener("click", () => {
-        window.location.hash = '';
-      });
+      backToTopicsBtn.addEventListener("click", switchToWelcomeView);
     }
 
     if (homeLogoBtn) {
       homeLogoBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        window.location.hash = '';
+        switchToWelcomeView();
       });
     }
 
@@ -7118,49 +8908,8 @@
       });
     });
 
-    if (saveProgressBtn) saveProgressBtn.addEventListener("click", saveStudentWork);
+    if (copyParaphraseBtn) copyParaphraseBtn.addEventListener("click", copyWorkToClipboard);
     if (printWorksheetBtn) printWorksheetBtn.addEventListener("click", triggerPrintWorksheet);
-
-    if (teacherLoginBtn) {
-      teacherLoginBtn.addEventListener("click", () => {
-        if (teacherModal) teacherModal.classList.add("active");
-        if (teacherAuthSection) teacherAuthSection.style.display = "block";
-        if (teacherContentSection) teacherContentSection.style.display = "none";
-        if (teacherPinInput) teacherPinInput.value = "";
-        if (teacherPinError) teacherPinError.style.display = "none";
-      });
-    }
-    if (closeTeacherModalBtn) {
-      closeTeacherModalBtn.addEventListener("click", () => {
-        if (teacherModal) teacherModal.classList.remove("active");
-      });
-    }
-    
-    if (teacherPinSubmitBtn) {
-      teacherPinSubmitBtn.addEventListener("click", () => {
-        if (!teacherPinInput) return;
-        if (teacherPinInput.value.trim() === "1234") {
-          if (teacherAuthSection) teacherAuthSection.style.display = "none";
-          if (teacherContentSection) teacherContentSection.style.display = "block";
-          renderTeacherSubmissions();
-        } else {
-          if (teacherPinError) teacherPinError.style.display = "block";
-        }
-      });
-    }
-
-    if (clearSubmissionsBtn) {
-      clearSubmissionsBtn.addEventListener("click", () => {
-        if (confirm("Are you sure you want to clear all student submissions?")) {
-          savedSubmissions = [];
-          localStorage.removeItem("talking_cal_submissions");
-          renderTeacherSubmissions();
-        }
-      });
-    }
-
-    window.addEventListener("hashchange", handleHashChange);
-    handleHashChange();
   }
 
   document.addEventListener("DOMContentLoaded", init);

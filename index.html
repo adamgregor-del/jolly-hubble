@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Talking Calendar: Research & Paraphrasing Hub</title>
-  <meta name="description" content="An interactive research hub for students to select their name, explore monthly topics, compare dual articles, practice paraphrasing, and create printable calendar project reports.">
+  <meta name="description" content="An interactive research hub for students to explore monthly topics, compare dual articles, practice paraphrasing, and create printable calendar project reports.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,12 +20,7 @@
         </div>
       </a>
       <div class="nav-actions">
-        <div class="user-badge" id="userBadge">
-          <div class="avatar" id="userAvatar">A</div>
-          <span id="userNameDisplay">Adalie G</span>
-        </div>
         <button class="btn-btn btn-secondary" id="backToTopicsBtn" style="display:none;">👈 Back to Topics</button>
-        <button class="btn-btn btn-accent" id="teacherLoginBtn">🔒 Teacher Dashboard</button>
       </div>
     </div>
   </nav>
@@ -38,39 +33,13 @@
       <div class="welcome-hero">
         <div class="welcome-badge">🌟 Interactive Student Research Studio</div>
         <h1 class="welcome-title">Welcome to Talking Calendar!</h1>
-        <p class="welcome-subtitle">Select your name, choose a calendar month, pick a topic, and launch your dual-article research workbench!</p>
+        <p class="welcome-subtitle">Choose a calendar month, pick a research topic, launch your dual-article workbench, and synthesize your writing!</p>
       </div>
 
       <!-- Selection Control Panel Card -->
       <div class="selection-card">
-        <div class="selectors-row">
+        <div class="selectors-row single-selector">
           
-          <!-- Student Dropdown -->
-          <div class="selector-group">
-            <label for="studentSelect" class="selector-label">
-              <span class="label-icon">👤</span> Select Student:
-            </label>
-            <select id="studentSelect" class="custom-select">
-              <option value="Adalie G">Adalie G</option>
-              <option value="Adelaide C">Adelaide C</option>
-              <option value="Andie C">Andie C</option>
-              <option value="August K">August K</option>
-              <option value="Avaleen L">Avaleen L</option>
-              <option value="Emmett C">Emmett C</option>
-              <option value="Felipe M">Felipe M</option>
-              <option value="Jalen S">Jalen S</option>
-              <option value="Josephine B">Josephine B</option>
-              <option value="Landon O">Landon O</option>
-              <option value="Lila S">Lila S</option>
-              <option value="Nika A">Nika A</option>
-              <option value="Olivia C">Olivia C</option>
-              <option value="Oscar J">Oscar J</option>
-              <option value="Payton E">Payton E</option>
-              <option value="Samuel T">Samuel T</option>
-              <option value="William R">William R</option>
-            </select>
-          </div>
-
           <!-- Month Dropdown -->
           <div class="selector-group">
             <label for="monthSelect" class="selector-label">
@@ -130,7 +99,7 @@
         <!-- Print Header Banner (Only visible when printed) -->
         <div class="print-header-banner" style="display:none;">
           <h1 id="printTitle">Talking Calendar Research Project</h1>
-          <p>Student Name: <span id="printStudentName">____________________</span> | Date: <span id="printDate">____________</span></p>
+          <p>Date: <span id="printDate">____________</span></p>
         </div>
 
         <!-- Topic Visual Header Graphic -->
@@ -225,9 +194,9 @@
 
         <!-- Paraphrase Input Area -->
         <div class="paraphrase-textarea-wrapper">
-          <textarea class="paraphrase-textarea" id="paraphraseInput" placeholder="Synthesize the facts from Article 1 and Article 2 into your own words... (Copy/paste is disabled)"></textarea>
+          <textarea class="paraphrase-textarea" id="paraphraseInput" placeholder="Synthesize the facts from Article 1 and Article 2 into your own words..."></textarea>
           <div class="paste-blocked-toast" id="pasteToast">
-            🚫 Copy & Paste is disabled! Please write in your own words.
+            📋 Copied to clipboard!
           </div>
         </div>
 
@@ -265,7 +234,7 @@
 
         <!-- Action Buttons -->
         <div class="workbench-actions">
-          <button class="btn-btn btn-primary" id="saveProgressBtn" style="flex:1;">💾 Save Work</button>
+          <button class="btn-btn btn-success" id="copyParaphraseBtn" style="flex:1;">📋 Copy Work to Clipboard</button>
           <button class="btn-btn btn-accent" id="printWorksheetBtn">🖨️ Print Worksheet</button>
         </div>
 
@@ -274,48 +243,6 @@
     </section>
 
   </main>
-
-  <!-- Teacher Dashboard Modal -->
-  <div class="modal-overlay" id="teacherModal">
-    <div class="modal-card" style="max-width: 800px;">
-      <div class="modal-header">
-        <h3>🔒 Teacher Dashboard & Class Work</h3>
-        <button class="close-modal-btn" id="closeTeacherModalBtn">&times;</button>
-      </div>
-      <div id="teacherAuthSection">
-        <p style="color:#475569; margin-bottom: 1rem;">Enter the Teacher PIN to review student submissions (Default PIN: <strong>1234</strong>):</p>
-        <div style="display:flex; gap:0.75rem; margin-bottom: 1.5rem;">
-          <input type="password" id="teacherPinInput" placeholder="Enter PIN..." style="padding:0.8rem; border-radius:10px; border:2px solid #cbd5e1; font-size:1.1rem; width:180px;">
-          <button class="btn-btn btn-primary" id="teacherPinSubmitBtn">Unlock Dashboard</button>
-        </div>
-        <p id="teacherPinError" style="color:#ef4444; font-weight:700; font-size:0.9rem; display:none;">Incorrect PIN. Try 1234.</p>
-      </div>
-
-      <div id="teacherContentSection" style="display:none;">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1rem;">
-          <h4>📋 Saved Student Submissions</h4>
-          <button class="btn-btn btn-secondary" id="clearSubmissionsBtn" style="background:#fee2e2; color:#991b1b; border:none; font-size:0.8rem;">Clear All Submissions</button>
-        </div>
-
-        <div class="submissions-table-wrapper">
-          <table class="sub-table">
-            <thead>
-              <tr>
-                <th>Student Name</th>
-                <th>Topic</th>
-                <th>Originality Score</th>
-                <th>Date</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody id="submissionsTableBody">
-              <!-- Populated by JS -->
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- External Data Repositories -->
   <script src="data/generated_articles.js"></script>
