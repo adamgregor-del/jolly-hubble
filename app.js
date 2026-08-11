@@ -12,9 +12,7 @@
       const ext = db[topic.id];
       return {
         article1: ext.article1,
-        article1_challenge: ext.article1,
-        article2: ext.article2,
-        article2_challenge: ext.article2
+        article2: ext.article2
       };
     }
 
@@ -22,9 +20,7 @@
     if (topic.article1 && topic.article2) {
       return {
         article1: topic.article1,
-        article1_challenge: topic.article1,
-        article2: topic.article2,
-        article2_challenge: topic.article2
+        article2: topic.article2
       };
     }
 
@@ -36,15 +32,7 @@
         title: `Article 1: ${topic.title} - Impact & Legacy (${sourceName})`,
         paragraphs: [[`${topic.who1 || topic.title}`]]
       },
-      article1_challenge: {
-        title: `Article 1: ${topic.title} - Impact & Legacy (${sourceName})`,
-        paragraphs: [[`${topic.who1 || topic.title}`]]
-      },
       article2: {
-        title: `Article 2: ${topic.title} - Origins & History (${sourceName})`,
-        paragraphs: [[`${topic.who2 || topic.title}`]]
-      },
-      article2_challenge: {
         title: `Article 2: ${topic.title} - Origins & History (${sourceName})`,
         paragraphs: [[`${topic.who2 || topic.title}`]]
       }
@@ -8296,7 +8284,6 @@
   let activeTopic = null;
   let selectedTopicObj = null;
   let activeArticleIndex = 1;
-  let isChallengeModeActive = false;
   let selectedMonth = "January";
   let selectedSentencesList = [];
   let currentAudioUtterance = null;
@@ -8317,7 +8304,6 @@
   const graphicIconWrap = document.getElementById("graphicIconWrap");
   const topicTypeTag = document.getElementById("topicTypeTag");
   const articleMonthTag = document.getElementById("articleMonthTag");
-  const challengeModeBtn = document.getElementById("challengeModeBtn");
   const audioReadBtn = document.getElementById("audioReadBtn");
   const audioIcon = document.getElementById("audioIcon");
   const audioText = document.getElementById("audioText");
@@ -8505,19 +8491,14 @@
       Object.assign(activeTopic, freshArticles);
     }
 
-    let articleData;
-    if (activeArticleIndex === 1) {
-      articleData = isChallengeModeActive ? (activeTopic.article1_challenge || activeTopic.article1) : activeTopic.article1;
-    } else {
-      articleData = isChallengeModeActive ? (activeTopic.article2_challenge || activeTopic.article2) : activeTopic.article2;
-    }
+    let articleData = (activeArticleIndex === 1) ? activeTopic.article1 : activeTopic.article2;
 
     articleBodyProtected.innerHTML = "";
     if (!articleData) return;
     
     const subHeading = document.createElement("h3");
     subHeading.className = "article-section-heading";
-    subHeading.style.color = isChallengeModeActive ? "#b45309" : "#4f46e5";
+    subHeading.style.color = "#4f46e5";
     subHeading.textContent = articleData.title;
     articleBodyProtected.appendChild(subHeading);
 
@@ -8706,12 +8687,7 @@
 
     stopAudio();
 
-    let activeArticle;
-    if (activeArticleIndex === 1) {
-      activeArticle = isChallengeModeActive ? (activeTopic.article1_challenge || activeTopic.article1) : activeTopic.article1;
-    } else {
-      activeArticle = isChallengeModeActive ? (activeTopic.article2_challenge || activeTopic.article2) : activeTopic.article2;
-    }
+    let activeArticle = (activeArticleIndex === 1) ? activeTopic.article1 : activeTopic.article2;
 
     const plainText = activeArticle.paragraphs.flat().join(" ").replace(/<[^>]*>/g, "");
     const speechText = `${activeTopic.title}. ${activeArticle.title}. ${plainText}`;
@@ -8850,20 +8826,6 @@ ${text}
       homeLogoBtn.addEventListener("click", (e) => {
         e.preventDefault();
         switchToWelcomeView();
-      });
-    }
-
-    if (challengeModeBtn) {
-      challengeModeBtn.addEventListener("click", () => {
-        isChallengeModeActive = !isChallengeModeActive;
-        if (isChallengeModeActive) {
-          challengeModeBtn.classList.add("active");
-          challengeModeBtn.innerHTML = "⚡ Challenge Mode: ON";
-        } else {
-          challengeModeBtn.classList.remove("active");
-          challengeModeBtn.innerHTML = "⚡ Challenge Mode";
-        }
-        renderCurrentArticle();
       });
     }
 
